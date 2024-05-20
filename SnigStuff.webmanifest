@@ -1,0 +1,15 @@
+{
+  "background_color": "blue",
+  "description": "This is Snigdoh's Stuff.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": "image/JPG"
+    }
+  ],
+  "name": "SnigStuffPWA",
+  "short_name": "SnigStuff",
+  "start_url": "/index.html"
+  }
