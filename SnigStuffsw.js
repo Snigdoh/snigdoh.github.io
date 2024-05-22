@@ -15,11 +15,11 @@ self.addEventListener('install', function(e) {
 				//'/3-HingeDrill2.png',
 				//'/Notes21.xml',
 				//.xml might be seen by service worker and browser as another html file which might crash the PWA?
-		//'/!gs63.js',
-		//'/!gs63.css',		
+		'/!gs63.js',
+		'/!gs63.css',		
 				// '/DougieBaseVer34.js',//directory path to project folder/app name.js file
 		     //  '/DougieBaseVer34.css',////directory path to project folder/app name.css file
-	    '/SnigStuff.webmanifest',////directory path to project folder/app name.trainmanifest file
+	    '/WaltStuff.webmanifest',////directory path to project folder/app name.trainmanifest file
 			  // '/jquery-3.6.0.min.js'////directory path to project folder/app name.jQuery file
 			 	//'/fudd4.jpeg'
 			  //  '/eeyore.JPG'//add this file to github repository
@@ -131,4 +131,5 @@ self.addEventListener('install', (e) => {
 }); */
 
 //A new service worker is installed in the background, and the previous one (v1) works correctly up until there are no pages using it — the new Service Worker is then activated and takes over management of the page from the old one.
+
 
