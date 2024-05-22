@@ -1,6 +1,6 @@
 {
-  "background_color": "purple",
-  "description": "This is Walts Stuff.",
+  "background_color": "blue",
+  "description": "This is Snigdoh!",
   "display": "fullscreen",
   "icons": [
     {
@@ -9,7 +9,7 @@
       "type": "image/JPG"
     }
   ],
-  "name": "WaltStuffPWA",
-  "short_name": "WaltStuff",
+  "name": "SnigDohPWA",
+  "short_name": "SnigDoh",
   "start_url": "/index.html"
   }
