@@ -8,8 +8,8 @@
 	<!-- https://www.w3schools.com/jsref/jsref_split.asp -->
 	<!-- Using whichever browser you choose, Tap this link below to install 'WaltStuff': https://GWHodg.github.io -->
 
-<link rel="stylesheet" href="!gs63.css">
-<script src="!gs63.js"></script>
+<link rel="stylesheet" href="!snig.css">
+<script src="!snig.js"></script>
 
 
 <style>
@@ -69,97 +69,20 @@
 			  "PIXEL reload/refresh: Hold icon > App info > Storage & cache > Manage space > MANAGE (Site storage) > 'gwhodg.github.io' > Clear & reset");	
 	}
 	
-	function USplus() {
-		document.getElementById("up/dwn").value = +document.getElementById("up/dwn").value + 1;
-	}
-	function THEMplus() {
-		document.getElementById("up/dwn").value = +document.getElementById("up/dwn").value - 1;
-	}
-
-	function bkgdCLR(crs,gp) {
-		if ( (document.getElementById(crs+"gp1").style.background!="lime") && (document.getElementById(crs+"gp2").style.background!="lime") && (document.getElementById(crs+"gp3").style.background!="lime") ) {
-				document.getElementById(crs+"gp"+gp).style.background="lime";
-		}	
-		else { document.getElementById(crs+"gp"+gp).style.background="silver"; }
-	} 
 	
-	function getSUM() {
-		document.getElementById('g+/-').value = +document.getElementById('f+/-').value + +document.getElementById('b+/-').value;
-		//f+/-
+
+	function openNav() {
+		  if (document.getElementById("mySidenav").style.width<"200px") {
+				document.getElementById("mySidenav").style.width = "400px";
+				//document.getElementById("mySidenav").style.overflow = "scroll";
+		  }
+		  else {
+			 	document.getElementById("mySidenav").style.width = "0px"; 
+		  }
 	}	
-
-	function resetSC() {
-		document.getElementById("Fgp1").style.background="white";
-		document.getElementById("Fgp2").style.background="white";
-		document.getElementById("Fgp3").style.background="white";
-		document.getElementById("Bgp1").style.background="white";
-		document.getElementById("Bgp2").style.background="white";
-		document.getElementById("Bgp3").style.background="white";
-		document.getElementById("Ggp1").style.background="white";
-		document.getElementById("Ggp2").style.background="white";
-		document.getElementById("Ggp3").style.background="white";
-	}		//Bgp3
-
-	function editHOLES() {
-		if (document.getElementById('HOLEbtn').innerHTML=="Edit Holes +") {
-	    	  let reply;
-			  if (confirm("Are you SURE you want to edit hole pars &/or handicaps?") == true) {
-			    reply = "YES!";
-			  } else {
-			    reply = "NO!";
-			  }
-	  		  //alert(reply);
-				  
-			  if ( reply=="YES!") {
-					alert("Can now edit hole pars & handicaps!");
-					//localStorage.setItem('DROPstr', "Medhurst,Dutton,Hodgins");
-					//id="PARh1" placeholder=5 value=5 readonly
-					//id="HCPh1"
-					for (let i = 1; i < 19; i++) {
-						  //document.getElementById("PARh1").setAttribute('readonly', 'false'); 
-						  document.getElementById('PARh'+i).readOnly = false;
-						  document.getElementById('HCPh'+i).readOnly = false;
-					}		
-					document.getElementById('HOLEbtn').innerHTML = "Edit Holes -";
-				}	
-		}
-		else {
-			for (let i = 1; i < 19; i++) {
-				  document.getElementById('PARh'+i).readOnly = true;
-				  document.getElementById('HCPh'+i).readOnly = true;
-			}	
-			document.getElementById('HOLEbtn').innerHTML = "Edit Holes +";
-			alert("Hole editing disabled!");	
-		}	
-	}
-
-	function note() {
-		if (document.getElementById("ROUNDnote").style.visibility=="visible") {
-			document.getElementById("ROUNDnote").style.visibility="hidden";
-			//var noteTEXT = localStorage.setItem('roundNOTE',document.getElementById("ROUNDnote").value);
-			localStorage.setItem('roundNOTE',document.getElementById("ROUNDnote").value);
-			//localStorage.setItem('roundNOTE',document.getElementById("ROUNDnote").innerText);"	
-		}		
-		else {
-			document.getElementById("ROUNDnote").style.visibility="visible";
-			document.getElementById("ROUNDnote").innerHTML = localStorage.getItem("roundNOTE");
-		}
-		hideMENU();		
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0px";
 	}		
-
-		function openNav() {
-			  if (document.getElementById("mySidenav").style.width<"200px") {
-					document.getElementById("mySidenav").style.width = "400px";
-					//document.getElementById("mySidenav").style.overflow = "scroll";
-			  }
-			  else {
-				 	document.getElementById("mySidenav").style.width = "0px"; 
-			  }
-		}
-		
-		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0px";
-		}		
 		
 </script>
 
@@ -171,7 +94,7 @@
 
 	<TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
 		<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:white; background:royalblue; FONT-WEIGHT:bold;" >Snigdoh test #1<br><font size=1 color=lightgray>May 22, 2024</font></TD> 
-			<TD width=20><font size=1>GWH</font></TD>	
+			<TD><font size=5>Vn 3</font></TD>	
 		</TR>
 	</TABLE>
 
