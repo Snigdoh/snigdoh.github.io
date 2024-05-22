@@ -174,7 +174,34 @@
 			<TD width=20><font size=1>GWH</font></TD>	
 		</TR>
 	</TABLE>
+
+	<TABLE border=1 align=center style="background:beige; zoom:1;">
+		<TR>			
+			<TH><A style="cursor:pointer; color:ivory; background:slategray; border:2px solid black; border-radius:5px;" onclick="">V</A></TH>   
+			<TH colspan=1> 
+				<input type="date" id="DATE" tabindex="300" style="background:beige; border:1px solid slategray; color:blue; width:50px;" placeholder="2024-mm-dd" value="2024-mm-dd"     onchange="localStorage.setItem('snigDATE',this.value);" > 
+			</TH>
+			<TD colspan=1 align=center style="color:green; font-size:40px;">selected<!--<br>to play--></TD>
 	
+			<TH> <button onclick="" style="font-size:30px; border:2px inset gray; border-radius:10px;">SHUFFLED</button></TH>
+		</TR>	
+
+		<TR>
+			<TD>1</TD> 
+			
+			<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK1b" onclick=""></TD>
+			<TD id="G1" tabindex="0" onclick="" style='cursor:pointer;'> </TD> 
+			<TD style="width:70px; font-size:40px;" align=center id="NXT1" ></TD>
+			<TD align=center id="SFL1" style="font-size:30px;"></TD>			
+		</TR>
+		<TR>
+			<TD>2</TD> 
+			<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK2b" onclick=""></TD>
+			<TD id="G2" tabindex="0" onclick="" style='cursor:pointer;'></TD> 
+			<TD align=center id="NXT2" style="font-size:40px;"></TD>
+			<TD align=center id="SFL2" style="font-size:30px;"></TD>
+		</TR>
+	</TABLE>	
 	
 </div>				
 </body>
