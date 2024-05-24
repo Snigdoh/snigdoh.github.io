@@ -37,7 +37,7 @@
 	
 	function openNav() {
 		  if (document.getElementById("mySidenav").style.width<"200px") {
-				document.getElementById("mySidenav").style.width = "400px";
+				document.getElementById("mySidenav").style.width = "200px";
 				//document.getElementById("mySidenav").style.overflow = "scroll";
 		  }
 		  else {

@@ -14,11 +14,13 @@
 	  /* Allow them to scroll down the document */
 		  /* overflow-y: hidden; */
 		  overflow-y:scroll;
+		  
 
 	}
 	
 	.body {
 	  /* Sending body at the bottom of the stack */
+	  FONT-SIZE:40px;
 	  z-index: 1;
 	   zoom:250%;	/* 250%; */
 	  overscroll-behavior-y: contain; /* < prevents 'pull-to-refresh' in CHROME (not DDG) */
@@ -67,7 +69,7 @@
 			.sidenav {
 			  height: 22%; width:0;   /* height: 100%;   30%*/
 			  position: fixed;z-index: 1;
-			  top:200px; left:0px; /* top: 545px; */
+			  top:300px; left:0px; /* top: 545px; */
 			  background-color:black;	/*blue;	  #111;*/
 			  overflow:scroll; transition: 0.5s; padding-top:0px;	/* 30px; */
 			  /* overflow-x: hidden; overflow-y:scroll; */
@@ -76,7 +78,8 @@
 			.sidenav a {
 			  /* padding: 8px 8px 8px 32px; text-decoration: none; */
 			  padding: 3px 3px 3px 0px; text-decoration: none; 
-			  font-size: 40px;	/* 20px; */ color: #818181; display: block; transition: 0.3s;
+			  font-size: 15px;	/* 20px; */ color:pink; display: block; transition: 0.3s;
+			  							/* color: #818181; */
 			}		
 			.sidenav a:hover { color: #f1f1f1; }		
 			.sidenav .closebtn {
@@ -87,18 +90,18 @@
 	.grid-container {
 	  display: grid;
 	  grid-template-columns: auto auto auto;	/* auto; */
-	  gap: 2px;
+	  /*gap: 2px;
 	  background-color:dodgerblue; 	/* #2196F3; */
 	  padding: 5px;
 	  /*vertical-align:top;*/
 	  /*align-content:space-evenly;*/
 	}	
 	.grid-container > div {
-	  background-color: ivory;	/* rgba(255, 255, 255, 0.8); */
+	  background-color:gray;	/* rgba(255, 255, 255, 0.8); */
 	  	color:white;
 	  border: 1px solid black;
 	  text-align: center;
-	  font-size: 20px;	  
+	  /* font-size: 20px; */
     }	
 	
 	
