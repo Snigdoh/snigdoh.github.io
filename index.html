@@ -14,52 +14,6 @@
 
 <style>
 
-	/*Animated Sidenav (Menu):
-		create an animated, closable side navigation menu
-	  	https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav*/
-			.sidenav {
-			  height: 30%; width: 0;   /* height: 100%; */
-			  position: fixed; z-index: 1;
-			  top: 540px; left: 0; /* top: 545; */
-			  background-color:black;	/*blue;	  #111;*/
-			  overflow:scroll; transition: 0.5s; padding-top:0px;	/* 30px; */
-			  /* overflow-x: hidden; overflow-y:scroll; */
-			  /*vertical-align: top;*/
-			}		
-			.sidenav a {
-			  /* padding: 8px 8px 8px 32px; text-decoration: none; */
-			  padding: 3px 3px 3px 0px; text-decoration: none; 
-			  font-size: 20px;	/* 25px; */ color: #818181; display: block; transition: 0.3s;
-			}		
-			.sidenav a:hover { color: #f1f1f1; }		
-			.sidenav .closebtn {
-			  position: absolute; top: 0; right: 25px;
-			  font-size: 36px; margin-left: 50px;
-			}	
-			/* @media screen and (max-height: 450px) {
-				  .sidenav {padding-top: 15px;}
-				  .sidenav a {font-size: 18px;}
-		  	  } */
-			  
-			  
-	.grid-container {
-	  display: grid;
-	  grid-template-columns: auto auto auto auto;
-	  gap: 2px;
-	  background-color:slategray; /* dodgerblue; */	/* #2196F3; */
-	  padding: 5px;
-	  /*vertical-align:top;*/
-	  /*align-content:space-evenly;*/
-	}	
-	.grid-container > div {
-	  background-color: lightgray;	/* maroon; */	/* rgba(255, 255, 255, 0.8); */
-	  	color:white;
-	  border: 1px solid black;
-	  text-align: center;
-	  font-size: 20px;
-	  
-    }		
-  
 </style>
 
 <script>
@@ -88,13 +42,41 @@
 
 </head>
 
-<body class="body" style="background:lime;"  onload=""> <!--  zoom:250%; -->
+<body class="body" style="background:yellow;"  onload=""> <!--  zoom:250%; -->
 	
 <div class="wrapper"><!-- Put the page contents here -->
+	
+				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
+						<div class="grid-container">
+							  <div><!--<A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="presetPLAY()"><b>presets</b></A>--></div>
+							  <div><A style="FONT-SIZE:60px; cursor:pointer; color:maroon;" onclick="lastPLAY()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
+							  <div><A style="FONT-SIZE:60px; cursor:pointer; color:maroon;" onclick="clearPLAYarray()"><b>clear lS</b></A><!--<button style="color:black; font-size:25px;" onclick="clearPLAYarray()"><b>CLEAR</b> PLAY[]</button>--></div>
+							  
+							  <div><A onclick="emails()" style='FONT-SIZE:normal; cursor:pointer; color:maroon;'><b>emails</b></A></div>
+							  <div><span style=" cursor:pointer; FONT-SIZE:60px; color:white;" onclick="closeNav()"><s>&#9776;</s></span>	<!--<button onclick="showALL()">display group</button>-->
+							  </div>
+							  <!--<div><button onclick="emails()">emails</button></div>-->
+							  <div><A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="clearFFx()"><b>clearFFx</b></A>	</div>
+							  
+							  <div>
+								  <!--<a onclick="showLSwrite()" style=""><b>WRITE to file</b></a>-->
+									  
+							  </div>
+							  <div><!--<A onclick="showLSread()" style='cursor:pointer;'>READ file</A>--></div>
+							  <div>
+								  <a onclick="showNOTE()" style="color:maroon"><b>note</b></a>
+							  </div>
+							  <div> </div>
+							  <div><A onclick="codeFILES()" style='cursor:pointer;'>code files</A></div>
+							  <div> </div>
+							  
+						</div>									
+				</div>	
+				
 
 	<TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-		<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:white; background:royalblue; FONT-WEIGHT:bold;" >Snigdoh test #1<br><font size=1 color=lightgray>May 22, 2024</font></TD> 
-			<TD><font size=5>Vn 4</font></TD>	
+		<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:white; background:royalblue; FONT-WEIGHT:bold;" >Snigdoh 2<br><font size=2 color=lightgray>May 22, 2024</font></TD> 
+			<TD><span style="font-size:100px; cursor:pointer; background:ivory;color:maroon;" onclick="openNav()">&#9776;</span>	</TD>	
 			<TD>
 				<img src="IMG_woody.png" width=50 height=50>
 			</TD>
@@ -103,30 +85,67 @@
 
 	<TABLE border=1 align=center style="background:beige; zoom:1;">
 		<TR>			
-			<TH><A style="cursor:pointer; color:ivory; background:slategray; border:2px solid black; border-radius:5px;" onclick="clearFFx()">&#9776;</A></TH>   
-			<TH colspan=1> 
+			<TH><!--<A style="cursor:pointer; color:ivory; background:slategray; border:2px solid black; border-radius:5px;" onclick="clearFFx()">&#9776;</A>--></TH>   
+			<!--<TH colspan=1> 
 				<input type="date" id="DATE" tabindex="300" style="background:beige; border:1px solid slategray; color:blue; width:50px;" placeholder="2024-mm-dd" value="2024-mm-dd"     onchange="localStorage.setItem('snigDATE',this.value);" > 
-			</TH>
-			<TD colspan=1 align=center style="color:green; font-size:30px;">selected<!--<br>to play--></TD>
+			</TH>-->
+			<TD colspan=1 align=center style="color:green; font-size:20px;">J6<!--<br>to play--></TD>
 	
-			<TH> <button onclick="" style="font-size:30px; border:2px inset gray; border-radius:10px;">SHUFFLED</button></TH>
+			<TH>J13 <!--<button onclick="" style="font-size:20px; border:2px inset gray; border-radius:10px;"></button>--></TH>
+			<TD>J20</TD> <TD>j4</TD> <TD>j11</TD>
 		</TR>	
 
 		<TR>
 			<TD>1</TD> 
 			
-			<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK1b" onclick=""></TD>
-			<TD id="G1" tabindex="0" onclick="" style='cursor:pointer;'> </TD> 
-			<TD style="width:70px; font-size:40px;" align=center id="NXT1" ></TD>
-			<TD align=center id="SFL1" style="font-size:30px;"></TD>			
+			<!--<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK1b" onclick=""></TD>-->
+			<TD id="G1" tabindex="0" onclick="" style='cursor:pointer;'>AB</TD> 
+			<TD style=" font-size:40px;" align=center id="NXT1" ></TD>
+			<TD align=center id="SFL1" style="font-size:30px;"></TD>
+			<TD align=center id="G1wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G1wk4" style="font-size:30px;"></TD>						
 		</TR>
 		<TR>
 			<TD>2</TD> 
-			<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK2b" onclick=""></TD>
-			<TD id="G2" tabindex="0" onclick="" style='cursor:pointer;'></TD> 
+			<!--<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK2b" onclick=""></TD>-->
+			<TD id="G2" tabindex="0" onclick="" style='cursor:pointer;'>TC</TD> 
 			<TD align=center id="NXT2" style="font-size:40px;"></TD>
 			<TD align=center id="SFL2" style="font-size:30px;"></TD>
+			<TD align=center id="G2wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G2wk4" style="font-size:30px;"></TD>						
 		</TR>
+		<TR>
+			<TD>3</TD> 
+			<TD id="G3" tabindex="0" onclick="" style='cursor:pointer;'>JD</TD> 
+			<TD align=center id="G3wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G3wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G3wk3" style="font-size:30px; background:red;"></TD>
+			<TD align=center id="G3wk4" style="font-size:30px;"></TD>			
+		</TR>
+		<TR>
+			<TD>4</TD> 
+			<TD id="G4" tabindex="0" onclick="" style='cursor:pointer;'>GF</TD> 
+			<TD align=center id="G4wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G4wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G4wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G4wk4" style="font-size:30px;"></TD>			
+		</TR>
+		<TR>
+			<TD>5</TD> 
+			<TD id="G5" tabindex="0" onclick="" style='cursor:pointer;'>WH</TD> 
+			<TD align=center id="G5wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G5wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G5wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G5wk4" style="font-size:30px;"></TD>			
+		</TR>
+		<TR>
+			<TD>6</TD> 
+			<TD id="G6" tabindex="0" onclick="" style='cursor:pointer;'>SJ</TD> 
+			<TD align=center id="G6wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G6wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G6wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G6wk4" style="font-size:30px;"></TD>			
+		</TR>		
 	</TABLE>	
 	
 </div>				

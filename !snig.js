@@ -35,7 +35,22 @@
 		alert("To clear your data on Firefox for Android, go to Settings via the three dots icon. Here, scroll down to Delete browsing data. You'll then be given a list of items you can choose to delete including Open tabs, Browsing history, Cookies and site data, Cached images and files, Site permissions and, finally, Downloads.");
 	}
 	
+	function openNav() {
+		  if (document.getElementById("mySidenav").style.width<"200px") {
+				document.getElementById("mySidenav").style.width = "400px";
+				//document.getElementById("mySidenav").style.overflow = "scroll";
+		  }
+		  else {
+			 	document.getElementById("mySidenav").style.width = "0px"; 
+		  }
+	}	
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0px";
+	}		
 	
+	function emails() {
+		alert("dbpengelly@gmail.com, jas@uvic.ca, abbuck@shaw.ca, tp70connolly@gmail.com, therad@shaw.ca, charlesmed@shaw.ca, evan@evanhazell.com, geofffield@shaw.ca, cathyhodgins2@gmail.com, pmkuechler@gmail.com, jmccr99@gmail.com, gportermd@gmail.com, jwdutton@telus.net, gmharris@hotmail.com, shaynej@shaw.ca, nigelbailey@shaw.ca, dave.pianoman@gmail.com");
+	}
 	
 	
 	
