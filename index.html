@@ -37,14 +37,14 @@
 						<div class="grid-container">
 							  <div><!--<A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="presetPLAY()"><b>presets</b></A>--></div>
 							  <div><A style="cursor:pointer;" onclick="lastPLAY()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
-							  <div><A style="cursor:pointer; color:white;" onclick="clearPLAYarray()"><b>clear lS</b></A><!--<button style="color:black; font-size:25px;" onclick="clearPLAYarray()"><b>CLEAR</b> PLAY[]</button>--></div>
+							  <div><A style="cursor:pointer; color:silver;" onclick="clearPLAYarray()"><b>clear lS</b></A><!--<button style="color:black; font-size:25px;" onclick="clearPLAYarray()"><b>CLEAR</b> PLAY[]</button>--></div>
 							  
-							  <div><A onclick="emails()" style='cursor:pointer; color:maroon;'><b>emails</b></A></div>
-							  <div><A onclick="closeNav()" style='cursor:pointer; color:maroon;'><s>&#9776;</s></A>
+							  <div><A onclick="emails()" style='cursor:pointer; color:white;'><b>emails</b></A></div>
+							  <div><A onclick="closeNav()" style='cursor:pointer; color:white;'><s>&#9776;</s></A>
 							  	<!--<span style=" cursor:pointer; color:white;" onclick="closeNav()"><s>&#9776;</s></span>-->	<!--<button onclick="showALL()">display group</button>-->
 							  </div>
 							  <!--<div><button onclick="emails()">emails</button></div>-->
-							  <div><A style="cursor:pointer; color:maroon;" onclick="clearFFx()"><b>clearFFx</b></A>	</div>
+							  <div><A style="cursor:pointer; color:white;" onclick="clearFFx()"><b>clearFFx</b></A>	</div>
 							  
 							  <div>
 								  <!--<a onclick="showLSwrite()" style=""><b>WRITE to file</b></a>-->
@@ -62,8 +62,8 @@
 				</div>	
 				
 
-	<TABLE id="HEADtbl" border=1 align=center style='color:maroon; visibility:visible;' bgcolor='lightgray'>	
-		<TR><TD style="FONT-WEIGHT: bold; COLOR:white; background:royalblue; FONT-WEIGHT:bold;" >Snigdoh3<!--<br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
+	<TABLE class="HEADtbl" border=1 align=center > <!-- style='color:maroon; visibility:visible;' bgcolor='lightgray' -->	
+		<TR><TD  >Snigdoh 4<!--<br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
 			<TD><span style="font-size:50px; cursor:pointer; background:ivory;color:maroon;" onclick="openNav()">&#9776;</span>	</TD>	
 			<TD>
 				<img src="IMG_woody.png" width=50 height=50>
@@ -71,71 +71,116 @@
 		</TR>
 	</TABLE>
 
-	<TABLE id="tableMAIN" border=1 align=center style="">
-		<TR>			
-			<TH><!--<A style="cursor:pointer; color:ivory; background:slategray; border:2px solid black; border-radius:5px;" onclick="clearFFx()">&#9776;</A>--></TH>   
-			<!--<TH colspan=1> 
-				<input type="date" id="DATE" tabindex="300" style="background:beige; border:1px solid slategray; color:blue; width:50px;" placeholder="2024-mm-dd" value="2024-mm-dd"     onchange="localStorage.setItem('snigDATE',this.value);" > 
-			</TH>-->
-			<TD colspan=1 align=center style="color:green; font-size:20px;"><!--<br>to play--></TD>
+	<!--<DIV style="width:150px; overflow-y:scroll;">-->
+	<TABLE class="tableMAIN" border=1 align=center style="">
+		<thead><TR>			
+			<TD  class="headcol" colspan=1 align=center style="color:green; font-size:20px;"><!--<br>to play--></TD>
 	
 			<TH>J13 <!--<button onclick="" style="font-size:20px; border:2px inset gray; border-radius:10px;"></button>--></TH>
-			<TD>J20</TD> <TD>J27</TD> <TD>j4</TD> <!-- 11 18 25 1 -->
-		</TR>	
-
+			<TH>J20</TH> <TH>J27</TH> <TH>&nbsp;j4</TH> <!-- 11 18 25 1 -->
+		</TR></thead>	
+		<tbody>
 		<TR>
-			<TD>1</TD> 
-			
-			<!--<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK1b" onclick=""></TD>-->
-			<TD id="G1" tabindex="0" onclick="" style='cursor:pointer;'>AB</TD> 
+			<TD class="headcol" id="G1" tabindex="0" onclick="" style='cursor:pointer;'>AB</TD> 
 			<TD style=" font-size:40px;" align=center id="NXT1" ></TD>
 			<TD align=center id="SFL1" style="font-size:30px;"></TD>
 			<TD align=center id="G1wk3" style="font-size:30px;"></TD>
 			<TD align=center id="G1wk4" style="font-size:30px;"></TD>						
 		</TR>
 		<TR>
-			<TD>2</TD> 
-			<!--<TD align=center><input type="checkbox" style="color:yellow; zoom:3;" id="CHK2b" onclick=""></TD>-->
-			<TD id="G2" tabindex="0" onclick="" style='cursor:pointer;'>TC</TD> 
+			<TD class="headcol" id="G2" tabindex="0" onclick="" style='cursor:pointer;'>TC</TD> 
 			<TD align=center id="NXT2" style="font-size:40px;"></TD>
 			<TD align=center id="SFL2" style="font-size:30px;"></TD>
 			<TD align=center id="G2wk3" style="font-size:30px;"></TD>
 			<TD align=center id="G2wk4" style="font-size:30px;"></TD>						
 		</TR>
 		<TR>
-			<TD>3</TD> 
-			<TD id="G3" tabindex="0" onclick="" style='cursor:pointer;'>JD</TD> 
+			<TD class="headcol" id="G3" tabindex="0" onclick="" style='cursor:pointer;'>JD</TD> 
 			<TD align=center id="G3wk1" style="font-size:40px;"></TD>
 			<TD align=center id="G3wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G3wk3" style="font-size:30px; background:red;"></TD>
 			<TD align=center id="G3wk4" style="font-size:30px;"></TD>			
 		</TR>
 		<TR>
-			<TD>4</TD> 
-			<TD id="G4" tabindex="0" onclick="" style='cursor:pointer;'>GF</TD> 
+			<TD class="headcol" id="G4" tabindex="0" onclick="" style='cursor:pointer;'>GF</TD> 
 			<TD align=center id="G4wk1" style="font-size:40px;"></TD>
 			<TD align=center id="G4wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G4wk3" style="font-size:30px;"></TD>
 			<TD align=center id="G4wk4" style="font-size:30px;"></TD>			
 		</TR>
 		<TR>
-			<TD>5</TD> 
-			<TD id="G5" tabindex="0" onclick="" style='cursor:pointer;'>WH</TD> 
+			<TD class="headcol" id="G5" tabindex="0" onclick="" style='cursor:pointer;'>WH</TD> 
 			<TD align=center id="G5wk1" style="font-size:40px;"></TD>
 			<TD align=center id="G5wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G5wk3" style="font-size:30px;"></TD>
 			<TD align=center id="G5wk4" style="font-size:30px;"></TD>			
 		</TR>
 		<TR>
-			<TD>6</TD> 
-			<TD id="G6" tabindex="0" onclick="" style='cursor:pointer;'>SJ</TD> 
+			<TD class="headcol" id="G6" tabindex="0" onclick="" style='cursor:pointer;'>SJ</TD> 
 			<TD align=center id="G6wk1" style="font-size:40px;"></TD>
 			<TD align=center id="G6wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G6wk3" style="font-size:30px;"></TD>
 			<TD align=center id="G6wk4" style="font-size:30px;"></TD>			
+		</TR>	
+		<TR>
+			<TD class="headcol" id="G7" tabindex="0" onclick="" style='cursor:pointer;'>PK</TD> 
+			<TD align=center id="G7wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G7wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G7wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G7wk4" style="font-size:30px;"></TD>			
+		</TR>	
+			<TR>
+			<TD class="headcol" id="G8" tabindex="0" onclick="" style='cursor:pointer;'>JM</TD> 
+			<TD align=center id="G8wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G8wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G8wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G8wk4" style="font-size:30px;"></TD>			
+		</TR>	
+		<TR>
+			<TD class="headcol" id="G9" tabindex="0" onclick="" style='cursor:pointer;'>CM</TD> 
+			<TD align=center id="G9wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G9wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G9wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G9wk4" style="font-size:30px;"></TD>			
 		</TR>		
+		<TR>
+			<TD class="headcol" id="G10" tabindex="0" onclick="" style='cursor:pointer;'>DP</TD> 
+			<TD align=center id="G10wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G10wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G10wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G10wk4" style="font-size:30px;"></TD>			
+		</TR>		
+		<TR>
+			<TD class="headcol" id="G11" tabindex="0" onclick="" style='cursor:pointer;'>Pd</TD> 
+			<TD align=center id="G11wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G11wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G11wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G11wk4" style="font-size:30px;"></TD>			
+		</TR>		
+		<TR>
+			<TD class="headcol" id="G12" tabindex="0" onclick="" style='cursor:pointer;'>BP</TD> 
+			<TD align=center id="G12wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G12wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G12wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G12wk4" style="font-size:30px;"></TD>			
+		</TR>				
+		<TR>
+			<TD class="headcol" id="G13" tabindex="0" onclick="" style='cursor:pointer;'>WR</TD> 
+			<TD align=center id="G13wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G13wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G13wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G13wk4" style="font-size:30px;"></TD>			
+		</TR>				
+		<TR>
+			<TD class="headcol" id="G14" tabindex="0" onclick="" style='cursor:pointer;'>JS</TD> 
+			<TD align=center id="G14wk1" style="font-size:40px;"></TD>
+			<TD align=center id="G14wk2" style="font-size:30px;"></TD>
+			<TD align=center id="G14wk3" style="font-size:30px;"></TD>
+			<TD align=center id="G14wk4" style="font-size:30px;"></TD>			
+		</TR>						
+		</tbody>	
 	</TABLE>	
-	
+	<!--</DIV>-->
 </div>				
 </body>
 </html>
