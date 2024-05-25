@@ -52,5 +52,19 @@
 		alert("dbpengelly@gmail.com, jas@uvic.ca, abbuck@shaw.ca, tp70connolly@gmail.com, therad@shaw.ca, charlesmed@shaw.ca, evan@evanhazell.com, geofffield@shaw.ca, cathyhodgins2@gmail.com, pmkuechler@gmail.com, jmccr99@gmail.com, gportermd@gmail.com, jwdutton@telus.net, gmharris@hotmail.com, shaynej@shaw.ca, nigelbailey@shaw.ca, dave.pianoman@gmail.com");
 	}
 	
+						/*   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   */
 	
-	
+	function PLAYwk1(pl) {
+		if ( document.getElementById("G3wk1").style.background == "lime" ) {
+			alert(pl+"is NOT playing wk 1!");
+			document.getElementById("G3wk1").style.background = "gray";	
+			localStorage.setItem("G3playWK1","");
+		}
+		else { 
+			alert(pl+"is playing wk 1!");
+			document.getElementById("G3wk1").style.background = "lime"; 
+			localStorage.setItem("G3playWK1",pl);
+		}
+			
+		
+	}
