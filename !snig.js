@@ -54,17 +54,21 @@
 	
 						/*   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   */
 	
-	function PLAYwk(pl,wk) {
-		if ( document.getElementById("G3wk"+wk).style.background == "lime" ) {
+	function PLAYwk(pl,pNO,wk) {
+		if ( document.getElementById("G"+pNO+"wk"+wk).style.background == "lime" ) {
 			alert(pl+" is NOT playing wk "+wk+"!");
-			document.getElementById("G3wk"+wk).style.background = "gray";	
-			localStorage.setItem("G3playWK"+wk,"");
+			document.getElementById("G"+pNO+"wk"+wk).style.background = "slategray";	
+			localStorage.setItem("G"+pNO+"playWK"+wk,"");
 		}
 		else { 
-			alert(pl+"is playing wk "+wk+"!");
-			document.getElementById("G3wk"+wk).style.background = "lime"; 
-			localStorage.setItem("G3playWK"+wk,pl);
-		}
-			
-		
+			alert(pl+" is playing wk "+wk+"!");
+			document.getElementById("G"+pNO+"wk"+wk).style.background = "lime"; 
+			localStorage.setItem("G"+pNO+"playWK"+wk,pl);
+		}		
+	}
+	
+	function locStor() {
+		alert("localStorage:\n\n"+
+			  "lS 'G3wk0' = "+localStorage.getItem('G3playWK0')+
+			  "\nlS 'G1wk3' = "+localStorage.getItem('G1playWK3'));
 	}

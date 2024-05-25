@@ -36,7 +36,7 @@
 				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
 						<div class="grid-container">
 							  <div><!--<A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="presetPLAY()"><b>presets</b></A>--></div>
-							  <div><A style="cursor:pointer;" onclick="lastPLAY()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
+							  <div><A style="cursor:pointer;" onclick="locStor()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
 							  <div><A style="cursor:pointer; color:silver;" onclick="clearPLAYarray()"><b>clear LS</b></A><!--<button style="color:black; font-size:25px;" onclick="clearPLAYarray()"><b>CLEAR</b> PLAY[]</button>--></div>
 							  
 							  <div><A onclick="emails()" style='cursor:pointer; color:white;'><b>emails</b></A></div>
@@ -83,15 +83,15 @@
 		<tbody>
 		<TR>
 			<TD class="headcol" id="G1" tabindex="0" onclick="" style='cursor:pointer;'>AB</TD> 
-			<TD style=" font-size:40px;" align=center id="G1wk0" ></TD>
-			<TD align=center id="G1wk1" style="font-size:30px;"></TD>
-			<TD align=center id="G1wk2" style="font-size:30px;"></TD>
-			<TD align=center id="G1wk3" style="font-size:30px;"></TD>
-			<TD align=center id="G1wk4" style="font-size:30px;"></TD>			
+			<TD style=" font-size:40px;" align=center id="G1wk0" onclick="PLAYwk('AB',1,0)"></TD>
+			<TD align=center id="G1wk1" style="font-size:30px;" onclick="PLAYwk('AB',1,1)"></TD>
+			<TD align=center id="G1wk2" style="font-size:30px;" onclick="PLAYwk('AB',1,2)"></TD>
+			<TD align=center id="G1wk3" style="font-size:30px;" onclick="PLAYwk('AB',1,3)"></TD>
+			<TD align=center id="G1wk4" style="font-size:30px;" onclick="PLAYwk('AB',1,4)"></TD>			
 		</TR>
 		<TR>
 			<TD class="headcol" id="G2" tabindex="0" onclick="" style='cursor:pointer;'>TC</TD> 
-			<TD align=center id="G2wk0" style="font-size:40px;"></TD>
+			<TD align=center id="G2wk0" style="font-size:40px;" onclick="PLAYwk('TC',2,0)"></TD>
 			<TD align=center id="G2wk1" style="font-size:30px;"></TD>
 			<TD align=center id="G2wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G2wk3" style="font-size:30px;"></TD>
@@ -99,7 +99,7 @@
 		</TR>
 		<TR>
 			<TD class="headcol" id="G3" tabindex="0" onclick="" style='opacity:50%;'>JD</TD> 
-			<TD align=center id="G3wk0" style="font-size:40px;" onclick="PLAYwk('JD',0)" style='cursor:pointer;'></TD>
+			<TD align=center id="G3wk0" style="font-size:40px;" onclick="PLAYwk('JD',3,0)" style='cursor:pointer;'></TD>
 			<TD align=center id="G3wk1" style="font-size:30px;"></TD>
 			<TD align=center id="G3wk2" style="font-size:30px; "></TD> <!-- background:red; -->
 			<TD align=center id="G3wk3" style="font-size:30px;"></TD>
@@ -107,7 +107,7 @@
 		</TR>
 		<TR>
 			<TD class="headcol" id="G4" tabindex="0" onclick="" style='cursor:pointer;'>GF</TD> 
-			<TD align=center id="G4wk0" style="font-size:40px;"></TD>
+			<TD align=center id="G4wk0" style="font-size:40px;" onclick="PLAYwk('GF',4,0)"></TD>
 			<TD align=center id="G4wk1" style="font-size:30px;"></TD>
 			<TD align=center id="G4wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G4wk3" style="font-size:30px;"></TD>
@@ -115,7 +115,7 @@
 		</TR>
 		<TR>
 			<TD class="headcol" id="G5" tabindex="0" onclick="" style='cursor:pointer;'>WH</TD> 
-			<TD align=center id="G5wk0" style="font-size:40px;"></TD>
+			<TD align=center id="G5wk0" style="font-size:40px;" onclick="PLAYwk('WH',5,0)"></TD>
 			<TD align=center id="G5wk1" style="font-size:30px;"></TD>
 			<TD align=center id="G5wk2" style="font-size:30px;"></TD>
 			<TD align=center id="G5wk3" style="font-size:30px;"></TD>	
