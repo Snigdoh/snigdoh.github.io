@@ -1,5 +1,5 @@
 /* !snig.js (formally 'gsJSidx3.js' > !gs63.js) [6 = 6th month (June); 3 = '(2)3] */
-
+	const PLAYwk1 = [];
 //How to save a javascript variable:
   localStorage.setItem("mykey",99); // set a variable
   var varNumber = localStorage.getItem("mykey"); // retrieve variable
@@ -59,16 +59,53 @@
 			alert(pl+" is NOT playing wk "+wk+"!");
 			document.getElementById("G"+pNO+"wk"+wk).style.background = "slategray";	
 			localStorage.setItem("G"+pNO+"playWK"+wk,"");
+			
+			if ( wk==1 ) {
+				alert("PLAYwk1 array includes "+pl+". Will REMOVE from array!");
+				var index = PLAYwk1.indexOf(pl);		alert("index of "+pl+" = "+index+"\nPLAY = "+PLAYwk1);
+				PLAYwk1.splice(index, 1);				/* <<< HELP! (July 15/23 */		// < **!
+				alert("Post splice PLAYwk1 = "+PLAYwk1);
+			}	
 		}
 		else { 
-			alert(pl+" is playing wk "+wk+"!");
+			//alert(pl+" is playing wk "+wk+"!");
 			document.getElementById("G"+pNO+"wk"+wk).style.background = "lime"; 
 			localStorage.setItem("G"+pNO+"playWK"+wk,pl);
+			
+			if ( wk == 1 ) {
+				PLAYwk1.push(pl); 			//alert("PLAY array = "+PLAY);
+				alert("'PLAYwk1'array = "+PLAYwk1);
+			}
 		}		
+		
+		
 	}
 	
 	function locStor() {
 		alert("localStorage:\n\n"+
 			  "lS 'G3wk0' = "+localStorage.getItem('G3playWK0')+
-			  "\nlS 'G1wk3' = "+localStorage.getItem('G1playWK3'));
+			  "\nlS 'G1wk3' = "+localStorage.getItem('G1playWK3')+
+			  "\n\nG1wk1: "+localStorage.getItem('G1playWK1')+" | G2wk1: "+localStorage.getItem('G2playWK1')+" | G3wk1: "+localStorage.getItem('G3playWK1')+" | G4wk1: "+localStorage.getItem('G4playWK1')+" | G5wk1: "+localStorage.getItem('G5playWK1') );
+			  		
+/*		for (let i = 1; i < 6; i++) {	  
+			if ( localStorage.getItem('G'+i+'playWK1') !== "" ) {
+				document.getElementById("G"+i+"wk1").style.background = "green";
+			}
+		}
+*/	
+		for (let w = 0; w < 5; w++) {	  
+			for (let i = 1; i < 6; i++) {	  
+				if ( (localStorage.getItem('G'+i+'playWK'+w) != "") &&  (localStorage.getItem('G'+i+'playWK'+w) != null) ) {
+					document.getElementById("G"+i+"wk"+w).style.background = "green";
+				}
+			}
+		}
+			  
+	}
+	
+	function clearLS () {		
+			alert("G1playWK0 PRE clear = "+localStorage.getItem('G1playWK0'));
+			//localStorage.setItem("lastPLAY","");
+			localStorage.clear();
+			alert("G1playWK0 post clear = "+localStorage.getItem('G1playWK0'));
 	}

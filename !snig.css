@@ -87,7 +87,7 @@
 			.sidenav {
 			  height: 22%; width:0;   /* height: 100%;   30%*/
 			  position: fixed;z-index: 1;
-			  top:600px; left:0px; /* top: 545px; */
+			  top:700px; left:0px; /* top: 545px; */
 			  background-color:black;	/*blue;	  #111;*/
 			  overflow:scroll; transition: 0.5s; padding-top:0px;	/* 30px; */
 			  /* overflow-x: hidden; overflow-y:scroll; */
