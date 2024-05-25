@@ -37,7 +37,7 @@
 	
 	function openNav() {
 		  if (document.getElementById("mySidenav").style.width<"200px") {
-				document.getElementById("mySidenav").style.width = "200px";
+				document.getElementById("mySidenav").style.width = "600px";
 				//document.getElementById("mySidenav").style.overflow = "scroll";
 		  }
 		  else {
@@ -54,16 +54,16 @@
 	
 						/*   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   */
 	
-	function PLAYwk1(pl) {
-		if ( document.getElementById("G3wk1").style.background == "lime" ) {
-			alert(pl+"is NOT playing wk 1!");
-			document.getElementById("G3wk1").style.background = "gray";	
-			localStorage.setItem("G3playWK1","");
+	function PLAYwk(pl,wk) {
+		if ( document.getElementById("G3wk"+wk).style.background == "lime" ) {
+			alert(pl+" is NOT playing wk "+wk+"!");
+			document.getElementById("G3wk"+wk).style.background = "gray";	
+			localStorage.setItem("G3playWK"+wk,"");
 		}
 		else { 
-			alert(pl+"is playing wk 1!");
-			document.getElementById("G3wk1").style.background = "lime"; 
-			localStorage.setItem("G3playWK1",pl);
+			alert(pl+"is playing wk "+wk+"!");
+			document.getElementById("G3wk"+wk).style.background = "lime"; 
+			localStorage.setItem("G3playWK"+wk,pl);
 		}
 			
 		
