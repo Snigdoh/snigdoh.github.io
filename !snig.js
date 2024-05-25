@@ -94,7 +94,7 @@
 		}
 */	
 		for (let w = 0; w < 5; w++) {	  
-			for (let i = 1; i < 6; i++) {	  
+			for (let i = 1; i < 11; i++) {	  
 				if ( (localStorage.getItem('G'+i+'playWK'+w) != "") &&  (localStorage.getItem('G'+i+'playWK'+w) != null) ) {
 					document.getElementById("G"+i+"wk"+w).style.background = "green";
 				}
