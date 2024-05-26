@@ -123,3 +123,31 @@
 				alert("'localStorage' has been CLEARED!");
 		  }
 	}
+	
+				/*   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   */
+				
+	function showNOTE() {
+		//alert("Trying to show 'note'!");
+		if (document.getElementById("noteTA").style.visibility=="visible") {
+			document.getElementById("noteTA").style.visibility="hidden"; 
+			//onchange="localStorage.setItem('bkDATE',this.value);"	
+		}		
+		else {
+			document.getElementById("noteTA").style.visibility="visible"; 
+			storedNOTE = localStorage.getItem("NOTEchange");
+				//alert("storedNOTE (fr lS) = "+storedNOTE);
+			document.getElementById("noteTA").value=storedNOTE;	
+		}
+		//hideMENU();		
+	}
+
+	function codeFILES() {
+		alert("CODE FILES:\n\n"+
+			  "SCORING 'APP':\t*\n"+
+			  "'GSidx3' files (Sept/23): !sep23_index.html (= index.html); !sep23_!gs63.css; !sep23_!gs63.js; WaltStuff.webmanifest; WaltStuffsw.js [on iPad @ Files/2021/$CODE/!code23/Elmer23]\n\n"+
+			  "BOOKING APP:\nDOCbk24+.html [on iPad @ Files/2021/$GOLF]\n\n"+			  
+			  "PIXEL reload/refresh: Hold icon > App info > Storage & cache > Manage space > MANAGE (Site storage) > 'gwhodg.github.io' > Clear & reset"
+			  
+			  );
+	}	
+	

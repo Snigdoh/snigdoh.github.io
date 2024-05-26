@@ -52,10 +52,10 @@
 							  </div>
 							  <div><!--<A onclick="showLSread()" style='cursor:pointer;'>READ file</A>--></div>
 							  <div>
-								  <a onclick="showNOTE()" style="color:silver"><b>note</b></a>
+								  <a onclick="showNOTE()" style="color:white;"><b>note</b></a>
 							  </div>
 							  <div> </div>
-							  <div><A onclick="codeFILES()" style='color:silver;'>code files</A></div>
+							  <div><A onclick="codeFILES()" style='color:white;'>code files</A></div>
 							  <div><A href="!gs63/!gs63idx.html" style='color:yellow;'>!gs63</A></div>
 							  
 						</div>									
@@ -63,7 +63,7 @@
 				
 
 	<TABLE class="HEADtbl" border=1 align=center > <!-- style='color:maroon; visibility:visible;' bgcolor='lightgray' -->	
-		<TR><TD>snigdOH <font size=4><i>V7</i></font><!--<br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
+		<TR><TD><span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:40px; padding:2px;">snigd'Oh</span> <font size=4><i>V7</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
 			<TD><span style="font-size:50px; cursor:pointer; background:ivory;color:maroon;" onclick="openNav()">&#9776;</span>	</TD>	
 			<TD>
 				<img src="IMG_woody.png" width=50 height=50>
@@ -215,6 +215,14 @@
 		</tbody>	
 	</TABLE>	
 	<!--</DIV>-->
-</div>				
+
+					<!--   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$.  -->
+					
+		<textarea id="noteTA" style= "position:fixed; left:250px; top:200px; background:lightyellow; padding:5px; visibility:hidden; width:500px; height:400px; font-size:25px;" ondblclick="showNOTE();" onchange="localStorage.setItem('NOTEchange',this.value);">NOTE textarea:
+		</textarea>		<!-- border:2px inset gray; border-radius:10px;  -->
+		
+
+</div>	
+
 </body>
 </html>
