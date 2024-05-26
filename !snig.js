@@ -1,5 +1,5 @@
 /* !snig.js (formally 'gsJSidx3.js' > !gs63.js) [6 = 6th month (June); 3 = '(2)3] */
-	const PLAYwk1 = [];
+	const PLAYwk0 = []; const PLAYwk1 = []; const PLAYwk2 = [];
 //How to save a javascript variable:
   localStorage.setItem("mykey",99); // set a variable
   var varNumber = localStorage.getItem("mykey"); // retrieve variable
@@ -66,6 +66,8 @@
 				PLAYwk1.splice(index, 1);				/* <<< HELP! (July 15/23 */		// < **!
 				//alert("Post splice PLAYwk1 = "+PLAYwk1);
 			}	
+			if ( wk==0 ) { var index = PLAYwk0.indexOf(pl);	PLAYwk0.splice(index, 1); }	
+			if ( wk==2 ) { var index = PLAYwk2.indexOf(pl);	PLAYwk2.splice(index, 1); }	
 		}
 		else { 
 			//alert(pl+" is playing wk "+wk+"!");
@@ -74,8 +76,10 @@
 			
 			if ( wk == 1 ) {
 				PLAYwk1.push(pl); 			//alert("PLAY array = "+PLAY);
-				//alert("'PLAYwk1'array = "+PLAYwk1);
+				alert("'PLAYwk1' array = "+PLAYwk1);
 			}
+			if ( wk == 0 ) { PLAYwk0.push(pl); alert("'PLAYwk0' array = "+PLAYwk0); }
+			if ( wk == 2 ) { PLAYwk2.push(pl); alert("'PLAYwk2' array = "+PLAYwk2); }
 		}		
 		
 		
@@ -150,4 +154,33 @@
 			  
 			  );
 	}	
+	
+	function showSFL() {
+		//alert("Trying to show 'tblSFL'!");
+		if (document.getElementById("tblSFL").style.visibility=="visible") {
+			document.getElementById("tblSFL").style.visibility="hidden"; 
+			//onchange="localStorage.setItem('bkDATE',this.value);"	
+		}		
+		else {
+			  let sflWK = prompt("Please enter week to shuffle", 1);
+			  if (sflWK != null) {
+			    //document.getElementById("demo").innerHTML =
+			    //"Hello " + person + "! How are you today?";	
+		
+					//LASTstring = localStorage.getItem("lastPLAY");
+					//lastARRAY = LASTstring.split(",");
+					//newLASTarray = lastARRAY.slice(1,lastARRAY.length);	
+						//LASTstring = LASTstring  + "," + NAME;
+						//localStorage.setItem("lastPLAY",LASTstring); //alert("GOT to 'localStorage.setItem'!");
+						
+				alert("sflWK = "+sflWK+"\n"+
+					  "'PLAYwk1' array = "+PLAYwk1);
+			  }
+			document.getElementById("tblSFL").style.visibility="visible"; 
+			//storedNOTE = localStorage.getItem("NOTEchange");
+				//alert("storedNOTE (fr lS) = "+storedNOTE);
+			//document.getElementById("tblSFL").value=storedNOTE;	
+		}
+		//hideMENU();		
+	}
 	
