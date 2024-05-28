@@ -1,6 +1,8 @@
 /* !snig.js (formally 'gsJSidx3.js' > !gs63.js) [6 = 6th month (June); 3 = '(2)3] */
 	const PLAYwk0 = []; const PLAYwk1 = []; const PLAYwk2 = [];
 	var PLAYwk0str; var PLAYwk1str; var PLAYwk2str;
+	var sflWK;
+	var wk0Date; var wk1Date; var wk2Date; var wk3Date;
 //How to save a javascript variable:
   localStorage.setItem("mykey",99); // set a variable
   var varNumber = localStorage.getItem("mykey"); // retrieve variable
@@ -143,6 +145,7 @@
 		  if ( reply=="YES!") {			  
 				//localStorage.setItem("lastPLAY","");
 				localStorage.clear();
+				//localStorage.removeItem(" ");									// << **
 				//alert("G1playWK0 post clear = "+localStorage.getItem('G1playWK0'));
 				alert("'localStorage' has been CLEARED!");
 		  }
@@ -182,7 +185,7 @@
 			//onchange="localStorage.setItem('bkDATE',this.value);"	
 		}		
 		else {
-			  let sflWK = prompt("Please enter week to shuffle", 1);
+			  sflWK = prompt("Please enter week to shuffle", 1);
 			  //lsWK2:
 			  /*var locStorWK2str = localStorage.getItem("lsWK2");
 			  		alert("'locStorWK2str' fr locStor = "+locStorWK2str);*/
@@ -228,7 +231,7 @@
 
 			const PLAYfull = [];
 					//alert("PLAY array pre-adjusted = "+PLAY);
-			for (let n = 1; n < 6; n++) {
+			for (let n = 1; n < 17; n++) {
 				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
 				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
 				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
@@ -246,7 +249,7 @@
 			}
 			//alert("PLAY array POST-adjusted = "+PLAY);
 					
-			for (let z = 1; z < 6; z++) {
+			for (let z = 1; z < 17; z++) {
 					document.getElementById("SFL"+z).innerHTML = "";
 			}
 			/*alert("Will try to SHUFFLE finished player order. Array to shuffle = "+array+"\n\n"+
@@ -281,5 +284,146 @@
 	
 	
 	function SFL2() {
-		alert("Will try to code shuffle from popup!");
+		//alert("Will try to code shuffle from popup!");
+		
+			const SFLwk0 = []; const SFLwk1 = []; const SFLwk2 = []; 
+			for (let i = 1; i < 17; i++) {	  
+					if ( (document.getElementById("G"+i+"wk"+sflWK).style.background=="green") || (document.getElementById("G"+i+"wk"+sflWK).style.background=="lime") ) {
+						if (sflWK==0) {SFLwk0.push(document.getElementById("G"+i).innerHTML);} 
+						if (sflWK==1) {SFLwk1.push(document.getElementById("G"+i).innerHTML);} 
+						if (sflWK==2) {SFLwk2.push(document.getElementById("G"+i).innerHTML);} 
+						//alert("G"+i+"wk2 bkgd is green/lime!");
+						//alert("SFLwk2' array = "+SFLwk2);
+					}
+			}
+			/* alert("'SFLwk0' array = "+SFLwk0+"\n"+
+				  "'SFLwk1' array = "+SFLwk1+"\n"+
+				  "'SFLwk2' array = "+SFLwk2); */
+			if ( sflWK == 0 ) { document.getElementById("WKipt").value = "W0"; }
+			if ( sflWK == 1 ) { document.getElementById("WKipt").value = "W1"; }
+			if ( sflWK == 2 ) { document.getElementById("WKipt").value = "W2"; }
+				  
+			/* if ( (SFLwk2[0] != "undefined") && (SFLwk2[0] != null) && (SFLwk2[0] != "") ) {
+				document.getElementById("SFL5").innerHTML=SFLwk2[0]; 
+			} */
+
+			const PLAYfull = [];
+					//alert("PLAY array pre-adjusted = "+PLAY);
+			for (let n = 1; n < 17; n++) {
+				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
+				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
+				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
+				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
+				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
+				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
+				if ((SFLwk0[n-1] == "PK")||(SFLwk1[n-1] == "PK")||(SFLwk2[n-1] == "PK")) { PLAYfull[n-1] = "Kuechler, Peter M." }
+				if ((SFLwk0[n-1] == "JM")||(SFLwk1[n-1] == "JM")||(SFLwk2[n-1] == "JM")) { PLAYfull[n-1] = "McCracken, John G." }
+				if ((SFLwk0[n-1] == "CM")||(SFLwk1[n-1] == "CM")||(SFLwk2[n-1] == "CM")) { PLAYfull[n-1] = "Medhurst, Charles" }
+				if ((SFLwk0[n-1] == "DP")||(SFLwk1[n-1] == "DP")||(SFLwk2[n-1] == "DP")) { PLAYfull[n-1] = "Pengelly, Delmer B." }
+				if ((SFLwk0[n-1] == "Pd")||(SFLwk1[n-1] == "Pd")||(SFLwk2[n-1] == "Pd")) { PLAYfull[n-1] = "Paulson, David B." }
+				if ((SFLwk0[n-1] == "BP")||(SFLwk1[n-1] == "BP")||(SFLwk2[n-1] == "BP")) { PLAYfull[n-1] = "Porter, George R." }
+				if ((SFLwk0[n-1] == "WR")||(SFLwk1[n-1] == "WR")||(SFLwk2[n-1] == "WR")) { PLAYfull[n-1] = "Ritchie, William" }
+				if ((SFLwk0[n-1] == "JS")||(SFLwk1[n-1] == "JS")||(SFLwk2[n-1] == "JS")) { PLAYfull[n-1] = "Schofield, John A." }
+			}
+			//alert("PLAY array POST-adjusted = "+PLAY);
+					
+			for (let z = 1; z < 17; z++) {
+					document.getElementById("SFL"+z).innerHTML = "";
+			}
+			/*alert("Will try to SHUFFLE finished player order. Array to shuffle = "+array+"\n\n"+
+				  array+" array content = "+PLAY);*/
+			
+			  //let shuffled = PLAY
+			  let shuffled = PLAYfull
+			    .map(value => ({ value, sort: Math.random() }))
+			    .sort((a, b) => a.sort - b.sort)
+			    .map(({ value }) => value)
+			  
+			//alert("'PLAY' array = "+PLAY+"\n\nNew 'shuffled' array = "+shuffled);	
+			var sflLen = shuffled.length;
+			for (let q = 0; q < sflLen; q++) {
+					document.getElementById("SFL"+(q+1)).innerHTML = shuffled[q];
+			}
+		
+	}
+	
+	
+	function showDATE() {
+		//alert("Trying to show 'note'!");
+		if (document.getElementById("tblDATE").style.visibility=="visible") {
+			document.getElementById("tblDATE").style.visibility="hidden"; 
+			//onchange="localStorage.setItem('bkDATE',this.value);"	
+		}		
+		else {
+			document.getElementById("tblDATE").style.visibility="visible"; 
+			//storedNOTE = localStorage.getItem("NOTEchange");
+				//alert("storedNOTE (fr lS) = "+storedNOTE);
+			//document.getElementById("noteTA").value=storedNOTE;	
+		}
+		//hideMENU();		
+	}
+	function setDATE() {
+		//const d = new Date("Mar 25 2015");
+		var d = new Date(document.getElementById("DATE").value); //alert("d pre manipulation = "+d);
+		d.setDate(d.getDate() + 1);
+		var myDate = d.toDateString(); 
+			myDate = myDate.substring(0,11);
+			alert("myDate = "+myDate);
+		//let dateOnly = d.slice(0, 10); alert("dateOnly (post slice) = "+dateOnly);
+		//var ds = d.substring(5,12);
+		//d = document.getElementById("DATE").value;  
+		//alert("d = "+d);		//+"\n"+"ds = "+ds);
+		//alert("Will try to set date(s) here . .");		
+				//if ( date3.checked == true ) {
+				//if ( date3.value == true ) {	
+		if(document.getElementById('date0').checked) {
+		  		alert ("'date0/aa'' radio button is checked. DATE submitted = "+myDate);
+				wk0Date = myDate;
+				localStorage.setItem("w0date",wk0Date); 
+	    }
+		else if(document.getElementById('date1').checked) {
+		  		alert ("'date1/bb'' radio button is checked. DATE submitted = "+myDate);
+				wk1Date = myDate;
+				localStorage.setItem("w1date",wk1Date); 
+	 	}
+		else if(document.getElementById('date2').checked) {
+		  		alert ("'date2/cc'' radio button is checked. DATE submitted = "+myDate);
+				wk2Date = myDate;
+				localStorage.setItem("w2date",wk2Date); 
+	  	}		
+		else if(document.getElementById('date3').checked) {
+			  //'dd' radio button is checked
+			  alert ("'date3/dd'' radio button is checked.\n\n"+
+			  		 //"DATE submitted = "+document.getElementById("DATE").value );
+					 "DATE submitted = "+myDate);					 
+			  //var d = document.getElementById("DATE").value.getDate();   alert("d = "+d);
+			  wk3Date = myDate; 	alert("wk3Date = "+wk3Date);							 // << **
+			  localStorage.setItem("w3date",wk3Date); 
+		}
+		else { alert ("Radio button OTHER THAN 0-3 was checked!"); }
+		//}else if(document.getElementById('date0').checked) {
+		  //'aa' radio button is checked
+		//}
+/*		if ( document.getElementById("date3").value==true ) {
+			alert("date3.checked = true!");			
+		}
+*/
+
+	}	
+	
+	
+	function displayDATE(w) {
+		/* alert("Will try to display date for wk "+w+"!\n"+
+			  "wk2Date (pre lS get) = "+wk2Date); */
+		Date0str = localStorage.getItem("w0date");	  
+		Date1str = localStorage.getItem("w1date");	  
+		Date2str = localStorage.getItem("w2date");	  
+			//alert("wk2Date/Date2str (post lS get) = \n"+Date2str);
+		Date3str = localStorage.getItem("w3date");	  
+			
+		if ( w == 0 ) { alert(Date0str); }
+		if ( w == 1 ) { alert(Date1str); }
+		if ( w == 2 ) { alert(Date2str); }
+		if ( w == 3 ) { alert(Date3str); }
+			
 	}
