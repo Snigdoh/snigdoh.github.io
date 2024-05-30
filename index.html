@@ -63,7 +63,7 @@
 				
 
 	<TABLE class="HEADtbl" border=1 align=center > <!-- style='color:maroon; visibility:visible;' bgcolor='lightgray' -->	
-		<TR><TD><span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:35px; padding:2px;">snigd'Oh</span><font size=4><i>V7</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
+		<TR><TD><span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:35px; padding:2px;">snigd'Oh</span><font size=4><i>V8</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
 			<TD><span style="font-size:50px; cursor:pointer; background:ivory;color:maroon;" onclick="openNav()">&#9776;</span>	</TD>	
 			<TD>
 				<img src="IMG_woody.png" width=50 height=50>
@@ -76,11 +76,11 @@
 		<thead><TR>			
 			<TD  class="headcol" colspan=1 align=center style="color:green; font-size:20px;"><!--<br>to play--></TD>
 	
-			<TH onclick="displayDATE(0)">W0</TH>
-			<TH onclick="displayDATE(1)">W1</TH> 
-			<TH onclick="displayDATE(2)">W2</TH> 
-			<TH onclick="displayDATE(3)">W3</TH> <!-- J13 J20 J27 j4 11 18 25 1 -->
-			<TH>W4</TH>
+			<TH id='w0' onclick="displayDATE(0)">W0</TH>
+			<TH id='w1' onclick="displayDATE(1)">W1</TH> 
+			<TH id='w2' onclick="displayDATE(2)">W2</TH> 
+			<TH id='w3' onclick="displayDATE(3)">W3</TH> <!-- J13 J20 J27 j4 11 18 25 1 -->
+			<TH id='w4' onclick="displayDATE(4)">W4</TH>
 		</TR></thead>	
 		<tbody>
 		<TR>
@@ -203,7 +203,7 @@
 			<TD align=center id="G15wk1" style="font-size:30px;" onclick="PLAYwk('?1',15,1)"></TD>
 			<TD align=center id="G15wk2" style="font-size:30px;" onclick="PLAYwk('?1',15,2)"></TD>
 			<TD align=center id="G15wk3" style="font-size:30px; opacity:80%;" onclick="PLAYwk('?1',15,3)"></TD>	
-			<TD align=center id="G56wk4" style="font-size:30px; opacity:80%;" onclick="PLAYwk('?1',15,4)"></TD>			
+			<TD align=center id="G15wk4" style="font-size:30px; opacity:80%;" onclick="PLAYwk('?1',15,4)"></TD>			
 		</TR>
 		<TR>
 			<TD class="headcol" id="G16" tabindex="0" onclick="" style=' opacity:50%;'>?2</TD> 
@@ -219,15 +219,19 @@
 	<!--</DIV>-->
 
 					<!--   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$.  -->
-					
+
+		<button id="noteX" onclick="hideNOTE()" style="position:fixed;  border:2px inset gray; border-radius:0px; z-index:10;  left:250px; top:160px; background:lightyellow; padding:5px; visibility:hidden; font-size:25px; opacity:1;"><b>&times;</b></button>	
 		<textarea id="noteTA" style= "position:fixed; left:250px; top:200px; background:lightyellow; padding:5px; visibility:hidden; width:500px; height:400px; font-size:25px;" ondblclick="showNOTE();" onchange="localStorage.setItem('NOTEchange',this.value);">NOTE textarea:
 		</textarea>		<!-- border:2px inset gray; border-radius:10px;  -->
 
 		
-
 	<TABLE id="tblSFL" border=1 align=center style="background:beige; zoom:1; position:fixed; left:150px; top:100px; visibility:hidden;">
 		<TR>			
-			<TH><!--<input value="WK">--><input id="WKipt" style="color:red; width:30px; font-size:20px;" value='W2'><button onclick="SFL2()" style="font-size:30px; border:2px inset gray; border-radius:10px;">SHUFFLE</button></TH>
+			<TH><!--<input value="WK">-->
+				<input id="WKipt" style="color:red; width:30px; font-size:20px;" value='W2'>
+				<button onclick="SFL2()" style="font-size:25px; border:2px inset gray; border-radius:10px;">SHUFFLE</button>
+				<a onclick="hideSFL()"><b>&times;</b></a>
+			</TH>
 		</TR>	
 		<TR><TD align=center id="SFL1" style="font-size:30px;"><!--Hodgins, George W.--></TD></TR>
 		<TR><TD align=center id="SFL2" style="font-size:30px;"><!--Pengelly, Delbert--></TD>
@@ -253,7 +257,8 @@
 		<TR><TH colspan=3>Date Picker</TH>
 			<td colspan=2>			
 				<button style="color:black; font-size:25px;" onclick="setDATE()"><b>SET!</b></button>				
-			</td>			
+			</td>	
+			<TD align=right><a onclick="hidePICKER()"><b>&times;</b></a></TD>
 		</TR>	
 		<TR>
 			<TD align=center id="wk0date" style="font-size:25px;">
@@ -270,12 +275,19 @@
 			</TD>
 			<TD align=center id="wk4date" style="font-size:25px; opacity:50%;">
 				wk4<br><input id="date4" type="radio" name="ninjaTurtles" value="ee"/ style="zoom:2;">				
-			</TD>						
+			</TD>	
+			<td rowspan=2>
+				<button style="color:black; font-size:15px;" onclick="PrimeWK()">PRIME</button>
+			</td>					
 		</TR>
 		<TR>
 			<TD colspan=5>
-				<input type="date" id="DATE" tabindex="" style="background:beige; border:1px solid slategray; color:blue; width:275px; font-size:30px;" placeholder="2024-mm-dd" value="2024-mm-dd"     onchange="localStorage.setItem('setDATE',this.value);" > 
+				<input type="date" id="DATE" tabindex="" style="background:beige; border:1px solid slategray; color:blue; width:275px; font-size:30px;" placeholder="2024-mm-dd" value="2024-mm-dd">
+							<!-- onchange="localStorage.setItem('setDATE',this.value);" -->	
 			</TD>
+			
+			
+			
 		</TR>	
 		
 	

@@ -1,8 +1,8 @@
 /* !snig.js (formally 'gsJSidx3.js' > !gs63.js) [6 = 6th month (June); 3 = '(2)3] */
-	const PLAYwk0 = []; const PLAYwk1 = []; const PLAYwk2 = [];
-	var PLAYwk0str; var PLAYwk1str; var PLAYwk2str;
+	const PLAYwk0 = []; const PLAYwk1 = []; const PLAYwk2 = [];  const PLAYwk3 = [];  const PLAYwk4 = [];
+	var PLAYwk0str; var PLAYwk1str; var PLAYwk2str; var PLAYwk3str; var PLAYwk4str;    //PLAYwk4str = PLAYwk4
 	var sflWK;
-	var wk0Date; var wk1Date; var wk2Date; var wk3Date;
+	var wk0Date; var wk1Date; var wk2Date; var wk3Date; var wk4Date;
 //How to save a javascript variable:
   localStorage.setItem("mykey",99); // set a variable
   var varNumber = localStorage.getItem("mykey"); // retrieve variable
@@ -86,6 +86,8 @@
 			}	
 			if ( wk==0 ) { var index = PLAYwk0.indexOf(pl);	PLAYwk0.splice(index, 1); PLAYwk0str = PLAYwk0.toString(); localStorage.setItem("lsWK0",PLAYwk0str);}	
 			if ( wk==2 ) { var index = PLAYwk2.indexOf(pl);	PLAYwk2.splice(index, 1); PLAYwk2str = PLAYwk2.toString(); localStorage.setItem("lsWK2",PLAYwk2str);}	
+			if ( wk==3 ) { var index = PLAYwk3.indexOf(pl);	PLAYwk3.splice(index, 1); PLAYwk3str = PLAYwk3.toString(); localStorage.setItem("lsWK3",PLAYwk3str);}
+			if ( wk==4 ) { var index = PLAYwk4.indexOf(pl);	PLAYwk4.splice(index, 1); PLAYwk4str = PLAYwk4.toString(); localStorage.setItem("lsWK4",PLAYwk4str);}
 		}
 		else { 
 			//alert(pl+" is playing wk "+wk+"!");
@@ -102,6 +104,8 @@
 			}
 			if ( wk == 0 ) { PLAYwk0.push(pl); alert("'PLAYwk0' array = "+PLAYwk0); PLAYwk0str = PLAYwk0.toString(); /*localStorage.setItem("lsWK0",PLAYwk0str);*/ }
 			if ( wk == 2 ) { PLAYwk2.push(pl); alert("'PLAYwk2' array = "+PLAYwk2); PLAYwk2str = PLAYwk2.toString(); /*localStorage.setItem("lsWK2",PLAYwk2str);*/ }
+			if ( wk == 3 ) { PLAYwk3.push(pl); alert("'PLAYwk3' array = "+PLAYwk3); PLAYwk3str = PLAYwk3.toString(); }
+			if ( wk == 4 ) { PLAYwk4.push(pl); alert("'PLAYwk4' array = "+PLAYwk4); PLAYwk4str = PLAYwk4.toString(); }
 		}		
 		
 		
@@ -129,9 +133,13 @@
 
 		document.getElementById("mySidenav").style.width = "0px";
 		
+		
+		var curWK = localStorage.getItem("PRIMEwk");
+		document.getElementById("w"+curWK).style.background="orange"; 
+		
 	}
 	
-	function clearLS () {		
+	function clearLS() {		
 			//alert("G1playWK0 PRE clear = "+localStorage.getItem('G1playWK0'));
 			
 		  let reply;
@@ -143,11 +151,23 @@
   		  alert(reply);
 			  
 		  if ( reply=="YES!") {			  
-				//localStorage.setItem("lastPLAY","");
+						var TEMPw0date = localStorage.getItem("w0date");
+						var TEMPw1date = localStorage.getItem("w1date");
+						var TEMPw2date = localStorage.getItem("w2date");
+						var TEMPw3date = localStorage.getItem("w3date");
+						var tempPRIMEwk = localStorage.getItem("PRIMEwk");	
+						var tempNOTE = localStorage.getItem("NOTEchange");	
+			    //localStorage.setItem("lastPLAY","");
 				localStorage.clear();
+						localStorage.setItem("w0date",TEMPw0date); 
+						localStorage.setItem("w1date",TEMPw1date); 
+						localStorage.setItem("w2date",TEMPw2date); 
+						localStorage.setItem("w3date",TEMPw3date); 
+						localStorage.setItem("PRIMEwk",tempPRIMEwk); 
+						localStorage.setItem("NOTEchange",tempNOTE); 
 				//localStorage.removeItem(" ");									// << **
 				//alert("G1playWK0 post clear = "+localStorage.getItem('G1playWK0'));
-				alert("'localStorage' has been CLEARED!");
+				alert("'localStorage' (except week dates & note) have been CLEARED!");
 		  }
 	}
 	
@@ -158,16 +178,22 @@
 		if (document.getElementById("noteTA").style.visibility=="visible") {
 			document.getElementById("noteTA").style.visibility="hidden"; 
 			//onchange="localStorage.setItem('bkDATE',this.value);"	
+				document.getElementById("noteX").style.visibility="hidden"; 
 		}		
 		else {
 			document.getElementById("noteTA").style.visibility="visible"; 
+				document.getElementById("noteX").style.visibility="visible"; 
 			storedNOTE = localStorage.getItem("NOTEchange");
 				//alert("storedNOTE (fr lS) = "+storedNOTE);
 			document.getElementById("noteTA").value=storedNOTE;	
 		}
 		//hideMENU();		
 	}
-
+	function hideNOTE() {
+			document.getElementById("noteTA").style.visibility="hidden"; 
+			document.getElementById("noteX").style.visibility="hidden"; 		
+	}
+	
 	function codeFILES() {
 		alert("CODE FILES:\n\n"+
 			  "SCORING 'APP':\t*\n"+
@@ -185,7 +211,7 @@
 			//onchange="localStorage.setItem('bkDATE',this.value);"	
 		}		
 		else {
-			  sflWK = prompt("Please enter week to shuffle", 1);
+			  sflWK = prompt("Please enter week to shuffle (0-4)", 1);
 			  //lsWK2:
 			  /*var locStorWK2str = localStorage.getItem("lsWK2");
 			  		alert("'locStorWK2str' fr locStor = "+locStorWK2str);*/
@@ -208,22 +234,33 @@
 				//alert("storedNOTE (fr lS) = "+storedNOTE);
 			//document.getElementById("tblSFL").value=storedNOTE;	
 			
-			const SFLwk0 = []; const SFLwk1 = []; const SFLwk2 = []; 
+			const SFLwk0 = []; const SFLwk1 = []; const SFLwk2 = []; const SFLwk3 = []; const SFLwk4 = []; 
 			for (let i = 1; i < 17; i++) {	  
 					if ( (document.getElementById("G"+i+"wk"+sflWK).style.background=="green") || (document.getElementById("G"+i+"wk"+sflWK).style.background=="lime") ) {
 						if (sflWK==0) {SFLwk0.push(document.getElementById("G"+i).innerHTML);} 
 						if (sflWK==1) {SFLwk1.push(document.getElementById("G"+i).innerHTML);} 
 						if (sflWK==2) {SFLwk2.push(document.getElementById("G"+i).innerHTML);} 
+						if (sflWK==3) {SFLwk3.push(document.getElementById("G"+i).innerHTML);} 
+						if (sflWK==4) {
+							SFLwk4.push(document.getElementById("G"+i).innerHTML);
+							//alert("got to sflWK = 4! SFLwk4 = "+SFLwk4);
+						} 
+						//else { alert("Didn't get here!"); }
 						//alert("G"+i+"wk2 bkgd is green/lime!");
 						//alert("SFLwk2' array = "+SFLwk2);
 					}
 			}
+			//alert("Didn't get here!");
 			alert("'SFLwk0' array = "+SFLwk0+"\n"+
 				  "'SFLwk1' array = "+SFLwk1+"\n"+
-				  "'SFLwk2' array = "+SFLwk2);
+				  "'SFLwk2' array = "+SFLwk2+"\n"+
+				  "'SFLwk3' array = "+SFLwk3+"\n"+
+				  "'SFLwk4' array = "+SFLwk4);
 			if ( sflWK == 0 ) { document.getElementById("WKipt").value = "W0"; }
 			if ( sflWK == 1 ) { document.getElementById("WKipt").value = "W1"; }
 			if ( sflWK == 2 ) { document.getElementById("WKipt").value = "W2"; }
+			if ( sflWK == 3 ) { document.getElementById("WKipt").value = "W3"; }
+			if ( sflWK == 4 ) { document.getElementById("WKipt").value = "W4"; }
 				  
 			/* if ( (SFLwk2[0] != "undefined") && (SFLwk2[0] != null) && (SFLwk2[0] != "") ) {
 				document.getElementById("SFL5").innerHTML=SFLwk2[0]; 
@@ -232,20 +269,20 @@
 			const PLAYfull = [];
 					//alert("PLAY array pre-adjusted = "+PLAY);
 			for (let n = 1; n < 17; n++) {
-				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
-				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
-				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
-				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
-				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
-				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
-				if ((SFLwk0[n-1] == "PK")||(SFLwk1[n-1] == "PK")||(SFLwk2[n-1] == "PK")) { PLAYfull[n-1] = "Kuechler, Peter M." }
-				if ((SFLwk0[n-1] == "JM")||(SFLwk1[n-1] == "JM")||(SFLwk2[n-1] == "JM")) { PLAYfull[n-1] = "McCracken, John G." }
-				if ((SFLwk0[n-1] == "CM")||(SFLwk1[n-1] == "CM")||(SFLwk2[n-1] == "CM")) { PLAYfull[n-1] = "Medhurst, Charles" }
-				if ((SFLwk0[n-1] == "DP")||(SFLwk1[n-1] == "DP")||(SFLwk2[n-1] == "DP")) { PLAYfull[n-1] = "Pengelly, Delmer B." }
-				if ((SFLwk0[n-1] == "Pd")||(SFLwk1[n-1] == "Pd")||(SFLwk2[n-1] == "Pd")) { PLAYfull[n-1] = "Paulson, David B." }
-				if ((SFLwk0[n-1] == "BP")||(SFLwk1[n-1] == "BP")||(SFLwk2[n-1] == "BP")) { PLAYfull[n-1] = "Porter, George R." }
-				if ((SFLwk0[n-1] == "WR")||(SFLwk1[n-1] == "WR")||(SFLwk2[n-1] == "WR")) { PLAYfull[n-1] = "Ritchie, William" }
-				if ((SFLwk0[n-1] == "JS")||(SFLwk1[n-1] == "JS")||(SFLwk2[n-1] == "JS")) { PLAYfull[n-1] = "Schofield, John A." }
+				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")||(SFLwk3[n-1] == "AB")||(SFLwk4[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
+				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")||(SFLwk3[n-1] == "TC")||(SFLwk4[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
+				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")||(SFLwk3[n-1] == "JD")||(SFLwk4[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
+				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")||(SFLwk3[n-1] == "GF")||(SFLwk4[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
+				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")||(SFLwk3[n-1] == "WH")||(SFLwk4[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
+				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")||(SFLwk3[n-1] == "SJ")||(SFLwk4[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
+				if ((SFLwk0[n-1] == "PK")||(SFLwk1[n-1] == "PK")||(SFLwk2[n-1] == "PK")||(SFLwk3[n-1] == "PK")||(SFLwk4[n-1] == "PK")) { PLAYfull[n-1] = "Kuechler, Peter M." }
+				if ((SFLwk0[n-1] == "JM")||(SFLwk1[n-1] == "JM")||(SFLwk2[n-1] == "JM")||(SFLwk3[n-1] == "JM")||(SFLwk4[n-1] == "JM")) { PLAYfull[n-1] = "McCracken, John G." }
+				if ((SFLwk0[n-1] == "CM")||(SFLwk1[n-1] == "CM")||(SFLwk2[n-1] == "CM")||(SFLwk3[n-1] == "CM")||(SFLwk4[n-1] == "CM")) { PLAYfull[n-1] = "Medhurst, Charles" }
+				if ((SFLwk0[n-1] == "DP")||(SFLwk1[n-1] == "DP")||(SFLwk2[n-1] == "DP")||(SFLwk3[n-1] == "DP")||(SFLwk4[n-1] == "DP")) { PLAYfull[n-1] = "Pengelly, Delmer B." }
+				if ((SFLwk0[n-1] == "Pd")||(SFLwk1[n-1] == "Pd")||(SFLwk2[n-1] == "Pd")||(SFLwk3[n-1] == "Pd")||(SFLwk4[n-1] == "Pd")) { PLAYfull[n-1] = "Paulson, David B." }
+				if ((SFLwk0[n-1] == "BP")||(SFLwk1[n-1] == "BP")||(SFLwk2[n-1] == "BP")||(SFLwk3[n-1] == "BP")||(SFLwk4[n-1] == "BP")) { PLAYfull[n-1] = "Porter, George R." }
+				if ((SFLwk0[n-1] == "WR")||(SFLwk1[n-1] == "WR")||(SFLwk2[n-1] == "WR")||(SFLwk3[n-1] == "WR")||(SFLwk4[n-1] == "WR")) { PLAYfull[n-1] = "Ritchie, William" }
+				if ((SFLwk0[n-1] == "JS")||(SFLwk1[n-1] == "JS")||(SFLwk2[n-1] == "JS")||(SFLwk3[n-1] == "JS")||(SFLwk4[n-1] == "JS")) { PLAYfull[n-1] = "Schofield, John A." }
 			}
 			//alert("PLAY array POST-adjusted = "+PLAY);
 					
@@ -270,8 +307,8 @@
 
 	/* =========================================== */			
 	
-
-
+			document.getElementById("mySidenav").style.width = "0px";	//hideMENU();		
+			//document.getElementById("tblDATE").style.visibility="hidden";	//display="none";
 
 			
 		}
@@ -286,12 +323,14 @@
 	function SFL2() {
 		//alert("Will try to code shuffle from popup!");
 		
-			const SFLwk0 = []; const SFLwk1 = []; const SFLwk2 = []; 
+			const SFLwk0 = []; const SFLwk1 = []; const SFLwk2 = [];  const SFLwk3 = [];  const SFLwk4 = []; 
 			for (let i = 1; i < 17; i++) {	  
 					if ( (document.getElementById("G"+i+"wk"+sflWK).style.background=="green") || (document.getElementById("G"+i+"wk"+sflWK).style.background=="lime") ) {
 						if (sflWK==0) {SFLwk0.push(document.getElementById("G"+i).innerHTML);} 
 						if (sflWK==1) {SFLwk1.push(document.getElementById("G"+i).innerHTML);} 
 						if (sflWK==2) {SFLwk2.push(document.getElementById("G"+i).innerHTML);} 
+						if (sflWK==3) {SFLwk3.push(document.getElementById("G"+i).innerHTML);} 
+						if (sflWK==4) {SFLwk4.push(document.getElementById("G"+i).innerHTML);} 
 						//alert("G"+i+"wk2 bkgd is green/lime!");
 						//alert("SFLwk2' array = "+SFLwk2);
 					}
@@ -302,6 +341,8 @@
 			if ( sflWK == 0 ) { document.getElementById("WKipt").value = "W0"; }
 			if ( sflWK == 1 ) { document.getElementById("WKipt").value = "W1"; }
 			if ( sflWK == 2 ) { document.getElementById("WKipt").value = "W2"; }
+			if ( sflWK == 3 ) { document.getElementById("WKipt").value = "W3"; }
+			if ( sflWK == 4 ) { document.getElementById("WKipt").value = "W4"; }
 				  
 			/* if ( (SFLwk2[0] != "undefined") && (SFLwk2[0] != null) && (SFLwk2[0] != "") ) {
 				document.getElementById("SFL5").innerHTML=SFLwk2[0]; 
@@ -310,20 +351,20 @@
 			const PLAYfull = [];
 					//alert("PLAY array pre-adjusted = "+PLAY);
 			for (let n = 1; n < 17; n++) {
-				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
-				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
-				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
-				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
-				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
-				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
-				if ((SFLwk0[n-1] == "PK")||(SFLwk1[n-1] == "PK")||(SFLwk2[n-1] == "PK")) { PLAYfull[n-1] = "Kuechler, Peter M." }
-				if ((SFLwk0[n-1] == "JM")||(SFLwk1[n-1] == "JM")||(SFLwk2[n-1] == "JM")) { PLAYfull[n-1] = "McCracken, John G." }
-				if ((SFLwk0[n-1] == "CM")||(SFLwk1[n-1] == "CM")||(SFLwk2[n-1] == "CM")) { PLAYfull[n-1] = "Medhurst, Charles" }
-				if ((SFLwk0[n-1] == "DP")||(SFLwk1[n-1] == "DP")||(SFLwk2[n-1] == "DP")) { PLAYfull[n-1] = "Pengelly, Delmer B." }
-				if ((SFLwk0[n-1] == "Pd")||(SFLwk1[n-1] == "Pd")||(SFLwk2[n-1] == "Pd")) { PLAYfull[n-1] = "Paulson, David B." }
-				if ((SFLwk0[n-1] == "BP")||(SFLwk1[n-1] == "BP")||(SFLwk2[n-1] == "BP")) { PLAYfull[n-1] = "Porter, George R." }
-				if ((SFLwk0[n-1] == "WR")||(SFLwk1[n-1] == "WR")||(SFLwk2[n-1] == "WR")) { PLAYfull[n-1] = "Ritchie, William" }
-				if ((SFLwk0[n-1] == "JS")||(SFLwk1[n-1] == "JS")||(SFLwk2[n-1] == "JS")) { PLAYfull[n-1] = "Schofield, John A." }
+				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")||(SFLwk3[n-1] == "AB")||(SFLwk4[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
+				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")||(SFLwk3[n-1] == "TC")||(SFLwk4[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
+				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")||(SFLwk3[n-1] == "JD")||(SFLwk4[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
+				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")||(SFLwk3[n-1] == "GF")||(SFLwk4[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
+				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")||(SFLwk3[n-1] == "WH")||(SFLwk4[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
+				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")||(SFLwk3[n-1] == "SJ")||(SFLwk4[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
+				if ((SFLwk0[n-1] == "PK")||(SFLwk1[n-1] == "PK")||(SFLwk2[n-1] == "PK")||(SFLwk3[n-1] == "PK")||(SFLwk4[n-1] == "PK")) { PLAYfull[n-1] = "Kuechler, Peter M." }
+				if ((SFLwk0[n-1] == "JM")||(SFLwk1[n-1] == "JM")||(SFLwk2[n-1] == "JM")||(SFLwk3[n-1] == "JM")||(SFLwk4[n-1] == "JM")) { PLAYfull[n-1] = "McCracken, John G." }
+				if ((SFLwk0[n-1] == "CM")||(SFLwk1[n-1] == "CM")||(SFLwk2[n-1] == "CM")||(SFLwk3[n-1] == "CM")||(SFLwk4[n-1] == "CM")) { PLAYfull[n-1] = "Medhurst, Charles" }
+				if ((SFLwk0[n-1] == "DP")||(SFLwk1[n-1] == "DP")||(SFLwk2[n-1] == "DP")||(SFLwk3[n-1] == "DP")||(SFLwk4[n-1] == "DP")) { PLAYfull[n-1] = "Pengelly, Delmer B." }
+				if ((SFLwk0[n-1] == "Pd")||(SFLwk1[n-1] == "Pd")||(SFLwk2[n-1] == "Pd")||(SFLwk3[n-1] == "Pd")||(SFLwk4[n-1] == "Pd")) { PLAYfull[n-1] = "Paulson, David B." }
+				if ((SFLwk0[n-1] == "BP")||(SFLwk1[n-1] == "BP")||(SFLwk2[n-1] == "BP")||(SFLwk3[n-1] == "BP")||(SFLwk4[n-1] == "BP")) { PLAYfull[n-1] = "Porter, George R." }
+				if ((SFLwk0[n-1] == "WR")||(SFLwk1[n-1] == "WR")||(SFLwk2[n-1] == "WR")||(SFLwk3[n-1] == "WR")||(SFLwk4[n-1] == "WR")) { PLAYfull[n-1] = "Ritchie, William" }
+				if ((SFLwk0[n-1] == "JS")||(SFLwk1[n-1] == "JS")||(SFLwk2[n-1] == "JS")||(SFLwk3[n-1] == "JS")||(SFLwk4[n-1] == "JS")) { PLAYfull[n-1] = "Schofield, John A." }
 			}
 			//alert("PLAY array POST-adjusted = "+PLAY);
 					
@@ -360,7 +401,7 @@
 				//alert("storedNOTE (fr lS) = "+storedNOTE);
 			//document.getElementById("noteTA").value=storedNOTE;	
 		}
-		//hideMENU();		
+		document.getElementById("mySidenav").style.width = "0px";	//hideMENU();		
 	}
 	function setDATE() {
 		//const d = new Date("Mar 25 2015");
@@ -400,7 +441,12 @@
 			  wk3Date = myDate; 	alert("wk3Date = "+wk3Date);							 // << **
 			  localStorage.setItem("w3date",wk3Date); 
 		}
-		else { alert ("Radio button OTHER THAN 0-3 was checked!"); }
+		else if(document.getElementById('date4').checked) {
+		  		alert ("'date4/ee'' radio button is checked. DATE submitted = "+myDate);
+				wk4Date = myDate;
+				localStorage.setItem("w4date",wk4Date); 
+			}		
+		else { alert ("Radio button OTHER THAN 0-4 was checked!"); }
 		//}else if(document.getElementById('date0').checked) {
 		  //'aa' radio button is checked
 		//}
@@ -420,10 +466,42 @@
 		Date2str = localStorage.getItem("w2date");	  
 			//alert("wk2Date/Date2str (post lS get) = \n"+Date2str);
 		Date3str = localStorage.getItem("w3date");	  
+		Date4str = localStorage.getItem("w4date");
 			
-		if ( w == 0 ) { alert(Date0str); }
-		if ( w == 1 ) { alert(Date1str); }
-		if ( w == 2 ) { alert(Date2str); }
-		if ( w == 3 ) { alert(Date3str); }
+		if ( w == 0 ) { alert("W0 = "+Date0str); }
+		if ( w == 1 ) { alert("W1 = "+Date1str); }
+		if ( w == 2 ) { alert("W2 = "+Date2str); }
+		if ( w == 3 ) { alert("W3 = "+Date3str); }
+		if ( w == 4 ) { alert("W4 = "+Date4str); }
 			
+	}
+	
+	function PrimeWK() {
+		  let reply;
+		  if (confirm("Are you SURE you want to set a primary/current week?") == true) {
+		    reply = "YES!";
+		  } else {
+		    reply = "NO!";
+		  }
+  		  alert(reply);
+			  
+		  if ( reply=="YES!") {			  
+			  curWK = prompt("Please enter week to highlight (0-4)", 1);
+			  localStorage.setItem("PRIMEwk",curWK);
+			  document.getElementById("w0").style.background="white"; 
+			  		document.getElementById("w1").style.background="white"; 
+			  		document.getElementById("w2").style.background="white"; 
+					document.getElementById("w3").style.background="white"; 
+					document.getElementById("w4").style.background="white"; 
+			  document.getElementById("w"+curWK).style.background="orange"; 
+			   
+		  }
+		  
+	}
+	
+	function hidePICKER() {
+		document.getElementById("tblDATE").style.visibility="hidden";	//display="none";
+	}
+	function hideSFL() {
+		document.getElementById("tblSFL").style.visibility="hidden";	//display="none";
 	}
