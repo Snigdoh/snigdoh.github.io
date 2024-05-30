@@ -57,7 +57,8 @@
 	
 						/*   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   */
 	
-	function PLAYwk(pl,pNO,wk) {
+function PLAYwk(pl,pNO,wk) {
+	if ( freeze != "y" ) {
 		/*
 		var locStorWK0str = localStorage.getItem("lsWK0");
 		var locStorWK1str = localStorage.getItem("lsWK1");
@@ -107,9 +108,10 @@
 			if ( wk == 3 ) { PLAYwk3.push(pl); alert("'PLAYwk3' array = "+PLAYwk3); PLAYwk3str = PLAYwk3.toString(); }
 			if ( wk == 4 ) { PLAYwk4.push(pl); alert("'PLAYwk4' array = "+PLAYwk4); PLAYwk4str = PLAYwk4.toString(); }
 		}		
+
+	}		
 		
-		
-	}
+}
 	
 	function locStor() {
 		/* alert("localStorage:\n\n"+
@@ -505,3 +507,30 @@
 	function hideSFL() {
 		document.getElementById("tblSFL").style.visibility="hidden";	//display="none";
 	}
+		
+						/*    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$    */
+	var freeze = "n";	
+	function FREEZE() {
+		if (freeze == "n") {
+				for (let w = 0; w < 5; w++) {	  
+					for (let i = 1; i < 17; i++) {	  
+						//document.getElementById("G"+i+"wk"+w).setAttribute('readonly', 'true'); 		// << *
+						//document.getElementById("G"+i+"wk"+w).readOnly = true;		
+						document.getElementById("G"+i+"wk"+w).style.opacity = "50%";
+						//document.getElementById("G"+i+"wk"+w).onclick = function(){alert("Input frozen!");}	
+					}
+				}
+				freeze = "y";
+		}
+		else {
+				for (let w = 0; w < 5; w++) {	  
+					for (let i = 1; i < 17; i++) {	  
+						document.getElementById("G"+i+"wk"+w).style.opacity = "100%";
+						//document.getElementById("G"+i+"wk"+w).onclick = PLAYwk('TC',2,4);
+						
+					}
+				}
+				freeze = "n";
+		}			
+	}					
+	
