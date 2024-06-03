@@ -703,3 +703,7 @@ function PLAYwk(pl,pNO,wk) {
 			  "LSawyW4 = '"+localStorage.getItem("LSawyW4")+"'"); 						
 		*/						
 	}
+	
+	function removeAWAY() {
+		alert("Will code to REMOVE away entries here!");
+	}
