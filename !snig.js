@@ -97,16 +97,16 @@ function PLAYwk(pl,pNO,wk) {
 			
 			if ( wk == 1 ) {
 				PLAYwk1.push(pl); 			//alert("PLAY array = "+PLAY);
-				alert("'PLAYwk1' array = "+PLAYwk1);
+				//alert("'PLAYwk1' array = "+PLAYwk1);
 				PLAYwk1str = PLAYwk1.toString();
 				//lastARRAY = LASTstring.split(",");
 				//localStorage.setItem("lsWK1",PLAYwk1str);
 				
 			}
-			if ( wk == 0 ) { PLAYwk0.push(pl); alert("'PLAYwk0' array = "+PLAYwk0); PLAYwk0str = PLAYwk0.toString(); /*localStorage.setItem("lsWK0",PLAYwk0str);*/ }
-			if ( wk == 2 ) { PLAYwk2.push(pl); alert("'PLAYwk2' array = "+PLAYwk2); PLAYwk2str = PLAYwk2.toString(); /*localStorage.setItem("lsWK2",PLAYwk2str);*/ }
-			if ( wk == 3 ) { PLAYwk3.push(pl); alert("'PLAYwk3' array = "+PLAYwk3); PLAYwk3str = PLAYwk3.toString(); }
-			if ( wk == 4 ) { PLAYwk4.push(pl); alert("'PLAYwk4' array = "+PLAYwk4); PLAYwk4str = PLAYwk4.toString(); }
+			if ( wk == 0 ) { PLAYwk0.push(pl); /*alert("'PLAYwk0' array = "+PLAYwk0);*/ PLAYwk0str = PLAYwk0.toString(); /*localStorage.setItem("lsWK0",PLAYwk0str);*/ }
+			if ( wk == 2 ) { PLAYwk2.push(pl); /*alert("'PLAYwk2' array = "+PLAYwk2);*/ PLAYwk2str = PLAYwk2.toString(); /*localStorage.setItem("lsWK2",PLAYwk2str);*/ }
+			if ( wk == 3 ) { PLAYwk3.push(pl); /*alert("'PLAYwk3' array = "+PLAYwk3);*/ PLAYwk3str = PLAYwk3.toString(); }
+			if ( wk == 4 ) { PLAYwk4.push(pl); /*alert("'PLAYwk4' array = "+PLAYwk4);*/ PLAYwk4str = PLAYwk4.toString(); }
 		}		
 
 	}		
@@ -143,26 +143,26 @@ function PLAYwk(pl,pNO,wk) {
 		
 		
 		
-		alert("in 'locStor' fn:\n\n"+
+		/*alert("in 'locStor' fn:\n\n"+
 			  "LSawyW0 = "+localStorage.getItem("LSawyW0")+"\n\n"+
 			  "LSawyW1 = "+localStorage.getItem("LSawyW1")+"\n"+
 			  "LSawyW2 = "+localStorage.getItem("LSawyW2")+"\n"+
 			  "LSawyW3 = "+localStorage.getItem("LSawyW3")+"\n"+
-			  "LSawyW4 = "+localStorage.getItem("LSawyW4")); 
+			  "LSawyW4 = "+localStorage.getItem("LSawyW4")); */
 		const awW0array = localStorage.getItem("LSawyW0").split(",");
 		const awW1array = localStorage.getItem("LSawyW1").split(",");
 		const awW2array = localStorage.getItem("LSawyW2").split(",");
 		const awW3array = localStorage.getItem("LSawyW3").split(",");
 		const awW4array = localStorage.getItem("LSawyW4").split(",");
-		alert("awW1array = "+ awW1array);
+		//alert("awW1array = "+ awW1array);
 		//document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
 			var awy1Len = awW1array.length;
-				alert("awy1Len (in locStor fn) = "+awy1Len);
+				//alert("awy1Len (in locStor fn) = "+awy1Len);
 			//if (awy1Len>1) {
 			if (awW1array.length!=0) {	
 				for (let a = 1; a < awy1Len; a++) {
-						alert("awy1Len (in locStor fn) = "+awy1Len+"\n"+
-						      "getElementById('G'+awW1array[a]+'wk1') = " + 'G'+awW1array[a]+'wk1');
+						/*alert("awy1Len (in locStor fn) = "+awy1Len+"\n"+
+						      "getElementById('G'+awW1array[a]+'wk1') = " + 'G'+awW1array[a]+'wk1');*/
 						
 						if (awW1array[a]!="") {	  
 							document.getElementById("G"+awW1array[a]+"wk1").style.background = 'ivory';  //G12wk1
@@ -170,7 +170,7 @@ function PLAYwk(pl,pNO,wk) {
 						
 				}
 			}				
-			var awy0Len = awW0array.length; alert("awy0Len (in locStor fn) = "+awy0Len);
+			var awy0Len = awW0array.length; //alert("awy0Len (in locStor fn) = "+awy0Len);
 			//if (awy0Len>1) {	
 			if (awW0array.length!=0) {			
 				for (let a = 1; a < awy0Len; a++) {
@@ -197,7 +197,7 @@ function PLAYwk(pl,pNO,wk) {
 					}
 				}
 			}		
-			var awy4Len = awW4array.length; alert("awy4Len (in locStor fn) = "+awy4Len);
+			var awy4Len = awW4array.length; //alert("awy4Len (in locStor fn) = "+awy4Len);
 			//if (awy4Len>1) {	
 			if (awW4array.length!=0) {			
 				for (let a = 1; a < awy4Len; a++) {
@@ -246,7 +246,8 @@ function PLAYwk(pl,pNO,wk) {
 				localStorage.setItem("LSawyW2",'0');  localStorage.setItem("LSawyW3",'0'); 
 				localStorage.setItem("LSawyW4",'0'); 
 				
-				alert("'localStorage' (except week dates & note) have been CLEARED!");
+				alert("'localStorage' (except week dates & note) have been CLEARED!\n"+
+					  "'Away' data also cleared. *");
 		  }
 	}
 	
@@ -330,11 +331,11 @@ function PLAYwk(pl,pNO,wk) {
 					}
 			}
 			//alert("Didn't get here!");
-			alert("'SFLwk0' array = "+SFLwk0+"\n"+
+			/* alert("'SFLwk0' array = "+SFLwk0+"\n"+
 				  "'SFLwk1' array = "+SFLwk1+"\n"+
 				  "'SFLwk2' array = "+SFLwk2+"\n"+
 				  "'SFLwk3' array = "+SFLwk3+"\n"+
-				  "'SFLwk4' array = "+SFLwk4);
+				  "'SFLwk4' array = "+SFLwk4); */
 			if ( sflWK == 0 ) { document.getElementById("WKipt").value = "W0"; }
 			if ( sflWK == 1 ) { document.getElementById("WKipt").value = "W1"; }
 			if ( sflWK == 2 ) { document.getElementById("WKipt").value = "W2"; }
@@ -497,31 +498,31 @@ function PLAYwk(pl,pNO,wk) {
 				//if ( date3.checked == true ) {
 				//if ( date3.value == true ) {	
 		if(document.getElementById('date0').checked) {
-		  		alert ("'date0/aa'' radio button is checked. DATE submitted = "+myDate);
+		  		//alert ("'date0/aa'' radio button is checked. DATE submitted = "+myDate);
 				wk0Date = myDate;
 				localStorage.setItem("w0date",wk0Date); 
 	    }
 		else if(document.getElementById('date1').checked) {
-		  		alert ("'date1/bb'' radio button is checked. DATE submitted = "+myDate);
+		  		//alert ("'date1/bb'' radio button is checked. DATE submitted = "+myDate);
 				wk1Date = myDate;
 				localStorage.setItem("w1date",wk1Date); 
 	 	}
 		else if(document.getElementById('date2').checked) {
-		  		alert ("'date2/cc'' radio button is checked. DATE submitted = "+myDate);
+		  		//alert ("'date2/cc'' radio button is checked. DATE submitted = "+myDate);
 				wk2Date = myDate;
 				localStorage.setItem("w2date",wk2Date); 
 	  	}		
 		else if(document.getElementById('date3').checked) {
 			  //'dd' radio button is checked
-			  alert ("'date3/dd'' radio button is checked.\n\n"+
+			  /* alert ("'date3/dd'' radio button is checked.\n\n"+
 			  		 //"DATE submitted = "+document.getElementById("DATE").value );
-					 "DATE submitted = "+myDate);					 
+					 "DATE submitted = "+myDate);	*/				 
 			  //var d = document.getElementById("DATE").value.getDate();   alert("d = "+d);
 			  wk3Date = myDate; 	alert("wk3Date = "+wk3Date);							 // << **
 			  localStorage.setItem("w3date",wk3Date); 
 		}
 		else if(document.getElementById('date4').checked) {
-		  		alert ("'date4/ee'' radio button is checked. DATE submitted = "+myDate);
+		  		//alert ("'date4/ee'' radio button is checked. DATE submitted = "+myDate);
 				wk4Date = myDate;
 				localStorage.setItem("w4date",wk4Date); 
 			}		
@@ -549,14 +550,14 @@ function PLAYwk(pl,pNO,wk) {
 			
 			for (let p = 1; p < 15; p++) {
 				if(document.getElementById('pl'+p).checked==true) {
-			  		alert ("'pl"+p+"' radio button is checked.");	
+			  		//alert ("'pl"+p+"' radio button is checked.");	
 					selPL = p;
 				}
 			}	
 			
 			for (let w = 0; w < 5; w++) {
 				if(document.getElementById('CHKw'+w).checked==true) { 
-					alert ("'CHKw"+w+"'' CHECKBOX is checked!");
+					//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
 					document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
 					if (w==0) {AWYwk0.push(selPL);}
 					if (w==1) {AWYwk1.push(selPL);}
@@ -572,12 +573,12 @@ function PLAYwk(pl,pNO,wk) {
 			var AWYwk2str = AWYwk2.toString(); 
 			var AWYwk3str = AWYwk3.toString(); 
 			var AWYwk4str = AWYwk4.toString(); 
-			alert("Away strings:\n\n"+
+			/* alert("Away strings:\n\n"+
 				  "newAWYwk0str = '"+AWYwk0str+"'\n"+
 				  "newAWYwk1str = '"+AWYwk1str+"'\n"+
 				  "newAWYwk2str = '"+AWYwk2str+"'\n"+
 				  "newAWYwk3str = '"+AWYwk3str+"'\n"+
-				  "newAWYwk4str = '"+AWYwk4str+"'");			
+				  "newAWYwk4str = '"+AWYwk4str+"'"); */		
 			
 			localStorage.setItem("LSawyW0",AWYwk0str);
 			localStorage.setItem("LSawyW1",AWYwk1str);
@@ -692,7 +693,7 @@ function PLAYwk(pl,pNO,wk) {
 		document.getElementById("W4lbl").innerText=Date4str; 
 		
 						/*   ###############################   */
-						
+		/*				
 		alert("Welcome to Retlaw Snigdoh's 'Tee Sheet' web app onLoad function!\n"+
 			  "Here are some 'localStoage' variables:\n\n"+
 			  "LSawyW0 = '"+localStorage.getItem("LSawyW0")+"'\n"+
@@ -700,5 +701,5 @@ function PLAYwk(pl,pNO,wk) {
 			  "LSawyW2 = '"+localStorage.getItem("LSawyW2")+"'\n"+
 			  "LSawyW3 = '"+localStorage.getItem("LSawyW3")+"'\n"+
 			  "LSawyW4 = '"+localStorage.getItem("LSawyW4")+"'"); 						
-						
+		*/						
 	}

@@ -35,12 +35,12 @@
 	
 				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
 						<div class="grid-container">
-							  <div><A onclick="showAWAY()" style='cursor:pointer; color:silver;'><i>away</i></A>
+							  <div><A onclick="showAWAY()" style='cursor:pointer; color:lime;'><i>away</i></A>
 								  <!--<A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="presetPLAY()"><b>presets</b></A>--></div>
-							  <div><A style="color:white;" onclick="locStor()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
+							  <div><A style="color:lime;" onclick="locStor()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
 							  <div><A style="cursor:pointer; color:white;" onclick="clearLS()"><b>clear LS</b></A><!--<button style="color:black; font-size:25px;" onclick="clearPLAYarray()"><b>CLEAR</b> PLAY[]</button>--></div>
 							  
-							  <div><A onclick="emails()" style='cursor:pointer; color:white;'><b>emails</b></A></div>
+							  <div><A onclick="emails()" style='cursor:pointer; color:gray;'><b>emails</b></A></div>
 							  <div><A onclick="closeNav()" style='cursor:pointer; color:white;'><s>&#9776;</s></A>
 							  	<!--<span style=" cursor:pointer; color:white;" onclick="closeNav()"><s>&#9776;</s></span>-->	<!--<button onclick="showALL()">display group</button>-->
 							  </div>
@@ -56,7 +56,7 @@
 								  <a onclick="showNOTE()" style="color:white;"><b>note</b></a>
 							  </div>
 							  <div><A style="cursor:pointer; color:silver;" onclick="clearFFx()"><b>? FFx</b></A></div>
-							  <div><A onclick="codeFILES()" style='color:white;'>code files</A></div>
+							  <div><A onclick="codeFILES()" style='color:gray;'>code files</A></div>
 							  <div><A href="!gs63/!gs63idx.html" style='color:yellow;'>!gs63</A></div>
 							  
 						</div>									
@@ -64,7 +64,7 @@
 				
 
 	<TABLE class="HEADtbl" border=1 align=center > <!-- style='color:maroon; visibility:visible;' bgcolor='lightgray' -->	
-		<TR><TD><span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:35px; padding:2px;">snigd'Oh</span><font size=4><i>V8</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
+		<TR><TD><span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:35px; padding:2px;">snigd'Oh</span><font size=5><i>v10</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
 			<TD><span style="font-size:50px; cursor:pointer; background:ivory;color:maroon;" onclick="openNav()">&#9776;</span>	</TD>	
 			<TD>
 				<img src="IMG_woody.png" width=50 height=50>
@@ -77,11 +77,11 @@
 		<thead><TR>			
 			<TD  class="headcol" colspan=1 align=center style="color:green; font-size:20px;"><!--<br>to play--></TD>
 	
-			<TH id='w0' onclick="displayDATE(0)">W0<br><span style="background:maroon;" id="W0lbl">00</span></TH>
-			<TH id='w1' onclick="displayDATE(1)">W1<br><span style="background:maroon;" id="W1lbl">00</span></TH> 
-			<TH id='w2' onclick="displayDATE(2)">W2<br><span style="background:maroon;" id="W2lbl">00</span></TH> 
-			<TH id='w3' onclick="displayDATE(3)">W3<br><span style="background:maroon;" id="W3lbl">00</span></TH>
-			<TH id='w4' onclick="displayDATE(4)">W4<br><span style="background:maroon;" id="W4lbl">00</span></TH>
+			<TH id='w0' style="font-size:12px;" onclick="displayDATE(0)">W0<br><span style="background:maroon;" id="W0lbl">00</span></TH>
+			<TH id='w1' style="font-size:12px;" onclick="displayDATE(1)">W1<br><span style="background:maroon;" id="W1lbl">00</span></TH> 
+			<TH id='w2' style="font-size:12px;" onclick="displayDATE(2)">W2<br><span style="background:maroon;" id="W2lbl">00</span></TH> 
+			<TH id='w3' style="font-size:12px;" onclick="displayDATE(3)">W3<br><span style="background:maroon;" id="W3lbl">00</span></TH>
+			<TH id='w4' style="font-size:12px;" onclick="displayDATE(4)">W4<br><span style="background:maroon;" id="W4lbl">00</span></TH>
 		</TR></thead>	
 		<tbody>
 		<TR>
@@ -257,33 +257,33 @@
 	<TABLE id="tblDATE" border=1 align=center style="background:red; zoom:1; position:fixed; left:200px; top:500px; visibility:hidden;">
 		<TR><TH colspan=3>Date Picker</TH>
 			<td colspan=2>			
-				<button style="color:black; font-size:25px;" onclick="setDATE()"><b>SET!</b></button>				
+				<button style="color:black; font-size:35px;" onclick="setDATE()"><b>SET!</b></button>				
 			</td>	
-			<TD align=right><a onclick="hidePICKER()"><b>&times;</b></a></TD>
+			<TD align=right><a onclick="hidePICKER()" style="font-size:45px;"><b>&times;</b></a></TD>
 		</TR>	
 		<TR>
-			<TD align=center id="wk0date" style="font-size:25px;">
+			<TD align=center id="wk0date" style="font-size:35px;">
 				wk0<br><input id="date0" type="radio" name="ninjaTurtles" value="aa" style="zoom:2;"/>
 			</TD>
-			<TD align=center id="wk1date" style="font-size:25px;">
+			<TD align=center id="wk1date" style="font-size:35px;">
 				wk1<br><input id="date1" type="radio" name="ninjaTurtles" value="bb" checked/ style="zoom:2;">				
 			</TD>			
-			<TD align=center id="wk2date" style="font-size:25px;">
+			<TD align=center id="wk2date" style="font-size:35px;">
 				wk2<br><input id="date2" type="radio" name="ninjaTurtles" value="cc"/ style="zoom:2;">				
 			</TD>			
-			<TD align=center id="wk3date" style="font-size:25px;">
+			<TD align=center id="wk3date" style="font-size:35px;">
 				wk3<br><input id="date3" type="radio" name="ninjaTurtles" value="dd"/ style="zoom:2;">				
 			</TD>
-			<TD align=center id="wk4date" style="font-size:25px; opacity:50%;">
+			<TD align=center id="wk4date" style="font-size:35px; opacity:50%;">
 				wk4<br><input id="date4" type="radio" name="ninjaTurtles" value="ee"/ style="zoom:2;">				
 			</TD>	
 			<td rowspan=2>
-				<button style="color:black; font-size:15px;" onclick="PrimeWK()">PRIME</button>
+				<button style="color:black; font-size:35px;" onclick="PrimeWK()">PRIME</button>
 			</td>					
 		</TR>
 		<TR>
 			<TD colspan=5>
-				<input type="date" id="DATE" tabindex="" style="background:beige; border:1px solid slategray; color:blue; width:275px; font-size:30px;" placeholder="2024-mm-dd" value="2024-mm-dd">
+				<input type="date" id="DATE" tabindex="" style="background:beige; border:1px solid slategray; color:blue; width:275px; font-size:33px;" placeholder="2024-mm-dd" value="2024-mm-dd">
 							<!-- onchange="localStorage.setItem('setDATE',this.value);" -->	
 			</TD>			
 		</TR>	
@@ -291,7 +291,7 @@
 
 
 
-	<TABLE id="tblAWAY" border=1 align=center style="background:orange; zoom:1; position:fixed; left:500px; top:50px; visibility:hidden; font-size:20px;">
+	<TABLE id="tblAWAY" border=1 align=center style="background:orange; zoom:2; position:fixed; left:250px; top:400px; visibility:hidden; font-size:20px;">
 		<thead>
 		<TR style="background:brown; color:white;"><TH colspan=6>AWAY</TH>
 			<TH><a onclick="showAWAY()"><b>&times;</b></a></TH>
