@@ -29,13 +29,14 @@
 
 </head>
 
-<body class="body" style="background:yellow;"  onload=""> <!--  zoom:250%; -->
+<body class="body" style="background:yellow;"  onload="LOADfn();"> <!--  zoom:250%; -->
 	
 <div class="wrapper"><!-- Put the page contents here -->
 	
 				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
 						<div class="grid-container">
-							  <div><!--<A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="presetPLAY()"><b>presets</b></A>--></div>
+							  <div><A onclick="showAWAY()" style='cursor:pointer; color:silver;'><i>away</i></A>
+								  <!--<A style="FONT-SIZE:normal; cursor:pointer; color:maroon;" onclick="presetPLAY()"><b>presets</b></A>--></div>
 							  <div><A style="color:white;" onclick="locStor()"><b>LAST</b></A><!--<button style="color:black; font-size:25px;" onclick="lastPLAY()"><b>LAST</b></button>--></div>
 							  <div><A style="cursor:pointer; color:white;" onclick="clearLS()"><b>clear LS</b></A><!--<button style="color:black; font-size:25px;" onclick="clearPLAYarray()"><b>CLEAR</b> PLAY[]</button>--></div>
 							  
@@ -76,11 +77,11 @@
 		<thead><TR>			
 			<TD  class="headcol" colspan=1 align=center style="color:green; font-size:20px;"><!--<br>to play--></TD>
 	
-			<TH id='w0' onclick="displayDATE(0)">W0</TH>
-			<TH id='w1' onclick="displayDATE(1)">W1</TH> 
-			<TH id='w2' onclick="displayDATE(2)">W2</TH> 
-			<TH id='w3' onclick="displayDATE(3)">W3</TH> <!-- J13 J20 J27 j4 11 18 25 1 -->
-			<TH id='w4' onclick="displayDATE(4)">W4</TH>
+			<TH id='w0' onclick="displayDATE(0)">W0<br><span style="background:maroon;" id="W0lbl">00</span></TH>
+			<TH id='w1' onclick="displayDATE(1)">W1<br><span style="background:maroon;" id="W1lbl">00</span></TH> 
+			<TH id='w2' onclick="displayDATE(2)">W2<br><span style="background:maroon;" id="W2lbl">00</span></TH> 
+			<TH id='w3' onclick="displayDATE(3)">W3<br><span style="background:maroon;" id="W3lbl">00</span></TH>
+			<TH id='w4' onclick="displayDATE(4)">W4<br><span style="background:maroon;" id="W4lbl">00</span></TH>
 		</TR></thead>	
 		<tbody>
 		<TR>
@@ -284,13 +285,58 @@
 			<TD colspan=5>
 				<input type="date" id="DATE" tabindex="" style="background:beige; border:1px solid slategray; color:blue; width:275px; font-size:30px;" placeholder="2024-mm-dd" value="2024-mm-dd">
 							<!-- onchange="localStorage.setItem('setDATE',this.value);" -->	
+			</TD>			
+		</TR>	
+	</TABLE>
+
+
+
+	<TABLE id="tblAWAY" border=1 align=center style="background:orange; zoom:1; position:fixed; left:500px; top:50px; visibility:hidden; font-size:20px;">
+		<thead>
+		<TR style="background:brown; color:white;"><TH colspan=6>AWAY</TH>
+			<TH><a onclick="showAWAY()"><b>&times;</b></a></TH>
+		</TR>	
+		<TR>
+			<TD>
+				<label><input id="pl1" type="radio" name="guysAWAY" value="ab" style="zoom:1;"/>AB</label>
 			</TD>
+			<TD><label><input id="pl2" type="radio" name="guysAWAY" value="tc" style="zoom:;"/>TC</label></TD>	
+			<TD>
+				<label><input id="pl3" type="radio" name="guysAWAY" value="jd" style="zoom:1;"/>JD</label>
+			</TD>	
+			<TD>
+				<label><input id="pl4" type="radio" name="guysAWAY" value="gf" style="zoom:;"/>GF</label>
+			</TD>			
+			<TD><label><input id="pl5" type="radio" name="guysAWAY" value="wh" style="zoom:;"/>WH</label></TD>
+			<TD><label><input id="pl6" type="radio" name="guysAWAY" value="sj" style="zoom:;"/>SJ</label></TD>
+			<TD><label><input id="pl7" type="radio" name="guysAWAY" value="pk" style="zoom:;"/>PK</label></TD>			
+		</TR>
+		<TR>
+			<TD><label><input id="pl8" type="radio" name="guysAWAY" value="jm" style="zoom:;"/>JM</label></TD>
+			<TD><label><input id="pl9" type="radio" name="guysAWAY" value="cm" style="zoom:;"/>CM</label></TD>
+			<TD><label><input id="pl10" type="radio" name="guysAWAY" value="dp" style="zoom:;"/>DP</label></TD>	
+			<TD><label><input id="pl11" type="radio" name="guysAWAY" value="pd" style="zoom:;"/>Pd</label></TD>
+			<TD><label><input id="pl12" type="radio" name="guysAWAY" value="bp" style="zoom:;"/>BP</label></TD>
+			<TD><label><input id="pl13" type="radio" name="guysAWAY" value="wr" style="zoom:;"/>WR</label></TD>	
+			<TD><label><input id="pl14" type="radio" name="guysAWAY" value="js" style="zoom:;"/>JS</label></TD>			
+		</TR>	
 			
+		</thead>	
+		<tbody>
 			
-			
+		<TR style="background:brown; color:white;">	
+			<TD><label><input type="checkbox" style="color:yellow; zoom:1;" id="CHKw0">W0</label></TD>			
+				<!--<TD align=center>W0<br><input type="checkbox" style="color:yellow; zoom:1;" id="CHKw0"></TD>-->
+			<TD><label><input type="checkbox" style="color:yellow; zoom:1;" id="CHKw1">W1</label></TD>	
+			<TD><label><input type="checkbox" style="color:yellow; zoom:1;" id="CHKw2">W2</label></TD>	
+			<TD><label><input type="checkbox" style="color:yellow; zoom:1;" id="CHKw3">W3</label></TD>	
+			<TD><label><input type="checkbox" style="color:yellow; zoom:1;" id="CHKw4">W4</label></TD>				
+			<TD colspan=2 align=center><button style="color:black;  font-size:15px;" onclick="setAWAY()"><b>SET!</b></button>
+									<!-- font-size:15px; -->
+			</TD>
 		</TR>	
 		
-	
+	</TABLE	
 	
 	
 	

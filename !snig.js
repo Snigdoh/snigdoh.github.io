@@ -139,6 +139,74 @@ function PLAYwk(pl,pNO,wk) {
 		var curWK = localStorage.getItem("PRIMEwk");
 		document.getElementById("w"+curWK).style.background="orange"; 
 		
+		
+		
+		
+		
+		alert("in 'locStor' fn:\n\n"+
+			  "LSawyW0 = "+localStorage.getItem("LSawyW0")+"\n\n"+
+			  "LSawyW1 = "+localStorage.getItem("LSawyW1")+"\n"+
+			  "LSawyW2 = "+localStorage.getItem("LSawyW2")+"\n"+
+			  "LSawyW3 = "+localStorage.getItem("LSawyW3")+"\n"+
+			  "LSawyW4 = "+localStorage.getItem("LSawyW4")); 
+		const awW0array = localStorage.getItem("LSawyW0").split(",");
+		const awW1array = localStorage.getItem("LSawyW1").split(",");
+		const awW2array = localStorage.getItem("LSawyW2").split(",");
+		const awW3array = localStorage.getItem("LSawyW3").split(",");
+		const awW4array = localStorage.getItem("LSawyW4").split(",");
+		alert("awW1array = "+ awW1array);
+		//document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
+			var awy1Len = awW1array.length;
+				alert("awy1Len (in locStor fn) = "+awy1Len);
+			//if (awy1Len>1) {
+			if (awW1array.length!=0) {	
+				for (let a = 1; a < awy1Len; a++) {
+						alert("awy1Len (in locStor fn) = "+awy1Len+"\n"+
+						      "getElementById('G'+awW1array[a]+'wk1') = " + 'G'+awW1array[a]+'wk1');
+						
+						if (awW1array[a]!="") {	  
+							document.getElementById("G"+awW1array[a]+"wk1").style.background = 'ivory';  //G12wk1
+						}
+						
+				}
+			}				
+			var awy0Len = awW0array.length; alert("awy0Len (in locStor fn) = "+awy0Len);
+			//if (awy0Len>1) {	
+			if (awW0array.length!=0) {			
+				for (let a = 1; a < awy0Len; a++) {
+					if (awW0array[a]!="") {	  	
+						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'ivory';  
+					}
+				}	
+			}
+			var awy2Len = awW2array.length;
+			//if (awy2Len>1) {
+			if (awW2array.length!=0) {				
+				for (let a = 1; a < awy2Len; a++) {
+					if (awW2array[a]!="") {	  	
+						document.getElementById("G"+awW2array[a]+"wk2").style.background = 'ivory';  // <<< ** 
+					}
+				}
+			}
+			var awy3Len = awW3array.length;
+			//if (awy3Len>1) {
+			if (awW3array.length!=0) {	
+				for (let a = 1; a < awy3Len; a++) {
+					if (awW3array[a]!="") {	  
+						document.getElementById("G"+awW3array[a]+"wk3").style.background = 'ivory';  
+					}
+				}
+			}		
+			var awy4Len = awW4array.length; alert("awy4Len (in locStor fn) = "+awy4Len);
+			//if (awy4Len>1) {	
+			if (awW4array.length!=0) {			
+				for (let a = 1; a < awy4Len; a++) {
+					if (awW4array[a]!="") {	  
+						document.getElementById("G"+awW4array[a]+"wk4").style.background = 'ivory';  
+					}
+				}	
+			}				
+		
 	}
 	
 	function clearLS() {		
@@ -157,7 +225,8 @@ function PLAYwk(pl,pNO,wk) {
 						var TEMPw1date = localStorage.getItem("w1date");
 						var TEMPw2date = localStorage.getItem("w2date");
 						var TEMPw3date = localStorage.getItem("w3date");
-						var tempPRIMEwk = localStorage.getItem("PRIMEwk");	
+						var TEMPw4date = localStorage.getItem("w4date");
+						var tempPRIMEwk = localStorage.getItem("PRIMEwk");	// *
 						var tempNOTE = localStorage.getItem("NOTEchange");	
 			    //localStorage.setItem("lastPLAY","");
 				localStorage.clear();
@@ -165,10 +234,18 @@ function PLAYwk(pl,pNO,wk) {
 						localStorage.setItem("w1date",TEMPw1date); 
 						localStorage.setItem("w2date",TEMPw2date); 
 						localStorage.setItem("w3date",TEMPw3date); 
+						localStorage.setItem("w4date",TEMPw4date); 
 						localStorage.setItem("PRIMEwk",tempPRIMEwk); 
 						localStorage.setItem("NOTEchange",tempNOTE); 
 				//localStorage.removeItem(" ");									// << **
 				//alert("G1playWK0 post clear = "+localStorage.getItem('G1playWK0'));
+				
+				//localStorage.getItem("LSawyW1"); 
+				//localStorage.setItem("LSawyW0",appendAWYwk0str); 
+				localStorage.setItem("LSawyW0",'0'); localStorage.setItem("LSawyW1",'0'); 
+				localStorage.setItem("LSawyW2",'0');  localStorage.setItem("LSawyW3",'0'); 
+				localStorage.setItem("LSawyW4",'0'); 
+				
 				alert("'localStorage' (except week dates & note) have been CLEARED!");
 		  }
 	}
@@ -458,7 +535,64 @@ function PLAYwk(pl,pNO,wk) {
 */
 
 	}	
-	
+
+	//const AWYwk0 = []; const AWYwk1 = []; const AWYwk2 = []; const AWYwk3 = []; const AWYwk4 = [];
+	function setAWAY() {
+		
+		const AWYwk0 = localStorage.getItem("LSawyW0").split(",");
+		const AWYwk1 = localStorage.getItem("LSawyW1").split(",");
+		const AWYwk2 = localStorage.getItem("LSawyW2").split(",");
+		const AWYwk3 = localStorage.getItem("LSawyW3").split(",");
+		const AWYwk4 = localStorage.getItem("LSawyW4").split(",");
+		
+			var selPL;
+			
+			for (let p = 1; p < 15; p++) {
+				if(document.getElementById('pl'+p).checked==true) {
+			  		alert ("'pl"+p+"' radio button is checked.");	
+					selPL = p;
+				}
+			}	
+			
+			for (let w = 0; w < 5; w++) {
+				if(document.getElementById('CHKw'+w).checked==true) { 
+					alert ("'CHKw"+w+"'' CHECKBOX is checked!");
+					document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
+					if (w==0) {AWYwk0.push(selPL);}
+					if (w==1) {AWYwk1.push(selPL);}
+					if (w==2) {AWYwk2.push(selPL);}
+					if (w==3) {AWYwk3.push(selPL);}
+					if (w==4) {AWYwk4.push(selPL);}					
+				}
+			}
+					
+			//NEW strings:
+			var AWYwk0str = AWYwk0.toString(); 
+			var AWYwk1str = AWYwk1.toString(); 
+			var AWYwk2str = AWYwk2.toString(); 
+			var AWYwk3str = AWYwk3.toString(); 
+			var AWYwk4str = AWYwk4.toString(); 
+			alert("Away strings:\n\n"+
+				  "newAWYwk0str = '"+AWYwk0str+"'\n"+
+				  "newAWYwk1str = '"+AWYwk1str+"'\n"+
+				  "newAWYwk2str = '"+AWYwk2str+"'\n"+
+				  "newAWYwk3str = '"+AWYwk3str+"'\n"+
+				  "newAWYwk4str = '"+AWYwk4str+"'");			
+			
+			localStorage.setItem("LSawyW0",AWYwk0str);
+			localStorage.setItem("LSawyW1",AWYwk1str);
+			localStorage.setItem("LSawyW2",AWYwk2str);
+			localStorage.setItem("LSawyW3",AWYwk3str);
+			localStorage.setItem("LSawyW4",AWYwk4str);
+//			localStorage.setItem("LSawyW0",appendAWYwk0str); 
+//			localStorage.setItem("LSawyW1",appendAWYwk1str);	
+				//localStorage.setItem("LSawyW1",localStorage.getItem("LSawyW1") + ", " + AWYwk1str);
+/*			localStorage.setItem("LSawyW2",appendAWYwk2str);
+			localStorage.setItem("LSawyW3",appendAWYwk3str);
+			localStorage.setItem("LSawyW4",appendAWYwk4str);
+*/							
+
+	}
 	
 	function displayDATE(w) {
 		/* alert("Will try to display date for wk "+w+"!\n"+
@@ -534,3 +668,37 @@ function PLAYwk(pl,pNO,wk) {
 		}			
 	}					
 	
+	function showAWAY() {
+		if (document.getElementById("tblAWAY").style.visibility=="visible") {
+			document.getElementById("tblAWAY").style.visibility="hidden"; 
+		}		
+		else {
+			document.getElementById("tblAWAY").style.visibility="visible"; 
+		}
+		document.getElementById("mySidenav").style.width = "0px";	//hideMENU();		
+	}	
+	
+	function LOADfn() {
+		Date0str = localStorage.getItem("w0date").substring(7,10);	  
+		Date1str = localStorage.getItem("w1date").substring(7,10);	  
+		Date2str = localStorage.getItem("w2date").substring(7,10);	  
+		Date3str = localStorage.getItem("w3date").substring(7,10);	  
+		Date4str = localStorage.getItem("w4date").substring(7,10);
+							//myDate = myDate.substring(0,11);
+		document.getElementById("W0lbl").innerText=Date0str; 
+		document.getElementById("W1lbl").innerText=Date1str; 
+		document.getElementById("W2lbl").innerText=Date2str; 
+		document.getElementById("W3lbl").innerText=Date3str; 
+		document.getElementById("W4lbl").innerText=Date4str; 
+		
+						/*   ###############################   */
+						
+		alert("Welcome to Retlaw Snigdoh's 'Tee Sheet' web app onLoad function!\n"+
+			  "Here are some 'localStoage' variables:\n\n"+
+			  "LSawyW0 = '"+localStorage.getItem("LSawyW0")+"'\n"+
+			  "LSawyW1 = '"+localStorage.getItem("LSawyW1")+"'\n"+
+			  "LSawyW2 = '"+localStorage.getItem("LSawyW2")+"'\n"+
+			  "LSawyW3 = '"+localStorage.getItem("LSawyW3")+"'\n"+
+			  "LSawyW4 = '"+localStorage.getItem("LSawyW4")+"'"); 						
+						
+	}
