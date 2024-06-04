@@ -705,5 +705,43 @@ function PLAYwk(pl,pNO,wk) {
 	}
 	
 	function removeAWAY() {
-		alert("Will code to REMOVE away entries here!");
+		//alert("Will code to REMOVE away entries here!");		
+		//str.replace('g', 'b');
+		var strAWYwk0 = localStorage.getItem("LSawyW0");
+		var strAWYwk1 = localStorage.getItem("LSawyW1");
+		var strAWYwk2 = localStorage.getItem("LSawyW2");
+		var strAWYwk3 = localStorage.getItem("LSawyW3");
+		var strAWYwk4 = localStorage.getItem("LSawyW4");
+/*		alert("removeAWAY fn:\n\n"+
+			  "'strAWYwk0' = '"+strAWYwk0+"'\n\n"+
+			  "Will try removing PK (p7) . .");	
+		strAWYwk0 = strAWYwk0.replace(','+7, '');
+		alert( "'strAWYwk0' post .replace= '"+strAWYwk0+"'");
+*/		
+			var selPL;
+			for (let p = 1; p < 15; p++) {
+				if(document.getElementById('pl'+p).checked==true) {
+			  		//alert ("'pl"+p+"' radio button is checked.");	
+					selPL = p;
+				}
+			}			
+			for (let w = 0; w < 5; w++) {
+				if(document.getElementById('CHKw'+w).checked==true) { 
+					//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
+					document.getElementById('G'+selPL+'wk'+w).style.background = 'slategray';  //G12wk1
+					if (w==0) {strAWYwk0 = strAWYwk0.replace(','+selPL, '');}
+					if (w==1) {strAWYwk1 = strAWYwk1.replace(','+selPL, '');}
+					if (w==2) {strAWYwk2 = strAWYwk2.replace(','+selPL, '');}
+					if (w==3) {strAWYwk3 = strAWYwk3.replace(','+selPL, '');}
+					if (w==4) {strAWYwk4 = strAWYwk4.replace(','+selPL, '');}					
+				}
+			}
+		
+			localStorage.setItem("LSawyW0",strAWYwk0);
+			localStorage.setItem("LSawyW1",strAWYwk1);
+			localStorage.setItem("LSawyW2",strAWYwk2);
+			localStorage.setItem("LSawyW3",strAWYwk3);
+			localStorage.setItem("LSawyW4",strAWYwk4);		
+		
+		
 	}
