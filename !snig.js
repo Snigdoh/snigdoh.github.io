@@ -165,7 +165,16 @@ function PLAYwk(pl,pNO,wk) {
 						      "getElementById('G'+awW1array[a]+'wk1') = " + 'G'+awW1array[a]+'wk1');*/
 						
 						if (awW1array[a]!="") {	  
-							document.getElementById("G"+awW1array[a]+"wk1").style.background = 'ivory';  //G12wk1
+							document.getElementById("G"+awW1array[a]+"wk1").style.background = 'ivory';  //G12wk1	
+							document.getElementById("G"+awW1array[a]+"wk1").onclick = function(){alert("Input frozen!");}	
+							
+							//document.getElementById("G"+awW1array[a]+"wk1").setAttribute('readonly', 'true'); 		// << *
+							//document.getElementById("G"+awW1array[a]+"wk1").setAttribute.readOnly = true;		
+							//document.getElementById("G"+awW1array[a]+"wk1").readOnly = true;		
+							//document.getElementById("G"+awW1array[a]+"wk1").style.opacity = "50%";
+							//document.getElementById("G"+awW1array[a]+"wk1").onclick = function(){alert("Input frozen!");}	
+							
+							
 						}
 						
 				}
@@ -176,6 +185,7 @@ function PLAYwk(pl,pNO,wk) {
 				for (let a = 1; a < awy0Len; a++) {
 					if (awW0array[a]!="") {	  	
 						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'ivory';  
+						document.getElementById("G"+awW0array[a]+"wk0").onclick = function(){alert("Input frozen!");}
 					}
 				}	
 			}
@@ -185,6 +195,7 @@ function PLAYwk(pl,pNO,wk) {
 				for (let a = 1; a < awy2Len; a++) {
 					if (awW2array[a]!="") {	  	
 						document.getElementById("G"+awW2array[a]+"wk2").style.background = 'ivory';  // <<< ** 
+						document.getElementById("G"+awW2array[a]+"wk2").onclick = function(){alert("Input frozen!");}
 					}
 				}
 			}
@@ -194,6 +205,7 @@ function PLAYwk(pl,pNO,wk) {
 				for (let a = 1; a < awy3Len; a++) {
 					if (awW3array[a]!="") {	  
 						document.getElementById("G"+awW3array[a]+"wk3").style.background = 'ivory';  
+						document.getElementById("G"+awW3array[a]+"wk3").onclick = function(){alert("Input frozen!");}
 					}
 				}
 			}		
@@ -202,7 +214,8 @@ function PLAYwk(pl,pNO,wk) {
 			if (awW4array.length!=0) {			
 				for (let a = 1; a < awy4Len; a++) {
 					if (awW4array[a]!="") {	  
-						document.getElementById("G"+awW4array[a]+"wk4").style.background = 'ivory';  
+						document.getElementById("G"+awW4array[a]+"wk4").style.background = 'ivory'; 
+						document.getElementById("G"+awW4array[a]+"wk4").onclick = function(){alert("Input frozen!");}	
 					}
 				}	
 			}				
@@ -248,6 +261,9 @@ function PLAYwk(pl,pNO,wk) {
 				
 				alert("'localStorage' (except week dates & note) have been CLEARED!\n"+
 					  "'Away' data also cleared. *");
+					  
+				location.reload();					  
+					  
 		  }
 	}
 	
@@ -559,6 +575,7 @@ function PLAYwk(pl,pNO,wk) {
 				if(document.getElementById('CHKw'+w).checked==true) { 
 					//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
 					document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
+					document.getElementById('G'+selPL+'wk'+w).onclick = function(){alert("Input frozen!");}	
 					if (w==0) {AWYwk0.push(selPL);}
 					if (w==1) {AWYwk1.push(selPL);}
 					if (w==2) {AWYwk2.push(selPL);}
@@ -692,6 +709,8 @@ function PLAYwk(pl,pNO,wk) {
 		document.getElementById("W3lbl").innerText=Date3str; 
 		document.getElementById("W4lbl").innerText=Date4str; 
 		
+		locStor();
+		
 						/*   ###############################   */
 		/*				
 		alert("Welcome to Retlaw Snigdoh's 'Tee Sheet' web app onLoad function!\n"+
@@ -743,5 +762,7 @@ function PLAYwk(pl,pNO,wk) {
 			localStorage.setItem("LSawyW3",strAWYwk3);
 			localStorage.setItem("LSawyW4",strAWYwk4);		
 		
+		location.reload();
+		//locStor();
 		
 	}
