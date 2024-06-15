@@ -469,7 +469,7 @@ function PLAYwk(pl,pNO,wk) {
 			for (let n = 1; n < 17; n++) {
 				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")||(SFLwk3[n-1] == "AB")||(SFLwk4[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
 				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")||(SFLwk3[n-1] == "TC")||(SFLwk4[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
-				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")||(SFLwk3[n-1] == "JD")||(SFLwk4[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
+				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")||(SFLwk3[n-1] == "JD")||(SFLwk4[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, James W." }
 				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")||(SFLwk3[n-1] == "GF")||(SFLwk4[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
 				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")||(SFLwk3[n-1] == "WH")||(SFLwk4[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
 				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")||(SFLwk3[n-1] == "SJ")||(SFLwk4[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
