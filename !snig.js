@@ -367,9 +367,12 @@ function PLAYwk(pl,pNO,wk) {
 			for (let n = 1; n < 17; n++) {
 				if ((SFLwk0[n-1] == "AB")||(SFLwk1[n-1] == "AB")||(SFLwk2[n-1] == "AB")||(SFLwk3[n-1] == "AB")||(SFLwk4[n-1] == "AB")) { PLAYfull[n-1] = "Buckley, Alan" }
 				if ((SFLwk0[n-1] == "TC")||(SFLwk1[n-1] == "TC")||(SFLwk2[n-1] == "TC")||(SFLwk3[n-1] == "TC")||(SFLwk4[n-1] == "TC")) { PLAYfull[n-1] = "Connolly, Thomas" }
-				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")||(SFLwk3[n-1] == "JD")||(SFLwk4[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, (James)" }
+				if ((SFLwk0[n-1] == "JD")||(SFLwk1[n-1] == "JD")||(SFLwk2[n-1] == "JD")||(SFLwk3[n-1] == "JD")||(SFLwk4[n-1] == "JD")) { PLAYfull[n-1] = "Dutton, James W." }
 				if ((SFLwk0[n-1] == "GF")||(SFLwk1[n-1] == "GF")||(SFLwk2[n-1] == "GF")||(SFLwk3[n-1] == "GF")||(SFLwk4[n-1] == "GF")) { PLAYfull[n-1] = "Field, Geoffrey" }
-				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")||(SFLwk3[n-1] == "WH")||(SFLwk4[n-1] == "WH")) { PLAYfull[n-1] = "Hodgins, George W." }
+				if ((SFLwk0[n-1] == "WH")||(SFLwk1[n-1] == "WH")||(SFLwk2[n-1] == "WH")||(SFLwk3[n-1] == "WH")||(SFLwk4[n-1] == "WH")) { 
+						PLAYfull[n-1] = "Hodgins, George W.";
+						//document.getElementById("SFL"+(n+1)).style.color = "red"; 
+				}
 				if ((SFLwk0[n-1] == "SJ")||(SFLwk1[n-1] == "SJ")||(SFLwk2[n-1] == "SJ")||(SFLwk3[n-1] == "SJ")||(SFLwk4[n-1] == "SJ")) { PLAYfull[n-1] = "Jessop, Shayne A." }
 				if ((SFLwk0[n-1] == "PK")||(SFLwk1[n-1] == "PK")||(SFLwk2[n-1] == "PK")||(SFLwk3[n-1] == "PK")||(SFLwk4[n-1] == "PK")) { PLAYfull[n-1] = "Kuechler, Peter M." }
 				if ((SFLwk0[n-1] == "JM")||(SFLwk1[n-1] == "JM")||(SFLwk2[n-1] == "JM")||(SFLwk3[n-1] == "JM")||(SFLwk4[n-1] == "JM")) { PLAYfull[n-1] = "McCracken, John G." }
@@ -398,6 +401,13 @@ function PLAYwk(pl,pNO,wk) {
 			var sflLen = shuffled.length;
 			for (let q = 0; q < sflLen; q++) {
 					document.getElementById("SFL"+(q+1)).innerHTML = shuffled[q];
+					
+					if (document.getElementById("SFL"+(q+1)).innerHTML == "Hodgins, George W.") {
+						document.getElementById("SFL"+(q+1)).style.color = "red";
+					}
+					else {
+						document.getElementById("SFL"+(q+1)).style.color = "black";
+					}	
 			}		
 	//}
 
@@ -411,7 +421,17 @@ function PLAYwk(pl,pNO,wk) {
 
 							/*  #################################  */
 							
-							
+					Date0str = localStorage.getItem("w0date");	  
+					Date1str = localStorage.getItem("w1date");	  
+					Date2str = localStorage.getItem("w2date");	  
+					Date3str = localStorage.getItem("w3date");	  
+					Date4str = localStorage.getItem("w4date");
+					if ( sflWK == 0 ) { document.getElementById("WKdisp").value =Date0str; }
+					if ( sflWK == 1 ) { document.getElementById("WKdisp").value =Date1str; }
+					if ( sflWK == 2 ) { document.getElementById("WKdisp").value =Date2str; }
+					if ( sflWK == 3 ) { document.getElementById("WKdisp").value =Date3str; }
+					if ( sflWK == 4 ) { document.getElementById("WKdisp").value =Date4str; }
+		
 		
 	}
 	
@@ -480,6 +500,12 @@ function PLAYwk(pl,pNO,wk) {
 			var sflLen = shuffled.length;
 			for (let q = 0; q < sflLen; q++) {
 					document.getElementById("SFL"+(q+1)).innerHTML = shuffled[q];
+					if (document.getElementById("SFL"+(q+1)).innerHTML == "Hodgins, George W.") {
+						document.getElementById("SFL"+(q+1)).style.color = "red";
+					}
+					else {
+						document.getElementById("SFL"+(q+1)).style.color = "black";
+					}
 			}
 		
 	}
