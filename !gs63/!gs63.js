@@ -1081,7 +1081,8 @@
 
 	function hideMENU() {
 		//document.getElementById("miscCONTENT").style.visibility="hidden";
-		document.getElementById("menuCONTENT").style.visibility="hidden";
+//		document.getElementById("menuCONTENT").style.visibility="hidden";
+		document.getElementById("mySidenav").style.width = "0px"; 
 	}
 	function showMENU(topic) {
 		if (topic=="tipMENU") {
@@ -1312,10 +1313,12 @@
 				}
 		*/		
 		var STKbtnLBL = document.getElementById("STROKESbtn").innerHTML;
+			//alert("STKbtnLBL = '"+STKbtnLBL+"'!");
 		var shtSTKbtn = STKbtnLBL.substr(0,7);
 		//alert("In 'pHCcolors()'' fn!\nshtSTKbtn = "+shtSTKbtn);
 			//alert("In 'pHCcolors()'' fn!\nSTKbtnLBL = "+STKbtnLBL+"\tshtSTKbtn = "+shtSTKbtn);
-		if ( shtSTKbtn=="Display" ) {
+		//if ( shtSTKbtn=="Display" ) {
+		if ( STKbtnLBL=="Strokes" ) {
 				for (var h = 1; h < 19; h++) {
 					//alert("hole = "+h);
 					HOLEhc = document.getElementById("HCPh"+h).value;
@@ -1346,7 +1349,8 @@
 									for (let i = 0; i < 5; i++) {
 									  text += "The number is " + i + "<br>";
 									} */
-				document.getElementById("STROKESbtn").innerHTML = "HIDE Stroke Holes";
+				//document.getElementById("STROKESbtn").innerHTML = "HIDE Stroke Holes";
+				document.getElementById("STROKESbtn").innerHTML = "StrokesX";
 					//document.getElementById("STROKESbtn").innerText = "HIDE Stroke Holes";
 				document.getElementById("postMNUtd").innerHTML =
 										"<span style='font-size:10px; background:lime; border:1px solid black; color:black;'>&nbsp;1&nbsp;</span>"+
@@ -1355,7 +1359,8 @@
 		}			
 		else { 
 			remCOLORS(); 
-			document.getElementById("STROKESbtn").innerHTML = "Display Stroke Holes";
+			//document.getElementById("STROKESbtn").innerHTML = "Display Stroke Holes";
+			document.getElementById("STROKESbtn").innerHTML = "Strokes";
 		}			
 			
 	}	
@@ -1946,7 +1951,7 @@
 			}	
 		}
 		
-
+/*
 	//SLIDER stuff:
 	var slider = document.getElementById("myRange");
 	var output = document.getElementById("demo");
@@ -1954,7 +1959,7 @@
 	slider.oninput = function() {
 	  output.innerHTML = this.value;
   	}	
-	
+*/	
 	
 		function calcCHC() {
 					/* VGC Golf Canada Course Rating  68.9 / 131 (Apr/23) */
@@ -2212,6 +2217,11 @@
 	function loadFN() {  
 		document.getElementById('p&h').value = localStorage.getItem('g1NAME') + ' 2';
 		document.getElementById("SLIDER").style.visibility="hidden";
+		
+		replace(); pHCcolors(); restrictTAB(); 
+		calcALL(); calcTOTALS(); 
+		showPARTIAL();
+		
 	}	
 
 	function cellTOslide(P,H) {
