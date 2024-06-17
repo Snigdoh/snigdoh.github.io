@@ -1757,6 +1757,17 @@
 			document.getElementById("fullDRPbtn").innerText = "+";
 		}
 	}
+	function FULLpartial() {
+		//alert("in 'FULLdrop' fn! Will try to ^ div height.");
+		if ( document.getElementById("fullPARTIALbtn").innerText == "+" ) {
+			document.getElementById("PARTIALdiv").style.height = '650px';	//"100%";	//'800px';
+			document.getElementById("fullPARTIALbtn").innerText = "-";
+		}
+		else { 
+			document.getElementById("PARTIALdiv").style.height = "400px";	//'300px';
+			document.getElementById("fullPARTIALbtn").innerText = "+";
+		}
+	}
 	
 	function changeZOOM() {
 		//In js you can change zoom by:
