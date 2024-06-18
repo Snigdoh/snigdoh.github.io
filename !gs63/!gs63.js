@@ -2272,7 +2272,7 @@
 	function showADDIN() {
 		if (document.getElementById("ADDINdiv").style.visibility=="visible") {
 			document.getElementById("ADDINdiv").style.visibility="hidden"; 
-			document.getElementById("ADDcheck").style.visibility="hidden";
+			//document.getElementById("ADDcheck").style.visibility="hidden";
 			
 			document.getElementById("pDone").style.visibility = "hidden";
 		}		

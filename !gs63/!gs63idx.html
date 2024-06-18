@@ -246,7 +246,41 @@
 				document.getElementById("H"+a+"tSF").style.background = "ivory";
 				document.getElementById("H"+a+"tSF").style.color = "slategray";
 			}
-			
+							/*   ()()()()()()()()   */		
+		
+		var Ft = 0;
+		for (let i = 1; i < 19; i++) {	 //H3ptT 
+			if(document.getElementById('chkF'+i).checked) {
+				document.getElementById("H"+i+"tSF").innerText = document.getElementById("H"+i+"ptT").innerText;
+				Ft = +Ft + +document.getElementById("H"+i+"tSF").innerText;
+				document.getElementById("H"+i+"tSF").style.background = "black";
+				document.getElementById("H"+i+"tSF").style.color = "white";
+			}
+		}
+		alert("Ft = '"+Ft+"'!");
+		document.getElementById("myF9ptT").innerText = Ft;  //f9ptT 
+		document.getElementById("myF9ptT").style.background = "black";
+		document.getElementById("myF9ptT").style.color = "white";
+		
+							/*   ()()()()()()()()   */
+							
+		var Bt = 0;	
+		for (let x = 1; x < 19; x++) {	  
+			if(document.getElementById('chkB'+x).checked) {
+				document.getElementById("H"+x+"tSF").innerText = document.getElementById("H"+x+"ptT").innerText;
+				Bt = +Bt + +document.getElementById("H"+x+"tSF").innerText;
+				document.getElementById("H"+x+"tSF").style.background = "yellow";
+				document.getElementById("H"+x+"tSF").style.color = "maroon";
+			}
+		}
+		alert("Bt = '"+Bt+"'!");		
+		document.getElementById("myB9ptT").innerText = Bt;  //f9ptT 
+		document.getElementById("myB9ptT").style.background = "yellow";
+		document.getElementById("myB9ptT").style.color = "maroon";
+		
+		document.getElementById("my18ptT").innerText = Ft+Bt;  //f9ptT 
+		document.getElementById("my18ptT").style.background = "red";
+		document.getElementById("my18ptT").style.color = "white";			
 	}		
 	function calcPARTadded() {
 		for (let a = 1; a < 19; a++) {	  
@@ -254,7 +288,41 @@
 				document.getElementById("H"+a+"tSF").style.background = "ivory";
 				document.getElementById("H"+a+"tSF").style.color = "slategray";
 			}
-			
+							/*   ()()()()()()()()   */		
+		
+		var Ft = 0;
+		for (let i = 1; i < 19; i++) {	 //newH3ptT
+			if(document.getElementById('chkF'+i).checked) {
+				document.getElementById("H"+i+"tSF").innerText = document.getElementById("newH"+i+"ptT").innerText;
+				Ft = +Ft + +document.getElementById("H"+i+"tSF").innerText;
+				document.getElementById("H"+i+"tSF").style.background = "black";
+				document.getElementById("H"+i+"tSF").style.color = "white";
+			}
+		}
+		alert("Ft = '"+Ft+"'!");
+		document.getElementById("myF9ptT").innerText = Ft;  //f9ptT 
+		document.getElementById("myF9ptT").style.background = "black";
+		document.getElementById("myF9ptT").style.color = "white";
+		
+							/*   ()()()()()()()()   */
+							
+		var Bt = 0;	
+		for (let x = 1; x < 19; x++) {	  
+			if(document.getElementById('chkB'+x).checked) {
+				document.getElementById("H"+x+"tSF").innerText = document.getElementById("newH"+x+"ptT").innerText;
+				Bt = +Bt + +document.getElementById("H"+x+"tSF").innerText;
+				document.getElementById("H"+x+"tSF").style.background = "yellow";
+				document.getElementById("H"+x+"tSF").style.color = "maroon";
+			}
+		}
+		alert("Bt = '"+Bt+"'!");		
+		document.getElementById("myB9ptT").innerText = Bt;  //f9ptT 
+		document.getElementById("myB9ptT").style.background = "yellow";
+		document.getElementById("myB9ptT").style.color = "maroon";
+		
+		document.getElementById("my18ptT").innerText = Ft+Bt;  //f9ptT 
+		document.getElementById("my18ptT").style.background = "red";
+		document.getElementById("my18ptT").style.color = "white";						
 	}			
 </script>
 
@@ -1442,7 +1510,7 @@
 
 		
 		<button id='partialCALCbtn' onclick="PARTcalcMASTER()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><b>CALC!</b></button>
-		&emsp;
+		&nbsp;
 		<label style="border:1px solid slategray;"><input id="cN" type="radio" name="gpSIZE" value="n" style="zoom:;" checked/>N</label>
 		<label style="border:1px solid slategray;"><input id="c-" type="radio" name="gpSIZE" value="-" style="zoom:;"/>-1</label>
 		<label style="border:1px solid slategray;"><input id="c+" type="radio" name="gpSIZE" value="+" style="zoom:;"/>+1</label>
