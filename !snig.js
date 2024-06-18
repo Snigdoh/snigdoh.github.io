@@ -403,7 +403,7 @@ function PLAYwk(pl,pNO,wk) {
 					document.getElementById("SFL"+(q+1)).innerHTML = shuffled[q];
 					
 					if (document.getElementById("SFL"+(q+1)).innerHTML == "Hodgins, George W.") {
-						document.getElementById("SFL"+(q+1)).style.color = "red";
+						document.getElementById("SFL"+(q+1)).style.color = "green";
 					}
 					else {
 						document.getElementById("SFL"+(q+1)).style.color = "black";
@@ -501,7 +501,7 @@ function PLAYwk(pl,pNO,wk) {
 			for (let q = 0; q < sflLen; q++) {
 					document.getElementById("SFL"+(q+1)).innerHTML = shuffled[q];
 					if (document.getElementById("SFL"+(q+1)).innerHTML == "Hodgins, George W.") {
-						document.getElementById("SFL"+(q+1)).style.color = "red";
+						document.getElementById("SFL"+(q+1)).style.color = "green";
 					}
 					else {
 						document.getElementById("SFL"+(q+1)).style.color = "black";
