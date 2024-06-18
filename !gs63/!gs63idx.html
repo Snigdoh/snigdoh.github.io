@@ -182,6 +182,8 @@
 		if(document.getElementById('cN').checked==true) {
 	  		alert ("'cN' radio button is checked (using native values).");	
 			//selPL = p;
+			document.getElementById("PARTIALdiv").style.left = "30%";
+							//PARTIALdiv
 			calcPARTIAL();
 		}
 		if(document.getElementById('c-').checked==true) {
@@ -1303,7 +1305,7 @@
 							<!-- hidden    class='gTOT' -->
 		<!--<span id="aDone" style="background:ivory; color:black; font-size:15px; visibility:hidden;">__</span>-->			
 		
-		<table id="ADDtbl" border=1 align=center>
+		<table id="ADDtbl" border=1 align=left>
 			<tr style="background:orange;">
 				<th>HOLE</th> <TH>ADD<br>pts</TH> <th>new<br>SF pts</th> <!--  p drop -->
 			</tr>
@@ -1500,7 +1502,7 @@
 	<!-- 	√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√ \/ PARTIAL ROUND \/ √√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√	  -->
 
 <!--<TABLE align=center><TR><TD>-->
-	<div id="PARTIALdiv" style= "border:3px inset slategray; border-radius:10px; width:200px; height:400px; overflow:scroll; margin:auto; visibility:hidden; background:white;  position:fixed; left:60%; transform:translate(-50%,0); top:10%;  zoom:100%;"> <!-- left:35%; -->
+	<div id="PARTIALdiv" style= "border:3px inset slategray; border-radius:10px; width:200px; height:400px; overflow:scroll; margin:auto; visibility:hidden; background:white;  position:fixed; left:65%; transform:translate(-50%,0); top:10%;  zoom:100%;"> <!-- left:35%; -->
 		
 		<font size=5><b>Partial Round</b></font>
 						<button id='fullPARTIALbtn' onclick="FULLpartial()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:blue; background:transparent; border:1px solid blue; border-radius:5px;">+</button>
@@ -1523,7 +1525,7 @@
 				 <!--<th colspan=1>P1</th> <th>P2</th> <th>P3</th> <th>P4</th>--> 
 				 <th><!--sf<b><u>G</u></b>-->pts</th>
 				 
-				 <td rowspan=20> </td>
+				 <td rowspan=20 style="background:slategray;"> </td>
 				 <TD colspan=2 style="color:blue;""><b>TOT</b></TD>
 				 
 				 
@@ -1578,7 +1580,7 @@
 			<tr><td><input type="checkbox" style="color:yellow; zoom:1;" id="chkF9"></td>
 				<td><input type="checkbox" style="color:yellow; zoom:1;" id="chkB9"></td>
 				<td>9</td> <td id="H9tSF"></td> </tr>	
-			<tr> </tr>
+			<tr> <td colspan=4 style="background:slategray; height:2px;"></td> </tr>
 			<tr><td><input type="checkbox" style="color:yellow; zoom:1;" id="chkF10"></td>
 				<td><input type="checkbox" style="color:yellow; zoom:1;" id="chkB10"></td>
 				<td>10</td> <td id="H10tSF"></td> </tr>				
