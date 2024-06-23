@@ -817,10 +817,27 @@
 				// gTb9p2 | sTb9p2 
 			}		
 		}
-		
-		
-		
+				
 		hideMENU();
+		
+					/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+/*			
+		for (h=1; h<19; h++) {
+			if ( document.getElementById("p1h"+h).value=="x" ) {
+				var Hpar = document.getElementById("PARh"+h).value;
+				alert("hole "+h+" par = "+Hpar);
+				
+				//alert("'p1h3scr' variable = "+p1h3scr+"!"); //TDp3h17
+				document.getElementById("TDp1h"+h).style.border = "3px solid red";
+				//PARh17
+			}	
+			else {
+				document.getElementById("TDp1h"+h).style.border = "1px solid gray";
+			}		
+		}
+*/		
+		
+		
 		
 	}	  
 
@@ -936,6 +953,14 @@
 		//document.getElementById(SCRinput).onfocus = function() { document.getElementById(SCRinput).style.background = "lime"; }
 		//document.getElementById(SCRinput).blur = function() { document.getElementById(SCRinput).style.background = "orange"; }
 
+							/*   %%%%%%%%% \/ June/24 \/ %%%%%%%%%%%%%%%   */
+		/*alert ("'SCRinput' variable = "+SCRinput+"!");					
+		if ( SCRinput == "x" ) {
+			alert ("'SCRinput' variable = "+SCRinput+"!\n"+
+				"Will try to > red BORDER for this box.");
+		}*/
+		
+		
 		
 	}
 
@@ -989,16 +1014,61 @@
 
 		if ( +document.getElementById(SCRinput).value == 0) {
 			document.getElementById('SP'+SCRinput).innerHTML = 0;	
-		}
+		}		
+
 		
-
-
-
+							/*  ################ \/ Jun/24 \/ ################  */
+		
+		// HOLE: p2h17;   PAR: PARh17;    STROKES: =color;    MAXscr = par+strokes+2
+		var HOLE = SCRinput.substr(3);	
+		var PAR = document.getElementById("PARh"+HOLE).value;
+		var STROKES = 0;
+		var MAXscore;
+			if ( document.getElementById(SCRinput).style.background=="lime") {
+				//alert("'SCRinput' bkgd = lime!");
+				STROKES = 1;
+			}
+			if ( document.getElementById(SCRinput).style.background=="green") {
+				STROKES = 2;
+			}
+			//else { STROKES = 0 }
+			//document.getElementById("p2h"+h).style.background = "lime";
+		MAXscore = +PAR + +STROKES + 2;							
+		//alert("In BLURfn. 'SCRinput' = "+SCRinput);
+		if ((document.getElementById(SCRinput).value=="x")||(document.getElementById(SCRinput).value>=MAXscore)) {
+			alert("In BLURfn. 'SCRinput' = "+SCRinput+"\n"+
+				"'HOLE' = '"+HOLE+"'"+
+				"\t\t'PAR' = '"+PAR+"'\n\n"+
+				"'STROKES' = '"+STROKES+"'\n"+
+				"'MAXscore = '"+MAXscore+"'");
+			document.getElementById(SCRinput).style.border = "2px solid red";
+			document.getElementById(SCRinput).value = MAXscore;
+				//document.getElementById(SCRinput).innerHTML = MAXscore;
+		}
+		else { document.getElementById(SCRinput).style.border = "1px solid gray"; }
+/*
+		for (h=1; h<19; h++) {
+			if ( document.getElementById("p1h"+h).value=="x" ) {
+				var Hpar = document.getElementById("PARh"+h).value;
+				alert("hole "+h+" par = "+Hpar);
+				
+				//alert("'p1h3scr' variable = "+p1h3scr+"!"); //TDp3h17
+				document.getElementById("TDp1h"+h).style.border = "3px solid red";
+				//PARh17
+			}	
+			else {
+				document.getElementById("TDp1h"+h).style.border = "1px solid gray";
+			}		
+		}
+*/		
+		
+							/*  ################ ^ Jun/24 ^ ################  */
+							
+		
+		
 		calcTOTALS();				
 		
-		
-		
-		
+	
 	}	
 
 	function showSLIDER() {
