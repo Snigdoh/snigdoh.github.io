@@ -1019,10 +1019,11 @@
 		
 							/*  ################ \/ Jun/24 \/ ################  */
 		
-		// HOLE: p2h17;   PAR: PARh17;    STROKES: =color;    MAXscr = par+strokes+2
+		// HOLE: p2h17;   PAR: PARh17;    STROKES: =color;    MAXscr = par+strokes+2;     playerNO;
 		var HOLE = SCRinput.substr(3);	
 		var PAR = document.getElementById("PARh"+HOLE).value;
 		var STROKES = 0;
+		var playerNO = SCRinput.substr(1,1);	;
 		var MAXscore;
 			if ( document.getElementById(SCRinput).style.background=="lime") {
 				//alert("'SCRinput' bkgd = lime!");
@@ -1035,14 +1036,16 @@
 			//document.getElementById("p2h"+h).style.background = "lime";
 		MAXscore = +PAR + +STROKES + 2;							
 		//alert("In BLURfn. 'SCRinput' = "+SCRinput);
-		if ((document.getElementById(SCRinput).value=="x")||(document.getElementById(SCRinput).value>=MAXscore)) {
+		if ((document.getElementById(SCRinput).value=="#")||(document.getElementById(SCRinput).value>=MAXscore)) {
 			alert("In BLURfn. 'SCRinput' = "+SCRinput+"\n"+
 				"'HOLE' = '"+HOLE+"'"+
 				"\t\t'PAR' = '"+PAR+"'\n\n"+
 				"'STROKES' = '"+STROKES+"'\n"+
-				"'MAXscore = '"+MAXscore+"'");
+				"'MAXscore = '"+MAXscore+"'\n\n"+
+				"'playerNO' ="+playerNO+"'");
 			document.getElementById(SCRinput).style.border = "2px solid red";
 			document.getElementById(SCRinput).value = MAXscore;
+			localStorage.setItem('g'+playerNO+'H'+HOLE+'s',MAXscore);
 				//document.getElementById(SCRinput).innerHTML = MAXscore;
 		}
 		else { document.getElementById(SCRinput).style.border = "1px solid gray"; }
@@ -1315,7 +1318,7 @@
 			}	
 		}
 		
-			
+					
 		hideMENU();
 			 		
 	}
@@ -1335,6 +1338,12 @@
 			for (var h = 1; h < 19; h++) {
 					for (var n = 1; n < 6; n++) {
 						localStorage.setItem('g'+n+'H'+h+'s',""); document.getElementById("p"+n+"h"+h).value = "";
+														
+										/* %%%%%%%%%%%%% Jun/24 \/ %%%%%%%%%%%%%%% */						
+						//if ( document.getElementById("p"+p+"h"+h).style.border = "2px solid red" ) {
+								document.getElementById("p"+n+"h"+h).style.border = "1px solid gray";
+						//}
+										/* %%%%%%%%%%%%% Jun/24 ^ %%%%%%%%%%%%%%% */										
 					}
 			}
 			
@@ -1353,7 +1362,7 @@
 		}
 		
 		//alert("g1H1s POST 'clear' = " +  localStorage.getItem("g1H1s"));
-		
+				
 		hideMENU();		
 	}
 	
@@ -1435,6 +1444,47 @@
 			
 	}	
 
+	function circleMAXs() {			/*  ################ \/ Jun/24 \/ ################  */
+		
+		// HOLE: p2h17;   PAR: PARh17;    STROKES: =color;    MAXscr = par+strokes+2;     playerNO;
+		var HOLE;	// = SCRinput.substr(3);	
+		var PAR;	// = document.getElementById("PARh"+HOLE).value;
+		var STROKES = 0;
+		var playerNO;	// = SCRinput.substr(1,1);	;
+		var MAXscore;
+		for (var h = 1; h < 19; h++) {	
+			for (var p = 1; p<6; p++) {	
+				if ( document.getElementById("p"+p+"h"+h).style.background=="lime") {
+						//alert("'SCRinput' bkgd = lime!");
+						STROKES = 1;
+				}
+				else if ( document.getElementById("p"+p+"h"+h).style.background=="green") {
+						STROKES = 2;
+				}
+				else { STROKES = 0; }
+					//else { STROKES = 0 }
+					//document.getElementById("p2h"+h).style.background = "lime";
+				//HOLE = h;
+				PAR = document.getElementById("PARh"+h).value;
+				MAXscore = +PAR + +STROKES + 2;							
+				//alert("In BLURfn. 'SCRinput' = "+SCRinput);
+				if ((document.getElementById("p"+p+"h"+h).value=="#")||(document.getElementById("p"+p+"h"+h).value>=MAXscore)) {
+					/*alert("In BLURfn. 'SCRinput' = "+SCRinput+"\n"+
+						"'HOLE' = '"+HOLE+"'"+
+						"\t\t'PAR' = '"+PAR+"'\n\n"+
+						"'STROKES' = '"+STROKES+"'\n"+
+						"'MAXscore = '"+MAXscore+"'\n\n"+
+						"'playerNO' ="+playerNO+"'");*/
+					document.getElementById("p"+p+"h"+h).style.border = "2px solid red";
+					//document.getElementById(SCRinput).value = MAXscore;
+					//localStorage.setItem('g'+playerNO+'H'+HOLE+'s',MAXscore);
+						//document.getElementById(SCRinput).innerHTML = MAXscore;
+				}
+				//else { document.getElementById(SCRinput).style.border = "1px solid gray"; }		
+			}
+		}					
+	}
+	
 	function remCOLORS() {
 		alert("Will try to REMOVE hole stroke colors!");
 		for (var h = 1; h < 19; h++) {
@@ -2302,6 +2352,7 @@
 		replace(); pHCcolors(); restrictTAB(); 
 		calcALL(); calcTOTALS(); 
 		//showPARTIAL();
+		circleMAXs();
 		
 	}	
 
