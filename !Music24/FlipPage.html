@@ -58,7 +58,7 @@
 		  padding: 8px 12px;
 		  position:fixed;	/* absolute; */
 		  /* bottom: 8px; */
-		  top:2%;	/* 8px; */
+		  top:2%; /* ?? = 0 */	/* 8px; */
 		  width: 100%;
 		  text-align:left;	/* center; */
 		  opacity:50%;
@@ -66,7 +66,7 @@
 		
 		/* Number text (1/3 etc) */
 		.numbertext {
-		  color: #f2f2f2;
+		  color:red;	/* #f2f2f2; */
 		  font-size: 12px;
 		  padding: 8px 12px;
 		  position: absolute;
@@ -153,6 +153,7 @@
 		// Thumbnail image controls
 		function currentSlide(n) {
 		  showSlides(slideIndex = n);
+		  closeNav();
 		}
 		
 		function showSlides(n) {
@@ -199,6 +200,12 @@
 								<TD onclick="currentSlide(2)">OO-De-Lally</TD>
 								<TD onclick="currentSlide(3)">Quarter To Three</TD>
 								<TD onclick="currentSlide(4)">Walk Of Life</TD>
+								<TD onclick="currentSlide(5)">Come Go With Me</TD>
+								<TD onclick="currentSlide(6)">Garden Party</TD>
+								<TD onclick="currentSlide(7)">Green Green</TD>
+								<TD onclick="currentSlide(8)">Last Date</TD>
+								<TD onclick="currentSlide(9)">Sea Of Love</TD>
+								<TD onclick="currentSlide(10)">Whiter Shade Of Pale</TD>
 							</TR>
 						</TABLE>
 						<!--
@@ -219,29 +226,56 @@
 		
 		  <!-- Full-width images with number and caption text -->
 		  <div class="mySlides fade">
-		    <div class="numbertext">1 / 4</div>
-		    <img src="2Centerfield.png" style="width:100%">
+		    <div class="numbertext">1 / 10</div>
+		    <img src="CenterField_C2.png" style="width:100%">
 		    <div class="text">Center Field</div>
-		  </div>
-		
+		  </div>		
 		  <div class="mySlides fade">
-		    <div class="numbertext">2 / 4</div>
+		    <div class="numbertext">2 / 10</div>
 		    <img src="OoDeLally_C.png" style="width:100%">	<!--  200%"> --> 
 		    <div class="text">Oo-De-Lally</div>	<!-- Caption Two</div> -->
-		  </div>
-		
+		  </div>		
 		  <div class="mySlides fade">
-		    <div class="numbertext">3 / 4</div>
-		    <img src="Quarter.jpeg" style="width:100%">
+		    <div class="numbertext">3 / 10</div>
+		    <img src="Quarter_C2.png" style="width:100%">
 		    <div class="text">Quarter To Three</div>
-		  </div>
-		  
+		  </div>		  
 		  <div class="mySlides fade">
-		    <div class="numbertext">4 / 4</div>
+		    <div class="numbertext">4 / 10</div>
 		    <img src="WalkLife_C2.png" style="width:100%">
 		    <div class="text">Walk Of Life</div>
 		  </div>
 		  
+		  <div class="mySlides fade">
+		    <div class="numbertext">5 / 10</div>
+		    <img src="ComeGo_C2.png" style="width:100%">
+		    <div class="text">Come Go With Me</div>
+		  </div>
+		  <div class="mySlides fade">
+		    <div class="numbertext">6 / 10</div>
+		    <img src="GardenParty_C2.png" style="width:100%">
+		    <div class="text">Garden Party</div>
+		  </div>		  
+		  <div class="mySlides fade">
+		    <div class="numbertext">7 / 10</div>
+		    <img src="GreenGreen_C2.png" style="width:100%">
+		    <div class="text">Green Green</div>
+		  </div>
+		  <div class="mySlides fade">
+		    <div class="numbertext">8 / 10</div>
+		    <img src="LastDate_C2.png" style="width:100%">
+		    <div class="text">Last Date</div>
+		  </div>		
+		  <div class="mySlides fade">
+		    <div class="numbertext">9 / 10</div>
+		    <img src="SeaLove_C2.png" style="width:100%">
+		    <div class="text">Sea Of Love</div>
+		  </div>
+		  <div class="mySlides fade">
+		    <div class="numbertext">10 / 10</div>
+		    <img src="WhiterPale_C2.png" style="width:100%">
+		    <div class="text">Whiter Shade Of Pale </div>
+		  </div>
 		
 		  <!-- Next and previous buttons -->
 		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
