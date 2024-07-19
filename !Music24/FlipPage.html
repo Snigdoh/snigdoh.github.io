@@ -8,7 +8,16 @@
 <style>
 		.body { zoom:2; }
 
-
+	.container {
+		position: absolute;
+		top:0px;
+		  width: 80%;
+		  height: 30%;	
+		  margin: 0;	
+		  overflow-y:scroll;
+		  border:2px solid black; border-radius:10px;
+	}
+		
 	.wrapper {
 	  /* Break the flow */
 		  position: absolute;
@@ -68,8 +77,8 @@
 		}
 		
 		.down {
-			right:50%;
-			top:50%;
+			right:40%;
+			top:35%;
 			color:green;
 			font-size: 200px;
 			opacity:50%;
@@ -226,7 +235,13 @@
 				alert("scroll = "+scroll);	
 		 } */
 		 
+		 var elH = img1.offsetHeight;
+		 alert("elH (img1.offsetHeight) = "+elH);	
+			var windowOUTERHT = window.outerHeight;	 
+		 	alert("windowOUTERHT = "+windowOUTERHT);	
+			
 		 window.scroll(0,(h-50));	//600);
+		 
 				 
 	}	
 		
@@ -236,8 +251,8 @@
 
 	
 <body class="body" style="background:brown;"  onload="plusSlides(0);"> <!--  zoom:250%; -->
-
-<!--<div class="wrapper">-->	
+		<!-- class="body" -->
+<!--<div class="container">-->
 	
 				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
 						<TABLE border=1 style="background:yellow;">
@@ -265,7 +280,7 @@
 	
 	
 	
-	<div class="sticky"><span style="font-size:50px; cursor:pointer; background:transparent; color:green;" onclick="openNav()">&#9776;</span><!--Sticky Stuff!--></div>
+	<div class="sticky"><span style="font-size:50px; cursor:pointer; background:transparent; color:green;" onclick="openNav()">&#9776;<font size=3>Jul 19/24</font></span><!--Sticky Stuff!--></div>
 	
 	<!-- Slideshow container -->
 	<div class="slideshow-container">
@@ -273,7 +288,7 @@
 		  <!-- Full-width images with number and caption text -->
 		  <div class="mySlides fade">
 		    <div class="numbertext">1 / 10</div>
-		    <img src="CenterField_C2.png" style="width:100%">
+		    <img src="CenterField_C2.png" id="img1" style="width:100%">
 		    <div class="text">Center Field</div>
 		  </div>		
 		  <div class="mySlides fade">
@@ -340,7 +355,7 @@
 	</div>
 
 
-<!--</div>	-->
+<!--</div>-->
 </body>		
 
 </html>
