@@ -81,8 +81,8 @@
 			top:35%;
 			color:green;
 			font-size: 200px;
-			opacity:50%;
-			z-index:200;
+			/*opacity:50%;*/
+			/*z-index:200;*/
 		}
 		
 		/* On hover, add a black background color with a little bit see-through */
@@ -176,7 +176,18 @@
 			  position: absolute; top: 0; right: 25px;
 			  font-size: 36px; margin-left: 50px;
 			}	
-			
+
+.someDiv {	/* Put a div on bottom of the screen, not page */
+  position:fixed;
+  width:25%;
+  height:60px;
+  /* margin-left:-25%; */
+  background:blue;	/* #063; */
+  	color:white;
+  bottom:0px;
+  left:40%;
+  border:2px solid black; border-radius:10px;
+}			
 				
 </style>
 
@@ -280,7 +291,7 @@
 	
 	
 	
-	<div class="sticky"><span style="font-size:50px; cursor:pointer; background:transparent; color:green;" onclick="openNav()">&#9776;<font size=3>Jul 19/24</font></span><!--Sticky Stuff!--></div>
+	<div class="sticky"><span style="font-size:50px; cursor:pointer; background:transparent; color:green;" onclick="openNav()">&#9776;<font size=3>Jul 20/24</font></span><!--Sticky Stuff!--></div>
 	
 	<!-- Slideshow container -->
 	<div class="slideshow-container">
@@ -355,6 +366,11 @@
 	</div>
 
 
+	
+	<div class="someDiv">
+		This is 'someDiv' (@ bottom of SCREEN)!
+	</div>	
+	
 <!--</div>-->
 </body>		
 
