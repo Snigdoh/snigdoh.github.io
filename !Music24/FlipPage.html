@@ -187,6 +187,7 @@
   bottom:0px;
   left:40%;
   border:2px solid black; border-radius:10px;
+  text-align:center; /* font-size:30px; */
 }			
 				
 </style>
@@ -238,7 +239,7 @@
 	function scrollDOWN() {
 		 //onLoad="window.scroll(0,3200)"
 		 let h = window.innerHeight;
-		 alert("window.innerHeight = "+h);
+
 		 //var srlHT = window.scrollHeight;
 		 //alert("window.scrollHeight = "+srlHT);
 		 /* window.addEventListener("scroll", (event) => {
@@ -246,10 +247,17 @@
 				alert("scroll = "+scroll);	
 		 } */
 		 
-		 var elH = img1.offsetHeight;
-		 alert("elH (img1.offsetHeight) = "+elH);	
-			var windowOUTERHT = window.outerHeight;	 
-		 	alert("windowOUTERHT = "+windowOUTERHT);	
+		 var imgH = img1.offsetHeight;
+		 //alert("elH (img1.offsetHeight) = "+elH);	
+		 var windowOUTERHT = window.outerHeight;	 
+		 	//alert("windowOUTERHT = "+windowOUTERHT);	
+		 var botdivH = botdiv.offsetHeight;
+		
+		 alert("window.innerHeight = "+h+"\n"+
+		 	"imgH (img1.offsetHeight) = "+imgH+"\n"+
+			"botdivH (botdiv.offsetHeight) = "+botdivH+"\n"+
+			"windowOUTERHT = "+windowOUTERHT);
+		
 			
 		 window.scroll(0,(h-50));	//600);
 		 
@@ -353,7 +361,7 @@
 		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 		  
-		  <a class="down" onclick="scrollDOWN()">&#8964;</a>	<!-- &#129035; -->
+		  <!--<a class="down" onclick="scrollDOWN()">&#8964;</a>-->	<!-- &#129035; -->
 	</div>
 	<br>
 	
@@ -367,8 +375,9 @@
 
 
 	
-	<div class="someDiv">
-		This is 'someDiv' (@ bottom of SCREEN)!
+	<div id="botdiv" class="someDiv">
+		<a onclick="scrollDOWN()"><font size=7>&#8964;</font></a>
+		<!--This is 'someDiv' (@ bottom of SCREEN)!-->
 	</div>	
 	
 <!--</div>-->
