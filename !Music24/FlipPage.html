@@ -6,7 +6,7 @@
 			<!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 
 <style>
-		.body { zoom:2; }
+		.body { zoom:1; }
 
 	.container {
 		position: absolute;
@@ -252,10 +252,14 @@
 		 var windowOUTERHT = window.outerHeight;	 
 		 	//alert("windowOUTERHT = "+windowOUTERHT);	
 		 var botdivH = botdiv.offsetHeight;
+		 
+		 const element = document.getElementById("botdiv")
+		 let botdivPOS = element.offsetTop;
 		
 		 alert("window.innerHeight = "+h+"\n"+
 		 	"imgH (img1.offsetHeight) = "+imgH+"\n"+
 			"botdivH (botdiv.offsetHeight) = "+botdivH+"\n"+
+			"element ('botdiv') position (element.offsetTop) = "+botdivPOS+"\n"+
 			"windowOUTERHT = "+windowOUTERHT);
 		
 			
