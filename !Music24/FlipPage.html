@@ -249,7 +249,7 @@
 		 
 		 var imgH = img1.offsetHeight;
 		 //alert("elH (img1.offsetHeight) = "+elH);	
-		 var windowOUTERHT = window.outerHeight;	 
+		 //var windowOUTERHT = window.outerHeight;	 
 		 	//alert("windowOUTERHT = "+windowOUTERHT);	
 		 var botdivH = botdiv.offsetHeight;
 		 
@@ -259,11 +259,10 @@
 		 alert("window.innerHeight = "+h+"\n"+
 		 	"imgH (img1.offsetHeight) = "+imgH+"\n"+
 			"botdivH (botdiv.offsetHeight) = "+botdivH+"\n"+
-			"element ('botdiv') position (element.offsetTop) = "+botdivPOS+"\n"+
-			"windowOUTERHT = "+windowOUTERHT);
+			"element ('botdiv') position (element.offsetTop) = "+botdivPOS);
 		
-			
-		 window.scroll(0,(h-50));	//600);
+		 window.scroll(0,botdivPOS);
+		 //window.scroll(0,(h-50));	//600);
 		 
 				 
 	}	
@@ -379,8 +378,9 @@
 
 
 	
-	<div id="botdiv" class="someDiv">
-		<a onclick="scrollDOWN()"><font size=7>&#8964;</font></a>
+	<div id="botdiv" class="someDiv" onclick="scrollDOWN();">
+		<font size=7>&#8964;</font>
+		<!--<a onclick="scrollDOWN()"><font size=7>&#8964;</font></a>-->
 		<!--This is 'someDiv' (@ bottom of SCREEN)!-->
 	</div>	
 	
