@@ -2395,12 +2395,12 @@
 			document.getElementById("ADDINdiv").style.visibility="hidden"; 
 			//document.getElementById("ADDcheck").style.visibility="hidden";
 			
-			document.getElementById("pDone").style.visibility = "hidden";
+			//document.getElementById("pDone").style.visibility = "hidden"; *
 		}		
 		else {
 			document.getElementById("ADDINdiv").style.visibility="visible";
 			//alert("Enter added players POINTS by hole\nthen touch/click 'ADD-IN'");
-			document.getElementById('ptsADDh1').focus();
+			//document.getElementById('ptsADDh1').focus(); *
 		}
 		
 		hideMENU();		
