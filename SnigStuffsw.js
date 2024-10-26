@@ -15,6 +15,7 @@ self.addEventListener('install', function(e) {
 				//'/3-HingeDrill2.png',
 				//'/Notes21.xml',
 				//.xml might be seen by service worker and browser as another html file which might crash the PWA?
+		'/indexCOPYbook24.html',
 		'/!snig.js',
 		'/!snig.css',		
 				// '/DougieBaseVer34.js',//directory path to project folder/app name.js file
@@ -22,8 +23,8 @@ self.addEventListener('install', function(e) {
 	    '/SnigStuff.webmanifest',////directory path to project folder/app name.trainmanifest file
 			  // '/jquery-3.6.0.min.js'////directory path to project folder/app name.jQuery file
 			 	//'/fudd4.jpeg'
-			  //  '/eeyore.JPG'//add this file to github repository //Oct 25/24*
-		'/!gs63/!gs63idx.html',
+			  //  '/eeyore.JPG'//add this file to github repository
+		//'/!gs63/!gs63idx.html',
 		'/!gs63/!gs63.css',
 		'/!gs63/!gs63.js',
      ]);
