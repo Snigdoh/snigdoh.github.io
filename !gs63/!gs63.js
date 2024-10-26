@@ -1036,13 +1036,14 @@
 			//document.getElementById("p2h"+h).style.background = "lime";
 		MAXscore = +PAR + +STROKES + 2;							
 		//alert("In BLURfn. 'SCRinput' = "+SCRinput);
-		if ((document.getElementById(SCRinput).value=="#")||(document.getElementById(SCRinput).value>=MAXscore)) {
-			alert("In BLURfn. 'SCRinput' = "+SCRinput+"\n"+
+		//if ((document.getElementById(SCRinput).value=="#")||(document.getElementById(SCRinput).value>=MAXscore)) {
+		if ((document.getElementById(SCRinput).value=="#")||(document.getElementById(SCRinput).value>=MAXscore+1)) {
+			/*alert("In BLURfn. 'SCRinput' = "+SCRinput+"\n"+
 				"'HOLE' = '"+HOLE+"'"+
 				"\t\t'PAR' = '"+PAR+"'\n\n"+
 				"'STROKES' = '"+STROKES+"'\n"+
 				"'MAXscore = '"+MAXscore+"'\n\n"+
-				"'playerNO' ="+playerNO+"'");
+				"'playerNO' ="+playerNO+"'");*/
 			document.getElementById(SCRinput).style.border = "2px solid red";
 			document.getElementById(SCRinput).value = MAXscore;
 			localStorage.setItem('g'+playerNO+'H'+HOLE+'s',MAXscore);
