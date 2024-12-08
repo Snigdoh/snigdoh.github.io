@@ -1084,6 +1084,7 @@
 		}
 		else {
 			document.getElementById("SLIDER").style.visibility="hidden";
+			document.getElementById('check').style.visibility = 'hidden';				
 		}
 		hideMENU();
 	}	
@@ -1319,7 +1320,9 @@
 			}	
 		}
 		
-					
+		calcALL();
+		calcTOTALS();	// < Dec 8/24 *
+		
 		hideMENU();
 			 		
 	}
