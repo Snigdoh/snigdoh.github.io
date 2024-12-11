@@ -986,6 +986,7 @@
 		document.getElementById("TD"+SCRinput).style.background = "red";   //TDp1h1
 			//changeGLOBAL(x);
 	}
+
 	function BLURfn(SCRinput) {
 		  	//alert("'this' variable = "+x);
 			//x.style.background = "yellow";
@@ -1047,7 +1048,8 @@
 			document.getElementById(SCRinput).style.border = "2px solid red";
 			document.getElementById(SCRinput).value = MAXscore;
 			localStorage.setItem('g'+playerNO+'H'+HOLE+'s',MAXscore);
-				//document.getElementById(SCRinput).innerHTML = MAXscore;
+				//document.getElementById(SCRinput).innerHTML = MAXscore;				
+				
 		}
 		else { document.getElementById(SCRinput).style.border = "1px solid gray"; }
 /*
@@ -1072,9 +1074,38 @@
 		
 		calcTOTALS();				
 		
-	
+		countCIRCLES();
 	}	
-
+	function countCIRCLES() {			//Dec 11/24: *	
+			//alert("Will try to count CIRCLED holes!");
+		const circled = new Array();
+		for (var h = 1; h < 19; h++) {	
+			for (var p = 1; p<6; p++) {	
+				//var entry = +document.getElementById("p"+p+"h"+h).value;
+				//circled.push(entry);
+				if (document.getElementById("p"+p+"h"+h).style.border == "2px solid red") {
+					var entry = "p"+p+"h"+h;
+					circled.push(entry);
+				}
+			}
+		}
+			//alert(circled.map(i => '*' +i).join(' | '));
+		/* alert("Will try to count CIRCLED holes!\n\n"+
+			circled.map(i => i).join(' | ')); */
+			//alert(circled.map(i => i).join(' | '));
+		localStorage.setItem("lsCIRCLED",circled);	
+			/* alert("localStorage 'lsCIRCLED' = \n"+localStorage.getItem('lsCIRCLED')); */
+					/* circled.push(playerNO+'/'+HOLE);
+					alert(circled.map(i => '*' +i).join('\n'));
+					localStorage.setItem("lsCIRCLED",circled);	
+						alert("localStorage 'lsCIRCLED' = \n"+localStorage.getItem('lsCIRCLED')); */
+										
+									//window.close();	//exit();	//window.open('','_self').close();
+									//window.open("indexA.html");	//,"_blank","width=50, height=50");
+									//window.close("indexA.html");	//self.close();
+		
+	}												
+	
 	function showSLIDER() {
 		if (document.getElementById("SLIDER").style.visibility=="hidden") {	
 			document.getElementById("SLIDER").style.visibility="visible";
@@ -1366,7 +1397,9 @@
 		}
 		
 		//alert("g1H1s POST 'clear' = " +  localStorage.getItem("g1H1s"));
-				
+		
+		localStorage.setItem('lsCIRCLED',"");	// < Dec/24 *
+		
 		hideMENU();		
 	}
 	
@@ -1487,6 +1520,23 @@
 				//else { document.getElementById(SCRinput).style.border = "1px solid gray"; }		
 			}
 		}					
+	}
+
+	function circleMAXs25() {			/*  ################ \/ Jan/25 \/ ################  */
+				//alert("Trying to find previous round circled holes . .\n\n"+
+				//	"localStorage 'lsCIRCLED' = \n"+localStorage.getItem('lsCIRCLED'));
+		var string = localStorage.getItem('lsCIRCLED');
+		var array = string.split(",");
+		/* alert("Trying to find previous round circled holes . .\n\n"+
+			"localStorage 'lsCIRCLED' = \n"+localStorage.getItem('lsCIRCLED')+"\n\n"+
+			"1st array element = " + array[0]); */
+					//alert("1st array element = " + array[0]);
+		//document.getElementById(array[0]).style.border = "2px solid red";
+		let arrayLEN = array.length;
+		for (let i = 0; i < arrayLEN; i++) {
+			document.getElementById(array[i]).style.border = "2px solid red";
+		}
+			
 	}
 	
 	function remCOLORS() {
@@ -2356,7 +2406,8 @@
 		replace(); pHCcolors(); restrictTAB(); 
 		calcALL(); calcTOTALS(); 
 		//showPARTIAL();
-		circleMAXs();
+		circleMAXs25();
+			//circleMAXs();
 		
 	}	
 

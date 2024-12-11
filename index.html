@@ -70,8 +70,11 @@
 <script>
 	function HELP() {
 		alert("HELP!\n\n"+
-			  "'GSidx3' files (Aug/23): !gs63.html (= index.html); !gs63.css; !gs63.js; WaltStuff.webmanifest; WaltStuffsw.js\n\n"+
-			  "PIXEL reload/refresh: Hold icon > App info > Storage & cache > Manage space > MANAGE (Site storage) > 'gwhodg.github.io' > Clear & reset");	
+			"Pickup input = # (max score + 1 > red circle)\n\n"+  
+			"Input edit: 'Input Edit' OR 'Slider'\n\n"+
+			"Code files ['SNIGDOH' folder] (Dec/24): index.html (?'!gs63.html'); !gs63/!gs63.css; !gs63/!gs63.js; SnigStuff.webmanifest; SnigStuffsw.js\n\n"+
+			  "PIXEL reload/refresh: Hold icon > App info > Storage & cache > Manage space > MANAGE (Site storage) > 'https://snigdoh.github.io' > Clear & reset\n\n"+
+			  "Red circle scores functions: circleMAXs25(); countCIRCLES()");	
 	}
 	
 	function USplus() {
@@ -332,7 +335,7 @@
 
 </head>
 
-<body class="body" style="background-color:white;"  onload="loadFN()"> <!--  zoom:250%; -->
+<body class="body" style="background-color:white;"  onload="loadFN()" > <!--  zoom:250%; -->
 	
 <div class="wrapper"><!-- Put the page contents here -->
 
@@ -347,23 +350,23 @@
 						<div class="grid-container">
 							  <!--<div><a><button style="color:blue; cursor:pointer;" onclick="calcALL()">Points</button></a></div>
 							  <div><button id='calcTOTbtn' onclick="calcTOTALS()" style="FONT-WEIGHT: bold; FONT-SIZE:15px; COLOR:black; background:lime; border:3px solid black; border-radius:10px; opacity:95%;"><u><b>TOTALS</b></u></button></div>-->
-							  <div><button id='calcALLbtn' onclick="calcALL()" style="FONT-WEIGHT: bold; FONT-SIZE:15px; COLOR:white; background:blue; border:3px solid black; border-radius:10px; opacity:95%;"><u><b>SF<!--STABLEFORD Points--></b></u></button></div>
-							  <div><button id='calcTOTbtn' onclick="calcTOTALS()" style="FONT-WEIGHT: bold; FONT-SIZE:15px; COLOR:black; background:lime; border:3px solid black; border-radius:10px; opacity:95%;"><u><b>T<!--TOTALS--></b></u></button></div>
+							  <div><button id='calcALLbtn' onclick="calcALL()" style="FONT-WEIGHT: bold; FONT-SIZE:15px; COLOR:white; background:blue; border:3px solid black; border-radius:10px; opacity:95%;"><u>SF<!--STABLEFORD Points--></u></button></div>
+							  <div><button id='calcTOTbtn' onclick="calcTOTALS()" style="FONT-WEIGHT: bold; FONT-SIZE:15px; COLOR:black; background:lime; border:3px solid black; border-radius:10px; opacity:95%;"><u>T<!--TOTALS--></u></button></div>
 							  <div><button id='STROKESbtn' onclick="pHCcolors()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:orange; border:2px solid black; border-radius:10px; opacity:100%;">Strokes</button><!--Display Stroke Holes--></div>
-							  <div><button id='TABbtn' onclick="restrictTAB()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:orange; border:2px solid black; border-radius:10px; opacity:100%;"><b>Inputs+/-<!--Disable/Enable Inputs--></b></button></div>
+							  <div><button id='TABbtn' onclick="restrictTAB()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:orange; border:2px solid black; border-radius:10px; opacity:100%;">Inputs+/-<!--Disable/Enable Inputs--></button></div>
 							  
 							  <div><button onclick="remREADONLY()" style='background:black; color:white; border:2px solid black; border-radius:10px; text-align:center; FONT-SIZE:15px;'>Input<br>Edit<!--Enable Input Edit--></button></div>
 							  <div><button id='SLIDEbtn' onclick="showSLIDER()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:white; background:green; border:3px solid orange; border-radius:10px;">Slider<br>&emsp;<!--Slider Input +/--></button></div>
 							  <div><button id='DROPbtn' onclick="showDROP()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:white; background:slategray; border:2px solid black; border-radius:10px; opacity:100%;">Drop<br>&emsp;<!--Drop Box!--></button></div>
 							  <div><button id='FreezeHCbtn' onclick="freeze()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:gray; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">HC<br>freeze<!--+/- freeze HC input--></button></div>
 
-							  <div><button id='REPLACEbtn' onclick="replace()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">SAVED<!--insert SAVED scores--></button></div>
+							 <div><button id='CLEARbtn' onclick="clearSAVED()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><s>saved X</s><!--CLEAR 'saved' scores--></button></div> 
 							 <div><button id='ADDbtn' onclick="showADDIN()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:ivory; background:slategray; border:2px solid black; border-radius:10px; opacity:100%;">Add<!--Add-in!--></button></div> 
 							  <div><button id='PARTbtn' onclick="showPARTIAL()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:white; background:green; border:3px solid orange; border-radius:10px;">PARTrd<!--PARTial Round--></button></div>							  
 							  <div><button onclick="displayP5()" style='background:black; color:white; border:2px solid black; border-radius:10px; text-align:center; FONT-SIZE:10px;'>P5+/-<!--5th Player +/--></button></div>							  
 							  
-							  <div><button id='CLEARbtn' onclick="clearSAVED()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">savedX<!--CLEAR 'saved' scores--></button></div>
-							  <div><button id='REPLACEbtn'  onclick="showLSwrite()" style="FONT-WEIGHT:normal; FONT-SIZE:10px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">WRITE<!--WRITE scores to file--></button></div>
+							  <div><button id='REPLACEbtn' onclick="replace()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">SAVED<!--insert SAVED scores--></button></div>
+							  <div><button onclick="HELP()" style='background:black; color:white; border:2px solid black; border-radius:10px; text-align:center; FONT-SIZE:15px;'>Help</button></div>
 							  <div><button id='HOLEbtn' onclick="editHOLES()" style="FONT-WEIGHT:bold; FONT-SIZE:10px; COLOR:white; background:red; border:1px solid black; border-radius:10px;">Holes<!--Edit Holes +--></button></div>
 							  
 							  <div><A href="indexCOPYbook24.html" style='color:maroon;'>BOOK!</A></div>
@@ -375,7 +378,7 @@
 							  <div><button id='CLEARbtn' onclick="showLSread()" style="FONT-WEIGHT:normal; FONT-SIZE:10px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">READ<!--READ file--></button></div>
 							  
 							  <!--<div><A href="../index.html" style='color:maroon;'>snigd'Oh</A></div>-->
-							  <div><button onclick="HELP()" style='background:black; color:white; border:2px solid black; border-radius:10px; text-align:center; FONT-SIZE:10px;'>Help</button></div>
+							  <div><button id='REPLACEbtn'  onclick="showLSwrite()" style="FONT-WEIGHT:normal; FONT-SIZE:10px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">WRITE<!--WRITE scores to file--></button></div>
 							  
 							  <!--<div><button onclick="remREADONLY()" style='background:black; color:white; border:2px solid black; border-radius:10px; text-align:center; FONT-SIZE:15px;'>Input Edit</button></div>-->
 							  
@@ -389,7 +392,7 @@
 	
 	
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:white; background:royalblue; FONT-WEIGHT:bold;" >VGC blue<br><font size=2 color=lightgray><b>Dec 8</b>, 2024</font>
+<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:white; background:royalblue; FONT-WEIGHT:bold;" >VGC blue<br><font size=2 color=lightgray><b>Dec 11</b>, 2024</font>
 	<!--<label style="FONT-WEIGHT: bold; FONT-SIZE:25px; COLOR:white; background:royalblue; border:3px solid black; border-radius:10px; opacity:100%; padding:5px;">VGC blue </label>-->
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 	<!--<span style="font-size:30px;cursor:pointer; color:blue; background:white; position:relative; left:38%;" onclick="openMENU()">&#9776;</span>-->	<!-- position:absolute; LEFT:750px; top:30px;  -->
@@ -462,6 +465,12 @@
 				<!-- <input type="date" id="today" name="birthday"> -->
 	<input type="text" id="focusIPT" style="height:12px; width:85px; background:black; color:yellow;" value="SNIGgs25"> 																<!-- GSidx3 -->
 	<!--<font size=2 color=gray><i>(GS<b>pxl2z</b>)</i></font> -->
+	
+				<!--
+				<span style="float:right; padding-right:5px; cursor:pointer; background:transparent; color:blue; font-size:20px;">
+						<a onclick="CLOSEapp()"><b>X</b>&times;</a>
+				</span><br>
+				-->
 </TD></TR>
 </TABLE>
 
