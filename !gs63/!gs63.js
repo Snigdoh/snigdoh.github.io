@@ -2755,3 +2755,30 @@
 		}
 	}	
 	
+	function setLSsbfd() {		
+		var SPp1h3VAL = document.getElementById("SPp1h3").innerHTML;
+		alert ("SPp1h3VAL = "+SPp1h3VAL);
+		
+		//localStorage.setItem('g'+playerNO+'H'+HOLE+'s',MAXscore);
+/*		localStorage.setItem("SBFDg1h3",document.getElementById('SPp1h3').innerHTML);
+		localStorage.setItem("SBFDg3h3",document.getElementById('SPp3h3').innerHTML);
+		localStorage.setItem("SBFDg4h3",document.getElementById('SPp4h3').innerHTML);
+
+		localStorage.setItem("SBFDg2h3",document.getElementById('SPp2h3').innerHTML);
+*/
+		for (var h = 1; h < 19; h++) {	
+			for (var p = 1; p<6; p++) {	
+				localStorage.setItem("SBFDg"+p+"h"+h,document.getElementById("SPp"+p+"h"+h).innerHTML);
+				if ( document.getElementById("p"+p+"h"+h).style.border == "2px solid red" ) {
+					localStorage.setItem("SBFDg"+p+"h"+h,-1);		
+					alert("p3h5 was a pickup! SBFDg3h5 = "+localStorage.getItem('SBFDg3h5'));
+						//onblur="BLURfn('p1h1')" > function BLURfn(SCRinput) { 
+						//document.getElementById(SCRinput).style.border = "2px solid red";
+				}
+			}
+		}
+		//alert ("p3h5 val = "+localStorage.getItem("SBFDg3h5"));
+		
+		window.location = "SNIGmatch.html";
+		
+	}
