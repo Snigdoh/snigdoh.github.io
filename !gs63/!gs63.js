@@ -1393,12 +1393,24 @@
 				localStorage.setItem("g3HC",""); document.getElementById("p3HC").value = ""; 
 				localStorage.setItem("g4HC",""); document.getElementById("p4HC").value = ""; 
 				localStorage.setItem("g5HC",""); document.getElementById("p5HC").value = ""; 
-			
+
+				
+			for (var h = 1; h < 19; h++) { 	//clear 'Matches' values (Apr/25):
+					for (var n = 1; n < 6; n++) {
+						localStorage.setItem("SBFDg"+n+"h"+h,""); 		
+					}
+			}				
+			localStorage.setItem("hideM",""); 	
+			localStorage.setItem("hideS1",""); localStorage.setItem("hideS2",""); localStorage.setItem("hideS3","");
+			localStorage.setItem("hideS4",""); localStorage.setItem("hideS5",""); localStorage.setItem("hideS6","");
 		}
 		
 		//alert("g1H1s POST 'clear' = " +  localStorage.getItem("g1H1s"));
 		
 		localStorage.setItem('lsCIRCLED',"");	// < Dec/24 *
+		
+		
+		
 		
 		hideMENU();		
 	}
@@ -2756,8 +2768,8 @@
 	}	
 	
 	function setLSsbfd() {		
-		var SPp1h3VAL = document.getElementById("SPp1h3").innerHTML;
-		alert ("SPp1h3VAL = "+SPp1h3VAL);
+		//var SPp1h3VAL = document.getElementById("SPp1h3").innerHTML;
+		//alert ("SPp1h3VAL = "+SPp1h3VAL);
 		
 		//localStorage.setItem('g'+playerNO+'H'+HOLE+'s',MAXscore);
 /*		localStorage.setItem("SBFDg1h3",document.getElementById('SPp1h3').innerHTML);
@@ -2771,7 +2783,7 @@
 				localStorage.setItem("SBFDg"+p+"h"+h,document.getElementById("SPp"+p+"h"+h).innerHTML);
 				if ( document.getElementById("p"+p+"h"+h).style.border == "2px solid red" ) {
 					localStorage.setItem("SBFDg"+p+"h"+h,-1);		
-					alert("p3h5 was a pickup! SBFDg3h5 = "+localStorage.getItem('SBFDg3h5'));
+					//alert("p3h5 was a pickup! SBFDg3h5 = "+localStorage.getItem('SBFDg3h5'));
 						//onblur="BLURfn('p1h1')" > function BLURfn(SCRinput) { 
 						//document.getElementById(SCRinput).style.border = "2px solid red";
 				}
