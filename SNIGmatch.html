@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>SNIGmatch</title>
-
+						<!-- THERE IS A RED CIRCLE PROBLEM APR 28, 2025! -->
 <style>
             table, th, td {
               border:2px solid white;
@@ -43,139 +43,168 @@
 
 			/*	++++++++++++++ FRONT 9 \/ ++++++++++++++++++. */			
 			s1val = 0; s2val = 0; s3val = 0; s4val = 0; s5val = 0; s6val = 0;
-			MAINval = 0; 						
+			MAINval = 0; 
+			//alert("localStorage.getItem('SBFDg1h6') = '"+localStorage.getItem("SBFDg1h6")+"'!");			
 			for (let i = 1; i < 10; i++) {
-				if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg3h"+i)) {s1val = (s1val+1);}
-				else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg3h"+i)) {s1val = (s1val-1);}
-				else {s1val = s1val;}
-				document.getElementById("s1h"+i+"TD").innerText = s1val;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
-					document.getElementById("s1h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {
+					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg3h"+i)) {s1val = (s1val+1);}
+					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg3h"+i)) {s1val = (s1val-1);}
+					else {s1val = s1val;}
+					document.getElementById("s1h"+i+"TD").innerText = s1val;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
+						document.getElementById("s1h"+i+"TD").style.background = "gray";	
+					}								
+				}
 			}				
 			for (let i = 1; i < 10; i++) {
-				if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg4h"+i)) {s2val = (s2val+1);}
-				else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg4h"+i)) {s2val = (s2val-1);}
-				else {s2val = s2val;}
-				document.getElementById("s2h"+i+"TD").innerText = s2val;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("s2h"+i+"TD").style.background = "gray";	
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {
+					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg4h"+i)) {s2val = (s2val+1);}
+					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg4h"+i)) {s2val = (s2val-1);}
+					else {s2val = s2val;}
+					document.getElementById("s2h"+i+"TD").innerText = s2val;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("s2h"+i+"TD").style.background = "gray";	
+					}
 				}				
 			}									
 			for (let i = 1; i < 10; i++) {
-				if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg3h"+i)) {s3val = (s3val+1);}
-				else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg3h"+i)) {s3val = (s3val-1);}
-				else {s3val = s3val;}
-				document.getElementById("s3h"+i+"TD").innerText = s3val;	
-				if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
-					document.getElementById("s3h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg3h"+i)) {s3val = (s3val+1);}
+					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg3h"+i)) {s3val = (s3val-1);}
+					else {s3val = s3val;}
+					document.getElementById("s3h"+i+"TD").innerText = s3val;	
+					if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
+						document.getElementById("s3h"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}									
 			for (let i = 1; i < 10; i++) {
-				if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg4h"+i)) {s4val = (s4val+1);}
-				else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg4h"+i)) {s4val = (s4val-1);}
-				else {s4val = s4val;}
-				document.getElementById("s4h"+i+"TD").innerText = s4val;	
-				if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("s4h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg4h"+i)) {s4val = (s4val+1);}
+					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg4h"+i)) {s4val = (s4val-1);}
+					else {s4val = s4val;}
+					document.getElementById("s4h"+i+"TD").innerText = s4val;	
+					if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("s4h"+i+"TD").style.background = "gray";	
+					}	
+				}	
 			}									
 			for (let i = 1; i < 10; i++) {
-				if ( (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINval = (MAINval+1);}
-				else if ( (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINval = (MAINval+1);}
-				else if ( (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINval = (MAINval-1);}
-				else if ( (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINval = (MAINval-1);}
-				else {MAINval = MAINval;}
-				document.getElementById("mainh"+i+"TD").innerText = MAINval;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0)  && (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("mainh"+i+"TD").style.background = "gray";	
-				}												
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {				
+					if ( (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINval = (MAINval+1);}
+					else if ( (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINval = (MAINval+1);}
+					else if ( (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINval = (MAINval-1);}
+					else if ( (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINval = (MAINval-1);}
+					else {MAINval = MAINval;}
+					document.getElementById("mainh"+i+"TD").innerText = MAINval;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0)  && (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("mainh"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}									
 			for (let i = 1; i < 10; i++) {
-				if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg2h"+i)) {s5val = (s5val+1);}
-				else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg2h"+i)) {s5val = (s5val-1);}
-				else {s5val = s5val;}
-				document.getElementById("s5h"+i+"TD").innerText = s5val;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0) ) {
-					document.getElementById("s5h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg2h"+i)) {s5val = (s5val+1);}
+					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg2h"+i)) {s5val = (s5val-1);}
+					else {s5val = s5val;}
+					document.getElementById("s5h"+i+"TD").innerText = s5val;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0) ) {
+						document.getElementById("s5h"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}
 			for (let i = 1; i < 10; i++) {
-				if (localStorage.getItem("SBFDg3h"+i)>localStorage.getItem("SBFDg4h"+i)) {s6val = (s6val+1);}
-				else if (localStorage.getItem("SBFDg3h"+i)<localStorage.getItem("SBFDg4h"+i)) {s6val = (s6val-1);}
-				else {s6val = s6val;}
-				document.getElementById("s6h"+i+"TD").innerText = s6val;	
-				if ( (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("s6h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg3h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg3h"+i)>localStorage.getItem("SBFDg4h"+i)) {s6val = (s6val+1);}
+					else if (localStorage.getItem("SBFDg3h"+i)<localStorage.getItem("SBFDg4h"+i)) {s6val = (s6val-1);}
+					else {s6val = s6val;}
+					document.getElementById("s6h"+i+"TD").innerText = s6val;	
+					if ( (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("s6h"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}														
 			/*	++++++++++++++ BACK 9 \/ ++++++++++++++++++. */			
 			s1valB = 0; s2valB = 0; s3valB = 0; s4valB = 0; s5valB = 0; s6valB = 0;
 			MAINvalB = 0; 						
 			for (let i = 10; i < 19; i++) {
-				if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg3h"+i)) {s1valB = (s1valB+1);}
-				else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg3h"+i)) {s1valB = (s1valB-1);}
-				else {s1valB = s1valB;}
-				document.getElementById("s1h"+i+"TD").innerText = s1valB;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
-					document.getElementById("s1h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg3h"+i)) {s1valB = (s1valB+1);}
+					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg3h"+i)) {s1valB = (s1valB-1);}
+					else {s1valB = s1valB;}
+					document.getElementById("s1h"+i+"TD").innerText = s1valB;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
+						document.getElementById("s1h"+i+"TD").style.background = "gray";	
+					}
+				}	
 			}				
 			for (let i = 10; i < 19; i++) {
-				if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg4h"+i)) {s2valB = (s2valB+1);}
-				else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg4h"+i)) {s2valB = (s2valB-1);}
-				else {s2valB = s2valB;}
-				document.getElementById("s2h"+i+"TD").innerText = s2valB;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("s2h"+i+"TD").style.background = "gray";	
-				}				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg4h"+i)) {s2valB = (s2valB+1);}
+					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg4h"+i)) {s2valB = (s2valB-1);}
+					else {s2valB = s2valB;}
+					document.getElementById("s2h"+i+"TD").innerText = s2valB;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("s2h"+i+"TD").style.background = "gray";	
+					}
+				}	
 			}									
 			for (let i = 10; i < 19; i++) {
-				if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg3h"+i)) {s3valB = (s3valB+1);}
-				else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg3h"+i)) {s3valB = (s3valB-1);}
-				else {s3valB = s3valB;}
-				document.getElementById("s3h"+i+"TD").innerText = s3valB;	
-				if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
-					document.getElementById("s3h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg3h"+i)) {s3valB = (s3valB+1);}
+					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg3h"+i)) {s3valB = (s3valB-1);}
+					else {s3valB = s3valB;}
+					document.getElementById("s3h"+i+"TD").innerText = s3valB;	
+					if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg3h"+i) == 0) ) {
+						document.getElementById("s3h"+i+"TD").style.background = "gray";	
+					}
+				}
 			}								
 			for (let i = 10; i < 19; i++) {
-				if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg4h"+i)) {s4valB = (s4valB+1);}
-				else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg4h"+i)) {s4valB = (s4valB-1);}
-				else {s4valB = s4valB;}
-				document.getElementById("s4h"+i+"TD").innerText = s4valB;	
-				if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("s4h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg4h"+i)) {s4valB = (s4valB+1);}
+					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg4h"+i)) {s4valB = (s4valB-1);}
+					else {s4valB = s4valB;}
+					document.getElementById("s4h"+i+"TD").innerText = s4valB;	
+					if ( (localStorage.getItem("SBFDg2h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("s4h"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}									
 			for (let i = 10; i < 19; i++) {
-				if ( (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINvalB = (MAINvalB+1);}
-				else if ( (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINvalB = (MAINvalB+1);}
-				else if ( (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINvalB = (MAINvalB-1);}
-				else if ( (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINvalB = (MAINvalB-1);}
-				else {MAINvalB = MAINvalB;}
-				document.getElementById("mainh"+i+"TD").innerText = MAINvalB;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0)  && (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("mainh"+i+"TD").style.background = "gray";	
-				}												
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {				
+					if ( (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINvalB = (MAINvalB+1);}
+					else if ( (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINvalB = (MAINvalB+1);}
+					else if ( (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINvalB = (MAINvalB-1);}
+					else if ( (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg4h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINvalB = (MAINvalB-1);}
+					else {MAINvalB = MAINvalB;}
+					document.getElementById("mainh"+i+"TD").innerText = MAINvalB;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0)  && (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("mainh"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}					
 			for (let i = 10; i < 19; i++) {
-				if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg2h"+i)) {s5valB = (s5valB+1);}
-				else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg2h"+i)) {s5valB = (s5valB-1);}
-				else {s5valB = s5valB;}
-				document.getElementById("s5h"+i+"TD").innerText = s5valB;	
-				if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0) ) {
-					document.getElementById("s5h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg2h"+i)) {s5valB = (s5valB+1);}
+					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg2h"+i)) {s5valB = (s5valB-1);}
+					else {s5valB = s5valB;}
+					document.getElementById("s5h"+i+"TD").innerText = s5valB;	
+					if ( (localStorage.getItem("SBFDg1h"+i) == 0) && (localStorage.getItem("SBFDg2h"+i) == 0) ) {
+						document.getElementById("s5h"+i+"TD").style.background = "gray";	
+					}	
+				}
 			}
 			for (let i = 10; i < 19; i++) {
-				if (localStorage.getItem("SBFDg3h"+i)>localStorage.getItem("SBFDg4h"+i)) {s6valB = (s6valB+1);}
-				else if (localStorage.getItem("SBFDg3h"+i)<localStorage.getItem("SBFDg4h"+i)) {s6valB = (s6valB-1);}
-				else {s6valB = s6valB;}
-				document.getElementById("s6h"+i+"TD").innerText = s6valB;	
-				if ( (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
-					document.getElementById("s6h"+i+"TD").style.background = "gray";	
-				}								
+				if ( localStorage.getItem("SBFDg3h"+i) != "&nbsp;&nbsp;") {				
+					if (localStorage.getItem("SBFDg3h"+i)>localStorage.getItem("SBFDg4h"+i)) {s6valB = (s6valB+1);}
+					else if (localStorage.getItem("SBFDg3h"+i)<localStorage.getItem("SBFDg4h"+i)) {s6valB = (s6valB-1);}
+					else {s6valB = s6valB;}
+					document.getElementById("s6h"+i+"TD").innerText = s6valB;	
+					if ( (localStorage.getItem("SBFDg3h"+i) == 0) && (localStorage.getItem("SBFDg4h"+i) == 0) ) {
+						document.getElementById("s6h"+i+"TD").style.background = "gray";	
+					}
+				}
 			}														
 			document.getElementById("mainTOT").innerText = MAINval+MAINvalB;	
 			document.getElementById("s1TOT").innerText = s1val+s1valB;	
@@ -195,6 +224,78 @@
 			if ( localStorage.getItem("hideS6") == "y" ) { hideS6(); }
 			if ( localStorage.getItem("hideM") == "y" ) { hideM(); }
 			
+			/*
+			if ( p1NAME!="" & p2NAME!="" & p3NAME=="" & p4NAME=="" ) {
+				alert ("p1NAME is "+p1NAME+". p2 = '"+p2NAME+"'.\np4 = '"+p4NAME+"'.");
+				hideM(); hideS1(); hideS2(); hideS3(); hideS4();  hideS6();
+			}
+			*/			
+			if ( p1NAME!="" & p2NAME!="" & p3NAME!="" & p4NAME=="" ) {
+				//alert ("p1NAME is "+p1NAME+". p2 = '"+p2NAME+"'.\np3 = '"+p3NAME+"'.");
+				for (let i = 1; i < 19; i++) {
+					document.getElementById("s2h"+i+"TD").style.display = "none";					
+					//document.getElementById("s3h"+i+"TD").style.display = "none";
+					document.getElementById("s4h"+i+"TD").style.display = "none";
+					document.getElementById("s6h"+i+"TD").style.display = "none";
+					document.getElementById("mainh"+i+"TD").style.display = "none";	
+				}
+				document.getElementById("p1/p4").style.display = "none";
+					document.getElementById("s2head").style.display = "none";	
+				document.getElementById("p2/p4").style.display = "none";
+					document.getElementById("s3head").style.display = "none";	
+				document.getElementById("p3/p4").style.display = "none";
+				//document.getElementById("s6head").style.display = "none";	
+				document.getElementById("mainMatch").style.display = "none";
+				document.getElementById("Mhead").style.display = "none";
+				document.getElementById("s1head").style.display = "none";
+				document.getElementById("s4head").style.display = "none";
+				
+				document.getElementById("s2x").style.display = "none";
+					document.getElementById("s2TOT").style.display = "none";
+				document.getElementById("s4x").style.display = "none";
+					document.getElementById("s4TOT").style.display = "none";
+				document.getElementById("s6x").style.display = "none";
+					document.getElementById("s6TOT").style.display = "none";
+				document.getElementById("sMx").style.display = "none";
+					document.getElementById("mainTOT").style.display = "none";									
+			}
+			if ( p1NAME!="" & p2NAME!="" & p3NAME=="" & p4NAME=="" ) {
+				//alert ("p1NAME is "+p1NAME+". p2 = '"+p2NAME+"'.\np3 = '"+p3NAME+"'.");
+				for (let i = 1; i < 19; i++) {
+					document.getElementById("s2h"+i+"TD").style.display = "none";					
+					document.getElementById("s1h"+i+"TD").style.display = "none";
+					document.getElementById("s3h"+i+"TD").style.display = "none";
+					document.getElementById("s4h"+i+"TD").style.display = "none";
+					document.getElementById("s6h"+i+"TD").style.display = "none";
+					document.getElementById("mainh"+i+"TD").style.display = "none";	
+				}
+				document.getElementById("p1/p4").style.display = "none";
+					document.getElementById("s2head").style.display = "none";	
+				document.getElementById("p2/p4").style.display = "none";
+					document.getElementById("s3head").style.display = "none";	
+				document.getElementById("p3/p4").style.display = "none";
+				//document.getElementById("s6head").style.display = "none";	
+				document.getElementById("mainMatch").style.display = "none";
+				document.getElementById("Mhead").style.display = "none";
+				document.getElementById("s1head").style.display = "none";
+				document.getElementById("s4head").style.display = "none";
+					document.getElementById("p1/p3").style.display = "none";
+					document.getElementById("p2/p3").style.display = "none";
+				
+				document.getElementById("s2x").style.display = "none";
+					document.getElementById("s2TOT").style.display = "none";
+				document.getElementById("s4x").style.display = "none";
+					document.getElementById("s4TOT").style.display = "none";
+				document.getElementById("s6x").style.display = "none";
+					document.getElementById("s6TOT").style.display = "none";
+				document.getElementById("sMx").style.display = "none";
+					document.getElementById("mainTOT").style.display = "none";
+				document.getElementById("s1x").style.display = "none";
+					document.getElementById("s1TOT").style.display = "none";					
+				document.getElementById("s3x").style.display = "none";
+					document.getElementById("s3TOT").style.display = "none";					
+				}			
+
 	}	
 	
 	function INFOside1() {
@@ -216,7 +317,7 @@
 		}
 		document.getElementById("s4x").style.display = "none";
 		document.getElementById("s4TOT").style.display = "none";
-		alert ("S4 column will be removed!");
+		//alert ("S4 column will be removed!");
 		localStorage.setItem('hideS4','y');		// = hideM > hideS6
 	}
 	function hideS3() {
@@ -228,7 +329,7 @@
 		}
 		document.getElementById("s3x").style.display = "none";
 		document.getElementById("s3TOT").style.display = "none";
-		alert ("S3 column will be removed!");
+		//alert ("S3 column will be removed!");
 		localStorage.setItem('hideS3','y');
 	}
 	function hideS1() {
@@ -240,7 +341,7 @@
 		}
 		document.getElementById("s1x").style.display = "none";
 		document.getElementById("s1TOT").style.display = "none";
-		alert ("S1 column will be removed!");
+		//alert ("S1 column will be removed!");
 		localStorage.setItem('hideS1','y');
 	}	
 	function hideS2() {
@@ -252,7 +353,7 @@
 		}
 		document.getElementById("s2x").style.display = "none";
 		document.getElementById("s2TOT").style.display = "none";
-		alert ("S2 column will be removed!");
+		//alert ("S2 column will be removed!");
 		localStorage.setItem('hideS2','y');
 	}		
 	function hideS5() {
@@ -264,7 +365,7 @@
 		}
 		document.getElementById("s5x").style.display = "none";
 		document.getElementById("s5TOT").style.display = "none";
-		alert ("S5 column will be removed!");
+		//alert ("S5 column will be removed!");
 		localStorage.setItem('hideS5','y');
 	}		
 	function hideS6() {
@@ -276,7 +377,7 @@
 		}
 		document.getElementById("s6x").style.display = "none";
 		document.getElementById("s6TOT").style.display = "none";
-		alert ("S6 column will be removed!");
+		//alert ("S6 column will be removed!");
 		localStorage.setItem('hideS6','y');
 	}			
 	function hideM() {
@@ -288,7 +389,7 @@
 		}
 		document.getElementById("sMx").style.display = "none";
 		document.getElementById("mainTOT").style.display = "none";
-		alert ("M column will be removed!");
+		//alert ("M column will be removed!");
 		localStorage.setItem('hideM','y');
 	}				
 
@@ -298,7 +399,7 @@
 		if ( reply === null ) {
 			return;
 		}
-		alert ("reply was "+reply);
+		//alert ("reply was "+reply);
 		if ( reply == "S1" ) {
 			localStorage.setItem('hideS1','n');
 			//location.reload(true); // < works on Pixel!

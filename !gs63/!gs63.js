@@ -1405,14 +1405,18 @@
 			localStorage.setItem("hideS4",""); localStorage.setItem("hideS5",""); localStorage.setItem("hideS6","");
 		}
 		
-		//alert("g1H1s POST 'clear' = " +  localStorage.getItem("g1H1s"));
 		
 		localStorage.setItem('lsCIRCLED',"");	// < Dec/24 *
 		
 		
-		
+		/* alert("LS values:\ng1H1s POST 'clear' = " +  localStorage.getItem("g1H1s")+"\n"+
+			"SBFDg1h1 POST 'clear' = " +  localStorage.getItem('SBFDg1h1')+"\n"+
+			"lsCIRCLED POST 'clear' = " +  localStorage.getItem('lsCIRCLED')); */  // < Apr/25! *
+			
 		
 		hideMENU();		
+		
+		window.location = "index.html"; //location.reload(true);
 	}
 	
 						/* 	√√√√√√√√√√√√√√√√√  ^ SAVE ^  √√√√√√√√√√√√√√√√   */
@@ -2792,5 +2796,7 @@
 		//alert ("p3h5 val = "+localStorage.getItem("SBFDg3h5"));
 		
 		window.location = "SNIGmatch.html";
+		//window.location = "index.html";
+		//window.location = "SNIGmatch.html";
 		
 	}
