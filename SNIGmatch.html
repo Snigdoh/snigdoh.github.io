@@ -207,13 +207,21 @@
 					}
 				}
 			}														
-			document.getElementById("mainTOT").innerText = MAINval+MAINvalB;	
-			document.getElementById("s1TOT").innerText = s1val+s1valB;	
-			document.getElementById("s2TOT").innerText = s2val+s2valB;	
-			document.getElementById("s3TOT").innerText = s3val+s3valB;	
-			document.getElementById("s4TOT").innerText = s4val+s4valB;	
-			document.getElementById("s5TOT").innerText = s5val+s5valB;	
-			document.getElementById("s6TOT").innerText = s6val+s6valB;	
+			
+			if (p1NAME!=null && p2NAME!=null && p3NAME!=null && p4NAME!=null && p1NAME!="" && p2NAME!="" && p3NAME!="" && p4NAME!="") {
+				document.getElementById("mainTOT").innerText = MAINval+MAINvalB;  }
+			if (p1NAME!=null && p3NAME!=null && p1NAME!="" && p3NAME!="") {
+				document.getElementById("s1TOT").innerText = s1val+s1valB; }
+			if (p1NAME!=null && p4NAME!=null && p1NAME!="" && p4NAME!="") {
+				document.getElementById("s2TOT").innerText = s2val+s2valB;	}
+			if (p2NAME!=null && p3NAME!=null && p2NAME!="" && p3NAME!="") {
+				document.getElementById("s3TOT").innerText = s3val+s3valB;	}
+			if (p2NAME!=null && p4NAME!=null && p2NAME!="" && p4NAME!="") {
+				document.getElementById("s4TOT").innerText = s4val+s4valB;	}
+			if (p1NAME!=null && p2NAME!=null && p1NAME!="" && p2NAME!="") {
+				document.getElementById("s5TOT").innerText = s5val+s5valB;	}
+			if (p3NAME!=null && p4NAME!=null && p3NAME!="" && p4NAME!="") {
+				document.getElementById("s6TOT").innerText = s6val+s6valB;	}
 			
 					/*----------------------*/
 					
