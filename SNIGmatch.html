@@ -23,7 +23,7 @@
 			var p1NAME = localStorage.getItem("g1NAME"); var p2NAME = localStorage.getItem("g2NAME");
 			var p3NAME = localStorage.getItem("g3NAME"); var p4NAME = localStorage.getItem("g4NAME");
 			var p5NAME = localStorage.getItem("g5NAME");	
-			alert ("p1NAME = '"+p1NAME+"'\np4NAME = '"+p4NAME+"'");		
+			//alert ("p1NAME = '"+p1NAME+"'\np4NAME = '"+p4NAME+"'");		
 /*			var p1HC = localStorage.getItem("g1HC"); var p2HC = localStorage.getItem("g2HC");
 			var p3HC = localStorage.getItem("g3HC"); var p4HC = localStorage.getItem("g4HC");
 			var p5HC = localStorage.getItem("g5HC");			
@@ -129,7 +129,7 @@
 			s1valB = 0; s2valB = 0; s3valB = 0; s4valB = 0; s5valB = 0; s6valB = 0;
 			MAINvalB = 0; 						
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="" && p3NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p3NAME!=null && p1NAME!="" && p3NAME!="") ) {				
 					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg3h"+i)) {s1valB = (s1valB+1);}
 					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg3h"+i)) {s1valB = (s1valB-1);}
 					else {s1valB = s1valB;}
@@ -140,7 +140,7 @@
 				}	
 			}				
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="" && p4NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p4NAME!=null && p1NAME!="" && p4NAME!="") ) {				
 					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg4h"+i)) {s2valB = (s2valB+1);}
 					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg4h"+i)) {s2valB = (s2valB-1);}
 					else {s2valB = s2valB;}
@@ -151,7 +151,7 @@
 				}	
 			}									
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!="" && p3NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!=null && p3NAME!=null && p2NAME!="" && p3NAME!="") ) {				
 					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg3h"+i)) {s3valB = (s3valB+1);}
 					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg3h"+i)) {s3valB = (s3valB-1);}
 					else {s3valB = s3valB;}
@@ -162,7 +162,7 @@
 				}
 			}								
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!="" && p4NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!=null && p4NAME!=null && p2NAME!="" && p4NAME!="") ) {				
 					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg4h"+i)) {s4valB = (s4valB+1);}
 					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg4h"+i)) {s4valB = (s4valB-1);}
 					else {s4valB = s4valB;}
@@ -173,7 +173,7 @@
 				}
 			}									
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="" && p2NAME!="" && p3NAME!="" && p4NAME!="" ) ) {				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p2NAME!=null && p3NAME!=null && p4NAME!=null && p1NAME!="" && p2NAME!="" && p3NAME!="" && p4NAME!="" ) ) {				
 					if ( (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINvalB = (MAINvalB+1);}
 					else if ( (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINvalB = (MAINvalB+1);}
 					else if ( (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINvalB = (MAINvalB-1);}
@@ -186,7 +186,7 @@
 				}
 			}					
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="" && p2NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p2NAME!=null && p1NAME!="" && p2NAME!="") ) {				
 					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg2h"+i)) {s5valB = (s5valB+1);}
 					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg2h"+i)) {s5valB = (s5valB-1);}
 					else {s5valB = s5valB;}
@@ -197,7 +197,7 @@
 				}
 			}
 			for (let i = 10; i < 19; i++) {
-				if ( localStorage.getItem("SBFDg3h"+i) != "&nbsp;&nbsp;" && (p3NAME!="" && p4NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg3h"+i) != "&nbsp;&nbsp;" && (p3NAME!=null && p4NAME!=null && p3NAME!="" && p4NAME!="") ) {				
 					if (localStorage.getItem("SBFDg3h"+i)>localStorage.getItem("SBFDg4h"+i)) {s6valB = (s6valB+1);}
 					else if (localStorage.getItem("SBFDg3h"+i)<localStorage.getItem("SBFDg4h"+i)) {s6valB = (s6valB-1);}
 					else {s6valB = s6valB;}
@@ -224,79 +224,7 @@
 			if ( localStorage.getItem("hideS5") == "y" ) { hideS5(); }
 			if ( localStorage.getItem("hideS6") == "y" ) { hideS6(); }
 			if ( localStorage.getItem("hideM") == "y" ) { hideM(); }
-			
-			/*
-			if ( p1NAME!="" & p2NAME!="" & p3NAME=="" & p4NAME=="" ) {
-				alert ("p1NAME is "+p1NAME+". p2 = '"+p2NAME+"'.\np4 = '"+p4NAME+"'.");
-				hideM(); hideS1(); hideS2(); hideS3(); hideS4();  hideS6();
-			}
-			*/			
-/*			if ( p1NAME!="" & p2NAME!="" & p3NAME!="" & p4NAME=="" ) {
-				//alert ("p1NAME is "+p1NAME+". p2 = '"+p2NAME+"'.\np3 = '"+p3NAME+"'.");
-				for (let i = 1; i < 19; i++) {
-					document.getElementById("s2h"+i+"TD").style.display = "none";					
-					//document.getElementById("s3h"+i+"TD").style.display = "none";
-					document.getElementById("s4h"+i+"TD").style.display = "none";
-					document.getElementById("s6h"+i+"TD").style.display = "none";
-					document.getElementById("mainh"+i+"TD").style.display = "none";	
-				}
-				document.getElementById("p1/p4").style.display = "none";
-					document.getElementById("s2head").style.display = "none";	
-				document.getElementById("p2/p4").style.display = "none";
-					document.getElementById("s3head").style.display = "none";	
-				document.getElementById("p3/p4").style.display = "none";
-				//document.getElementById("s6head").style.display = "none";	
-				document.getElementById("mainMatch").style.display = "none";
-				document.getElementById("Mhead").style.display = "none";
-				document.getElementById("s1head").style.display = "none";
-				document.getElementById("s4head").style.display = "none";
-				
-				document.getElementById("s2x").style.display = "none";
-					document.getElementById("s2TOT").style.display = "none";
-				document.getElementById("s4x").style.display = "none";
-					document.getElementById("s4TOT").style.display = "none";
-				document.getElementById("s6x").style.display = "none";
-					document.getElementById("s6TOT").style.display = "none";
-				document.getElementById("sMx").style.display = "none";
-					document.getElementById("mainTOT").style.display = "none";									
-			}
-			if ( p1NAME!="" & p2NAME!="" & p3NAME=="" & p4NAME=="" ) {
-				//alert ("p1NAME is "+p1NAME+". p2 = '"+p2NAME+"'.\np3 = '"+p3NAME+"'.");
-				for (let i = 1; i < 19; i++) {
-					document.getElementById("s2h"+i+"TD").style.display = "none";					
-					document.getElementById("s1h"+i+"TD").style.display = "none";
-					document.getElementById("s3h"+i+"TD").style.display = "none";
-					document.getElementById("s4h"+i+"TD").style.display = "none";
-					document.getElementById("s6h"+i+"TD").style.display = "none";
-					document.getElementById("mainh"+i+"TD").style.display = "none";	
-				}
-				document.getElementById("p1/p4").style.display = "none";
-					document.getElementById("s2head").style.display = "none";	
-				document.getElementById("p2/p4").style.display = "none";
-					document.getElementById("s3head").style.display = "none";	
-				document.getElementById("p3/p4").style.display = "none";
-				//document.getElementById("s6head").style.display = "none";	
-				document.getElementById("mainMatch").style.display = "none";
-				document.getElementById("Mhead").style.display = "none";
-				document.getElementById("s1head").style.display = "none";
-				document.getElementById("s4head").style.display = "none";
-					document.getElementById("p1/p3").style.display = "none";
-					document.getElementById("p2/p3").style.display = "none";
-				
-				document.getElementById("s2x").style.display = "none";
-					document.getElementById("s2TOT").style.display = "none";
-				document.getElementById("s4x").style.display = "none";
-					document.getElementById("s4TOT").style.display = "none";
-				document.getElementById("s6x").style.display = "none";
-					document.getElementById("s6TOT").style.display = "none";
-				document.getElementById("sMx").style.display = "none";
-					document.getElementById("mainTOT").style.display = "none";
-				document.getElementById("s1x").style.display = "none";
-					document.getElementById("s1TOT").style.display = "none";					
-				document.getElementById("s3x").style.display = "none";
-					document.getElementById("s3TOT").style.display = "none";					
-				}			
-*/
+		
 	}	
 	
 	function INFOside1() {
@@ -569,8 +497,8 @@
 <TR style="height:10px;"><TD colspan=8 style="background:white;"></TD></TR>
 
 <TR>
-	<TD style="background:beige; color:black;">G</TD>
-	<TD id="mainTOT" style="background:beige; color:black;"></TD> 
+	<TD style="background:maroon; color:white;">G</TD>
+	<TD id="mainTOT" style="background:beige; color:black; border:2px solid black;"></TD> 
 	<TD id="s1TOT" style="background:beige; color:black;"></TD> 
 	<TD id="s2TOT" style="background:beige; color:black;"></TD> 
 	<TD id="s3TOT" style="background:beige; color:black;"></TD> 
