@@ -47,7 +47,7 @@
 			MAINval = 0; 
 			//alert("localStorage.getItem('SBFDg1h6') = '"+localStorage.getItem("SBFDg1h6")+"'!");			
 			for (let i = 1; i < 10; i++) {		// 1 v 3:
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="null" && p3NAME!="null" && p1NAME!="" && p3NAME!="") ) {
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p3NAME!=null && p1NAME!="" && p3NAME!="") ) {
 					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg3h"+i)) {s1val = (s1val+1);}
 					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg3h"+i)) {s1val = (s1val-1);}
 					else {s1val = s1val;}
@@ -58,7 +58,7 @@
 				}
 			}				
 			for (let i = 1; i < 10; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="null" && p4NAME!="null" && p1NAME!="" && p4NAME!="") ) {
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p4NAME!=null && p1NAME!="" && p4NAME!="") ) {
 					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg4h"+i)) {s2val = (s2val+1);}
 					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg4h"+i)) {s2val = (s2val-1);}
 					else {s2val = s2val;}
@@ -69,7 +69,7 @@
 				}				
 			}									
 			for (let i = 1; i < 10; i++) {
-				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!="null" && p3NAME!="null" && p2NAME!="" && p3NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!=null && p3NAME!=null && p2NAME!="" && p3NAME!="") ) {				
 					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg3h"+i)) {s3val = (s3val+1);}
 					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg3h"+i)) {s3val = (s3val-1);}
 					else {s3val = s3val;}
@@ -80,7 +80,7 @@
 				}
 			}									
 			for (let i = 1; i < 10; i++) {
-				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!="null" && p4NAME!="null" && p2NAME!="" && p4NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg2h"+i) != "&nbsp;&nbsp;" && (p2NAME!=null && p4NAME!=null && p2NAME!="" && p4NAME!="") ) {				
 					if (localStorage.getItem("SBFDg2h"+i)>localStorage.getItem("SBFDg4h"+i)) {s4val = (s4val+1);}
 					else if (localStorage.getItem("SBFDg2h"+i)<localStorage.getItem("SBFDg4h"+i)) {s4val = (s4val-1);}
 					else {s4val = s4val;}
@@ -91,7 +91,7 @@
 				}	
 			}									
 			for (let i = 1; i < 10; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="null" && p2NAME!="null" && p3NAME!="null" && p4NAME!="null" && p1NAME!="" && p2NAME!="" && p3NAME!="" && p4NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p2NAME!=null && p3NAME!=null && p4NAME!=null && p1NAME!="" && p2NAME!="" && p3NAME!="" && p4NAME!="") ) {				
 					if ( (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg1h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINval = (MAINval+1);}
 					else if ( (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg3h"+i)) && (localStorage.getItem("SBFDg2h"+i) > localStorage.getItem("SBFDg4h"+i)) )  {MAINval = (MAINval+1);}
 					else if ( (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg1h"+i)) && (localStorage.getItem("SBFDg3h"+i) > localStorage.getItem("SBFDg2h"+i)) )  {MAINval = (MAINval-1);}
@@ -104,7 +104,7 @@
 				}
 			}									
 			for (let i = 1; i < 10; i++) {
-				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!="null" && p2NAME!="null" && p1NAME!="" && p2NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg1h"+i) != "&nbsp;&nbsp;" && (p1NAME!=null && p2NAME!=null && p1NAME!="" && p2NAME!="") ) {				
 					if (localStorage.getItem("SBFDg1h"+i)>localStorage.getItem("SBFDg2h"+i)) {s5val = (s5val+1);}
 					else if (localStorage.getItem("SBFDg1h"+i)<localStorage.getItem("SBFDg2h"+i)) {s5val = (s5val-1);}
 					else {s5val = s5val;}
@@ -115,7 +115,7 @@
 				}
 			}
 			for (let i = 1; i < 10; i++) {
-				if ( localStorage.getItem("SBFDg3h"+i) != "&nbsp;&nbsp;" && (p3NAME!="null" && p4NAME!="null" && p3NAME!="" && p4NAME!="") ) {				
+				if ( localStorage.getItem("SBFDg3h"+i) != "&nbsp;&nbsp;" && (p3NAME!=null && p4NAME!=null && p3NAME!="" && p4NAME!="") ) {				
 					if (localStorage.getItem("SBFDg3h"+i)>localStorage.getItem("SBFDg4h"+i)) {s6val = (s6val+1);}
 					else if (localStorage.getItem("SBFDg3h"+i)<localStorage.getItem("SBFDg4h"+i)) {s6val = (s6val-1);}
 					else {s6val = s6val;}
