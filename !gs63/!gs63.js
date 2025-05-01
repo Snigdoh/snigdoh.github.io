@@ -2785,7 +2785,7 @@
 		for (var h = 1; h < 19; h++) {	
 			for (var p = 1; p<6; p++) {	
 				localStorage.setItem("SBFDg"+p+"h"+h,document.getElementById("SPp"+p+"h"+h).innerHTML);
-				if ( document.getElementById("p"+p+"h"+h).style.border == "2px solid red" ) {
+				if ( (document.getElementById("p"+p+"h"+h).style.border == "2px solid red") && (document.getElementById("SPp"+p+"h"+h).innerHTML == 0) ) {
 					localStorage.setItem("SBFDg"+p+"h"+h,-1);		
 					//alert("p3h5 was a pickup! SBFDg3h5 = "+localStorage.getItem('SBFDg3h5'));
 						//onblur="BLURfn('p1h1')" > function BLURfn(SCRinput) { 
