@@ -988,11 +988,11 @@
 		}*/ 
 		
 		GLOBALinput = SCRinput;	//"ADD";
-		
+		/*		
 		if ( (document.getElementById("TDp1h2").style.background = "red") && (GLOBALinput != "p1h2") ) {
 				document.getElementById("TDp1h2").style.background = "aqua"; 	// < nov 20/25 **
-		}
-		
+		}  // <^ May 12/26 *
+		*/
 		//document.getElementById("SLIDER").style.visibility="visible";
 			document.getElementById("check").style.visibility = "hidden";	//	**
 		
@@ -1077,16 +1077,20 @@
 		document.getElementById("focusIPT").style.background = "red";
 			document.getElementById("focusIPT").style.color = "white";
 			document.getElementById("focusIPT").value = pNAME+" "+nameArray[1]; 		//GLOBALinput;
-		document.getElementById("TD"+SCRinput).style.background = "red";   //TDp1h1
+		//document.getElementById("TD"+SCRinput).style.background = "red";   //TDp1h1
 			//changeGLOBAL(x);
 			/*alert("In 'FOCUSfn()'! SCRinput = "+SCRinput+". prevIPT = "+prevIPT+". lastFOCUS = "+lastFOCUS+".\n\n"+
 			  "document.getElementById('lastFOCUS').value = "+document.getElementById('lastFOCUS').value);*/
-			if ( document.getElementById('lastFOCUS').value != "" )  {	// && VRyn != "y" ) {   // << Mar/26 **
+			if ( document.getElementById('lastFOCUS').value != "" ) {//&& document.getElementById('lastFOCUS').value != "p1h1" )  {	// && VRyn != "y" ) {   // << Mar/26 **
 			  	var lstFCSel =  document.getElementById('lastFOCUS').value;
 				document.getElementById("TD"+lstFCSel).style.background = "aqua";   // < Nov 20/25 **
 			}
-		document.getElementById(prevIPT).style.background = "aqua";   // < Nov 20/25 **
 			
+		//if ( document.getElementById(prevIPT).value!="p1h1" ) {
+			//document.getElementById(prevIPT).style.background = "aqua";   // < Nov 20/25 **
+		//}	
+		document.getElementById("TD"+SCRinput).style.background = "red";   // < moved fr above May 12/26 *
+		
 		//localStorage.setItem("lastFOCUSval", document.getElementById(SCRinput).value);
 		
 		
@@ -1265,7 +1269,7 @@
 		document.getElementById("TD"+SCRinput).style.background = "black";
 		document.getElementById("focusIPT").style.background = "white";
 			document.getElementById("focusIPT").style.color = "maroon";
-			document.getElementById("focusIPT").value = "gwHODG"	//"GSmac3x"; 		//GLOBALinput;
+			document.getElementById("focusIPT").value = "SNIGgs26"	//"GSmac3x"; 	gwHODG. 	//GLOBALinput;
 			
 		
 		var entry = +document.getElementById(SCRinput).value;
@@ -1675,9 +1679,9 @@
 		var vG3h4s = localStorage.getItem("g3H4s"); var vG4h4s = localStorage.getItem("g4H4s");
 		var vG5h4s = localStorage.getItem("g5H4s");*/	
 		
-		/*alert("Will now try to put player3 H3 score (vG3h3s="+vG3h3s+") in it's input box (id='p3h3)!\n"+
+		/* alert("Will now try to put player3 H3 score (vG3h3s="+vG3h3s+") in it's input box (id='p3h3)!\n"+
 			  "\t\t\t + others . . .\n\n"+
-			  "vG2h1s = "+vG2h1s+" | vG2h2s = "+vG2h2s);*/
+			  "vG2h1s = "+vG2h1s+" | vG2h2s = "+vG2h2s); */
 		
 		document.getElementById("p1h1").value = vG1h1s; document.getElementById("p2h1").value = vG2h1s;
 		document.getElementById("p3h1").value = vG3h1s; document.getElementById("p4h1").value = vG4h1s;
@@ -3076,10 +3080,12 @@
 		replace(); //pHCcolors(); restrictTAB(); 
 			//alert("post replace() in loadFN . . .");	
 		//circleMAXs25();
-		calcALL(); calcTOTALS(); 	//alert("post calcALL() in loadFN . . .");	
+		calcALL();      //alert("post calcALL() in loadFN . . .");	
+		calcTOTALS(); 	//alert("post calcTOTALS() in loadFN . . .");	
 			//showPARTIAL();
 		circleMAXs25();
-			//circleMAXs();		//alert("post circleMAXs25() in loadFN . . .");	
+			//circleMAXs();		
+			//alert("post circleMAXs25() in loadFN . . .");	
 		for (Pno=1; Pno<6; Pno++) {	/* Added Sept/25 */
 			if (document.getElementById("p"+Pno+"NAME").value=="" && document.getElementById("p"+Pno+"HC").value=="") {
 				for (n=1; n<19; n++) {
@@ -3129,15 +3135,15 @@
 		
 		if (localStorage.getItem("lsCOURSE")=="CordovaBay") {
 			document.getElementById("CourseLogo").src="CBGClogo.jpeg";	
-			document.getElementById("CourseLogo").alt="Cordova";
+			document.getElementById("CourseLogo").alt="CDVB";
 		}
 		else if (localStorage.getItem("lsCOURSE")=="Uplands") {
 			document.getElementById("CourseLogo").src="UPLANDSlogo.jpeg";
-			document.getElementById("CourseLogo").alt="Uplands";	
+			document.getElementById("CourseLogo").alt="UPLD";	
 		}
 		else if (localStorage.getItem("lsCOURSE")=="Colwood") {
 			document.getElementById("CourseLogo").src="COLWOODlogo.png";	
-			document.getElementById("CourseLogo").alt="Colwood";
+			document.getElementById("CourseLogo").alt="CLWD";
 		}
 		else if (localStorage.getItem("lsCOURSE")=="VGC") {
 			document.getElementById("CourseLogo").src="VGClogo.jpeg";
@@ -3145,12 +3151,17 @@
 		}
 		else {
 			document.getElementById("CourseLogo").src="VGClogo.jpeg";
-			document.getElementById("CourseLogo").alt="Victoria";
+			document.getElementById("CourseLogo").alt="VIC";
 		}
 		
 		
 		pHCcolors();  restrictTAB(); // < moved from top of fn Oct 8/25 **
 		//alert("@ end loadFN()!");
+		
+		if ( document.getElementById("p1NAME").value!="" && document.getElementById("SPp1h1").innerHTML=="") {
+			alert("MAY have to perform a 'clear' after a new app download to get stroke hole colors & totals to display on 'reload'.");
+		}
+		
 	}	
 
 	function cellTOslide(P,H) {
