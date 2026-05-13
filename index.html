@@ -809,7 +809,7 @@
 	}
 
 	function changeCOURSE() {
-		let newCOURSE = prompt("Enter course:\n\t1. Cordova Bay\n\t2. Uplands\n\t3. Royal Colwood\n\t4. VGC", "1");	//+
+		let newCOURSE = prompt("Enter course:\n\t1. Cordova Bay\n\t2. Uplands\n\t3. Royal Colwood\n\t4. VGC\n\n\t5. Custom", "1");	//+
 								     //"\n\t3. SSI\n\t4. Royal Collwood"+
 									 //"\n\t5. Uplands\n\t6. Gorge Vail", "1");	
 		if (newCOURSE=="1") { 
@@ -956,6 +956,19 @@
 			calcALL(); calcTOTALS(); // < ?? Nov/25 **
 			
 		}
+		else if (newCOURSE=="5") { 
+			alert("You chose to create a CUSTOM course!");
+				//localStorage.setItem("lsCOURSE","CST");
+				//document.getElementById("CourseLogo").src="VGClogo.jpeg";
+				//document.getElementById("CourseLogo").alt="CST";
+			if (document.getElementById("CUSTcourse").style.visibility=="visible") {
+				document.getElementById("CUSTcourse").style.visibility="hidden"; 
+			}		
+			else {
+				document.getElementById("CUSTcourse").style.visibility="visible";
+			}
+		
+		}
 		else { alert("No course chosen!"); }
 	}
 	
@@ -977,7 +990,7 @@
 <div class="wrapper"><!-- Put the page contents here -->
 				
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>37</u></font><br><font size=2 color=lime>11</font><font size=2 color=silver><b>May<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
+	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>37</u></font><br><font size=2 color=lime>13</font><font size=2 color=silver><b>May<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 <TD>
 					<div class="dropup" style="cursor:pointer; color:black; background:lightgray; /*position:relative; left:18%;*/">
@@ -2272,6 +2285,99 @@
 		</iframe>
 		
 	</div>
+
+
+	<!-- 	√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√ \/ CUSTOM COURSE \/ √√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√	  -->
+
+	<div class="ADDclass" id="CUSTcourse" style= "background:black; color:white; visibility:hidden; padding:5px; width:200px;">
+			<!-- position = 'fixed'; left = "700px"; top = "100px"; -->
+		<font size=5><b>Custom Course</b></font>
+			<button id='fullCUSTbtn' onclick="FULLcustom()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:gold; background:transparent; border:1px solid gold; border-radius:5px;">+</button>
+			<span style="float:right; padding-right:10px; cursor:pointer; background:white; color:black; font-size:30px;">
+					<a onclick="showCUSTOM()"><b>&times;</b></a>
+			</span><br>
+
+		NAME:<input class='' type="text" style="width:40px;" id="cstNAME"> <!--maxlength=2-->
+		<!--&emsp;-->
+		<button id='SAVECOURSEbtn' onclick="saveCUSTOM()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%; "><b>save</b></button>		
+		<button id='USEbtn' onclick="useCUSTOM()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%; "><b>USE</b></button>
+		
+		<table id="CUSTtbl" border=1 align=left>
+			<tr style="background:green;">
+				<th>HOLE</th> <TH>PAR</TH> <th>HCP</th> <!--  p drop -->
+			</tr>			
+			<tr> <td>1</td> 
+				<TD>
+					<input class='' type="tel" style="width:20px;" id="cstPARh1" maxlength=2>
+						<!-- onfocus="alert('Enter added players POINTS by hole\nthen touch/click ADD-IN');" -->
+				</TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh1" maxlength=2></TD> 
+						<!--<td style="background:ivory; color:black; font-size:25px;" id="newH1ptT"></td> -->
+			</tr>
+			<tr> <td>2</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh2" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh2" maxlength=2></TD> </tr>
+			<tr> <td>3</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh3" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh3" maxlength=2></TD> </tr>
+			<tr> <td>4</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh4" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh4" maxlength=2></TD> </tr>
+			<tr> <td>5</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh5" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh5" maxlength=2></TD> </tr>
+			<tr> <td>6</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh6" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh6" maxlength=2></TD> </tr>
+			<tr> <td>7</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh7" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh7" maxlength=2></TD> </tr>
+			<tr> <td>8</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh8" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh8" maxlength=2></TD> </tr>
+			<tr> <td>9</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh9" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh9" maxlength=2></TD> </tr>
+			<TR style="height:5px;"></TR>
+			<tr> <td>10</td> 
+				<TD>
+					<input class='' type="tel" style="width:20px;" id="cstPARh10" maxlength=2>
+				</TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh10" maxlength=2></TD> </tr>
+			<tr> <td>11</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh11" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh11" maxlength=2></TD> </tr>
+			<tr> <td>12</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh12" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh12" maxlength=2></TD> </tr>
+			<tr> <td>13</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh13" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh13" maxlength=2></TD> </tr>
+			<tr> <td>14</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh14" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh14" maxlength=2></TD> </tr>
+			<tr> <td>15</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh15" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh15" maxlength=2></TD> </tr>
+			<tr> <td>16</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh16" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh16" maxlength=2></TD> </tr>
+			<tr> <td>17</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh17" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh17" maxlength=2></TD> </tr>
+			<tr> <td>18</td> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstPARh18" maxlength=2></TD> 
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh18" maxlength=2></TD> </tr>
+		</table>
+				
+	</div>	
+
+	<!-- 	√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√ ^ CUSTOM COURSE ^ √√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√	  -->
+	
+
+
+
+
 	
 </div>	
 </body>
