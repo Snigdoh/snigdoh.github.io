@@ -3157,9 +3157,21 @@
 		
 		pHCcolors();  restrictTAB(); // < moved from top of fn Oct 8/25 **
 		//alert("@ end loadFN()!");
-		
+		/*
 		if ( document.getElementById("p1NAME").value!="" && document.getElementById("SPp1h1").innerHTML=="") {
 			alert("MAY have to perform a 'clear' after a new app download to get stroke hole colors & totals to display on 'reload'.");
+		}
+		*/
+		if ( document.getElementById("p1NAME").value!="" ) {
+			var inputCOLORED = 'n';
+			for (var h = 1; h < 19; h++) {	
+				if ( document.getElementById("p1h"+h).style.background=='lime' || document.getElementById("p1h"+h).style.background=='green' || document.getElementById("p1h"+h).style.background=='purple') {
+						inputCOLORED = 'y';
+				}
+			}
+			if ( inputCOLORED == 'n' ) {
+				alert("MAY have to perform a 'clear' after a new app download to get stroke hole colors & totals to display on 'reload'.");
+			}
 		}
 		
 	}	
@@ -3224,6 +3236,30 @@
 		
 		hideMENU();		
 	}			
+
+	
+	function FULLcustom() {
+		//alert("in 'FULLdrop' fn! Will try to ^ div height.");
+		if ( document.getElementById("fullCUSTbtn").innerText == "+" ) {
+			document.getElementById("CUSTcourse").style.height = "100%";	//'650px';	//"100%";	//'800px';
+			document.getElementById("fullCUSTbtn").innerText = "-";
+		}
+		else { 
+			document.getElementById("CUSTcourse").style.height = "50%";	//"400px";	//'300px';
+			document.getElementById("fullCUSTbtn").innerText = "+";
+		}
+	}
+
+	function showCUSTOM() {
+		if (document.getElementById("CUSTcourse").style.visibility=="visible") {
+			document.getElementById("CUSTcourse").style.visibility="hidden"; 
+		}		
+		else {
+			document.getElementById("CUSTcourse").style.visibility="visible";
+		}
+		//hideMENU();		
+	}			
+	
 	
 	function ADD() {
 var addH1 = +document.getElementById("ptsADDh1").value;
