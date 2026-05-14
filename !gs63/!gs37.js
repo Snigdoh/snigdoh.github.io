@@ -3259,7 +3259,54 @@
 		}
 		//hideMENU();		
 	}			
-	
+
+	function saveCUSTOM() {
+		localStorage.setItem('CCname', document.getElementById("cstNAME").value);
+		for (var h = 1; h < 19; h++) {
+			localStorage.setItem('CCh'+h+'PAR', document.getElementById("cstPARh"+h).value);
+			localStorage.setItem('CCh'+h+'HC', document.getElementById("cstHCh"+h).value);			
+		}
+		
+		alert("Trying to save custom course . . .\n"+
+			 "CC h3 HCP = "+localStorage.getItem('CCh3HC'));
+		
+	}	
+
+	function useCUSTOM() {		
+		alert("Will try to USE custom course . . .\n"+"");
+		
+		var allCCparsENTERED = 'y';
+		for (var h = 1; h < 19; h++) {	
+				if ( document.getElementById("cstPARh"+h).value=="" ) {
+						allCCparsENTERED = 'n';
+				}
+		}
+		if ( allCCparsENTERED == 'n' ) {
+				alert("All custom course pars have not been entered. Cannot yet USE this course data.");
+		}
+		else {
+			alert("Will USE custom course!");
+			document.getElementById("CourseLogo").src="CustomCourseLogo.png";
+			document.getElementById("CourseLogo").alt=localStorage.getItem('CCname');
+			for (var h = 1; h < 19; h++) {				
+				document.getElementById("PARh"+h).value=localStorage.getItem('CCh'+h+'PAR'); 
+				document.getElementById("HCPh"+h).value=localStorage.getItem('CCh'+h+'HC'); 
+				
+			}			
+			/*
+			for (var h = 1; h < 19; h++) {
+				localStorage.setItem("lsPARh"+h,document.getElementById("PARh"+h).value);
+				localStorage.setItem("lsHCPh"+h,document.getElementById("HCPh"+h).value);
+			}
+			*/			
+			pHCcolors(); 
+						pHCcolors(); // < ??	
+						calcALL(); calcTOTALS(); // < ?? Nov/25 **			
+			
+		}
+			
+		
+	}	
 	
 	function ADD() {
 var addH1 = +document.getElementById("ptsADDh1").value;
