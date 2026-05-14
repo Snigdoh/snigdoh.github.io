@@ -966,6 +966,12 @@
 			}		
 			else {
 				document.getElementById("CUSTcourse").style.visibility="visible";
+				document.getElementById("cstNAME").value = localStorage.getItem('CCname');
+				for (H=1; H<19; H++) {
+					document.getElementById("cstPARh"+H).value = localStorage.getItem('CCh'+H+'PAR');
+					document.getElementById("cstHCh"+H).value = localStorage.getItem('CCh'+H+'HC');
+				}
+				//document.getElementById("useCUSTOM").disabled = true;
 			}
 		
 		}
@@ -990,7 +996,7 @@
 <div class="wrapper"><!-- Put the page contents here -->
 				
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>37</u></font><br><font size=2 color=lime>13</font><font size=2 color=silver><b>May<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
+	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>37</u></font><br><font size=2 color=lime>14</font><font size=2 color=silver><b>May<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 <TD>
 					<div class="dropup" style="cursor:pointer; color:black; background:lightgray; /*position:relative; left:18%;*/">
@@ -2292,19 +2298,19 @@
 	<div class="ADDclass" id="CUSTcourse" style= "background:black; color:white; visibility:hidden; padding:5px; width:200px;">
 			<!-- position = 'fixed'; left = "700px"; top = "100px"; -->
 		<font size=5><b>Custom Course</b></font>
-			<button id='fullCUSTbtn' onclick="FULLcustom()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:gold; background:transparent; border:1px solid gold; border-radius:5px;">+</button>
-			<span style="float:right; padding-right:10px; cursor:pointer; background:white; color:black; font-size:30px;">
-					<a onclick="showCUSTOM()"><b>&times;</b></a>
-			</span><br>
-
-		NAME:<input class='' type="text" style="width:40px;" id="cstNAME"> <!--maxlength=2-->
-		<!--&emsp;-->
+		<br>
+		NAME:<input class='' type="text" style="width:50px;" id="cstNAME"> <!--maxlength=2-->
+		&emsp;
 		<button id='SAVECOURSEbtn' onclick="saveCUSTOM()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%; "><b>save</b></button>		
-		<button id='USEbtn' onclick="useCUSTOM()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%; "><b>USE</b></button>
 		
-		<table id="CUSTtbl" border=1 align=left>
+		<table id="CUSTtbl" border=1 align=left style="margin-left: auto; margin-right: auto;">
+								<!-- margin: 0 auto; -->
 			<tr style="background:green;">
 				<th>HOLE</th> <TH>PAR</TH> <th>HCP</th> <!--  p drop -->
+				<td style="background:gold;">
+					<button style="cursor:pointer; background:white; color:black; font-size:20px;" onclick="showCUSTOM()"><b>&times;</b></button>
+				</span>
+				</td>
 			</tr>			
 			<tr> <td>1</td> 
 				<TD>
@@ -2313,16 +2319,29 @@
 				</TD> 
 				<TD><input class='' type="tel" style="width:20px;" id="cstHCh1" maxlength=2></TD> 
 						<!--<td style="background:ivory; color:black; font-size:25px;" id="newH1ptT"></td> -->
+				<td>
+					<button id='fullCUSTbtn' onclick="FULLcustom()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:gold; background:transparent; border:1px solid gold; border-radius:5px;">+</button>
+				</td>
 			</tr>
 			<tr> <td>2</td> 
 				<TD><input class='' type="tel" style="width:20px;" id="cstPARh2" maxlength=2></TD> 
-				<TD><input class='' type="tel" style="width:20px;" id="cstHCh2" maxlength=2></TD> </tr>
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh2" maxlength=2></TD>
+				<td>
+					<button id='USEbtn' onclick="useCUSTOM()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px;"><b>USE</b></button> 
+							<!-- opacity:100%; pointer-events: none; opacity: 0.6; cursor: not-allowed; -->
+				</td>
+			</tr>
 			<tr> <td>3</td> 
 				<TD><input class='' type="tel" style="width:20px;" id="cstPARh3" maxlength=2></TD> 
-				<TD><input class='' type="tel" style="width:20px;" id="cstHCh3" maxlength=2></TD> </tr>
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh3" maxlength=2></TD> 
+				<td>
+					<button id='USEbtn' onclick="delCUSTOM()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:gray; background:ivory; border:2px solid black; border-radius:10px; opacity:100%; "><b>delete</b></button> 
+				</td>
+			</tr>
 			<tr> <td>4</td> 
 				<TD><input class='' type="tel" style="width:20px;" id="cstPARh4" maxlength=2></TD> 
-				<TD><input class='' type="tel" style="width:20px;" id="cstHCh4" maxlength=2></TD> </tr>
+				<TD><input class='' type="tel" style="width:20px;" id="cstHCh4" maxlength=2></TD> 
+			</tr>
 			<tr> <td>5</td> 
 				<TD><input class='' type="tel" style="width:20px;" id="cstPARh5" maxlength=2></TD> 
 				<TD><input class='' type="tel" style="width:20px;" id="cstHCh5" maxlength=2></TD> </tr>
