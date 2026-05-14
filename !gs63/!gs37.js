@@ -3303,10 +3303,30 @@
 						pHCcolors(); // < ??	
 						calcALL(); calcTOTALS(); // < ?? Nov/25 **			
 			
-		}
-			
-		
+		}		
 	}	
+
+	function delCUSTOM() {
+		  let reply;
+		  if (confirm("Are you SURE you want to DELETE all current custom course data?") == true) {
+		    reply = "YES!";
+		  } else {
+		    reply = "NO!";
+		  }
+  		  //alert(reply);			  
+		  if ( reply=="YES!") {			
+				localStorage.setItem('CCname', "");
+					document.getElementById("cstNAME").value=localStorage.getItem('CCname');
+				for (var h = 1; h < 19; h++) {
+					localStorage.setItem('CCh'+h+'PAR', "");
+					localStorage.setItem('CCh'+h+'HC', "");		
+					document.getElementById("cstPARh"+h).value=localStorage.getItem('CCh'+h+'PAR'); 
+					document.getElementById("cstHCh"+h).value=localStorage.getItem('CCh'+h+'HC');
+				}				
+				alert("Hopefully all custom course data has been deleted . . .\n"+
+				"CC h3 HCP = '"+localStorage.getItem('CCh3HC')+"'");		  
+		  }  
+	}
 	
 	function ADD() {
 var addH1 = +document.getElementById("ptsADDh1").value;
