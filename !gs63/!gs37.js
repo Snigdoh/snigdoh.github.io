@@ -3149,6 +3149,10 @@
 			document.getElementById("CourseLogo").src="VGClogo.jpeg";
 			document.getElementById("CourseLogo").alt="VGC";	
 		}
+		else if (localStorage.getItem("lsCOURSE").startsWith("z")) { 	//string.startsWith("Hello")
+			document.getElementById("CourseLogo").src="CustomCourseLogo.jpeg";
+			document.getElementById("CourseLogo").alt=localStorage.getItem("lsCOURSE");	
+		}
 		else {
 			document.getElementById("CourseLogo").src="VGClogo.jpeg";
 			document.getElementById("CourseLogo").alt="VIC";
@@ -3266,14 +3270,14 @@
 			localStorage.setItem('CCh'+h+'PAR', document.getElementById("cstPARh"+h).value);
 			localStorage.setItem('CCh'+h+'HC', document.getElementById("cstHCh"+h).value);			
 		}
-		
-		alert("Trying to save custom course . . .\n"+
-			 "CC h3 HCP = "+localStorage.getItem('CCh3HC'));
+		alert("Custom course was saved.");
+		/* alert("Trying to save custom course . . .\n"+
+			 "CC h3 HCP = "+localStorage.getItem('CCh3HC')); */
 		
 	}	
 
 	function useCUSTOM() {		
-		alert("Will try to USE custom course . . .\n"+"");
+		//alert("Will try to USE custom course . . .\n"+"");
 		
 		var allCCparsENTERED = 'y';
 		for (var h = 1; h < 19; h++) {	
@@ -3291,14 +3295,20 @@
 			for (var h = 1; h < 19; h++) {				
 				document.getElementById("PARh"+h).value=localStorage.getItem('CCh'+h+'PAR'); 
 				document.getElementById("HCPh"+h).value=localStorage.getItem('CCh'+h+'HC'); 
-				
+				localStorage.setItem("lsPARh"+h,document.getElementById("PARh"+h).value);
+				localStorage.setItem("lsHCPh"+h,document.getElementById("HCPh"+h).value);				
 			}			
 			/*
 			for (var h = 1; h < 19; h++) {
 				localStorage.setItem("lsPARh"+h,document.getElementById("PARh"+h).value);
 				localStorage.setItem("lsHCPh"+h,document.getElementById("HCPh"+h).value);
 			}
-			*/			
+			*/
+			var CCcoursename = localStorage.getItem('CCname');
+			localStorage.setItem("lsCOURSE",CCcoursename); // < ?? May 14/26
+				//document.getElementById("CourseLogo").src="CBGClogo.jpeg";
+				//document.getElementById("CourseLogo").alt="CDVB";
+			
 			pHCcolors(); 
 						pHCcolors(); // < ??	
 						calcALL(); calcTOTALS(); // < ?? Nov/25 **			
@@ -3315,7 +3325,7 @@
 		  }
   		  //alert(reply);			  
 		  if ( reply=="YES!") {			
-				localStorage.setItem('CCname', "");
+				localStorage.setItem('CCname', "zXXX");
 					document.getElementById("cstNAME").value=localStorage.getItem('CCname');
 				for (var h = 1; h < 19; h++) {
 					localStorage.setItem('CCh'+h+'PAR', "");
@@ -3323,8 +3333,8 @@
 					document.getElementById("cstPARh"+h).value=localStorage.getItem('CCh'+h+'PAR'); 
 					document.getElementById("cstHCh"+h).value=localStorage.getItem('CCh'+h+'HC');
 				}				
-				alert("Hopefully all custom course data has been deleted . . .\n"+
-				"CC h3 HCP = '"+localStorage.getItem('CCh3HC')+"'");		  
+				/* alert("Hopefully all custom course data has been deleted . . .\n"+
+				"CC h3 HCP = '"+localStorage.getItem('CCh3HC')+"'"); */
 		  }  
 	}
 	
