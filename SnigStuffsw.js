@@ -25,8 +25,10 @@ self.addEventListener('install', function(e) {
 			 	//'/fudd4.jpeg'
 			  //  '/eeyore.JPG'//add this file to github repository
 		//'/!gs63/!gs63idx.html',
-		'/!gs63/!gs63.css',
-		'/!gs63/!gs63.js',
+		'/!gs63/!gs37.js';
+		'/!gs63/!gs37.css',
+		//'/!gs63/!gs63.css',
+		//'/!gs63/!gs63.js',
      ]);
    })
  );
