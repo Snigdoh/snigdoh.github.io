@@ -29,6 +29,13 @@ self.addEventListener('install', function(e) {
 		//'/!gs63/!gs37.css',
 		//'/!gs63/!gs63.css',
 		//'/!gs63/!gs63.js',
+		'indexCOPYbook24.html',
+		'ttBRIDGEcol2.html',
+		'SNIGmatch.html',
+		'VGClogo.jpeg',
+		'UPLANDSlogo.jpeg',
+		'COLWOODlogo.png',
+		'CBGClogo.jpeg',
      ]);
    })
  );
