@@ -16,8 +16,8 @@ self.addEventListener('install', function(e) {
 				//'/Notes21.xml',
 				//.xml might be seen by service worker and browser as another html file which might crash the PWA?
 		//'/indexCOPYbook24.html',
-		'/!snig.js',
-		'/!snig.css',		
+		'/!snigT.js',
+		'/!snigT.css',		
 				// '/DougieBaseVer34.js',//directory path to project folder/app name.js file
 		     //  '/DougieBaseVer34.css',////directory path to project folder/app name.css file
 	    '/SnigStuff.webmanifest',////directory path to project folder/app name.trainmanifest file
