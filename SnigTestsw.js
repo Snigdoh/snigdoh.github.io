@@ -17,6 +17,7 @@ self.addEventListener('install', function(e) {
 				//.xml might be seen by service worker and browser as another html file which might crash the PWA?
 		//'/indexCOPYbook24.html',
 		'/!snigT.js',
+		'/!snigT2.js',
 		'/!snigT.css',		
 				// '/DougieBaseVer34.js',//directory path to project folder/app name.js file
 		     //  '/DougieBaseVer34.css',////directory path to project folder/app name.css file
@@ -29,14 +30,15 @@ self.addEventListener('install', function(e) {
 		//'/!gs63/!gs37.css',
 		//'/!gs63/!gs63.css',
 		//'/!gs63/!gs63.js',
-		'indexCOPYbook24.html',
-		 'ttBRIDGEcol2.html',
-		 'SNIGmatch.html',
-		'VGClogo.jpeg',
-		'UPLANDSlogo.jpeg',
-		 'COLWOODlogo.png',
-		 'CBGClogo.jpeg',
-		'HISTORY2.html',
+		'/indexCOPYbook24.html',
+		 '/ttBRIDGEcol2.html',
+		 '/SNIGmatch.html',
+		'/VGClogo.jpeg',
+		'/UPLANDSlogo.jpeg',
+		 '/COLWOODlogo.png',
+		 '/CBGClogo.jpeg',
+		'/HISTORY2.html',
+		'/SWINGcol.html',
      ]);
    })
  );

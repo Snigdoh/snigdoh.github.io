@@ -1910,7 +1910,20 @@
 			"SBFDg1h1 POST 'clear' = " +  localStorage.getItem('SBFDg1h1')+"\n"+
 			"lsCIRCLED POST 'clear' = " +  localStorage.getItem('lsCIRCLED')); */  // < Apr/25! *
 			
-		
+		//CLEAR TEE COLORS:
+		for (var a = 1; a < 5; a++) {
+			localStorage.setItem('Tp'+a+'teeLS',"");	
+		}
+		//CLEAR $$$ DIV:
+		for (var a = 1; a < 6; a++) {
+			localStorage.setItem('Bp'+a+'NAME',"");			//localStorage.getItem('Bp1NAME');
+			localStorage.setItem('Cp'+a+'NAME',"");	
+		}
+		localStorage.setItem('gAf',""); localStorage.setItem('gAb',""); localStorage.setItem('gAt',"");
+		localStorage.setItem('gBf',""); localStorage.setItem('gBb',""); localStorage.setItem('gBt',"");
+		localStorage.setItem('gCf',""); localStorage.setItem('gCb',""); localStorage.setItem('gCt',"");
+					//localStorage.setItem('Ap5NAME', localStorage.setItem('gAb'
+			
 		hideMENU();		
 		
 		//window.location = "index37.html"; //location.reload(true);
@@ -3177,9 +3190,117 @@
 				alert("MAY have to perform a 'clear' after a new app download to get stroke hole colors & totals to display on 'reload'.");
 			}
 		}
+
+		/* $MONEY$ values: */
+		document.getElementById('gpAp1NAME').value = localStorage.getItem('g1NAME');
+			document.getElementById('gpAp2NAME').value = localStorage.getItem('g2NAME');
+			document.getElementById('gpAp3NAME').value = localStorage.getItem('g3NAME');
+			document.getElementById('gpAp4NAME').value = localStorage.getItem('g4NAME');
+				document.getElementById('gAf').value = document.getElementById('sTf9gp').innerHTML;
+					document.getElementById('gAb').value = document.getElementById('sTb9gp').innerHTML;
+					document.getElementById('gAt').value = document.getElementById('sT18gp').innerHTML;
+		document.getElementById('gpBp1NAME').value = localStorage.getItem('Bp1NAME');	
+			document.getElementById('gpBp2NAME').value = localStorage.getItem('Bp2NAME');
+			document.getElementById('gpBp3NAME').value = localStorage.getItem('Bp3NAME');
+			document.getElementById('gpBp4NAME').value = localStorage.getItem('Bp4NAME');
+				document.getElementById('gBf').value = localStorage.getItem('gBf');
+					document.getElementById('gBb').value = localStorage.getItem('gBb');
+					document.getElementById('gBt').value = +document.getElementById('gBf').value + +document.getElementById('gBb').value;		
+		document.getElementById('gpCp1NAME').value = localStorage.getItem('Cp1NAME');	
+			document.getElementById('gpCp2NAME').value = localStorage.getItem('Cp2NAME');
+			document.getElementById('gpCp3NAME').value = localStorage.getItem('Cp3NAME');
+			document.getElementById('gpCp4NAME').value = localStorage.getItem('Cp4NAME');
+				document.getElementById('gCf').value = localStorage.getItem('gCf');
+					document.getElementById('gCb').value = localStorage.getItem('gCb');
+					document.getElementById('gCt').value = +document.getElementById('gCf').value + +document.getElementById('gCb').value;		
+			
+		//TEE COLORS:
+		for (var a = 1; a < 5; a++) {
+			document.getElementById("p"+a+"HCtee").style.background = localStorage.getItem('Tp'+a+'teeLS');	
+						//localStorage.setItem('Tp'+a+'teeLS',"B");		
+		}
 		
 	}	
 
+	function MONEYcalc(){
+		//alert("Will calc highest & lowest f/b/t!");
+		if ( (+document.getElementById('gAf').value > +document.getElementById('gBf').value) && (+document.getElementById('gAf').value > +document.getElementById('gCf').value) ) {
+			document.getElementById('gAf').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gBf').value > +document.getElementById('gAf').value) && (+document.getElementById('gBf').value > +document.getElementById('gCf').value) ) {
+			document.getElementById('gBf').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gCf').value > +document.getElementById('gAf').value) && (+document.getElementById('gCf').value > +document.getElementById('gBf').value) ) {
+			document.getElementById('gCf').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gAf').value < +document.getElementById('gBf').value) && (+document.getElementById('gAf').value < +document.getElementById('gCf').value) ) {
+			if ( document.getElementById('gAf').value != "" ) {
+				document.getElementById('gAf').style.background = "silver";
+			}
+		}
+		if ( (+document.getElementById('gBf').value < +document.getElementById('gAf').value) && (+document.getElementById('gBf').value < +document.getElementById('gCf').value) ) {
+			if ( document.getElementById('gBf').value != "" ) {
+				document.getElementById('gBf').style.background = "silver";
+			}
+		}
+		if ( (+document.getElementById('gCf').value < +document.getElementById('gAf').value) && (+document.getElementById('gCf').value < +document.getElementById('gBf').value) ) {
+			if ( document.getElementById('gCf').value != "" ) {
+				document.getElementById('gCf').style.background = "silver";
+			}
+		}
+		
+		if ( (+document.getElementById('gAb').value > +document.getElementById('gBb').value) && (+document.getElementById('gAb').value > +document.getElementById('gCb').value) ) {
+			document.getElementById('gAb').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gBb').value > +document.getElementById('gAb').value) && (+document.getElementById('gBb').value > +document.getElementById('gCb').value) ) {
+			document.getElementById('gBb').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gCb').value > +document.getElementById('gAb').value) && (+document.getElementById('gCb').value > +document.getElementById('gBb').value) ) {
+			document.getElementById('gCb').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gAb').value < +document.getElementById('gBb').value) && (+document.getElementById('gAb').value < +document.getElementById('gCb').value) ) {
+			if ( document.getElementById('gAb').value != "" ) {
+				document.getElementById('gAb').style.background = "silver";
+			}
+		}
+		if ( (+document.getElementById('gBb').value < +document.getElementById('gAb').value) && (+document.getElementById('gBb').value < +document.getElementById('gCb').value) ) {
+			if ( document.getElementById('gBb').value != "" ) {
+				document.getElementById('gBb').style.background = "silver";
+			}
+		}
+		if ( (+document.getElementById('gCb').value < +document.getElementById('gAb').value) && (+document.getElementById('gCb').value < +document.getElementById('gBb').value) ) {
+			if ( document.getElementById('gCb').value != "" ) {
+				document.getElementById('gCb').style.background = "silver";
+			}
+		}
+
+		if ( (+document.getElementById('gAt').value > +document.getElementById('gBt').value) && (+document.getElementById('gAt').value > +document.getElementById('gCt').value) ) {
+			document.getElementById('gAt').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gBt').value > +document.getElementById('gAt').value) && (+document.getElementById('gBt').value > +document.getElementById('gCt').value) ) {
+			document.getElementById('gBt').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gCt').value > +document.getElementById('gAt').value) && (+document.getElementById('gCt').value > +document.getElementById('gBt').value) ) {
+			document.getElementById('gCt').style.background = "yellow";
+		}
+		if ( (+document.getElementById('gAt').value < +document.getElementById('gBt').value) && (+document.getElementById('gAt').value < +document.getElementById('gCt').value) ) {
+			if ( document.getElementById('gAt').value != "" ) {
+				document.getElementById('gAt').style.background = "silver";
+			}
+		}
+		if ( (+document.getElementById('gBt').value < +document.getElementById('gAt').value) && (+document.getElementById('gBt').value < +document.getElementById('gCt').value) ) {
+			if ( document.getElementById('gBt').value != "" ) {
+				document.getElementById('gBt').style.background = "silver";
+			}
+		}
+		if ( (+document.getElementById('gCt').value < +document.getElementById('gAt').value) && (+document.getElementById('gCt').value < +document.getElementById('gBt').value) ) {
+			if ( document.getElementById('gCt').value != "" && document.getElementById('gCt').value != 0 ) {
+				document.getElementById('gCt').style.background = "silver";
+			}
+		}
+		
+	}
+	
 	function cellTOslide(P,H) {
 		//Oct/25:
 			if ( document.getElementById("H"+H).style.background != "red" ) {
@@ -3716,7 +3837,7 @@ else {
 			if (pwd == 'r') {	//if (pwd == 'roentgen') {
 				//alert ("Will try to bring up selected menu item!");	
 				let mnuITEM = prompt("Enter MENU ITEM:\n\t1. Hx\n\t2. NOTE"+
-								     "\n\t3. Matches\n\t4. BOOK/bridge"+
+								     "\n\t3. Matches\n\t4. BOOK/bridge/SWING"+
 									 "\n\t5. Slider +/-\n\t6. SlideValsX\n\t7. SAVED\n\t8. coding *"+
 									 "\n\t9. P5+/-\n\t10. Change Course\n\t11. Edit Stablefords", "1");	
 									 	//onclick="restrictTAB()"   Inputs+/  --->	  <!-- NB++ Feb/26 ** -->
