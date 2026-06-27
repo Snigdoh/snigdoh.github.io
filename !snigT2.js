@@ -992,6 +992,7 @@
 	}
 	
 	function showTEES() {
+		//alert("localStorage.getItem('Tp1teeLS') = "+localStorage.getItem('Tp1teeLS'));
 		if (document.getElementById("TEESdiv").style.visibility=="visible") {
 			document.getElementById("TEESdiv").style.visibility="hidden"; 
 		}		
@@ -1001,7 +1002,22 @@
 			document.getElementById('Tp2name').value = localStorage.getItem('g2NAME');
 			document.getElementById('Tp3name').value = localStorage.getItem('g3NAME');
 			document.getElementById('Tp4name').value = localStorage.getItem('g4NAME');
-			
+				for (var a = 1; a < 5; a++) {
+					//document.getElementById('Tp1tee').value = localStorage.getItem('Tp1teeLS');
+					if (localStorage.getItem('Tp'+a+'teeLS')=="white") {
+						document.getElementById('Tp'+a+'tee').value="W"
+					}
+					else if (localStorage.getItem('Tp'+a+'teeLS')=="blue") {
+						document.getElementById('Tp'+a+'tee').value="B"
+					}
+					else if (localStorage.getItem('Tp'+a+'teeLS')=="red") {
+						document.getElementById('Tp'+a+'tee').value="R"
+					}
+					else if (localStorage.getItem('Tp'+a+'teeLS')=="green") {
+						document.getElementById('Tp'+a+'tee').value="G"
+					}
+					else { document.getElementById('Tp'+a+'tee').value="" }
+				}
 		}
 		
 	}

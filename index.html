@@ -32,7 +32,7 @@
 <div class="wrapper"><!-- Put the page contents here -->
 				
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>25</font><font size=2 color=silver><b>Jun<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
+	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>27</font><font size=2 color=silver><b>Jun<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 <TD>
 					<div class="dropup" style="cursor:pointer; color:black; background:lightgray; /*position:relative; left:18%;*/">
@@ -1525,13 +1525,13 @@
 			<b>SKINS</b>:<br> 
 				&nbsp;#plr:<input type="tel" id="NOp" maxlength=2 onchange="localStorage.setItem('NOp',this.value);" style="background:white; width:20px;" >&nbsp;
 				#skn:<input type="tel" id="NOsk" maxlength=2 onchange="localStorage.setItem('NOsk',this.value);" style="background:white; width:20px;" >
-				&nbsp;<button id='skinsCALCbtn' onclick="SKINScalc()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><b>Get Values</b></button>
+				&nbsp;<button id='skinsCALCbtn' onclick="SKINScalc()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">Submit</button>
 				<br>
 				&nbsp;pot = $<input type="tel" id="pot" maxlength=2 onchange="localStorage.setItem('pot',this.value);" style="background:whitesmoke; width:20px;" >&emsp;
 				$/skn = $<input type="tel" id="Sval" maxlength=4 onchange="localStorage.setItem('Sval',this.value);" style="background:whitesmoke; width:40px;" ><br>
-				rounded $/skn > nearest $0.50= <input type="tel" id="rdSval" maxlength=4 onchange="localStorage.setItem('rdSval',this.value);" style="background:whitesmoke; width:40px;" ><br>
-				real - round = <input type="tel" id="diff" maxlength=4 onchange="localStorage.setItem('diff',this.value);" style="background:whitesmoke; width:40px;" ><br>
-				winner puts/takes = $<input type="tel" id="balance" maxlength=4 onchange="localStorage.setItem('bal',this.value);" style="background:whitesmoke; width:40px;" > 
+				&nbsp;rounded $/skn > $<input type="tel" id="rdSval" maxlength=4 onchange="localStorage.setItem('rdSval',this.value);" style="background:whitesmoke; width:40px;" ><br>
+				&nbsp;real - round = <input type="tel" id="diff" maxlength=4 onchange="localStorage.setItem('diff',this.value);" style="background:whitesmoke; width:40px;" ><br>
+				&nbsp;winner puts/takes = $<input type="tel" id="balance" maxlength=4 onchange="localStorage.setItem('bal',this.value);" style="background:whitesmoke; width:40px;" > 
 		</div>
 		
 	</div>		
@@ -1541,7 +1541,7 @@
 	
 	<!-- 	√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√ \/ TEES \/ √√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√	  -->
 
-	<div id="TEESdiv" style= "border:3px inset slategray; border-radius:10px; width:150px; height:200px; overflow:scroll; margin:auto; visibility:hidden; background:white;  position:fixed; left:65%; transform:translate(-50%,0); top:10%;  zoom:100%;"> <!-- width:200px;  left:35%; -->
+	<div id="TEESdiv" style= "border:3px inset slategray; border-radius:10px; width:200px; height:225px; overflow:scroll; margin:auto; visibility:hidden; background:white;  position:fixed; left:60%; transform:translate(-50%,0); top:10%;  zoom:100%;"> <!-- width:200px;  left:35%; -->
 		
 		<font size=5>&emsp;<b>TEES</b></font>
 						<!--<button id='fullMONEYbtn' onclick="FULLmoney()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:blue; background:transparent; border:1px solid blue; border-radius:5px;">+</button>-->
@@ -1551,7 +1551,7 @@
 						<a onclick="showTEES()"><b>&times;</b></a>
 				</span><br>
 
-		
+		<div style="position:relative; left:50%;">B W R G</div>		
 		<table id="TEEStbl" border=1 align=center style="">
 			<TR>
 				<th>Player</th>
@@ -1559,27 +1559,27 @@
 				<!--<th style='background:gray;'><input type="text" id="p1TEES" onchange="localStorage.setItem('p1TEES',this.value);"  style="background:whitesmoke; width:60%; font-weight:bold; font-size:14px;" maxlength=3 value=""></th>-->
 			</TR>
 			<TR>
-				<td><input type="text" id="Tp1name" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
+				<td><input type="text" id="Tp1name" value="" style="background:white; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
 				</td>
-				<td><input type="text" id="Tp1tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;" maxlength=2  placeholder="R">
+				<td><input type="text" id="Tp1tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;" maxlength=2  placeholder="">
 				</td>
 			</TR>
 			<TR>
-				<td><input type="text" id="Tp2name" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
+				<td><input type="text" id="Tp2name" value="" style="background:white; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
 				</td>
-				<td><input type="text" id="Tp2tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;"" maxlength=2  placeholder="B">
+				<td><input type="text" id="Tp2tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;"" maxlength=2  placeholder="">
 				</td>	
 			</TR>
 			<TR>
-				<td><input type="text" id="Tp3name" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
+				<td><input type="text" id="Tp3name" value="" style="background:white; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
 				</td>				
-				<td><input type="text" id="Tp3tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;"" maxlength=2  placeholder="W">
+				<td><input type="text" id="Tp3tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;"" maxlength=2  placeholder="">
 				</td>
 			</TR>
 			<TR>
-				<td><input type="text" id="Tp4name" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
+				<td><input type="text" id="Tp4name" value="" style="background:white; font-weight:bold; font-size:14px; width:25px;" maxlength=2>
 				</td>				
-				<td><input type="text" id="Tp4tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;"" maxlength=2  placeholder="G">
+				<td><input type="text" id="Tp4tee" value="" style="background:whitesmoke; font-weight:bold; font-size:14px; width:20px;"" maxlength=2  placeholder="">
 				</td>				
 			</TR>
 		</table>
@@ -1589,7 +1589,7 @@
 
 	<!-- 	√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√ \/ MISC menu \/ √√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√	  -->
 
-	<div id="MISCdiv" class="scrollmenu" style="border:3px inset slategray; border-radius:10px; width:200px; height:350px; overflow:scroll; margin:auto; visibility:hidden; background:yellow;  position:fixed; left:50%; transform:translate(-50%,0); top:20%;  zoom:100%;"> <!-- width:200px;  left:35%; -->
+	<div id="MISCdiv" class="scrollmenu" style="border:3px inset slategray; border-radius:10px; width:230px; height:360px; overflow:scroll; margin:auto; visibility:hidden; background:yellow;  position:fixed; left:50%; transform:translate(-50%,0); top:20%;  zoom:100%;"> <!-- width:200px;  left:35%; -->
 		
 		<font size=5>&emsp;<b>MISC menu</b></font>
 					<span style="float:right; padding-right:10px; cursor:pointer; background:yellow; color:black; font-size:30px;">
