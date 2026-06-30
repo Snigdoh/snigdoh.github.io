@@ -475,10 +475,10 @@
 				
 				document.getElementById('gBf').value = localStorage.getItem('gBf');
 					document.getElementById('gBb').value = localStorage.getItem('gBb');
-					document.getElementById('gBt').value = localStorage.getItem('gBt');
+					//document.getElementById('gBt').value = localStorage.getItem('gBt');
 				document.getElementById('gCf').value = localStorage.getItem('gCf');
 					document.getElementById('gCb').value = localStorage.getItem('gCb');
-					document.getElementById('gCt').value = localStorage.getItem('gCt');
+					//document.getElementById('gCt').value = localStorage.getItem('gCt');
 										
 			}
 			
@@ -1061,3 +1061,12 @@
 	function closeMISC() {
 		document.getElementById("MISCdiv").style.visibility="hidden"; 
 	}	
+	
+	function showFOREARM(){
+				if (document.getElementById("FOREARMdiv").style.visibility=="visible") {
+					document.getElementById("FOREARMdiv").style.visibility="hidden"; 
+				}		
+				else {
+					document.getElementById("FOREARMdiv").style.visibility="visible";	
+				}		
+	}
