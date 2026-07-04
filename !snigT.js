@@ -1077,6 +1077,12 @@
 		document.getElementById("focusIPT").style.background = "red";
 			document.getElementById("focusIPT").style.color = "white";
 			document.getElementById("focusIPT").value = pNAME+" "+nameArray[1]; 		//GLOBALinput;
+			
+			//document.getElementById("HCPh"+nameArray[1]).value = pNAME;		// < July 2/26 *
+			document.getElementById("H"+nameArray[1]).style.color="red";
+			document.getElementById("H"+nameArray[1]).innerHTML = nameArray[1]+"/"+pNAME;		// < July 2/26 *
+						//HCPh2; H2
+			
 		//document.getElementById("TD"+SCRinput).style.background = "red";   //TDp1h1
 			//changeGLOBAL(x);
 			/*alert("In 'FOCUSfn()'! SCRinput = "+SCRinput+". prevIPT = "+prevIPT+". lastFOCUS = "+lastFOCUS+".\n\n"+
@@ -1271,7 +1277,6 @@
 			document.getElementById("focusIPT").style.color = "maroon";
 			document.getElementById("focusIPT").value = "SNIGgs26"	//"GSmac3x"; 	gwHODG. 	//GLOBALinput;
 			
-		
 		var entry = +document.getElementById(SCRinput).value;
 		//alert ("In 'BLURfn' function! \n'SCRinput' variable = "+SCRinput+"\n"+
 		//	   "Content of "+SCRinput+" element = "+entry);			
@@ -1351,6 +1356,10 @@
 				
 		}
 		else { document.getElementById(SCRinput).style.border = "1px solid gray"; }
+		
+		document.getElementById("H"+HOLE).style.color="maroon";
+		document.getElementById("H"+HOLE).innerHTML = HOLE;		// < July 2/26 *
+		
 /*
 		for (h=1; h<19; h++) {
 			if ( document.getElementById("p1h"+h).value=="x" ) {
