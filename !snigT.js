@@ -1080,8 +1080,8 @@
 			
 			//document.getElementById("HCPh"+nameArray[1]).value = pNAME;		// < July 2/26 *
 			document.getElementById("H"+nameArray[1]).style.color="red";
-			document.getElementById("H"+nameArray[1]).style.fontSize="16px";
-			document.getElementById("H"+nameArray[1]).innerHTML = nameArray[1]+"/"+pNAME;		// < July 2/26 *
+			document.getElementById("H"+nameArray[1]).style.fontSize="14px";
+			document.getElementById("H"+nameArray[1]).innerHTML = nameArray[1]+pNAME; //+"/"		// < July 2/26 *
 						//HCPh2; H2
 			
 		//document.getElementById("TD"+SCRinput).style.background = "red";   //TDp1h1
