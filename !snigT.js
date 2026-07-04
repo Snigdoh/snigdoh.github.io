@@ -1080,6 +1080,7 @@
 			
 			//document.getElementById("HCPh"+nameArray[1]).value = pNAME;		// < July 2/26 *
 			document.getElementById("H"+nameArray[1]).style.color="red";
+			document.getElementById("H"+nameArray[1]).style.fontSize="16px";
 			document.getElementById("H"+nameArray[1]).innerHTML = nameArray[1]+"/"+pNAME;		// < July 2/26 *
 						//HCPh2; H2
 			
@@ -1358,6 +1359,7 @@
 		else { document.getElementById(SCRinput).style.border = "1px solid gray"; }
 		
 		document.getElementById("H"+HOLE).style.color="maroon";
+		document.getElementById("H"+HOLE).style.fontSize="20px";
 		document.getElementById("H"+HOLE).innerHTML = HOLE;		// < July 2/26 *
 		
 /*
