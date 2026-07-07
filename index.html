@@ -32,7 +32,7 @@
 <div class="wrapper"><!-- Put the page contents here -->
 				
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>1</font><font size=2 color=silver><b>Jul<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
+	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>7</font><font size=2 color=silver><b>Jul<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 <TD>
 					<div class="dropup" style="cursor:pointer; color:black; background:lightgray; /*position:relative; left:18%;*/">
@@ -1449,9 +1449,15 @@
 <!--<TABLE align=center><TR><TD>-->
 	<div id="MONEYdiv" style= "border:3px inset slategray; border-radius:10px; width:250px; height:475px; overflow:scroll; margin:auto; visibility:hidden; background:white;  position:fixed; left:65%; transform:translate(-50%,0); top:10%;  zoom:100%;"> <!-- width:200px;  left:35%; -->
 		
-		<font size=5>&emsp;<b>$$$$</b></font>
+		
 						<!--<button id='fullMONEYbtn' onclick="FULLmoney()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:blue; background:transparent; border:1px solid blue; border-radius:5px;">+</button>-->
 				&emsp;<button id='moneyCALCbtn' onclick="MONEYcalc()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><b>CALC!</b></button>
+				
+				<font size=5><b>$$$$</b></font>
+				&nbsp;
+				<button id='Wbtn' onclick="$Wfn()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:gray; background:lightgreen; border:2px solid orange; border-radius:10px; cursor: pointer;  opacity:50%;">W</button>
+				<button id='Lbtn' onclick="$Lfn()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:gray; background:pink; border:2px solid orange; border-radius:10px; cursor: pointer; opacity:50%;">L</button>
+								<!-- onclick="fVRyn()" -->
 		
 				<span style="float:right; padding-right:10px; cursor:pointer; background:white; color:black; font-size:30px;">
 						<a onclick="showMONEY()"><b>&times;</b></a>
@@ -1499,23 +1505,23 @@
 		<tbody id='$TBLbody'> -->
 			<TR>
 				<TD style="background:lightgray;"><b>F</b></TD>
-				<TD><input type="tel" id="gAf" maxlength=2 onchange="localStorage.setItem('gAf',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" ></TD>
-				<TD><input type="tel" id="gBf" maxlength=2 onchange="localStorage.setItem('gBf',this.value);" style="background:whitesmoke; width:60%;" ></TD> <!-- P2 HC -->
-				<TD><input type="tel" id="gCf" maxlength=2 onchange="localStorage.setItem('gCf',this.value);" style="background:whitesmoke; width:60%;" ></TD>
+				<TD id='gAfTD'><input type="tel" id="gAf" maxlength=2 onchange="localStorage.setItem('gAf',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAf');"></TD>
+				<TD id='gBfTD'><input type="tel" id="gBf" maxlength=2 onchange="localStorage.setItem('gBf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBf');"></TD> <!-- P2 HC -->
+				<TD id='gCfTD'><input type="tel" id="gCf" maxlength=2 onchange="localStorage.setItem('gCf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCf');"></TD>
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
 			</TR>
 			<TR>
 				<TD style="background:lightgray;"><b>B</b></TD>
-				<TD><input type="tel" id="gAb" maxlength=2 onchange="localStorage.setItem('gAb',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" ></TD>
-				<TD><input type="tel" id="gBb" maxlength=2 onchange="localStorage.setItem('gBb',this.value);" style="background:whitesmoke; width:60%;" ></TD> <!-- P2 HC -->
-				<TD><input type="tel" id="gCb" maxlength=2 onchange="localStorage.setItem('gCb',this.value);" style="background:whitesmoke; width:60%;" ></TD>
+				<TD id='gAbTD'><input type="tel" id="gAb" maxlength=2 onchange="localStorage.setItem('gAb',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAb');"></TD>
+				<TD id='gBbTD'><input type="tel" id="gBb" maxlength=2 onchange="localStorage.setItem('gBb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBb');"></TD> <!-- P2 HC -->
+				<TD id='gCbTD'><input type="tel" id="gCb" maxlength=2 onchange="localStorage.setItem('gCb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCb');"></TD>
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
 			</TR>
 			<TR>
 				<TD style="background:lightgray;"><b>T</b></TD>
-				<TD><input type="tel" id="gAt" maxlength=2 onchange="localStorage.setItem('gAt',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" ></TD>
-				<TD><input type="tel" id="gBt" maxlength=2 onchange="localStorage.setItem('gBt',this.value);" style="background:whitesmoke; width:60%;" ></TD> <!-- P2 HC -->
-				<TD><input type="tel" id="gCt" maxlength=2 onchange="localStorage.setItem('gCt',this.value);" style="background:whitesmoke; width:60%;" ></TD>
+				<TD id='gAtTD'><input type="tel" id="gAt" maxlength=2 onchange="localStorage.setItem('gAt',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAt');"></TD>
+				<TD id='gBtTD'><input type="tel" id="gBt" maxlength=2 onchange="localStorage.setItem('gBt',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBt');"></TD> <!-- P2 HC -->
+				<TD id='gCtTD'><input type="tel" id="gCt" maxlength=2 onchange="localStorage.setItem('gCt',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCt');"></TD>
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
 			</TR>			
 		<!--</tbody>-->

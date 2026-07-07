@@ -1070,3 +1070,53 @@
 					document.getElementById("FOREARMdiv").style.visibility="visible";	
 				}		
 	}
+
+	var $l;
+	function $Lfn(){
+		if ( document.getElementById("Lbtn").style.opacity==0.5 ) {
+			$l = "y";
+			document.getElementById("Lbtn").style.opacity='100%';	
+		}
+		else {
+			$l = "n";	
+			document.getElementById("Lbtn").style.opacity='50%';
+		}
+			/*$l = "y";
+			document.getElementById("Lbtn").style.opacity='100%';
+			setTimeout(() => {
+				$l = "n";	
+				document.getElementById("Lbtn").style.opacity='50%';
+			}, 5000);*/	 // < 5 seconds!	
+	}
+	var $w;
+	function $Wfn(){
+		//alert("In $Wfn()!\nButton opacity = "+document.getElementById("Wbtn").style.opacity);
+		if ( document.getElementById("Wbtn").style.opacity==0.5 ) {
+			$w = "y";
+			document.getElementById("Wbtn").style.opacity='100%';	
+		}
+		else {
+			$w = "n";	
+			document.getElementById("Wbtn").style.opacity='50%';
+		}
+			/*$w = "y";
+			document.getElementById("Wbtn").style.opacity='100%';
+			setTimeout(() => {
+				$w = "n";	
+				document.getElementById("Wbtn").style.opacity='50%';
+			}, 5000);*/	 // < 5 seconds!		
+	}
+	function clickPOINTS(group){
+					/*alert("'group' var = "+group+"\n"+"$w var = "+$w);*/
+		if ($w=="y") {
+			document.getElementById(group+"TD").style.background = "lime";
+			$w = "n";	document.getElementById("Wbtn").style.opacity='50%';
+		}
+		else if ($l=="y") {
+			document.getElementById(group+"TD").style.background = "black";
+			$l = "n";	document.getElementById("Lbtn").style.opacity='50%';
+		}
+		else {
+			document.getElementById(group+"TD").style.background = "white";
+		}
+	}
