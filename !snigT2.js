@@ -706,7 +706,7 @@
 		pwd = prompt("'book', 'bridge' or 'swing'", "");
 		if (pwd == "book") {
 			//alert ("Password is valid. Will try to load href = 'indexCOPYbook24.html'.");
-			window.location.href = "indexCOPYbook24.html";
+			window.location.href = "book26.html";	//indexCOPYbook24.html";
 		}
 		else if (pwd == "bridge") {
 			//alert ("Password is valid. Will try to load href = 'indexCOPYbook24.html'.");

@@ -39,6 +39,9 @@ self.addEventListener('install', function(e) {
 		 '/CBGClogo.jpeg',
 		'/HISTORY2.html',
 		'/SWINGcol.html',
+		'/book26.html',
+		'/!bookJS.js',
+		
      ]);
    })
  );
