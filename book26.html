@@ -177,7 +177,9 @@
 				
 
 	<TABLE class="HEADtbl" border=1 align=center > <!-- style='color:maroon; visibility:visible;' bgcolor='lightgray' -->	
-		<TR><TD><span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:35px; padding:2px;">snigdoh</span><font size=5><i><!--v10-->'26</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
+		<TR><TD>
+			Tee Time<br>Lottery Requests<br>
+			<span style="background:slategray; border:1px outset silver; border-radius:10px; font-size:35px; padding:2px;">snigdoh</span><font size=5><i><!--v10-->'26</i></font><!-- font-family="Comic Sans MS"  <br><font size=2 color=lightgray>May 22, 2024</font>--></TD> 
 			<TD><span style="font-size:50px; cursor:pointer; background:ivory;color:maroon;" onclick="openNav()">&#9776;</span>	</TD>	
 			<TD>
 				<img src="IMG_woody.png" width=50 height=50>
@@ -363,10 +365,7 @@
 		<TR>			
 			<TD><!--<input value="WK">-->
 				&nbsp;Docs Group&emsp;<a onclick="hideSFL()"><b>&times;</b></a><br>
-				<input id="WKipt" style="border:0px inset gray; background:beige;color:gray; width:20px; font-size:10px;" value='W2'>
-				<input id="WKdisp" style="border:0px inset gray; background:beige; color:blue; width:100px; font-size:20px;" value=''>&nbsp;
-				<button onclick="SFL2()" style="font-size:15px; border:2px inset gray; border-radius:10px;">S</button> <!-- SHUFFLE -->
-				<button onclick="SFLmnl()" style="font-size:15px; border:2px inset gray; border-radius:10px;">m</button>
+				<input id="WKipt" style="border:0px inset gray; background:beige;color:gray; width:20px; font-size:10px;" value='W2'><input id="WKdisp" style="border:0px inset gray; background:beige; color:blue; width:100px; font-size:20px;" value=''><!--&nbsp;--><button onclick="SFL2()" style="font-size:15px; border:2px inset gray; border-radius:10px;">sfl</button> <!-- SHUFFLE --><button onclick="SFLmnl()" style="font-size:15px; border:2px inset gray; border-radius:10px;">mnl</button><span id="SVDspan" style="visibility:hidden;">SVD</span>
 			</TD>
 		</TR>	
 		<TR><TD align=center id="SFL1" style="font-size:30px;" onclick="SFLcolor('1')"><!--Hodgins, George W.--></TD>
@@ -399,7 +398,7 @@
 		<TR><TD align=center id="SFL14" style="font-size:30px;" onclick="SFLcolor(14)">&nbsp;</TD>
 			<TD><input type="tel" id="sflODR14" maxlength=2  style="width:20px; display:none;" tabindex="314"></TD></TR>
 		<TR><TD align=center id="SFL15" style="font-size:30px;" onclick="SFLcolor(15)">&nbsp;</TD>
-			<TD><input type="tel" id="sflODR15" maxlength=2  style="width:20px; display:none;" tabindex="315"></TD></TR>
+			<TD onclick=""><input type="tel" id="sflODR15" maxlength=2  style="width:20px; display:none;" tabindex="315"></TD></TR>
 		<TR><TD align=center id="SFL16" style="font-size:30px;" onclick="SFLcolor(16)">&nbsp;</TD>
 			<TD><input type="tel" id="sflODR16" maxlength=2  style="width:20px; display:none;" tabindex="316"></TD></TR>
 		<TR><TD align=center id="SFL17" style="font-size:30px;" onclick="SFLcolor(17)">&nbsp;</TD>
@@ -407,10 +406,8 @@
 		<TR><TD align=center id="SFL18" style="font-size:30px;" onclick="SFLcolor(18)">&nbsp;</TD>
 			<TD><input type="tel" id="sflODR18" maxlength=2  style="width:20px; display:none;" tabindex="318"></TD></TR>
 		<TR>
-			<TD>&nbsp;
-				<button onclick="saveSFL()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">save</button> &#8680; 
-										<!-- right arrows: 8680 &#8658; -->
-				<button onclick="displaySFLsaved()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">display</button><!-- localStorage.getItem("sflP1") -->
+			<TD><!--&nbsp;-->
+				<button onclick="editSFL()" style="font-size:15px; border:2px inset gray; border-radius:10px;">mod</button><button onclick="saveSFL()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">save</button><!--&#8680;--><!-- right arrows: 8680 &#8658; --><button onclick="displaySFLsaved()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">show</button><!--localStorage.getItem("sflP1") --><button onclick="delNUMS()" style="font-size:15px; border:2px inset gray; border-radius:10px;">del#</button>
 			</TD>
 		</TR>	
 	</TABLE>	

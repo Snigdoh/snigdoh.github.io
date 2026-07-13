@@ -12,6 +12,10 @@
 
 	function hideSFL() {
 		document.getElementById("tblSFL").style.visibility="hidden";	//display="none";
+		document.getElementById("SVDspan").style.visibility="hidden";
+		for (let n = 1; n < 19; n++) {
+				document.getElementById("sflODR"+n).style.display="none"; 
+		}
 	}	
 	function showSFL() {
 		//alert("Trying to show 'tblSFL'!");
@@ -314,6 +318,7 @@
 
 	function SFL2() {
 		//alert("Will try to code shuffle from popup!");
+			document.getElementById("SVDspan").style.visibility="hidden";	
 		
 			const SFLwk0 = []; const SFLwk1 = []; const SFLwk2 = [];  const SFLwk3 = [];  const SFLwk4 = []; 
 			for (let i = 1; i < 19; i++) {	  
@@ -619,6 +624,7 @@ function PLAYwk(pl,pNO,wk) {
 	}	
 	
 	function SFLmnl(){
+		document.getElementById("SVDspan").style.visibility="hidden";
 		/*
 		for (let x = 1; x < 19; x++) {
 			document.getElementById("SFL"+x).innerHTML=localStorage.getItem('sflODR'+x); // July10/26 *
@@ -754,28 +760,34 @@ function PLAYwk(pl,pNO,wk) {
 	}
 	
 	function saveSFL() {
-		alert("Will save SFL to localStorage!");
+		if (confirm("Are you SURE you want to save this SFL to localStorage?") == true) {
+		    reply = "YES!";
+		//alert("Will save SFL to localStorage!");
 		//localStorage.setItem('sflP'+i,document.getElementById("SFL"+i).innerHTML);
-		for (let i = 1; i < 19; i++) {
-			for (let q = 1; q < 19; q++) {
-				if ( document.getElementById("sflODR"+i).value == q) {
-					localStorage.setItem('sflP'+q,document.getElementById("SFL"+i).innerHTML);
+				for (let i = 1; i < 19; i++) {
+					for (let q = 1; q < 19; q++) {
+						if ( document.getElementById("sflODR"+i).value == q) {
+							localStorage.setItem('sflP'+q,document.getElementById("SFL"+i).innerHTML);
+						}
+						/*if ( document.getElementById("sflODR"+i).value == "2") {
+							localStorage.setItem('sflP2',document.getElementById("SFL"+i).innerHTML);
+						}
+						if ( document.getElementById("sflODR"+i).value == "3") {
+							localStorage.setItem('sflP3',document.getElementById("SFL"+i).innerHTML);
+						}*/
+					}
 				}
-				/*if ( document.getElementById("sflODR"+i).value == "2") {
-					localStorage.setItem('sflP2',document.getElementById("SFL"+i).innerHTML);
-				}
-				if ( document.getElementById("sflODR"+i).value == "3") {
-					localStorage.setItem('sflP3',document.getElementById("SFL"+i).innerHTML);
-				}*/
-			}
-		}
-		alert("ls 'sflP1' = "+localStorage.getItem("sflP1")+"\nls 'sflP3' = "+localStorage.getItem("sflP3")+"\nls 'sflP8' = "+localStorage.getItem("sflP8"));
+				alert("ls 'sflP1' = "+localStorage.getItem("sflP1")+"\nls 'sflP3' = "+localStorage.getItem("sflP3")+"\nls 'sflP8' = "+localStorage.getItem("sflP8"));
+		} else {
+		    reply = "NO!";
+		}							
 	}
 	function displaySFLsaved() {
 		alert("Will display saved shuffle!");
 		for (let x = 1; x < 19; x++) {
 			document.getElementById("SFL"+x).innerHTML = localStorage.getItem("sflP"+x);
 		}
+		document.getElementById("SVDspan").style.visibility="visible";
 	}
 	
 	function SFLcolor(n) {
@@ -788,4 +800,31 @@ function PLAYwk(pl,pNO,wk) {
 				document.getElementById("SFL"+n).style.background="beige";
 			}
 		//}
+	}
+	
+	function delNUMS() {
+		alert("Will try to delete NUMBERS!"); //sflODR18
+		for (let n = 1; n < 19; n++) {
+			document.getElementById("sflODR"+n).value="";
+		}		
+		
+	}
+	
+	function editSFL() {
+		//alert("Will try to edit saved sfl!");
+		let SFLid = prompt("Please enter SFL id to be edited", "SFL15");	
+				if (SFLid === null) {
+			        return; //break out of the function early
+			    }
+		let SFLnew = prompt("Please enter new value for "+SFLid, 'Hodgins, George W.');
+		//alert("SFLid = "+SFLid+"\nSFLnew = "+SFLnew);		
+		var ordNUM = SFLid.slice(3); // < get chs after 1st 3
+			//alert("ordNUM = "+ordNUM);		
+	    let reply;
+		if (confirm("Are you SURE you want to make this change to saved sfl?") == true) {
+		    reply = "YES!";
+			localStorage.setItem('sflP'+ordNUM,SFLnew);	
+		} else {
+		    reply = "NO!";
+		}			
 	}

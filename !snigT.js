@@ -3231,6 +3231,20 @@
 						//localStorage.setItem('Tp'+a+'teeLS',"B");		
 		}
 		
+		//Player stoke hole colors not displaying:   // July 13/26 *
+		for (var x = 1; x < 19; x++) {	//p1h11
+			if (document.getElementById("HCPh"+x).value==1) {
+				/*alert("#1 stroke hole is "+x+"\n"+
+					  "H"+x+" P1 score = "+document.getElementById("p1h"+x).value+"\n"+
+					  "H"+x+" P1 input color = "+document.getElementById("p1h"+x).style.background+"\n"+
+					  "H"+x+" P1 HC = "+document.getElementById("p1HC").value);*/
+				if ( document.getElementById("p1h"+x).style.background == "white" ) { 
+					alert("MAY have to perform a FULL 'clear' (including hole par/handicap changes) after a new app download (or code apdate) to get stroke hole colors & totals to display on 'reload'");
+				} 
+				
+			}
+		}
+		
 	}	
 
 	function MONEYcalc(){
