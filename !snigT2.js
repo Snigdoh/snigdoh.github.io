@@ -448,7 +448,7 @@
 				/*document.getElementById('gCf').value = localStorage.getItem('gCf');
 					document.getElementById('gCb').value = localStorage.getItem('gCb');*/
 					document.getElementById('gCt').value = +document.getElementById('gCf').value + +document.getElementById('gCb').value;		
-			
+					document.getElementById('gDt').value = +document.getElementById('gDf').value + +document.getElementById('gDb').value;		
 			
 					
 		
@@ -479,6 +479,8 @@
 				document.getElementById('gCf').value = localStorage.getItem('gCf');
 					document.getElementById('gCb').value = localStorage.getItem('gCb');
 					//document.getElementById('gCt').value = localStorage.getItem('gCt');
+				document.getElementById('gDf').value = localStorage.getItem('gDf');
+					document.getElementById('gDb').value = localStorage.getItem('gDb');
 										
 			}
 			

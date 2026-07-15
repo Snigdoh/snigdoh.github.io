@@ -3198,7 +3198,7 @@
 				}
 			}
 			if ( inputCOLORED == 'n' ) {
-				alert("MAY have to perform a 'clear' after a new app download to get stroke hole colors & totals to display on 'reload'.");
+				alert("MAY have to perform a FULL 'clear' after a new app download to get stroke hole colors & totals to display on 'reload'.");
 			}
 		}
 
@@ -3224,6 +3224,13 @@
 				document.getElementById('gCf').value = localStorage.getItem('gCf');
 					document.getElementById('gCb').value = localStorage.getItem('gCb');
 					document.getElementById('gCt').value = +document.getElementById('gCf').value + +document.getElementById('gCb').value;		
+		document.getElementById('gpDp1NAME').value = localStorage.getItem('Dp1NAME');	
+			document.getElementById('gpDp2NAME').value = localStorage.getItem('Dp2NAME');
+			document.getElementById('gpDp3NAME').value = localStorage.getItem('Dp3NAME');
+			document.getElementById('gpDp4NAME').value = localStorage.getItem('Dp4NAME');
+				document.getElementById('gDf').value = localStorage.getItem('gDf');
+					document.getElementById('gDb').value = localStorage.getItem('gDb');
+					document.getElementById('gDt').value = +document.getElementById('gDf').value + +document.getElementById('gDb').value;							
 			
 		//TEE COLORS:
 		for (var a = 1; a < 5; a++) {
