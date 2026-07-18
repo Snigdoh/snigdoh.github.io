@@ -440,7 +440,7 @@
 			document.getElementById('gpBp4NAME').value = localStorage.getItem('Bp4NAME');*/
 				/*document.getElementById('gBf').value = localStorage.getItem('gBf');
 					document.getElementById('gBb').value = localStorage.getItem('gBb');*/
-					document.getElementById('gBt').value = +document.getElementById('gBf').value + +document.getElementById('gBb').value;		
+					document.getElementById('gBt').value = +document.getElementById('gBf').value + +document.getElementById('gBb').value;		// < **!
 		/*document.getElementById('gpCp1NAME').value = localStorage.getItem('Cp1NAME');	
 			document.getElementById('gpCp2NAME').value = localStorage.getItem('Cp2NAME');
 			document.getElementById('gpCp3NAME').value = localStorage.getItem('Cp3NAME');
@@ -1108,17 +1108,20 @@
 				document.getElementById("Wbtn").style.opacity='50%';
 			}, 5000);*/	 // < 5 seconds!		
 	}
-	function clickPOINTS(group){
+	function clickPOINTS(group,sfx){
 					/*alert("'group' var = "+group+"\n"+"$w var = "+$w);*/
+					//gAbTD.  //gAfAVG
 		if ($w=="y") {
-			document.getElementById(group+"TD").style.background = "lime";
+			document.getElementById(group+sfx).style.background = "lime";
+				//alert("In 'clickPOINTS' fn: group = "+group);
+				//document.getElementById(group).style.background = "lime";
 			$w = "n";	document.getElementById("Wbtn").style.opacity='50%';
 		}
 		else if ($l=="y") {
-			document.getElementById(group+"TD").style.background = "black";
+			document.getElementById(group+sfx).style.background = "silver";
 			$l = "n";	document.getElementById("Lbtn").style.opacity='50%';
 		}
 		else {
-			document.getElementById(group+"TD").style.background = "white";
+			document.getElementById(group+sfx).style.background = "white";
 		}
 	}

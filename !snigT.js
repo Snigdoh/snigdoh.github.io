@@ -3214,7 +3214,7 @@
 			document.getElementById('gpBp2NAME').value = localStorage.getItem('Bp2NAME');
 			document.getElementById('gpBp3NAME').value = localStorage.getItem('Bp3NAME');
 			document.getElementById('gpBp4NAME').value = localStorage.getItem('Bp4NAME');
-				document.getElementById('gBf').value = localStorage.getItem('gBf');
+				document.getElementById('gBf').value = localStorage.getItem('gBf'); // < **!
 					document.getElementById('gBb').value = localStorage.getItem('gBb');
 					document.getElementById('gBt').value = +document.getElementById('gBf').value + +document.getElementById('gBb').value;		
 		document.getElementById('gpCp1NAME').value = localStorage.getItem('Cp1NAME');	
@@ -3255,6 +3255,79 @@
 	}	
 
 	function MONEYcalc(){
+		if (document.getElementById("gpAp4NAME").value!="") { // < July17/26 *
+			document.getElementById("gAfAVG").innerHTML = (+document.getElementById('gAf').value/4).toFixed(2);  
+			document.getElementById("gAbAVG").innerHTML = (+document.getElementById('gAb').value/4).toFixed(2);
+			document.getElementById("gAtAVG").innerHTML = (+document.getElementById('gAt').value/4).toFixed(2);
+		}
+		if (document.getElementById("gpAp4NAME").value=="") {
+			if (document.getElementById("gpAp3NAME").value=="") {
+				document.getElementById("gAfAVG").innerHTML = (+document.getElementById('gAf').value/2).toFixed(2);
+				document.getElementById("gAbAVG").innerHTML = (+document.getElementById('gAb').value/2).toFixed(2);
+				document.getElementById("gAtAVG").innerHTML = (+document.getElementById('gAt').value/2).toFixed(2);
+			}		
+			else {	
+				document.getElementById("gAfAVG").innerHTML = (+document.getElementById('gAf').value/3).toFixed(2);
+				document.getElementById("gAbAVG").innerHTML = (+document.getElementById('gAb').value/3).toFixed(2);
+				document.getElementById("gAtAVG").innerHTML = (+document.getElementById('gAt').value/3).toFixed(2);
+			}
+		}		
+		
+		if (document.getElementById("gpBp4NAME").value!="") { // < July17/26 *
+			document.getElementById("gBfAVG").innerHTML = (+document.getElementById('gBf').value/4).toFixed(2);  
+			document.getElementById("gBbAVG").innerHTML = (+document.getElementById('gBb').value/4).toFixed(2);
+			document.getElementById("gBtAVG").innerHTML = (+document.getElementById('gBt').value/4).toFixed(2);
+		}
+		if (document.getElementById("gpBp4NAME").value=="") {
+			if (document.getElementById("gpBp3NAME").value=="") {
+				document.getElementById("gBfAVG").innerHTML = (+document.getElementById('gBf').value/2).toFixed(2);
+				document.getElementById("gBbAVG").innerHTML = (+document.getElementById('gBb').value/2).toFixed(2);
+				document.getElementById("gBtAVG").innerHTML = (+document.getElementById('gBt').value/2).toFixed(2);
+			}		
+			else {	
+				document.getElementById("gBfAVG").innerHTML = (+document.getElementById('gBf').value/3).toFixed(2);
+				document.getElementById("gBbAVG").innerHTML = (+document.getElementById('gBb').value/3).toFixed(2);
+				document.getElementById("gBtAVG").innerHTML = (+document.getElementById('gBt').value/3).toFixed(2);
+			}
+		}		
+		
+		if (document.getElementById("gpCp4NAME").value!="") { // < July17/26 *
+			document.getElementById("gCfAVG").innerHTML = (+document.getElementById('gCf').value/4).toFixed(2);  
+			document.getElementById("gCbAVG").innerHTML = (+document.getElementById('gCb').value/4).toFixed(2);
+			document.getElementById("gCtAVG").innerHTML = (+document.getElementById('gCt').value/4).toFixed(2);
+		}
+		if (document.getElementById("gpCp4NAME").value=="") {
+			if (document.getElementById("gpCp3NAME").value=="") {
+				document.getElementById("gCfAVG").innerHTML = (+document.getElementById('gCf').value/2).toFixed(2);
+				document.getElementById("gCbAVG").innerHTML = (+document.getElementById('gCb').value/2).toFixed(2);
+				document.getElementById("gCtAVG").innerHTML = (+document.getElementById('gCt').value/2).toFixed(2);
+			}		
+			else {	
+				document.getElementById("gCfAVG").innerHTML = (+document.getElementById('gCf').value/3).toFixed(2);
+				document.getElementById("gCbAVG").innerHTML = (+document.getElementById('gCb').value/3).toFixed(2);
+				document.getElementById("gCtAVG").innerHTML = (+document.getElementById('gCt').value/3).toFixed(2);
+			}
+		}	
+
+		if (document.getElementById("gpDp4NAME").value!="") { // < July17/26 *
+			document.getElementById("gDfAVG").innerHTML = (+document.getElementById('gDf').value/4).toFixed(2);  
+			document.getElementById("gDbAVG").innerHTML = (+document.getElementById('gDb').value/4).toFixed(2);
+			document.getElementById("gDtAVG").innerHTML = (+document.getElementById('gDt').value/4).toFixed(2);
+		}
+		if (document.getElementById("gpDp4NAME").value=="") {
+			if (document.getElementById("gpDp3NAME").value=="") {
+				document.getElementById("gDfAVG").innerHTML = (+document.getElementById('gDf').value/2).toFixed(2);
+				document.getElementById("gDbAVG").innerHTML = (+document.getElementById('gDb').value/2).toFixed(2);
+				document.getElementById("gDtAVG").innerHTML = (+document.getElementById('gDt').value/2).toFixed(2);
+			}		
+			else {	
+				document.getElementById("gDfAVG").innerHTML = (+document.getElementById('gDf').value/3).toFixed(2);
+				document.getElementById("gDbAVG").innerHTML = (+document.getElementById('gDb').value/3).toFixed(2);
+				document.getElementById("gDtAVG").innerHTML = (+document.getElementById('gDt').value/3).toFixed(2);
+			}
+		}		
+		
+/*		
 		//alert("Will calc highest & lowest f/b/t!");
 		if ( (+document.getElementById('gAf').value > +document.getElementById('gBf').value) && (+document.getElementById('gAf').value > +document.getElementById('gCf').value) ) {
 			document.getElementById('gAf').style.background = "yellow";
@@ -3330,7 +3403,7 @@
 				document.getElementById('gCt').style.background = "silver";
 			}
 		}
-		
+*/		
 	}
 	
 	function cellTOslide(P,H) {
