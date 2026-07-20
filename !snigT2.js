@@ -1123,5 +1123,12 @@
 		}
 		else {
 			document.getElementById(group+sfx).style.background = "white";
+			//document.getElementById(group).style.background = "white"; // < July 20/26 *
+		}
+	}
+	function clearGROSS(box) {
+		//alert("Will try to clearGROSSfront! box = "+box);
+		if ((document.getElementById(box).style.background=="red")||(document.getElementById(box).style.background=="skyblue")) {
+				document.getElementById(box).style.background="white";	
 		}
 	}
