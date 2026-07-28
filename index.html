@@ -1295,7 +1295,8 @@
 	  <button id='HOLEbtn' onclick="editHOLES()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:white; background:red; border:1px solid black; border-radius:10px;">Edit Holes<!--Edit Holes +--></button>	
 	  <a style="color:black; font-size:15px;" onclick="showCALCULATOR()">calc</a>	
 	
-	  <a style="color:green; font-size:30px;"  onclick="showMONEY()">$$$</a>  
+	  <a style="color:green; font-size:30px;"  onclick="showMONEY()">$$$</a> 
+	  &nbsp;<a style="color:black; font-size:25px;" onclick="displayP5()"><b>P5+/-</b></a>
 
 	 
 
@@ -1516,24 +1517,24 @@
 				<TD style="background:lightgray;"><b>F</b></TD>
 				<TD id='gAfTD'><input type="tel" id="gAf" maxlength=2 onchange="localStorage.setItem('gAf',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAf','TD'); clearGROSS('gAf');"></TD>
 						<TD id="gAfAVG" onclick="clickPOINTS('gAf','AVG')" style='font-size:10px;'></TD>
-				<TD id='gBfTD'><input type="tel" id="gBf" maxlength=2 onchange="localStorage.setItem('gBf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBf','TD'); clearGROSS('gBf');"></TD> <!-- P2 HC -->
+				<TD id='gBfTD'><input type="tel" id="gBf" maxlength=2 onchange="localStorage.setItem('gBf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBf','TD'); clearGROSS('gBf');" onblur="add$();"></TD> <!-- *! -->
 						<TD id="gBfAVG" onclick="clickPOINTS('gBf','AVG')" style='font-size:10px;'></TD>
-				<TD id='gCfTD'><input type="tel" id="gCf" maxlength=2 onchange="localStorage.setItem('gCf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCf','TD'); clearGROSS('gCf');"></TD>
+				<TD id='gCfTD'><input type="tel" id="gCf" maxlength=2 onchange="localStorage.setItem('gCf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCf','TD'); clearGROSS('gCf');" onblur="add$();"></TD>
 						<TD id="gCfAVG" onclick="clickPOINTS('gCf','AVG')" style='font-size:10px;'></TD>
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
-				<TD id='gDfTD'><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDf','TD'); clearGROSS('gDf');"></TD>
+				<TD id='gDfTD'><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDf','TD'); clearGROSS('gDf');" onblur="add$();"></TD>
 						<TD id="gDfAVG" onclick="clickPOINTS('gDf','AVG')" style='font-size:10px;'></TD>
 			</TR>
 			<TR>
 				<TD style="background:lightgray;"><b>B</b></TD>
 				<TD id='gAbTD'><input type="tel" id="gAb" maxlength=2 onchange="localStorage.setItem('gAb',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAb','TD'); clearGROSS('gAb');"></TD>
 						<TD id="gAbAVG" onclick="clickPOINTS('gAb','AVG')" style='font-size:10px;'></TD>				
-				<TD id='gBbTD'><input type="tel" id="gBb" maxlength=2 onchange="localStorage.setItem('gBb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBb','TD'); clearGROSS('gBb');"></TD> <!-- P2 HC -->
+				<TD id='gBbTD'><input type="tel" id="gBb" maxlength=2 onchange="localStorage.setItem('gBb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBb','TD'); clearGROSS('gBb');" onblur="add$();"></TD> <!-- P2 HC -->
 						<TD id="gBbAVG" onclick="clickPOINTS('gBb','AVG')" style='font-size:10px;'></TD>				
-				<TD id='gCbTD'><input type="tel" id="gCb" maxlength=2 onchange="localStorage.setItem('gCb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCb','TD'); clearGROSS('gCb');"></TD>
+				<TD id='gCbTD'><input type="tel" id="gCb" maxlength=2 onchange="localStorage.setItem('gCb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCb','TD'); clearGROSS('gCb');" onblur="add$();"></TD>
 						<TD id="gCbAVG" onclick="clickPOINTS('gCb','AVG')" style='font-size:10px;'></TD>				
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
-				<TD id='gDbTD'><input type="tel" id="gDb" maxlength=2 onchange="localStorage.setItem('gDb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDb','TD'); clearGROSS('gDb');"></TD>
+				<TD id='gDbTD'><input type="tel" id="gDb" maxlength=2 onchange="localStorage.setItem('gDb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDb','TD'); clearGROSS('gDb');" onblur="add$();"></TD>
 						<TD id="gDbAVG" onclick="clickPOINTS('gDb','AVG')" style='font-size:10px;'></TD>				
 			</TR>
 			<TR>
@@ -1629,11 +1630,11 @@
 			<li><a style="color:red; font-size:30px;" onclick="history()">Hx</a></li>
 		  	<li><a style="color:green; font-size:30px;" onclick="note()">NOTE</a></li>
 		  	<li><button id='TABbtn' onclick="setLSsbfd()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:blue; background:orange; border:2px solid black; border-radius:10px; opacity:100%;"><b>Matches</b></button></li>
-			<li><a style="color:red; font-size:20px;" onclick="book()"><b><u>BOOK/bridge/SWING</u></b></a></li>
+			<li><a style="color:red; font-size:20px;" onclick="book()"><b><u>bridge/SWING</u></b></a></li>
 	  		<li><a style="color:green; font-size:20px;" onclick="showSLIDER()">Slider +/-</a></li>
 	  		<li><button id='STROKESbtn' onclick="clrSLDR()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">SlideValsX</button></li>	  
 	  		<li><a style="color:red; font-size:25px;" onclick="replace()">SAVED</a></li>
-	  		<li><button id='MISCbtn' onclick="codeHELP()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:white; background:maroon; border:2px solid black; border-radius:10px; opacity:100%;">coding *</button></li>	  		<li><a style="color:black; font-size:15px;" onclick="displayP5()"><b>P5+/-</b></a></li> 
+	  		<li><button id='MISCbtn' onclick="codeHELP()" style="FONT-WEIGHT:normal; FONT-SIZE:15px; COLOR:white; background:maroon; border:2px solid black; border-radius:10px; opacity:100%;">coding *</button></li>	  	<!--<li><a style="color:black; font-size:15px;" onclick="displayP5()"><b>P5+/-</b></a></li>--> 
 	  		<li><a style="color:red; font-size:30px;" onclick="changeCOURSE()">Change Course</a></li>	
 			<li><a style="color:green; font-size:20px;" onclick="editSP()">Edit Stablefords</a></li>
 	  	</ol>		

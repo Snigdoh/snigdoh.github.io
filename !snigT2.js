@@ -506,6 +506,13 @@
 		
 		hideMENU();		
 	}												
+	function add$() {
+		//alert("Will try to ADD f + b > T!");
+		document.getElementById('gBt').value = +document.getElementById('gBf').value + +document.getElementById('gBb').value;		
+		document.getElementById('gCt').value = +document.getElementById('gCf').value + +document.getElementById('gCb').value;		
+		document.getElementById('gDt').value = +document.getElementById('gDf').value + +document.getElementById('gDb').value;		
+					
+	}
 	function showCALCULATOR() {
 		if (document.getElementById("Calculator").style.visibility=="visible") {
 			document.getElementById("CalcFrame").src="";
