@@ -32,7 +32,7 @@
 <div class="wrapper"><!-- Put the page contents here -->
 				
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>20</font><font size=2 color=silver><b>Jul<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
+	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>1</font><font size=2 color=silver><b>Aug<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 <TD>
 					<div class="dropup" style="cursor:pointer; color:black; background:lightgray; /*position:relative; left:18%;*/">
@@ -1257,7 +1257,7 @@
 	</div>	
 
 
-						<!--	^^^^^^^^^^^^^ Jun/24 ^^^^^^^^^^^^^^^^^^^^^^    -->
+						<!--	^^^^^^^^^^^^^ Jun/24 ^^^^^ MAIN MENU ^^^^^^^^^^^^^^^^^    -->
 
 
 	<!-- Horizontal Scrollable Menu (Oct/25): -->
@@ -1458,10 +1458,14 @@
 				
 				<font size=5><b>$$$$</b></font>
 				&nbsp;
+				<!--
 				<button id='Wbtn' onclick="$Wfn()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:gray; background:lightgreen; border:2px solid orange; border-radius:10px; cursor: pointer;  opacity:50%;">W</button>
 				<button id='Lbtn' onclick="$Lfn()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:gray; background:pink; border:2px solid orange; border-radius:10px; cursor: pointer; opacity:50%;">L</button>
+				-->
 								<!-- onclick="fVRyn()" -->
-				&emsp;<button id='moneyCALCbtn' onclick="AVGcalc()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><b>AVG</b></button><!--CALC 3-->
+				&emsp;
+				<button id='moneyCALCbtn' onclick="AVGcalc()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><b>AVG</b></button><!--CALC 3-->
+				&emsp;
 				<button id='btnHiLo' onclick="HiLo()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;"><b>HiLo</b></button>
 				
 				<span style="float:right; padding-right:10px; cursor:pointer; background:white; color:black; font-size:30px;">
@@ -1515,39 +1519,44 @@
 		<tbody id='$TBLbody'> -->
 			<TR>
 				<TD style="background:lightgray;"><b>F</b></TD>
-				<TD id='gAfTD'><input type="tel" id="gAf" maxlength=2 onchange="localStorage.setItem('gAf',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAf','TD'); clearGROSS('gAf');"></TD>
-						<TD id="gAfAVG" onclick="clickPOINTS('gAf','AVG')" style='font-size:10px;'></TD>
-				<TD id='gBfTD'><input type="tel" id="gBf" maxlength=2 onchange="localStorage.setItem('gBf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBf','TD'); clearGROSS('gBf');" onblur="add$();"></TD> <!-- *! -->
-						<TD id="gBfAVG" onclick="clickPOINTS('gBf','AVG')" style='font-size:10px;'></TD>
-				<TD id='gCfTD'><input type="tel" id="gCf" maxlength=2 onchange="localStorage.setItem('gCf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCf','TD'); clearGROSS('gCf');" onblur="add$();"></TD>
-						<TD id="gCfAVG" onclick="clickPOINTS('gCf','AVG')" style='font-size:10px;'></TD>
+				<TD id='gAfTD'><input type="tel" id="gAf" maxlength=2 onchange="localStorage.setItem('gAf',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clearGROSS('gAf');"></TD>
+								<!-- onclick="clickPOINTS('gAf','TD');" -->
+						<TD id="gAfAVG" onclick="MAGavg('gAf','AVG')" style='font-size:12px;'></TD>
+						<!-- July 29/26 * -->
+				<TD id='gBfTD'><input type="tel" id="gBf" maxlength=2 onchange="localStorage.setItem('gBf',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gBf');" onblur="add$();"></TD> <!-- *! -->
+								<!-- onclick="clickPOINTS('gBf','TD');" -->
+						<TD id="gBfAVG" onclick="MAGavg('gBf','AVG')" style='font-size:12px;'></TD>
+								<!-- onclick="clickPOINTS('gBf','AVG')" -->
+
+				<TD id='gCfTD'><input type="tel" id="gCf" maxlength=2 onchange="localStorage.setItem('gCf',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gCf');" onblur="add$();"></TD>
+						<TD id="gCfAVG" onclick="MAGavg('gCf','AVG')" style='font-size:12px;'></TD>
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
-				<TD id='gDfTD'><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDf','TD'); clearGROSS('gDf');" onblur="add$();"></TD>
-						<TD id="gDfAVG" onclick="clickPOINTS('gDf','AVG')" style='font-size:10px;'></TD>
+				<TD id='gDfTD'><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gDf');" onblur="add$();"></TD>
+						<TD id="gDfAVG" onclick="MAGavg('gDf','AVG')" style='font-size:12px;'></TD>
 			</TR>
 			<TR>
 				<TD style="background:lightgray;"><b>B</b></TD>
-				<TD id='gAbTD'><input type="tel" id="gAb" maxlength=2 onchange="localStorage.setItem('gAb',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAb','TD'); clearGROSS('gAb');"></TD>
-						<TD id="gAbAVG" onclick="clickPOINTS('gAb','AVG')" style='font-size:10px;'></TD>				
-				<TD id='gBbTD'><input type="tel" id="gBb" maxlength=2 onchange="localStorage.setItem('gBb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBb','TD'); clearGROSS('gBb');" onblur="add$();"></TD> <!-- P2 HC -->
-						<TD id="gBbAVG" onclick="clickPOINTS('gBb','AVG')" style='font-size:10px;'></TD>				
-				<TD id='gCbTD'><input type="tel" id="gCb" maxlength=2 onchange="localStorage.setItem('gCb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCb','TD'); clearGROSS('gCb');" onblur="add$();"></TD>
-						<TD id="gCbAVG" onclick="clickPOINTS('gCb','AVG')" style='font-size:10px;'></TD>				
+				<TD id='gAbTD'><input type="tel" id="gAb" maxlength=2 onchange="localStorage.setItem('gAb',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clearGROSS('gAb');"></TD>
+						<TD id="gAbAVG" onclick="MAGavg('gAb','AVG')" style='font-size:12px;'></TD>				
+				<TD id='gBbTD'><input type="tel" id="gBb" maxlength=2 onchange="localStorage.setItem('gBb',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gBb');" onblur="add$();"></TD> <!-- P2 HC -->
+						<TD id="gBbAVG" onclick="MAGavg('gBb','AVG')" style='font-size:12px;'></TD>				
+				<TD id='gCbTD'><input type="tel" id="gCb" maxlength=2 onchange="localStorage.setItem('gCb',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gCb');" onblur="add$();"></TD>
+						<TD id="gCbAVG" onclick="MAGavg('gCb','AVG')" style='font-size:12px;'></TD>				
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
-				<TD id='gDbTD'><input type="tel" id="gDb" maxlength=2 onchange="localStorage.setItem('gDb',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDb','TD'); clearGROSS('gDb');" onblur="add$();"></TD>
-						<TD id="gDbAVG" onclick="clickPOINTS('gDb','AVG')" style='font-size:10px;'></TD>				
+				<TD id='gDbTD'><input type="tel" id="gDb" maxlength=2 onchange="localStorage.setItem('gDb',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gDb');" onblur="add$();"></TD>
+						<TD id="gDbAVG" onclick="MAGavg('gDb','AVG')" style='font-size:12px;'></TD>				
 			</TR>
 			<TR>
 				<TD style="background:lightgray;"><b>T</b></TD>
-				<TD id='gAtTD'><input type="tel" id="gAt" maxlength=3 onchange="localStorage.setItem('gAt',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clickPOINTS('gAt','TD'); clearGROSS('gAt');"></TD>
-						<TD id="gAtAVG" onclick="clickPOINTS('gAt','AVG')" style='font-size:10px;'></TD>				
-				<TD id='gBtTD'><input type="tel" id="gBt" maxlength=3 onchange="localStorage.setItem('gBt',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gBt','TD'); clearGROSS('gBt');"></TD> <!-- P2 HC -->
-						<TD id="gBtAVG" onclick="clickPOINTS('gBt','AVG')" style='font-size:10px;'></TD>
-				<TD id='gCtTD'><input type="tel" id="gCt" maxlength=3 onchange="localStorage.setItem('gCt',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gCt','TD'); clearGROSS('gCt');"></TD>
-						<TD id="gCtAVG" onclick="clickPOINTS('gCt','AVG')" style='font-size:10px;'></TD>
+				<TD id='gAtTD'><input type="tel" id="gAt" maxlength=3 onchange="localStorage.setItem('gAt',this.value);" autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" onclick="clearGROSS('gAt');"></TD>
+						<TD id="gAtAVG" onclick="MAGavg('gAt','AVG')" style='font-size:12px;'></TD>				
+				<TD id='gBtTD'><input type="tel" id="gBt" maxlength=3 onchange="localStorage.setItem('gBt',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gBt');"></TD> <!-- P2 HC -->
+						<TD id="gBtAVG" onclick="MAGavg('gBt','AVG')" style='font-size:12px;'></TD>
+				<TD id='gCtTD'><input type="tel" id="gCt" maxlength=3 onchange="localStorage.setItem('gCt',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gCt');"></TD>
+						<TD id="gCtAVG" onclick="MAGavg('gCt','AVG')" style='font-size:12px;'></TD>
 				<!--<TD><input type="tel" id="gDf" maxlength=2 onchange="localStorage.setItem('gDf',this.value);" style="background:whitesmoke; width:60%;"  ></TD>-->
-				<TD id='gDtTD'><input type="tel" id="gDt" maxlength=3 onchange="localStorage.setItem('gDt',this.value);" style="background:whitesmoke; width:60%;" onclick="clickPOINTS('gDt','TD'); clearGROSS('gDt');"></TD>
-						<TD id="gDtAVG" onclick="clickPOINTS('gDt','AVG')" style='font-size:10px;'></TD>
+				<TD id='gDtTD'><input type="tel" id="gDt" maxlength=3 onchange="localStorage.setItem('gDt',this.value);" style="background:whitesmoke; width:60%;" onclick="clearGROSS('gDt');"></TD>
+						<TD id="gDtAVG" onclick="MAGavg('gDt','AVG')" style='font-size:12px;'></TD>
 			</TR>			
 		<!--</tbody>-->
 		</table>
@@ -1563,6 +1572,14 @@
 				&nbsp;rounded $/skn > $<input type="tel" id="rdSval" maxlength=4 onchange="localStorage.setItem('rdSval',this.value);" style="background:whitesmoke; width:40px;" ><br>
 				&nbsp;real - round = <input type="tel" id="diff" maxlength=4 onchange="localStorage.setItem('diff',this.value);" style="background:whitesmoke; width:40px;" ><br>
 				&nbsp;winner puts/takes = $<input type="tel" id="balance" maxlength=4 onchange="localStorage.setItem('bal',this.value);" style="background:whitesmoke; width:40px;" > 
+		</div>
+		
+		<div> <!-- DIVIDER: -->
+			    &emsp;
+			    &nbsp;pts:<input type="tel" id="SFpts" maxlength=2 style="background:white; width:20px;" > &divide; 
+				#pl:<input type="tel" id="NOpl" maxlength=2 style="background:white; width:20px;" >
+				&nbsp;<button id='DIVEDERbtn' onclick="divide()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">divide</button> = <input type="tel" id="divideRESULT" maxlength=4  style="background:whitesmoke; width:40px;" > 
+				&nbsp;<button id='clrDIVEDbtn' onclick="CLRdivide()" style="FONT-WEIGHT:normal; FONT-SIZE:12px; COLOR:black; background:ivory; border:2px solid black; border-radius:10px; opacity:100%;">clr</button>		
 		</div>
 		
 	</div>		

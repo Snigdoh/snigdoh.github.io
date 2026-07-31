@@ -1137,5 +1137,27 @@
 		//alert("Will try to clearGROSSfront! box = "+box);
 		if ((document.getElementById(box).style.background=="red")||(document.getElementById(box).style.background=="skyblue")) {
 				document.getElementById(box).style.background="white";	
+				document.getElementById(box).style.color="black";	
 		}
+	}
+	
+	function MAGavg(group,sfx){
+		/*alert("will try to MAG average Stableford points!\n"+
+			  "'group' = "+group+"\n'sfx' = "+sfx);*/
+		if ( document.getElementById(group+sfx).style.fontSize == "12px" ) {
+			  document.getElementById(group+sfx).style.fontSize = "24px";
+		}
+		else { document.getElementById(group+sfx).style.fontSize = "12px" }	
+	}
+	
+	function divide(){
+		var divRESULT = (+document.getElementById("SFpts").value/+document.getElementById("NOpl").value).toFixed(2);
+			// (+document.getElementById('gBf').value/2).toFixed(2);
+		//alert("Will DIVIDE! . . .\ndivRESULT = "+divRESULT);
+		document.getElementById("divideRESULT").value = divRESULT;
+	}
+	function CLRdivide(){
+		document.getElementById("SFpts").value="";
+		document.getElementById("NOpl").value="";
+		document.getElementById("divideRESULT").value="";
 	}

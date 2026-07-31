@@ -1929,10 +1929,12 @@
 		for (var a = 1; a < 6; a++) {
 			localStorage.setItem('Bp'+a+'NAME',"");			//localStorage.getItem('Bp1NAME');
 			localStorage.setItem('Cp'+a+'NAME',"");	
+			localStorage.setItem('Dp'+a+'NAME',"");	
 		}
 		localStorage.setItem('gAf',""); localStorage.setItem('gAb',""); localStorage.setItem('gAt',"");
 		localStorage.setItem('gBf',""); localStorage.setItem('gBb',""); localStorage.setItem('gBt',"");
 		localStorage.setItem('gCf',""); localStorage.setItem('gCb',""); localStorage.setItem('gCt',"");
+		localStorage.setItem('gDf',""); localStorage.setItem('gDb',""); localStorage.setItem('gDt',"");
 					//localStorage.setItem('Ap5NAME', localStorage.setItem('gAb'
 			
 		hideMENU();		
@@ -3339,10 +3341,10 @@
 			const lowF = Math.min(...LOWnumbers.filter(n => n > 0));
 				//var lowF = Math.min(gAfVAL,gBfVAL,gCfVAL,gDfVAL);
 			//alert("highF val = "+highF+"\nlowF = "+lowF);
-			if (document.getElementById('gAf').value==highF) {document.getElementById('gAf').style.background="red"}
-			if (document.getElementById('gBf').value==highF) {document.getElementById('gBf').style.background="red"}
-			if (document.getElementById('gCf').value==highF) {document.getElementById('gCf').style.background="red"}
-			if (document.getElementById('gDf').value==highF) {document.getElementById('gDf').style.background="red"}
+			if (document.getElementById('gAf').value==highF) {document.getElementById('gAf').style.background="red"; document.getElementById('gAf').style.color="white"}
+			if (document.getElementById('gBf').value==highF) {document.getElementById('gBf').style.background="red"; document.getElementById('gBf').style.color="white"}
+			if (document.getElementById('gCf').value==highF) {document.getElementById('gCf').style.background="red"; document.getElementById('gCf').style.color="white"}
+			if (document.getElementById('gDf').value==highF) {document.getElementById('gDf').style.background="red"; document.getElementById('gDf').style.color="white"}
 			if (document.getElementById('gAf').value==lowF) {document.getElementById('gAf').style.background="skyblue"}
 			if (document.getElementById('gBf').value==lowF) {document.getElementById('gBf').style.background="skyblue"}
 			if (document.getElementById('gCf').value==lowF) {document.getElementById('gCf').style.background="skyblue"}
@@ -3352,10 +3354,10 @@
 			var highB = Math.max(gAbVAL,gBbVAL,gCbVAL,gDbVAL);
 			const LOWnumbersB = [gAbVAL,gBbVAL,gCbVAL,gDbVAL];
 			const lowB = Math.min(...LOWnumbersB.filter(n => n > 0));
-			if (document.getElementById('gAb').value==highB) {document.getElementById('gAb').style.background="red"}
-			if (document.getElementById('gBb').value==highB) {document.getElementById('gBb').style.background="red"}
-			if (document.getElementById('gCb').value==highB) {document.getElementById('gCb').style.background="red"}
-			if (document.getElementById('gDb').value==highB) {document.getElementById('gDb').style.background="red"}
+			if (document.getElementById('gAb').value==highB) {document.getElementById('gAb').style.background="red"; document.getElementById('gAb').style.color="white"}
+			if (document.getElementById('gBb').value==highB) {document.getElementById('gBb').style.background="red"; document.getElementById('gBb').style.color="white"}
+			if (document.getElementById('gCb').value==highB) {document.getElementById('gCb').style.background="red"; document.getElementById('gCb').style.color="white"}
+			if (document.getElementById('gDb').value==highB) {document.getElementById('gDb').style.background="red"; document.getElementById('gDb').style.color="white"}
 			if (document.getElementById('gAb').value==lowB) {document.getElementById('gAb').style.background="skyblue"}
 			if (document.getElementById('gBb').value==lowB) {document.getElementById('gBb').style.background="skyblue"}
 			if (document.getElementById('gCb').value==lowB) {document.getElementById('gCb').style.background="skyblue"}
@@ -3367,10 +3369,10 @@
 			const LOWnumbersT = [gAtVAL,gBtVAL,gCtVAL,gDtVAL];
 			const lowT = Math.min(...LOWnumbersT.filter(n => n > 0));
 						//alert("highT val = "+highT+"\nlowT = "+lowT);
-			if (document.getElementById('gAt').value==highT) {document.getElementById('gAt').style.background="red"}
-			if (document.getElementById('gBt').value==highT) {document.getElementById('gBt').style.background="red"}
-			if (document.getElementById('gCt').value==highT) {document.getElementById('gCt').style.background="red"}
-			if (document.getElementById('gDt').value==highT) {document.getElementById('gDt').style.background="red"}
+			if (document.getElementById('gAt').value==highT) {document.getElementById('gAt').style.background="red"; document.getElementById('gAt').style.color="white"}
+			if (document.getElementById('gBt').value==highT) {document.getElementById('gBt').style.background="red"; document.getElementById('gBt').style.color="white"}
+			if (document.getElementById('gCt').value==highT) {document.getElementById('gCt').style.background="red"; document.getElementById('gCt').style.color="white"}
+			if (document.getElementById('gDt').value==highT) {document.getElementById('gDt').style.background="red"; document.getElementById('gDt').style.color="white"}
 			if (document.getElementById('gAt').value==lowT) {document.getElementById('gAt').style.background="skyblue"}
 			if (document.getElementById('gBt').value==lowT) {document.getElementById('gBt').style.background="skyblue"}
 			if (document.getElementById('gCt').value==lowT) {document.getElementById('gCt').style.background="skyblue"}
@@ -3384,10 +3386,10 @@
 			var highFav = Math.max(gAfAVG,gBfAVG,gCfAVG,gDfAVG);
 			const LOWavnos = [gAfAVG,gBfAVG,gCfAVG,gDfAVG];
 			const lowFav = Math.min(...LOWavnos.filter(n => n > 0));
-			if (document.getElementById('gAfAVG').innerHTML==highFav) {document.getElementById('gAfAVG').style.background="red"}
-			if (document.getElementById('gBfAVG').innerHTML==highFav) {document.getElementById('gBfAVG').style.background="red"}
-			if (document.getElementById('gCfAVG').innerHTML==highFav) {document.getElementById('gCfAVG').style.background="red"}
-			if (document.getElementById('gDfAVG').innerHTML==highFav) {document.getElementById('gDfAVG').style.background="red"}
+			if (document.getElementById('gAfAVG').innerHTML==highFav) {document.getElementById('gAfAVG').style.background="red";   document.getElementById('gAfAVG').style.color="white"}
+			if (document.getElementById('gBfAVG').innerHTML==highFav) {document.getElementById('gBfAVG').style.background="red";   document.getElementById('gBfAVG').style.color="white"}
+			if (document.getElementById('gCfAVG').innerHTML==highFav) {document.getElementById('gCfAVG').style.background="red";   document.getElementById('gCfAVG').style.color="white"}
+			if (document.getElementById('gDfAVG').innerHTML==highFav) {document.getElementById('gDfAVG').style.background="red";   document.getElementById('gDfAVG').style.color="white"}
 			if (document.getElementById('gAfAVG').innerHTML==lowFav) {document.getElementById('gAfAVG').style.background="skyblue"}
 			if (document.getElementById('gBfAVG').innerHTML==lowFav) {document.getElementById('gBfAVG').style.background="skyblue"}
 			if (document.getElementById('gCfAVG').innerHTML==lowFav) {document.getElementById('gCfAVG').style.background="skyblue"}
@@ -3399,10 +3401,10 @@
 			var highBav = Math.max(gAbAVG,gBbAVG,gCbAVG,gDbAVG);
 			const LOWavnosB = [gAbAVG,gBbAVG,gCbAVG,gDbAVG];
 			const lowBav = Math.min(...LOWavnosB.filter(n => n > 0));
-			if (document.getElementById('gAbAVG').innerHTML==highBav) {document.getElementById('gAbAVG').style.background="red"}
-			if (document.getElementById('gBbAVG').innerHTML==highBav) {document.getElementById('gBbAVG').style.background="red"}
-			if (document.getElementById('gCbAVG').innerHTML==highBav) {document.getElementById('gCbAVG').style.background="red"}
-			if (document.getElementById('gDbAVG').innerHTML==highBav) {document.getElementById('gDbAVG').style.background="red"}
+			if (document.getElementById('gAbAVG').innerHTML==highBav) {document.getElementById('gAbAVG').style.background="red";   document.getElementById('gAbAVG').style.color="white"}
+			if (document.getElementById('gBbAVG').innerHTML==highBav) {document.getElementById('gBbAVG').style.background="red";   document.getElementById('gBbAVG').style.color="white"}
+			if (document.getElementById('gCbAVG').innerHTML==highBav) {document.getElementById('gCbAVG').style.background="red";   document.getElementById('gCbAVG').style.color="white"}
+			if (document.getElementById('gDbAVG').innerHTML==highBav) {document.getElementById('gDbAVG').style.background="red";   document.getElementById('gDbAVG').style.color="white"}
 			if (document.getElementById('gAbAVG').innerHTML==lowBav) {document.getElementById('gAbAVG').style.background="skyblue"}
 			if (document.getElementById('gBbAVG').innerHTML==lowBav) {document.getElementById('gBbAVG').style.background="skyblue"}
 			if (document.getElementById('gCbAVG').innerHTML==lowBav) {document.getElementById('gCbAVG').style.background="skyblue"}
@@ -3414,10 +3416,10 @@
 			var highTav = Math.max(gAtAVG,gBtAVG,gCtAVG,gDtAVG);
 			const LOWavnosT = [gAtAVG,gBtAVG,gCtAVG,gDtAVG];
 			const lowTav = Math.min(...LOWavnosT.filter(n => n > 0));
-			if (document.getElementById('gAtAVG').innerHTML==highTav) {document.getElementById('gAtAVG').style.background="red"}
-			if (document.getElementById('gBtAVG').innerHTML==highTav) {document.getElementById('gBtAVG').style.background="red"}
-			if (document.getElementById('gCtAVG').innerHTML==highTav) {document.getElementById('gCtAVG').style.background="red"}
-			if (document.getElementById('gDtAVG').innerHTML==highTav) {document.getElementById('gDtAVG').style.background="red"}
+			if (document.getElementById('gAtAVG').innerHTML==highTav) {document.getElementById('gAtAVG').style.background="red";   document.getElementById('gAtAVG').style.color="white"}
+			if (document.getElementById('gBtAVG').innerHTML==highTav) {document.getElementById('gBtAVG').style.background="red";   document.getElementById('gBtAVG').style.color="white"}
+			if (document.getElementById('gCtAVG').innerHTML==highTav) {document.getElementById('gCtAVG').style.background="red";   document.getElementById('gCtAVG').style.color="white"}
+			if (document.getElementById('gDtAVG').innerHTML==highTav) {document.getElementById('gDtAVG').style.background="red";   document.getElementById('gDtAVG').style.color="white"}
 			if (document.getElementById('gAtAVG').innerHTML==lowTav) {document.getElementById('gAtAVG').style.background="skyblue"}
 			if (document.getElementById('gBtAVG').innerHTML==lowTav) {document.getElementById('gBtAVG').style.background="skyblue"}
 			if (document.getElementById('gCtAVG').innerHTML==lowTav) {document.getElementById('gCtAVG').style.background="skyblue"}
