@@ -398,7 +398,8 @@
 	}
 
 						/*   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   */
-	
+//const NOwk0 = []; const NOwk1 = []; const NOwk2 = [];  const NOwk3 = [];  const NOwk4 = [];
+//var NOwk0str; var NOwk1str; var NOwk2str; var NOwk3str; var NOwk4str;    //PLAYwk4str = PLA	
 function PLAYwk(pl,pNO,wk) {
 	if ( freeze != "y" ) {
 		/*
@@ -425,12 +426,20 @@ function PLAYwk(pl,pNO,wk) {
 				PLAYwk1.splice(index, 1);				/* <<< HELP! (July 15/23 */		// < **!
 				//alert("Post splice PLAYwk1 = "+PLAYwk1);
 				PLAYwk1str = PLAYwk1.toString();
-				localStorage.setItem("lsWK1",PLAYwk1str);
+				localStorage.setItem("lsWK1",PLAYwk1str);	//localStorage.setItem("noWK1",PLAYwk1str);	
 			}	
-			if ( wk==0 ) { var index = PLAYwk0.indexOf(pl);	PLAYwk0.splice(index, 1); PLAYwk0str = PLAYwk0.toString(); localStorage.setItem("lsWK0",PLAYwk0str);}	
+			if ( wk==0 ) { var index = PLAYwk0.indexOf(pl);	PLAYwk0.splice(index, 1); PLAYwk0str = PLAYwk0.toString(); localStorage.setItem("lsWK0",PLAYwk0str); 
+					//NOwk0.push(pl); alert("'NOwk0' array = "+NOwk0); NOwk0str = NOwk0.toString(); // < Aug/26 * 
+					//localStorage.setItem("outWK0",NOwk0str); 
+			}	
 			if ( wk==2 ) { var index = PLAYwk2.indexOf(pl);	PLAYwk2.splice(index, 1); PLAYwk2str = PLAYwk2.toString(); localStorage.setItem("lsWK2",PLAYwk2str);}	
 			if ( wk==3 ) { var index = PLAYwk3.indexOf(pl);	PLAYwk3.splice(index, 1); PLAYwk3str = PLAYwk3.toString(); localStorage.setItem("lsWK3",PLAYwk3str);}
 			if ( wk==4 ) { var index = PLAYwk4.indexOf(pl);	PLAYwk4.splice(index, 1); PLAYwk4str = PLAYwk4.toString(); localStorage.setItem("lsWK4",PLAYwk4str);}
+			
+			
+			//alert("localStorage 'NOwk0str' = "+	NOwk0str);	//+localStorage.getItem("noWK0"));	//+"\n"+
+				  //"localStorage 'lsWK0' = "+localStorage.getItem("lsWK0"));
+			
 		}
 		else { 
 			//alert(pl+" is playing wk "+wk+"!");
@@ -827,4 +836,119 @@ function PLAYwk(pl,pNO,wk) {
 		} else {
 		    reply = "NO!";
 		}			
+	}
+
+							/*  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  */
+	
+	function showAWAY() {
+		if (document.getElementById("tblAWAY").style.visibility=="visible") {
+			document.getElementById("tblAWAY").style.visibility="hidden"; 
+		}		
+		else {
+			document.getElementById("tblAWAY").style.visibility="visible"; 
+		}
+		document.getElementById("mySidenav").style.width = "0px";	//hideMENU();		
+	}	
+
+	//const AWYwk0 = []; const AWYwk1 = []; const AWYwk2 = []; const AWYwk3 = []; const AWYwk4 = [];
+	function setAWAY() {
+		
+		const AWYwk0 = localStorage.getItem("LSawyW0").split(",");
+		const AWYwk1 = localStorage.getItem("LSawyW1").split(",");
+		const AWYwk2 = localStorage.getItem("LSawyW2").split(",");
+		const AWYwk3 = localStorage.getItem("LSawyW3").split(",");
+		const AWYwk4 = localStorage.getItem("LSawyW4").split(",");
+		
+			var selPL;
+			
+			for (let p = 1; p < 18; p++) {
+				if(document.getElementById('pl'+p).checked==true) {
+			  		//alert ("'pl"+p+"' radio button is checked.");	
+					selPL = p;
+				}
+			}	
+			
+			for (let w = 0; w < 5; w++) {
+				if(document.getElementById('CHKw'+w).checked==true) { 
+					//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
+					document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
+					document.getElementById('G'+selPL+'wk'+w).onclick = function(){alert("Input frozen!");}	
+					if (w==0) {AWYwk0.push(selPL);}
+					if (w==1) {AWYwk1.push(selPL);}
+					if (w==2) {AWYwk2.push(selPL);}
+					if (w==3) {AWYwk3.push(selPL);}
+					if (w==4) {AWYwk4.push(selPL);}					
+				}
+			}
+					
+			//NEW strings:
+			var AWYwk0str = AWYwk0.toString(); 
+			var AWYwk1str = AWYwk1.toString(); 
+			var AWYwk2str = AWYwk2.toString(); 
+			var AWYwk3str = AWYwk3.toString(); 
+			var AWYwk4str = AWYwk4.toString(); 
+			alert("Away strings:\n\n"+
+				  "newAWYwk0str = '"+AWYwk0str+"'\n"+
+				  "newAWYwk1str = '"+AWYwk1str+"'\n"+
+				  "newAWYwk2str = '"+AWYwk2str+"'\n"+
+				  "newAWYwk3str = '"+AWYwk3str+"'\n"+
+				  "newAWYwk4str = '"+AWYwk4str+"'"); 	
+			
+			localStorage.setItem("LSawyW0",AWYwk0str);
+			localStorage.setItem("LSawyW1",AWYwk1str);
+			localStorage.setItem("LSawyW2",AWYwk2str);
+			localStorage.setItem("LSawyW3",AWYwk3str);
+			localStorage.setItem("LSawyW4",AWYwk4str);
+//			localStorage.setItem("LSawyW0",appendAWYwk0str); 
+//			localStorage.setItem("LSawyW1",appendAWYwk1str);	
+				//localStorage.setItem("LSawyW1",localStorage.getItem("LSawyW1") + ", " + AWYwk1str);
+/*			localStorage.setItem("LSawyW2",appendAWYwk2str);
+			localStorage.setItem("LSawyW3",appendAWYwk3str);
+			localStorage.setItem("LSawyW4",appendAWYwk4str);
+*/							
+
+}	
+
+	function removeAWAY() {
+		//alert("Will code to REMOVE away entries here!");		
+		//str.replace('g', 'b');
+		var strAWYwk0 = localStorage.getItem("LSawyW0");
+		var strAWYwk1 = localStorage.getItem("LSawyW1");
+		var strAWYwk2 = localStorage.getItem("LSawyW2");
+		var strAWYwk3 = localStorage.getItem("LSawyW3");
+		var strAWYwk4 = localStorage.getItem("LSawyW4");
+		/*alert("removeAWAY fn:\n\n"+
+			  "'strAWYwk0' = '"+strAWYwk0+"'\n\n"+
+			  "Will try removing PK (p7) . .");*/
+/*		strAWYwk0 = strAWYwk0.replace(','+7, '');
+		alert( "'strAWYwk0' post .replace= '"+strAWYwk0+"'");
+*/		
+			var selPL;
+			for (let p = 1; p < 18; p++) {
+				if(document.getElementById('pl'+p).checked==true) {
+			  		//alert ("'pl"+p+"' radio button is checked.");	
+					selPL = p;
+				}
+			}			
+			for (let w = 0; w < 5; w++) {
+				if(document.getElementById('CHKw'+w).checked==true) { 
+					//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
+					document.getElementById('G'+selPL+'wk'+w).style.background = 'slategray';  //G12wk1
+					if (w==0) {strAWYwk0 = strAWYwk0.replace(','+selPL, '');}
+					if (w==1) {strAWYwk1 = strAWYwk1.replace(','+selPL, '');}
+					if (w==2) {strAWYwk2 = strAWYwk2.replace(','+selPL, '');}
+					if (w==3) {strAWYwk3 = strAWYwk3.replace(','+selPL, '');}
+					if (w==4) {strAWYwk4 = strAWYwk4.replace(','+selPL, '');}					
+				}
+			}
+		
+			localStorage.setItem("LSawyW0",strAWYwk0);
+			localStorage.setItem("LSawyW1",strAWYwk1);
+			localStorage.setItem("LSawyW2",strAWYwk2);
+			localStorage.setItem("LSawyW3",strAWYwk3);
+			localStorage.setItem("LSawyW4",strAWYwk4);		
+		
+		location.reload();
+		//locStor();
+		
 	}

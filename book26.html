@@ -162,10 +162,10 @@
 									  
 							  </div>
 							  
-							  <!--<div><A onclick="showAWAY()" style='cursor:pointer; color:lime; opacity:50%;'><i><s>away</s></i></A></div>-->
-							  <div>
-								  <span style="background:slategray; border:1px outset silver; border-radius:10px;  padding:2px;">snigdoh '26</span> <!-- font-size:15px; -->
-							  </div>
+							  <div><A onclick="showAWAY()" style='cursor:pointer; color:lime; opacity:100%;'><i>out</i></A></div> <!-- away -->
+							  <!--<div>
+								  <span style="background:slategray; border:1px outset silver; border-radius:10px;  padding:2px;">snigdoh '26</span>
+							  </div>-->
 							  <div><A href="index.html" style='color:yellow;'>scorecard</A></div>
 							  <!-- 
 							  <div><A style="cursor:pointer; color:silver;" onclick="clearFFx()"><b>? FFx</b></A></div>
@@ -461,9 +461,9 @@
 
 
 
-	<TABLE id="tblAWAY" border=1 align=center style="background:orange; zoom:2; position:fixed; left:40px; top:400px; visibility:hidden; font-size:20px;">
+	<TABLE id="tblAWAY" border=1 align=center style="background:orange; zoom:2; position:fixed; left:40px; top:350px; visibility:hidden; font-size:20px;"> <!-- top:400px; -->
 		<thead>
-		<TR style="background:brown; color:white;"><TH colspan=4>AWAY</TH>
+		<TR style="background:brown; color:white;"><TH colspan=4>OUT/away</TH>
 			<TD colspan=2 align=center><a style="color:silver;" onclick="removeAWAY()">remove</a>
 			<TH><a onclick="showAWAY()"><b>&times;</b></a></TH>
 		</TR>	
@@ -491,7 +491,11 @@
 			<TD><label><input id="pl13" type="radio" name="guysAWAY" value="wr" style="zoom:;"/>WR</label></TD>	
 			<TD><label><input id="pl14" type="radio" name="guysAWAY" value="js" style="zoom:;"/>JS</label></TD>			
 		</TR>	
-			
+		<TR>
+			<TD><label><input id="pl15" type="radio" name="guysAWAY" value="nb" style="zoom:;"/>NB</label></TD>
+			<TD><label><input id="pl16" type="radio" name="guysAWAY" value="eh" style="zoom:;"/>EH</label></TD>
+			<TD><label><input id="pl17" type="radio" name="guysAWAY" value="gn" style="zoom:;"/>GN</label></TD>
+		</tr>	
 		</thead>	
 		<tbody>
 			
