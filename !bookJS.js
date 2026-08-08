@@ -159,7 +159,9 @@
 	}	
 
 	//var loadNUMBER;
-	function LOADfn() {
+	function LOADbk() {
+		//alert("In '!bookJS.js' file > 'LOADbk()' script\n\t[not '!snigT.js' file 'loadFN()' script]");
+		
 		Date0str = localStorage.getItem("w0date").substring(7,10);	  
 		Date1str = localStorage.getItem("w1date").substring(7,10);	  
 		Date2str = localStorage.getItem("w2date").substring(7,10);	  
@@ -265,8 +267,9 @@
 			if (awW0array.length!=0) {			
 				for (let a = 1; a < awy0Len; a++) {
 					if (awW0array[a]!="") {	  	
-						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'ivory';  
+						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'yellow';	//'ivory';  
 						document.getElementById("G"+awW0array[a]+"wk0").onclick = function(){alert("Input frozen!");}
+						alert("Now in 'locStor()' fn > awW0array[a]!=''");
 					}
 				}	
 			}
