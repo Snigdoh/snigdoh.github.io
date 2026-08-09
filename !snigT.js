@@ -3106,7 +3106,7 @@
 		replace(); //pHCcolors(); restrictTAB(); 
 			//alert("post replace() in loadFN . . .");	
 		//circleMAXs25();
-		calcALL();      //alert("post calcALL() in loadFN . . .");	
+		calcALL();      //alert("post calcALL() in loadFN . . .");	 
 		calcTOTALS(); 	//alert("post calcTOTALS() in loadFN . . .");	
 			//showPARTIAL();
 		circleMAXs25();

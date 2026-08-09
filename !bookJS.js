@@ -197,6 +197,7 @@
 	}
 
 	function locStor() {
+		alert("In locStor() fn!\nlocalStorage.getItem('LSawyW0') = "+localStorage.getItem('LSawyW0'));
 		/* alert("localStorage:\n\n"+
 			  "lS 'G3wk0' = "+localStorage.getItem('G3playWK0')+
 			  "\nlS 'G1wk3' = "+localStorage.getItem('G1playWK3')+
@@ -268,9 +269,10 @@
 			if (awW0array.length!=0) {			
 				for (let a = 1; a < awy0Len; a++) {
 					if (awW0array[a]!="") {	  	
+						alert("Now in 'locStor()' fn \n> awW0array[a]!=''");
 						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'yellow';	//'ivory';  
 						document.getElementById("G"+awW0array[a]+"wk0").onclick = function(){alert("Input frozen!");}
-						alert("Now in 'locStor()' fn \n> awW0array[a]!=''");
+						
 					}
 				}	
 			}
