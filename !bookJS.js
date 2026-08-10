@@ -221,6 +221,10 @@
 		
 		
 		var curWK = localStorage.getItem("PRIMEwk");
+			if ( curWK == "" ) { 
+				alert("You must set a primary/current week to diplay outs!\n"+
+					  "[> Munu > out > prime]");
+			}
 		document.getElementById("w"+curWK).style.background="orange"; 
 		
 		
