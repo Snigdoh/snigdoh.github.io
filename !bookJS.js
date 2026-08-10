@@ -160,7 +160,7 @@
 
 	//var loadNUMBER;
 	function LOADbk() {
-		alert("In '!bookJS.js' file > 'LOADbk()' script\n\t[not '!snigT.js' file 'loadFN()' script]");
+		//alert("In '!bookJS.js' file > 'LOADbk()' script\n\t[not '!snigT.js' file 'loadFN()' script]");
 		
 		Date0str = localStorage.getItem("w0date").substring(7,10);	  
 		Date1str = localStorage.getItem("w1date").substring(7,10);	  
@@ -197,7 +197,7 @@
 	}
 
 	function locStor() {
-		alert("In locStor() fn!\nlocalStorage.getItem('LSawyW0') = "+localStorage.getItem('LSawyW0'));
+		alert("In locStor() fn from 'LOADbk()'\n[in !bookJS.js' file]!\n\nlocalStorage.getItem('LSawyW0') = "+localStorage.getItem('LSawyW0'));
 		/* alert("localStorage:\n\n"+
 			  "lS 'G3wk0' = "+localStorage.getItem('G3playWK0')+
 			  "\nlS 'G1wk3' = "+localStorage.getItem('G1playWK3')+
@@ -266,8 +266,10 @@
 			}				
 			var awy0Len = awW0array.length; //alert("awy0Len (in locStor fn) = "+awy0Len);
 			//if (awy0Len>1) {	
-			if (awW0array.length!=0) {			
+			if (awW0array.length!=0) {		
+				alert("awW0array.length = "+awW0array.length);	
 				for (let a = 1; a < awy0Len; a++) {
+					alert("awW0array[a] = "+awW0array[a]);
 					if (awW0array[a]!="") {	  	
 						alert("Now in 'locStor()' fn \n> awW0array[a]!=''");
 						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'yellow';	//'ivory';  
@@ -407,6 +409,21 @@
 //const NOwk0 = []; const NOwk1 = []; const NOwk2 = [];  const NOwk3 = [];  const NOwk4 = [];
 //var NOwk0str; var NOwk1str; var NOwk2str; var NOwk3str; var NOwk4str;    //PLAYwk4str = PLA	
 function PLAYwk(pl,pNO,wk) {
+	if ( document.getElementById("G"+pNO+"wk"+wk).style.background == "lime" ) {
+		  let reply;
+		  if (confirm("Are you SURE you want to change "+pNO+"/"+wk+" scheduled to play?" ) == true) {
+		    reply = "YES!";
+		  } else {
+		    reply = "NO!";
+		  }
+  		  alert(reply);
+			  
+		  if ( reply=="NO!") {	
+			  return;     // Exits early, returning undefined
+		  }		  
+	}
+
+
 	if ( freeze != "y" ) {
 		/*
 		var locStorWK0str = localStorage.getItem("lsWK0");
@@ -419,7 +436,7 @@ function PLAYwk(pl,pNO,wk) {
 			  "'locStorWK0str' fr locStor = "+locStorWK0str+"\n\n"+
 			  "'concatWKstr' = "+concatWKstr);
 		*/
-		
+
 		
 		if ( document.getElementById("G"+pNO+"wk"+wk).style.background == "lime" ) {
 			//alert(pl+" is NOT playing wk "+wk+"!");
