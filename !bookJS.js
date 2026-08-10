@@ -197,7 +197,7 @@
 	}
 
 	function locStor() {
-		alert("In locStor() fn from 'LOADbk()'\n[in !bookJS.js' file]!\n\nlocalStorage.getItem('LSawyW0') = "+localStorage.getItem('LSawyW0'));
+		//alert("In locStor() fn from 'LOADbk()'\n[in !bookJS.js' file]!\n\nlocalStorage.getItem('LSawyW0') = "+localStorage.getItem('LSawyW0'));
 		/* alert("localStorage:\n\n"+
 			  "lS 'G3wk0' = "+localStorage.getItem('G3playWK0')+
 			  "\nlS 'G1wk3' = "+localStorage.getItem('G1playWK3')+
@@ -238,10 +238,10 @@
 		const awW2array = localStorage.getItem("LSawyW2").split(",");
 		const awW3array = localStorage.getItem("LSawyW3").split(",");
 		const awW4array = localStorage.getItem("LSawyW4").split(",");
-		alert("awW1array = "+ awW1array+"\n\nawW0array = "+ awW0array);
+		//alert("awW1array = "+ awW1array+"\n\nawW0array = "+ awW0array);
 		//document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
 			var awy1Len = awW1array.length;
-				alert("awy1Len (in locStor fn) = "+awy1Len);
+				//alert("awy1Len (in locStor fn) = "+awy1Len);
 			//if (awy1Len>1) {
 			if (awW1array.length!=0) {	
 				for (let a = 1; a < awy1Len; a++) {
@@ -264,14 +264,14 @@
 						
 				}
 			}				
-			var awy0Len = awW0array.length; 		alert("awy0Len = "+awy0Len);
+			var awy0Len = awW0array.length; 		//alert("awy0Len = "+awy0Len);
 			//if (awy0Len>1) {	
 			if (awW0array.length!=0) {		
-				alert("awW0array.length = "+awW0array.length);	
+				//alert("awW0array.length = "+awW0array.length);	
 				for (let a = 1; a < awy0Len; a++) {
-					alert("awW0array[a] = "+awW0array[a]);
+					//alert("awW0array[a] = "+awW0array[a]);
 					if (awW0array[a]!="") {	  	
-						alert("Now in 'locStor()' fn \n> awW0array[a]!=''");
+						//alert("Now in 'locStor()' fn \n> awW0array[a]!=''");
 						document.getElementById("G"+awW0array[a]+"wk0").style.background = 'yellow';	//'ivory';  
 						document.getElementById("G"+awW0array[a]+"wk0").onclick = function(){alert("Input frozen!");}
 						
