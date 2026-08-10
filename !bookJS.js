@@ -238,10 +238,10 @@
 		const awW2array = localStorage.getItem("LSawyW2").split(",");
 		const awW3array = localStorage.getItem("LSawyW3").split(",");
 		const awW4array = localStorage.getItem("LSawyW4").split(",");
-		//alert("awW1array = "+ awW1array);
+		alert("awW1array = "+ awW1array+"\n\nawW0array = "+ awW0array);
 		//document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
 			var awy1Len = awW1array.length;
-				//alert("awy1Len (in locStor fn) = "+awy1Len);
+				alert("awy1Len (in locStor fn) = "+awy1Len);
 			//if (awy1Len>1) {
 			if (awW1array.length!=0) {	
 				for (let a = 1; a < awy1Len; a++) {
