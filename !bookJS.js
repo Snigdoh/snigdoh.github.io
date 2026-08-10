@@ -264,7 +264,7 @@
 						
 				}
 			}				
-			var awy0Len = awW0array.length; //alert("awy0Len (in locStor fn) = "+awy0Len);
+			var awy0Len = awW0array.length; 		alert("awy0Len = "+awy0Len);
 			//if (awy0Len>1) {	
 			if (awW0array.length!=0) {		
 				alert("awW0array.length = "+awW0array.length);	
