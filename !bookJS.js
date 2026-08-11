@@ -162,11 +162,11 @@
 	function LOADbk() {
 		//alert("In '!bookJS.js' file > 'LOADbk()' script\n\t[not '!snigT.js' file 'loadFN()' script]");
 		
-		Date0str = localStorage.getItem("w0date").substring(7,10);	  
-		Date1str = localStorage.getItem("w1date").substring(7,10);	  
-		Date2str = localStorage.getItem("w2date").substring(7,10);	  
-		Date3str = localStorage.getItem("w3date").substring(7,10);	  
-		Date4str = localStorage.getItem("w4date").substring(7,10);
+		Date0str = localStorage.getItem("w0date").substring(3,10);	  
+		Date1str = localStorage.getItem("w1date").substring(3,10);	//7,10);	  
+		Date2str = localStorage.getItem("w2date").substring(3,10);	  
+		Date3str = localStorage.getItem("w3date").substring(3,10);	  
+		Date4str = localStorage.getItem("w4date").substring(3,10);
 							//myDate = myDate.substring(0,11);
 		document.getElementById("W0lbl").innerText=Date0str; 
 		document.getElementById("W1lbl").innerText=Date1str; 
