@@ -193,7 +193,22 @@
 			loadNUMBER = '2';
 			window.location.href = "!gs63/!gs63idx.html";
 		}
-*/		
+*/	
+
+		storedNOTE = localStorage.getItem("NOTEchange");
+		for (let i = 1; i < 18; i++) {	// > 17
+				var PL = document.getElementById("G"+i).innerHTML;
+					//alert("PL = "+PL);
+				const afterPL = storedNOTE.split(PL)[1]; 
+				//console.log(result); // Output: "12345"				
+				  if (storedNOTE.includes(PL)) {
+				    //console.log("Match found!");
+					//alert(pl+": "+afterPL);	//storedNOTE);
+					document.getElementById("G"+i).style.background = "maroon";
+				  } else {
+				    //alert("No note re "+pl+"!");
+				}	
+		}
 	}
 
 	function locStor() {
@@ -998,4 +1013,21 @@ function PLAYwk(pl,pNO,wk) {
 		location.reload();
 		//locStor();
 		
+	}
+	
+	function plNOTE(pl){
+		storedNOTE = localStorage.getItem("NOTEchange");
+		//onst text = "order-12345";
+		//const result = text.split('-')[1]; 
+		const afterPL = storedNOTE.split(pl)[1]; 
+		//console.log(result); // Output: "12345"
+		
+		  if (storedNOTE.includes(pl)) {
+		    //console.log("Match found!");
+			alert(pl+": "+afterPL);	//storedNOTE);
+		  } 
+		  /*else {
+		    alert("No note re "+pl+"!");
+		  }*/	
+				
 	}
