@@ -1024,7 +1024,7 @@ function PLAYwk(pl,pNO,wk) {
 		storedNOTE = localStorage.getItem("NOTEchange");
 		//onst text = "order-12345";
 		//const result = text.split('-')[1]; 
-		const afterPL = storedNOTE.split(pl)[1]; 
+		const afterPL = storedNOTE.split(pl+":")[1]; 
 		//console.log(result); // Output: "12345"
 		
 		  if (storedNOTE.includes(pl)) {
