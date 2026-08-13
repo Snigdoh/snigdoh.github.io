@@ -168,6 +168,11 @@
 		Date3str = localStorage.getItem("w3date").substring(3,10);	  
 		Date4str = localStorage.getItem("w4date").substring(3,10);
 							//myDate = myDate.substring(0,11);
+			if ( Date0str=="alid Da" ) { Date0str = "-" };
+			if ( Date1str=="alid Da" ) { Date1str = "-" };
+			if ( Date2str=="alid Da" ) { Date2str = "-" };
+			if ( Date3str=="alid Da" ) { Date3str = "-" };
+			if ( Date4str=="alid Da" ) { Date4str = "-" };	//alert("Date4str = '"+Date4str+"'!"); // < *!
 		document.getElementById("W0lbl").innerText=Date0str; 
 		document.getElementById("W1lbl").innerText=Date1str; 
 		document.getElementById("W2lbl").innerText=Date2str; 
