@@ -1022,17 +1022,22 @@ function PLAYwk(pl,pNO,wk) {
 	
 	function plNOTE(pl){
 		storedNOTE = localStorage.getItem("NOTEchange");
-		//onst text = "order-12345";
+		//const text = "order-12345";
 		//const result = text.split('-')[1]; 
 		const afterPL = storedNOTE.split(pl+":")[1]; 
 		//console.log(result); // Output: "12345"
 		
 		  if (storedNOTE.includes(pl)) {
-		    //console.log("Match found!");
-			alert(pl+": "+afterPL);	//storedNOTE);
+		    	//console.log("Match found!");
+				//alert(pl+": "+afterPL);	//storedNOTE);
+			  const start = storedNOTE.indexOf(pl);	//+ 1;
+			  //const end = storedNOTE.indexOf(start+10);
+			  const end = storedNOTE.indexOf(";", start + 1);
+			  const result = storedNOTE.slice(start, end);
+			  alert(result);		//("result = "+result);			
 		  } 
 		  /*else {
 		    alert("No note re "+pl+"!");
 		  }*/	
-				
+		  	
 	}
