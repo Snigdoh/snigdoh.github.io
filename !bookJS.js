@@ -838,6 +838,9 @@ function PLAYwk(pl,pNO,wk) {
 	function saveSFL() {
 		if (confirm("Are you SURE you want to save this SFL to localStorage?") == true) {
 		    reply = "YES!";
+				for (let n = 1; n < 19; n++) {
+					localStorage.removeItem('sflP'+n);		
+				}
 		//alert("Will save SFL to localStorage!");
 		//localStorage.setItem('sflP'+i,document.getElementById("SFL"+i).innerHTML);
 				for (let i = 1; i < 19; i++) {
@@ -932,9 +935,41 @@ function PLAYwk(pl,pNO,wk) {
 				if(document.getElementById('pl'+p).checked==true) {
 			  		//alert ("'pl"+p+"' radio button is checked.");	
 					selPL = p;
-				}
+				//}
+					for (let w = 0; w < 5; w++) {
+						if(document.getElementById('CHKw'+w).checked==true) { 
+							//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
+							document.getElementById('G'+selPL+'wk'+w).style.background = 'ivory';  //G12wk1
+							document.getElementById('G'+selPL+'wk'+w).onclick = function(){alert("Input frozen!");}	
+							if (w==0) {AWYwk0.push(selPL);}
+							if (w==1) {AWYwk1.push(selPL);}
+							if (w==2) {AWYwk2.push(selPL);}
+							if (w==3) {AWYwk3.push(selPL);}
+							if (w==4) {AWYwk4.push(selPL);}					
+						}
+					}
+					//NEW strings:
+					var AWYwk0str = AWYwk0.toString(); 
+					var AWYwk1str = AWYwk1.toString(); 
+					var AWYwk2str = AWYwk2.toString(); 
+					var AWYwk3str = AWYwk3.toString(); 
+					var AWYwk4str = AWYwk4.toString(); 
+					alert("Away strings:\n\n"+
+						  "newAWYwk0str = '"+AWYwk0str+"'\n"+
+						  "newAWYwk1str = '"+AWYwk1str+"'\n"+
+						  "newAWYwk2str = '"+AWYwk2str+"'\n"+
+						  "newAWYwk3str = '"+AWYwk3str+"'\n"+
+						  "newAWYwk4str = '"+AWYwk4str+"'"); 	
+					
+					localStorage.setItem("LSawyW0",AWYwk0str);
+					localStorage.setItem("LSawyW1",AWYwk1str);
+					localStorage.setItem("LSawyW2",AWYwk2str);
+					localStorage.setItem("LSawyW3",AWYwk3str);
+					localStorage.setItem("LSawyW4",AWYwk4str);	
+				}			
 			}	
 			
+/*			
 			for (let w = 0; w < 5; w++) {
 				if(document.getElementById('CHKw'+w).checked==true) { 
 					//alert ("'CHKw"+w+"'' CHECKBOX is checked!");
@@ -947,6 +982,7 @@ function PLAYwk(pl,pNO,wk) {
 					if (w==4) {AWYwk4.push(selPL);}					
 				}
 			}
+			
 					
 			//NEW strings:
 			var AWYwk0str = AWYwk0.toString(); 
@@ -966,6 +1002,7 @@ function PLAYwk(pl,pNO,wk) {
 			localStorage.setItem("LSawyW2",AWYwk2str);
 			localStorage.setItem("LSawyW3",AWYwk3str);
 			localStorage.setItem("LSawyW4",AWYwk4str);
+*/
 //			localStorage.setItem("LSawyW0",appendAWYwk0str); 
 //			localStorage.setItem("LSawyW1",appendAWYwk1str);	
 				//localStorage.setItem("LSawyW1",localStorage.getItem("LSawyW1") + ", " + AWYwk1str);
