@@ -4103,7 +4103,7 @@ else {
 		//p1h4
 		document.getElementById("p"+pl+"h"+H).focus();
 		
-		document.getElementById("GOdiv").style.visibility="visible";
+		//document.getElementById("GOdiv").style.visibility="visible";
 	}	
 	function hideGOdiv(){
 		document.getElementById("GOdiv").style.visibility="hidden";
