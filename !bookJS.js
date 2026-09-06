@@ -17,14 +17,38 @@
 				document.getElementById("sflODR"+n).style.display="none"; 
 		}
 	}	
+	function hideRADIO() {
+			document.getElementById("tblWK").style.visibility="hidden";
+	}
+	function radioSFL() {
+		document.getElementById("tblWK").style.visibility="visible";
+		closeNav();
+		//id="pwk2" type="radio" name="sflWK"
+		var thisWK = localStorage.getItem("PRIMEwk");
+			//alert("thisWK = "+thisWK);
+		// Select/Check the radio button
+		document.getElementById('wk'+thisWK).checked = true;	
+	}
 	function showSFL() {
+		// Find the checked radio button in the "gender" group
+		const checkedRadio = document.querySelector('input[name="sflWK"]:checked');
+		if (checkedRadio) {
+		    //alert("value of the selected radio button = "+checkedRadio.value); // Outputs the value of the selected radio button
+			document.getElementById("tblWK").style.visibility="hidden";
+		} else {
+		    alert("No radio button is selected.");
+		}	
+		
+		
+		
 		//alert("Trying to show 'tblSFL'!");
 		if (document.getElementById("tblSFL").style.visibility=="visible") {
 			document.getElementById("tblSFL").style.visibility="hidden"; 
 			//onchange="localStorage.setItem('bkDATE',this.value);"	
 		}		
 		else {
-			  sflWK = prompt("Please enter week to shuffle (0-4)", 1);
+			  //sflWK = prompt("Please enter week to shuffle (0-4)", 1);
+			  sflWK = checkedRadio.value; //alert("sflWK = "+sflWK);
 			  //lsWK2:
 			  /*var locStorWK2str = localStorage.getItem("lsWK2");
 			  		alert("'locStorWK2str' fr locStor = "+locStorWK2str);*/
@@ -716,7 +740,7 @@ function PLAYwk(pl,pNO,wk) {
 				document.getElementById("sflODR"+n).value=n;	// < July 11/26 *
 			}	
 		}
-		alert("'cars' array = "+ cars);
+		//alert("'cars' array = "+ cars);
 		//alert("cars[2] (3rd element) = "+cars[2]);
 		/*
 		document.getElementById("sflODR3").style.display="block"; 

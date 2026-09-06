@@ -155,7 +155,8 @@
 							  	<!--<span style=" cursor:pointer; color:white;" onclick="closeNav()"><s>&#9776;</s></span>-->	<!--<button onclick="showALL()">display group</button>-->
 							  </div>
 							  		<!--<div><button onclick="emails()">emails</button></div>-->
-							  <div><A style="color:lime;" onclick="showSFL()">shuffle</A></div>
+							  <div><A style="color:lime;" onclick="radioSFL()">shuffle</A></div>
+							  									<!-- showSFL() -->
 							  
 							  <div><A onclick="closeNav()" style='cursor:pointer; color:white;'><s>&#9776;</s></A>
 								  <!--<a onclick="showLSwrite()" style=""><b>WRITE to file</b></a>-->
@@ -514,8 +515,32 @@
 		</TR>	
 		
 	</TABLE>
+
+
 	
-	
+	<TABLE id="tblWK" border=1 align=center style="background:blue; color:white; zoom:2; position:fixed; left:40px; top:350px; visibility:hidden; font-size:20px;"> <!-- top:400px; -->
+		<thead>
+		<TR style="background:dodgerblue; color:white;"><TH colspan=5>Enter week to shuffle (0-4)</TH>
+		</TR>	
+		<TR>
+			<TD>
+				<label><input id="wk0" type="radio" name="sflWK" value="0" style="zoom:1;"/>0</label>
+			</TD>
+			<TD><label><input id="wk1" type="radio" name="sflWK" value="1" style="zoom:;"/>1</label></TD>	
+			<TD> 
+				<label><input id="wk2" type="radio" name="sflWK" value="2" style="zoom:1;"/>2</label>
+									<!-- type="radio" -->
+			</TD>	
+			<TD><label><input id="wk3" type="radio" name="sflWK" value="3" style="zoom:;"/>3</label></TD>
+			<TD><label><input id="wk4" type="radio" name="sflWK" value="4" style="zoom:;"/>4</label></TD>
+		</TR>
+		<TR>
+						<TD colspan=4 align=center><button style="color:black;  font-size:15px;" onclick="showSFL()"><b>SUBMIT</b></button></TD>
+									<!-- font-size:15px; -->
+						<TD><a onclick="hideRADIO()" style=""><b>clear</b></a>
+						</TD><!-- &times; font-size:45px;-->
+		</TR>
+	</TABLE>
 	
 </div>	
 

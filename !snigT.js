@@ -2046,6 +2046,41 @@
 			
 	}	
 
+	function blurCOLORS(p){
+		/*alert("Trying to change INDIVIDUAL player HC colors on HC input blur!\n\n"+
+			  "player (p) = "+p);*/
+		let HCpl = document.getElementById("p"+p+"HC").value;
+		//remove colors: 
+			for (var x = 1; x < 19; x++) {
+				document.getElementById("p"+p+"h"+x).style.background = "linen";
+				document.getElementById("p"+p+"h"+x).style.color = "black";
+			}
+		for (var h = 1; h < 19; h++) {
+					//alert("hole = "+h);
+					HOLEhc = document.getElementById("HCPh"+h).value;					
+					if ( (HCpl-36) >= +HOLEhc) {
+						document.getElementById("p"+p+"h"+h).style.background = "purple";
+						document.getElementById("p"+p+"h"+h).style.color = "white";
+						if ( document.getElementById("PARh"+h).value==5 ) {
+							document.getElementById("p"+p+"h"+h).maxLength = 2;	// < May 6/26 *
+							document.getElementById("p"+p+"h"+h).style.width = "22px";
+							document.getElementById("p"+p+"h"+h).style.height = "22px";
+							document.getElementById("p"+p+"h"+h).style.padding = "2px";	
+						}
+					}
+					else if ( (HCpl-18) >= +HOLEhc) {
+						document.getElementById("p"+p+"h"+h).style.background = "green";	//"slategray";
+						document.getElementById("p"+p+"h"+h).style.color = "white";
+					}
+					else if ( +HCpl >= +HOLEhc ) { 
+						//if (h=5) {alert("h = 5 & HOLEhc = "+HOLEhc); }
+						document.getElementById("p"+p+"h"+h).style.background = "lime";
+					}
+		}		
+	}
+	
+	
+	
 	function circleMAXs() {			/*  ################ \/ Jun/24 \/ ################  */
 		
 		// HOLE: p2h17;   PAR: PARh17;    STROKES: =color;    MAXscr = par+strokes+2;     playerNO;
@@ -4060,4 +4095,16 @@ else {
 			
 		}	
 
+	function GOto(){
+		let goal = prompt("Enter desired box (p,h)", "2,7");
+		const pl = goal.split(',')[0];
+		const H = goal.split(',')[1];	 	
+			alert("pl = "+pl+"; H = "+H);		
+		//p1h4
+		document.getElementById("p"+pl+"h"+H).focus();
 		
+		document.getElementById("GOdiv").style.visibility="visible";
+	}	
+	function hideGOdiv(){
+		document.getElementById("GOdiv").style.visibility="hidden";
+	}

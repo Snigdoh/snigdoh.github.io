@@ -32,7 +32,7 @@
 <div class="wrapper"><!-- Put the page contents here -->
 				
 <TABLE id="HEADtbl" border=1 align=center style='FONT-SIZE:large; color:maroon; visibility:visible;' bgcolor='lightgray'>	
-	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>25</u></font><br><font size=2 color=lime>1</font><font size=2 color=silver><b>Aug<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
+	<TR><TD style="FONT-WEIGHT: bold; FONT-SIZE:20px; COLOR:gold; background:brown; FONT-WEIGHT:bold;" >snig<font color=white><u>6</u></font><br><font size=2 color=lime>1</font><font size=2 color=silver><b>Sep<font color=yellow>26</font><!--<font color=gold>&#9733;</font>--></b></font>	
 </TD> <!--<TD width=20><font size=1>93i</font></TD>	-->
 <TD>
 					<div class="dropup" style="cursor:pointer; color:black; background:lightgray; /*position:relative; left:18%;*/">
@@ -86,11 +86,11 @@
 					<span id="MICsymbol" style="padding:0px; background:white; border:2px inset black; border-radius:15%; font-size:22px; visibility:hidden;">&#127908;</span> <!-- mic symbol   speaker = &#128265; -->		
 					<!--<span id="battery-percentage" style="padding:2px; background:lightgreen; color:black;">0</span><font size=2 color=black>%</font>-->
 				</TH> <!-- << put battery % here ^ -->
-				<TH id="p1HCtee" style="background:blue;"><input type="tel" id="p1HC" maxlength=2 onchange="localStorage.setItem('g1HC',this.value);" name='NMp1hc' autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;" ></TH> <!-- value=24  onchange="pHCcolors('p1')" whitesmoke -->
-				<TH id="p2HCtee" style="background:blue;"><input type="tel" id="p2HC" maxlength=2 onchange="localStorage.setItem('g2HC',this.value);" tabindex="204" style="background:whitesmoke; width:60%;" ></TH> <!-- P2 HC -->
-				<TH id="p3HCtee" style="background:blue;"><input type="tel" id="p3HC" maxlength=2 onchange="localStorage.setItem('g3HC',this.value);" tabindex="206" style="background:whitesmoke; width:60%;" ></TH>
-				<TH id="p4HCtee" style="background:blue;"><input type="tel" id="p4HC" maxlength=2 onchange="localStorage.setItem('g4HC',this.value);" tabindex="208" style="background:whitesmoke; width:60%;"  ></TH>
-				<TH id="TDp5HC"><input type="tel" id="p5HC" maxlength=2 onchange="localStorage.setItem('g5HC',this.value);" tabindex="210" style="background:whitesmoke; width:60%;"></TH>
+				<TH id="p1HCtee" style="background:blue;"><input type="tel" id="p1HC" maxlength=2 onchange="localStorage.setItem('g1HC',this.value); blurCOLORS(1)" name='NMp1hc' autofocus tabindex="202" style="background:whitesmoke; width:60%; font-weight:bold;"></TH> <!-- value=24  onchange="pHCcolors('p1')" whitesmoke  onblur="blurCOLORS(1)" -->
+				<TH id="p2HCtee" style="background:blue;"><input type="tel" id="p2HC" maxlength=2 onchange="localStorage.setItem('g2HC',this.value); blurCOLORS(2)" tabindex="204" style="background:whitesmoke; width:60%;"></TH> <!-- P2 HC -->
+				<TH id="p3HCtee" style="background:blue;"><input type="tel" id="p3HC" maxlength=2 onchange="localStorage.setItem('g3HC',this.value); blurCOLORS(3)" tabindex="206" style="background:whitesmoke; width:60%;"></TH>
+				<TH id="p4HCtee" style="background:blue;"><input type="tel" id="p4HC" maxlength=2 onchange="localStorage.setItem('g4HC',this.value); blurCOLORS(4)" tabindex="208" style="background:whitesmoke; width:60%;" ></TH>
+				<TH id="TDp5HC"><input type="tel" id="p5HC" maxlength=2 onchange="localStorage.setItem('g5HC',this.value); blurCOLORS(5)" tabindex="210" style="background:whitesmoke; width:60%;"></TH>
 				<TD  colspan=3 style="background:transparent;"> <!--  float:right; -->
 					<!--<button id='SLIDEbtn' onclick="showSLIDE()" style="FONT-WEIGHT:bold; FONT-SIZE:15px; COLOR:white; background:green; border:3px solid orange; border-radius:10px;">Slider Input</button>	-->
 					<button id='FULLbtn2' onclick="FULLtbl()" style="FONT-WEIGHT:bold; FONT-SIZE:20px; COLOR:blue; background:transparent; border:0px solid blue; border-radius:5px;">+</button>
@@ -1297,6 +1297,8 @@
 	
 	  <a style="color:green; font-size:30px;"  onclick="showMONEY()">$$$</a> 
 	  &nbsp;<a style="color:black; font-size:25px;" onclick="displayP5()"><b>P5+/-</b></a>
+	  
+	  <a style="color:red; font-size:30px;" onclick="GOto()">GoTo</a>
 
 	 
 
@@ -1658,6 +1660,30 @@
 	</div>			
 
 	<!-- 	√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√ ^ MISC menu ^ √√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√√	  -->	
+
+	<div id="GOdiv" style= "border:3px inset slategray; border-radius:10px;  overflow:scroll; margin:auto; visibility:hidden; background:white;  position:fixed; left:50%; transform:translate(-50%,0); top:10%;  zoom:100%;"> <!-- width:250px;  left:65%; -->
+	
+		<TABLE id="tblGO" border=1 align=center style="background:lime; color:black; zoom:1;  font-size:20px;"> <!-- visibility:visible;  position:fixed; left:40px; top:350px;   top:400px; -->
+			<TR style="background:dodgerblue; color:white;"><TH colspan=2>Enter box to GoTo:<!-- (p,h); e.g. 2,10--></TH>
+			</TR>	
+			<TR>			
+				<TD><label>P: <input type="tel" id="pGO" maxlength=2 style="background:whitesmoke; width:20%;"></label></TD>
+				<TD><label>H: <input type="tel" id="hGO" maxlength=2 style="background:whitesmoke; width:20%;"></label></TD>
+			</TR>
+			<TR>
+				<TD>
+					<label>><input id="goFWD" type="radio" name="GO" value="f" style="zoom:1;"/></label>
+				</TD>
+				<TD><label><<input id="goBACK" type="radio" name="GO" value="b" style="zoom:;"/></label></TD>			
+			<TR>
+							<TD colspan=1 align=center><button style="color:black;  font-size:15px;" onclick="GOto()"><b>SUBMIT</b></button></TD>
+										<!-- font-size:15px; -->
+							<TD><a onclick="hideGOdiv();" style=""><b>exit</b></a>
+							</TD><!-- &times; font-size:45px;-->
+			</TR>
+		</TABLE>
+	</div>
+
 	
 </div>	
 
@@ -1673,4 +1699,4 @@
 
 </body>
 
-</html>
+</html>	
