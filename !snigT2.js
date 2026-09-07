@@ -1161,3 +1161,23 @@
 		document.getElementById("NOpl").value="";
 		document.getElementById("divideRESULT").value="";
 	}
+	
+	
+if ('virtualKeyboard' in navigator) {
+				alert("virtualKeyboard' IS in navigator!");
+  // Prevent the browser from automatically handling the keyboard layout
+  navigator.virtualKeyboard.overlaysContent = true;
+
+  document.getElementById('editBtn').addEventListener('click', () => {
+    document.getElementById('myEditor').focus();
+    
+    // Manually force the keyboard to slide up
+    navigator.virtualKeyboard.show();
+  });
+} else {
+				alert("virtualKeyboard' is NOT in navigator!");
+  // Fallback for browsers that don't support the VirtualKeyboard API (like iOS Safari)
+  document.getElementById('editBtn').addEventListener('click', () => {
+    document.getElementById('myEditor').focus();
+  });
+}	
