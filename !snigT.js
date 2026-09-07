@@ -4101,9 +4101,16 @@ else {
 		const H = goal.split(',')[1];	 	
 			alert("pl = "+pl+"; H = "+H);		
 		//p1h4
-		document.getElementById("p"+pl+"h"+H).focus();
+		//document.getElementById("p"+pl+"h"+H).focus();
 		
 		//document.getElementById("GOdiv").style.visibility="visible";
+		
+		document.getElementById('gotoLINK').addEventListener('click', () => {
+  			const inputElement = document.getElementById("p"+pl+"h"+H);  
+  			// Directly focusing inside the click event triggers the keyboard
+  			inputElement.focus();
+		});
+		
 	}	
 	function hideGOdiv(){
 		document.getElementById("GOdiv").style.visibility="hidden";
