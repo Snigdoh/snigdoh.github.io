@@ -4099,18 +4099,36 @@ else {
 		let goal = prompt("Enter desired box (p,h)", "2,7");
 		const pl = goal.split(',')[0];
 		const H = goal.split(',')[1];	 	
-			alert("pl = "+pl+"; H = "+H);		
+			//alert("pl = "+pl+"; H = "+H);		
 		//p1h4
 		//document.getElementById("p"+pl+"h"+H).focus();
 		
 		//document.getElementById("GOdiv").style.visibility="visible";
 		
-		document.getElementById('gotoLINK').addEventListener('click', () => {
+		//document.getElementById('gotoLINK').addEventListener('click', () => {
   			const inputElement = document.getElementById("p"+pl+"h"+H);  
   			// Directly focusing inside the click event triggers the keyboard
-  			inputElement.focus();
-		});
+  			inputElement.focus();			
+		//});
+			
+/*		
+		if ('virtualKeyboard' in navigator) {
+		  // Prevent the browser from automatically handling the keyboard layout
+		  navigator.virtualKeyboard.overlaysContent = true;
 		
+		  document.getElementById('editBtn').addEventListener('click', () => {
+		    document.getElementById("p"+pl+"h"+H).focus();
+		    
+		    // Manually force the keyboard to slide up
+		    navigator.virtualKeyboard.show();
+		  });
+		} else {
+		  // Fallback for browsers that don't support the VirtualKeyboard API (like iOS Safari)
+		  document.getElementById('editBtn').addEventListener('click', () => {
+		    document.getElementById("p"+pl+"h"+H).focus();
+		  });
+	  	}
+*/		
 	}	
 	function hideGOdiv(){
 		document.getElementById("GOdiv").style.visibility="hidden";
@@ -4121,15 +4139,17 @@ else {
 		  navigator.virtualKeyboard.overlaysContent = true;
 		
 		  document.getElementById('editBtn').addEventListener('click', () => {
-		    document.getElementById('myEditor').focus();
-		    
+		    //document.getElementById('myEditor').focus(); //p1h15
+		    document.getElementById('p1h18').focus();
+			
 		    // Manually force the keyboard to slide up
 		    navigator.virtualKeyboard.show();
 		  });
 		} else {
 		  // Fallback for browsers that don't support the VirtualKeyboard API (like iOS Safari)
 		  document.getElementById('editBtn').addEventListener('click', () => {
-		    document.getElementById('myEditor').focus();
+		    //document.getElementById('myEditor').focus();
+			document.getElementById('p1h18').focus();
 		  });
 		}		
 	}
