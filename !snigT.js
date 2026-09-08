@@ -4115,3 +4115,21 @@ else {
 	function hideGOdiv(){
 		document.getElementById("GOdiv").style.visibility="hidden";
 	}
+	function virtKBD() {
+		if ('virtualKeyboard' in navigator) {
+		  // Prevent the browser from automatically handling the keyboard layout
+		  navigator.virtualKeyboard.overlaysContent = true;
+		
+		  document.getElementById('editBtn').addEventListener('click', () => {
+		    document.getElementById('myEditor').focus();
+		    
+		    // Manually force the keyboard to slide up
+		    navigator.virtualKeyboard.show();
+		  });
+		} else {
+		  // Fallback for browsers that don't support the VirtualKeyboard API (like iOS Safari)
+		  document.getElementById('editBtn').addEventListener('click', () => {
+		    document.getElementById('myEditor').focus();
+		  });
+		}		
+	}
