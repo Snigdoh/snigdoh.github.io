@@ -1179,5 +1179,6 @@ if ('virtualKeyboard' in navigator) {
   // Fallback for browsers that don't support the VirtualKeyboard API (like iOS Safari)
   document.getElementById('editBtn').addEventListener('click', () => {
     document.getElementById('myEditor').focus();
+	//navigator.virtualKeyboard.show(); // < ??
   });
 }	
