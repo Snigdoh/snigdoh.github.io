@@ -4130,10 +4130,11 @@ else {
 	  	}
 */		
 	}	
-	function hideGOdiv(){
+/*	function hideGOdiv(){
 		document.getElementById("GOdiv").style.visibility="hidden";
 	}
-	function virtKBD() {
+*/
+/*	function virtKBD() {
 		if ('virtualKeyboard' in navigator) {
 		  // Prevent the browser from automatically handling the keyboard layout
 		  navigator.virtualKeyboard.overlaysContent = true;
@@ -4153,3 +4154,4 @@ else {
 		  });
 		}		
 	}
+*/
