@@ -233,7 +233,10 @@
 				  if (storedNOTE.includes(PL)) {
 				    //console.log("Match found!");
 					//alert(pl+": "+afterPL);	//storedNOTE);
-					document.getElementById("G"+i).style.background = "maroon";
+					//document.getElementById("G"+i).style.background = "maroon"; // < Sep/26 *!
+					//document.getElementById("G"+i).style.border = "2px solid red"; // < Sep/26 *!
+					//document.getElementById("G"+i).innerHTML = document.getElementById("G"+i).innerHTML+" n"; // < Sep/26 *!
+					document.getElementById("G"+i).style.color = "orange"; // < Sep/26 *!
 				  } else {
 				    //alert("No note re "+pl+"!");
 				}	
@@ -563,6 +566,19 @@ function PLAYwk(pl,pNO,wk) {
 	
 	function clearLS() {		
 			//alert("G1playWK0 PRE clear = "+localStorage.getItem('G1playWK0'));
+				/*alert("localStorage G5playWK2 =" + localStorage.getItem('G5playWK2')+
+				      "\n\tlocalStorage G1playWK0 =" + localStorage.getItem('G1playWK0')+
+					  "\n\tlocalStorage G18playWK4 =" + localStorage.getItem('G18playWK4')+
+					  "\nlocalStorage G8playWK3 =" + localStorage.getItem('G8playWK3')+
+					  "\nlocalStorage G10playWK1 =" + localStorage.getItem('G10playWK1'));*/
+		/*for (let w = 0; w < 5; w++) {	  
+			for (let i = 1; i < 19; i++) {	  // was i < 17 pre July/26 *
+				if ( (localStorage.getItem('G'+i+'playWK'+w) != "") &&  (localStorage.getItem('G'+i+'playWK'+w) != null) ) {
+					document.getElementById("G"+i+"wk"+w).style.background = "green";
+				}
+			}
+		}*/
+		
 			
 		  let reply;
 		  if (confirm("Are you SURE you want to CLEAR 'localStorage'?") == true) {
@@ -571,9 +587,17 @@ function PLAYwk(pl,pNO,wk) {
 		    reply = "NO!";
 		  }
   		  alert(reply);
-			  
 		  if ( reply=="YES!") {			  
-						var TEMPw0date = localStorage.getItem("w0date");
+					for (let w = 0; w < 5; w++) {	  
+						for (let i = 1; i < 19; i++) {	  // was i < 17 pre July/26 *
+							if ( (localStorage.getItem('G'+i+'playWK'+w) != "") &&  (localStorage.getItem('G'+i+'playWK'+w) != null) ) {
+									localStorage.setItem('G'+i+'playWK'+w,""); 
+								//document.getElementById("G"+i+"wk"+w).style.background = "green";
+							}
+						}
+					}
+/*			  
+					    var TEMPw0date = localStorage.getItem("w0date");
 						var TEMPw1date = localStorage.getItem("w1date");
 						var TEMPw2date = localStorage.getItem("w2date");
 						var TEMPw3date = localStorage.getItem("w3date");
@@ -581,7 +605,11 @@ function PLAYwk(pl,pNO,wk) {
 						var tempPRIMEwk = localStorage.getItem("PRIMEwk");	// *
 						var tempNOTE = localStorage.getItem("NOTEchange");	
 			    //localStorage.setItem("lastPLAY","");
-				localStorage.clear();
+
+				localStorage.clear(); // < BAD! May clear ALL localStorage (including round scores) *
+				//localStorage.setItem("G"+pNO+"playWK"+wk,pl);
+					//alert("localStorage G3playWK4 =" + localStorage.getItem('G3playWK4'));
+
 						localStorage.setItem("w0date",TEMPw0date); 
 						localStorage.setItem("w1date",TEMPw1date); 
 						localStorage.setItem("w2date",TEMPw2date); 
@@ -589,6 +617,7 @@ function PLAYwk(pl,pNO,wk) {
 						localStorage.setItem("w4date",TEMPw4date); 
 						localStorage.setItem("PRIMEwk",tempPRIMEwk); 
 						localStorage.setItem("NOTEchange",tempNOTE); 
+*/			
 				//localStorage.removeItem(" ");									// << **
 				//alert("G1playWK0 post clear = "+localStorage.getItem('G1playWK0'));
 				
