@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SHOP</title> <!-- 6 = 6th month (June); 3 = '(2)3; formerly 'GSidx3' (_M4) -->
+<link rel="manifest" href="SnigStuff.webmanifest">
+	<!--Changed href = "manifest.json" To <link rel="manifest" href="WaltStuff.webmanifest">  -->
+	<!-- https://www.w3schools.com/jsref/jsref_split.asp -->
+	<!-- Using whichever browser you choose, Tap this link below to install 'WaltStuff': https://GWHodg.github.io -->
+
+<!--<link rel="stylesheet" href="!snigT.css">-->   <!--<link rel="stylesheet" href="!snig.css">-->
+<script src="!shopJS.js"></script> <!--<script src="!snigT.js"></script>-->
+
+
+<style>
+	.body,
+	.wrapper {
+	  /* Break the flow */
+		  position: absolute;
+		  top: 0px;	
+	  /* Give them all the available space */
+		  width: 100%;
+		  height: 100%;	
+	  /* Remove the margins if any */
+		  margin: 0;	
+	  /* Allow them to scroll down the document */
+		  /* overflow-y: hidden; */
+		  overflow-y:scroll;
+	}
+	
+	.body {
+	  /* Sending body at the bottom of the stack */
+	  FONT-SIZE:40px;
+	  z-index: 1;
+	   /* zoom:250%; */	/* 250%; */
+	  overscroll-behavior-y: contain; /* < prevents 'pull-to-refresh' in CHROME (not DDG) */
+	  /*background:lime;*/
+	  /*zoom:150%;*/	/*250%;*/
+  }
+	table.table2 tr td:nth-child(+6){ display:none }
+	table.table2 tr th:nth-child(+6){ display:none }
+	
+	
+	.wrapper {
+	  /* Making the wrapper stack above the body */
+	  z-index: 2;
+	  padding:5px; /* < my add (Mar 14/23) [dec to 5 px June 6/23] */
+	  /*zoom:150%;*/
+	}
+
+	table.HEADtbl td { 
+		background:black; color:white; text-align:center; 
+		zoom:300%;
+	}	
+	table.tableMAIN thead { 
+		display:block; /* display:block; | display:unset; */ 
+		/* width:150px; overflow-x:scroll; */
+		zoom:400%;
+	}
+	table.tableMAIN tbody { 
+		/* height:150px; overflow-y:scroll; */
+		display:block; 
+		zoom:400%;
+		/* width:150px; overflow-x:scroll; */
+	} 
+	table.tableMAIN td { width:30px; background:black; color:white; text-align:center; font-size:15px;} /* width: 30px; */
+	table.tableMAIN th { width:30px; background:beige; color:maroon;  font-size:15px; } /* width: 30px;  */
+	.headcol {
+		/*position: sticky;
+    	left: 5px;
+    	background-color: blue;*/
+	}
+
+	
+	input { width:11px; font-size:15px; text-align:center; }
+		input.uncoded { background:gray; } /* beige ivory linen */
+		input.inptTXT { background:gray; width:110px; } /* beige ivory linen */
+	span { color:white; background:black; font-size:12px; }
+		span.gTOT { color:black; background:white; font-size:12px; border:0px solid blue; border-radius:0px; padding:2px; font-weight:bold; }
+		span.sliderVAL { color:black; background:white; font-size:20px; border:1px solid blue; border-radius:0px; padding:5px; font-weight:bold; }  /* < slider */
+
+	div.classLSwrite { position:fixed; left:50%; transform:translate(-50%,0); top:10%;
+		background:pink; padding:10px; border:2px inset gray; border-radius:10px; visibility:hidden; } /*  position:fixed;  left:30em; top:200px;  (left:50px; top:200px;)  */
+	
+									/*	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   */
+									
+	/*Animated Sidenav (Menu):
+		create an animated, closable side navigation menu
+	  	https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav*/
+			.sidenav {
+			  height: 22%; width:0;   /* height: 100%;   30%*/
+			  position: fixed;z-index: 1;
+			  top:700px; left:0px; /* top: 545px; */
+			  background-color:black;	/*blue;	  #111;*/
+			  overflow:scroll; transition: 0.5s; padding-top:0px;	/* 30px; */
+			  /* overflow-x: hidden; overflow-y:scroll; */
+			  /*vertical-align: top;*/
+			  /* zoom:2.5; */
+			}		
+			.sidenav a {
+			  /* padding: 8px 8px 8px 32px; text-decoration: none; */
+			  padding: 3px 3px 3px 0px; text-decoration: none; 
+			  font-size: 50px;	/* 20px; */ color:pink; display: block; transition: 0.3s;
+			  							/* color: #818181; */
+			}		
+			.sidenav a:hover { color: #f1f1f1; }		
+			.sidenav .closebtn {
+			  position: absolute; top: 0; right: 25px;
+			  font-size: 36px; margin-left: 50px;
+			}	
+			
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: auto auto auto;	/* auto; */
+	  /*gap: 2px;
+	  background-color:dodgerblue; 	/* #2196F3; */
+	  padding: 5px;
+	  /*vertical-align:top;*/
+	  /*align-content:space-evenly;*/
+	  /* font-size: 50px;  */
+	}	
+	.grid-container > div {
+	  background-color:blue;	/* rgba(255, 255, 255, 0.8); */
+	  	color:white;
+	  border: 1px solid black;
+	  text-align: center;
+	  
+    }	
+	
+	
+	
+	
+</style>
+
+<script>	
+	function displayGpic(Gno){
+		//document.getElementById("myGRAPES").src = "VGClogo.jpeg";
+		//for (let n = 1; n < 5; n++) { document.getElementById("myG"+n).style.display = "none"; }
+		if ( document.getElementById("myG"+Gno).style.display == "none" ) {	
+			//alert("Will try to display pic for G2 (grapes)!");
+			for (let n = 1; n < 16; n++) { document.getElementById("myG"+n).style.display = "none"; }
+			document.getElementById("myG"+Gno).style.display = "block"; }
+		else { document.getElementById("myG"+Gno).style.display = "none"; }		
+	}
+
+	function addITEM(){
+		alert("Will try to add an item to list!");
+		for (let n = 9; n < 16; n++) {
+			if ( document.getElementById("R"+n).style.display=="none" ) {
+				document.getElementById("R"+n).style.display="block";
+				var ITEMname = prompt("Enter item name", 'drink');
+			  		localStorage.setItem("G"+n+"item",ITEMname);
+			  	document.getElementById("G"+n).style.fontSize = "19px"; // < ???
+				document.getElementById("G"+n).innerHTML=ITEMname;
+				
+				var ITEMdetail = prompt("Enter item detail", 'tasty!');
+				localStorage.setItem("G"+n+"detail",ITEMdetail); // < Oct 27 **
+				document.getElementById("G"+n+"detail").style.fontSize = "19px"; // < ???
+				document.getElementById("G"+n+"detail").innerHTML = ITEMdetail;
+				
+				return;     // Exits early, returning undefined
+			}
+			//alert("No more slots available!");
+		}		
+	}
+	
+	function assignPIC(){
+		let itemNO = prompt("Enter item number", 3);	
+		if ( (itemNO === null) || (itemNO == '') ) {
+	        return; //break out of the function early
+	    }
+		let pic = prompt("Enter pic file name for item # "+itemNO+":\n\nPassiveArms1.png; VGClogo.jpeg; IMG_woody.png; UPLANDSlogo.jpeg;", 'CBGClogo.jpeg');	
+			//alert("Picture file to be added = "+pic);			
+		if ( (pic === null) || (pic == "") ) {
+			        return; //break out of the function early
+		}
+		else{
+			alert("Picture file to be added = "+pic);
+			localStorage.setItem("G"+itemNO+"itemPIC", pic);	
+			// 1. Retrieve the URL string from localStorage
+			const storedImageUrl = localStorage.getItem("G"+itemNO+"itemPIC");			
+			// 2. If it exists, apply it to the <img> src attribute
+			if (storedImageUrl) {
+			  document.getElementById("myG"+itemNO).src = storedImageUrl;
+			}
+		}
+	}
+	
+</script>
+
+</head>
+
+<body class="body" style="background:yellow;" onload="LOADgroc();"> <!-- onload="LOADbk();"   zoom:250%; -->
+	
+<div class="wrapper"><!-- Put the page contents here -->	
+				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
+						<div class="grid-container">							
+							  <div><A style="cursor:pointer; color:white;" onclick="GclearLS()"><b>clear LS</b></A></div>
+							  <div><A style="color:lime;" onclick="GshowSFL()">LIST</A></div><!--shuffle</A></div>-->							  
+							  <div><A onclick="GcloseNav()" style='cursor:pointer; color:white;'><s>&#9776;</s></A></div>
+							  <div><A href="index.html" style='color:yellow;'>scorecard</A></div>
+							  <div><A style="color:lime;" onclick="addITEM()">add item</A></div>
+							  <div>
+								  <a onclick="GshowNOTE()" style="color:white; opacity:100%;"><b>note</b></a>
+							  </div>	
+							  <div></div>
+							  <div><A style="color:yellow;" onclick="editITEM()">edit item</A></div>	
+							  <div><A style="color:ivory;" onclick="assignPIC()"><!--assign -->pic</A></div>				  
+						</div>									
+				</div>	
+				
+
+	<TABLE class="HEADtbl" border=1 align=center > 	
+		<TR><TD>
+				<font size=4>Grocery List</font><br>
+			</TD> 
+		</TR>
+	</TABLE>
+
+	<TABLE class="tableMAIN" border=1 align=center style="">
+		<thead><TR>			
+			<TD style="width:10px;"></TD>
+			<TD> 
+				<span style="font-size:25px; cursor:pointer; background:ivory;color:maroon;" onclick="GopenNav()">&#9776;</span>
+			</TD>	
+			<TH id='det' style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="">details<br></TH>
+			<TH id='w2' style="font-size:12px; width:15px;" onclick="">&#10003;<!--check symbol--></TH> 		
+		</TR></thead>	
+
+		<tbody>
+		<TR>
+			<TD style="background:white; color:black; width:10px;">1</TD>
+			<TD class="headcol" id="G1" tabindex="0" onclick="displayGpic(1)" style='cursor:pointer; background:maroon;'>bread</TD> 
+			<TD style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red;" align=center id="G1detail" onclick="itemNOTE('g1')">white</TD>
+					<img src ="PassiveArms1.png" id="myG1" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 			
+			<TD align=center id="G1check" style="font-size:30px; width:15px;" onclick="BUY(1)"></TD><!--onclick="PLAYwk('AB',1,2)"-->			
+		</TR>
+		<TR>
+			<TD style="background:white; color:black; width:10px;">2</TD>
+			<TD class="headcol" id="G2" tabindex="0" onclick="displayGpic(2)" style='cursor:pointer; background:maroon;' >grapes</TD> 
+			<TD align=center id="G2detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red; background:black; color:white;" onclick="itemNOTE('g2')">green</TD>
+					<img src ="VGClogo.jpeg" id="myG2" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
+			<TD align=center id="G2check" style="font-size:30px; width:15px;" onclick="BUY(2)"></TD><!--PLAYwk('TC',2,2)-->
+		</TR>
+		<TR style="display:block;">	<!-- G3 WAS missing! -->
+			<TD style="background:white; color:black; width:10px;">3</TD>
+			<TD class="headcol" id="G3" tabindex="0" onclick="displayGpic(3)" style='cursor:pointer; background:maroon;' >miss</TD> 
+			<TD align=center id="G3detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red; background:black; color:white;" onclick="itemNOTE('g3')">G3</TD>
+					<img src ="" id="myG3" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
+			<TD align=center id="G3check" style="font-size:30px; width:15px;" onclick="BUY(3)"></TD>
+		</TR>				
+		<TR>
+			<TD style="background:white; color:black; width:10px;">4</TD>
+			<TD class="headcol" id="G4" tabindex="0" onclick="displayGpic(4)" style='cursor:pointer; background:maroon;''>turkey slices</TD>
+			<TD align=center id="G4detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g4')">Sunrize vvvvv iiii</TD>
+					<img src ="IMG_woody.png" id="myG4" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G4check" style="font-size:30px; width:15px;" onclick="BUY(4)"></TD>
+		</TR>
+
+		<TR>
+			<TD style="background:white; color:black; width:10px;">5</TD>
+			<TD class="headcol" id="G5" tabindex="0" onclick="displayGpic(5)" style='cursor:pointer; background:maroon;''>coffee</TD>
+			<TD align=center id="G5detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g5')">little cups</TD>
+					<img src ="" id="myG5" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G5check" style="font-size:30px; width:15px;" onclick="BUY(5)"></TD>
+		</TR>
+		<TR>
+			<TD style="background:white; color:black; width:10px;">6</TD>
+			<TD class="headcol" id="G6" tabindex="0" onclick="displayGpic(6)" style='cursor:pointer; background:maroon;''>spinach</TD>
+			<TD align=center id="G6detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g6')">green</TD>
+					<img src ="UPLANDSlogo.jpeg" id="myG6" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G6check" style="font-size:30px; width:15px;" onclick="BUY(6)"></TD>
+		</TR>
+		<TR>
+			<TD style="background:white; color:black; width:10px;">7</TD>
+			<TD class="headcol" id="G7" tabindex="0" onclick="displayGpic(7)" style='cursor:pointer; background:maroon;''>beets</TD>
+			<TD align=center id="G7detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g7')">maroon colour</TD>
+					<img src ="" id="myG7" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G7check" style="font-size:30px; width:15px;" onclick="BUY(7)"></TD>
+		</TR>		
+
+		<TR style="border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:red;">
+			<TD style="background:white; color:black; width:10px;">8</TD>
+			<TD class="headcol" id="G8" tabindex="0" onclick="displayGpic(8)" style='cursor:pointer; background:maroon;''>xxxxxxxxx</TD>
+			<TD align=center id="G8detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g8')">zzzzz 8 zzzzzz</TD>
+					<img src ="" id="myG8" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G8check" style="font-size:30px; width:15px;" onclick="BUY(8)"></TD>
+		</TR>				
+		
+
+		<TR id="R9" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">9</TD>
+			<TD class="headcol" id="G9" tabindex="0" onclick="displayGpic(9)" style='cursor:pointer; background:maroon;''>G9 item</TD>
+			<TD align=center id="G9detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g9')">G9 detail</TD>
+					<img src ="" id="myG9" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G9check" style="font-size:30px; width:15px;" onclick="BUY(9)"></TD>
+		</TR>				
+		<TR id="R10" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">10</TD>
+			<TD class="headcol" id="G10" tabindex="0" onclick="displayGpic(10)" style='cursor:pointer; background:maroon;''>G10 item</TD>
+			<TD align=center id="G10detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g10')">G10 detail</TD>
+					<img src ="" id="myG10" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G10check" style="font-size:30px; width:15px;" onclick="BUY(10)"></TD>
+		</TR>						
+		<TR id="R11" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">11</TD>
+			<TD class="headcol" id="G11" tabindex="0" onclick="displayGpic(11)" style='cursor:pointer; background:maroon;''>G11 item</TD>
+			<TD align=center id="G11detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g11')">G11 detail</TD>
+					<img src ="" id="myG11" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G11check" style="font-size:30px; width:15px;" onclick="BUY(11)"></TD>
+		</TR>	
+		<TR id="R12" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">12</TD>
+			<TD class="headcol" id="G12" tabindex="0" onclick="displayGpic(12)" style='cursor:pointer; background:maroon;''>G12 item</TD>
+			<TD align=center id="G12detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g12')">G12 detail</TD>
+					<img src ="" id="myG12" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G12check" style="font-size:30px; width:15px;" onclick="BUY(12)"></TD>
+		</TR>						
+		<TR id="R13" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">13</TD>
+			<TD class="headcol" id="G13" tabindex="0" onclick="displayGpic(13)" style='cursor:pointer; background:maroon;''>G13 item</TD>
+			<TD align=center id="G13detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g13')">G13 detail</TD>
+					<img src ="" id="myG13" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G13check" style="font-size:30px; width:15px;" onclick="BUY(13)"></TD>
+		</TR>						
+		<TR id="R14" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">14</TD>
+			<TD class="headcol" id="G14" tabindex="0" onclick="displayGpic(14)" style='cursor:pointer; background:maroon;''>G14 item</TD>
+			<TD align=center id="G14detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g14')">G14 detail</TD>
+					<img src ="" id="myG14" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G14check" style="font-size:30px; width:15px;" onclick="BUY(14)"></TD>
+		</TR>						
+		<TR id="R15" style="display:none;">
+			<TD style="background:white; color:black; width:10px;">15</TD>
+			<TD class="headcol" id="G15" tabindex="0" onclick="displayGpic(15)" style='cursor:pointer; background:maroon;''>G15 item</TD>
+			<TD align=center id="G15detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g15')">G15 detail</TD>
+					<img src ="" id="myG15" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
+			<TD align=center id="G15check" style="font-size:30px; width:15px;" onclick="BUY(15)"></TD>
+		</TR>								
+		
+		</tbody>	
+	</TABLE>	
+
+					<!--   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$.  -->
+
+		<button id="noteG" onclick="GhideNOTE()" style="position:fixed;  border:2px inset gray; border-radius:0px; z-index:10;  left:250px; top:160px; background:lightyellow; padding:5px; visibility:hidden; font-size:25px; opacity:1;"><b>&times;</b></button>	
+		<textarea id="noteTAg" style= "position:fixed; left:250px; top:200px; background:lightyellow; padding:5px; visibility:hidden; width:500px; height:400px; font-size:25px;" ondblclick="GshowNOTE();" onchange="localStorage.setItem('NOTEchangeG',this.value);">NOTE textarea:
+		</textarea>		<!-- border:2px inset gray; border-radius:10px;  -->
+
+		
+		
+	<TABLE id="tblSFL" border=1 align=center style="background:beige; zoom:1; position:fixed; left:150px; top:100px; visibility:hidden;">
+		<TR>			
+			<TD><!--<input value="WK">-->
+				&nbsp;Grocery Items&emsp;<a onclick="GhideSFL()"><b>&times;</b></a><br>
+				<!--<input id="WKipt" style="border:0px inset gray; background:beige;color:gray; width:20px; font-size:10px;" value='W2'>-->
+				
+				<input id="WKdisp" style="border:0px inset gray; background:beige; color:blue; width:100px; font-size:20px;" value=''><!--&nbsp;-->
+				
+					<!--<button onclick="SFL2()" style="font-size:15px; border:2px inset gray; border-radius:10px;">sfl</button>-->      <!-- SHUFFLE -->
+					
+					<button onclick="gSFLmnl()" style="font-size:15px; border:2px inset gray; border-radius:10px;">#s</button>&nbsp;<span id="SVDspan" style="visibility:hidden;">SVD</span>
+			</TD>
+		</TR>	
+		<TR><TD align=center id="SFL1" style="font-size:30px;" onclick="SFLcolorG('1')"><!--Hodgins, George W.--></TD>
+			<TD><input type="tel" id="GsflODR1" maxlength=2 style="width:20px; display:none;" tabindex="301"></TD>
+		</TR>
+		<TR><TD align=center id="SFL2" style="font-size:30px;" onclick="SFLcolorG(2)"><!--Pengelly, Delbert--></TD>
+			<TD><input type="tel" id="GsflODR2" maxlength=2  style="width:20px; display:none;" tabindex="302"></TD></TR>
+		<TR><TD align=center id="SFL3" style="font-size:30px;" onclick="SFLcolorG('3')"><!--Porter, George R.--></TD>
+			<TD><input type="tel" id="GsflODR3" maxlength=2  style="width:20px; display:none;" tabindex="303"></TD></TR>
+		<TR><TD align=center id="SFL4" style="font-size:30px;"  onclick="SFLcolorG(4)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR4" maxlength=2  style="width:20px; display:none;" tabindex="304"></TD></TR>
+		<TR><TD align=center id="SFL5" style="font-size:30px;" onclick="SFLcolorG(5)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR5" maxlength=2 Item('sflODR2' name='sflODR5' autofocus tabindex="202" style="background:whitesmoke; width:20px; font-weight:bold; display:none;"  tabindex="305"> <!-- display:block; --></TD></TR>
+		<TR><TD align=center id="SFL6" style="font-size:30px;" onclick="SFLcolorG(6)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR6" maxlength=2  style="width:20px; display:none;" tabindex="306"></TD></TR> <!-- onchange="localStorage.setItem('sflODR6',this.value);" -->
+		<TR><TD align=center id="SFL7" style="font-size:30px;" onclick="SFLcolorG(7)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR7" maxlength=2  style="width:20px; display:none;" tabindex="307"></TD></TR>
+		<TR><TD align=center id="SFL8" style="font-size:30px;" onclick="SFLcolorG(8)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR8" maxlength=2  style="width:20px; display:none;" tabindex="308"></TD></TR>
+		<TR><TD align=center id="SFL9" style="font-size:30px;" onclick="SFLcolorG(9)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR9" maxlength=2  style="width:20px; display:none;" tabindex="309"></TD></TR>
+		<TR><TD align=center id="SFL10" style="font-size:30px;" onclick="SFLcolorG(10)">&nbsp;</TD>	
+			<TD><input type="tel" id="GsflODR10" maxlength=2  style="width:20px; display:none;" tabindex="310"></TD></TR>
+		<TR><TD align=center id="SFL11" style="font-size:30px;" onclick="SFLcolorG(11)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR11" maxlength=2  style="width:20px; display:none;" tabindex="311"></TD></TR>
+		<TR><TD align=center id="SFL12" style="font-size:30px;" onclick="SFLcolorG(12)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR12" maxlength=2  style="width:20px; display:none;" tabindex="312"></TD></TR>
+		<TR><TD align=center id="SFL13" style="font-size:30px;" onclick="SFLcolorG(13)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR13" maxlength=2  style="width:20px; display:none;" tabindex="313"></TD></TR>
+		<TR><TD align=center id="SFL14" style="font-size:30px;" onclick="SFLcolorG(14)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR14" maxlength=2  style="width:20px; display:none;" tabindex="314"></TD></TR>
+		<TR><TD align=center id="SFL15" style="font-size:30px;" onclick="SFLcolorG(15)">&nbsp;</TD>
+			<TD onclick=""><input type="tel" id="GsflODR15" maxlength=2  style="width:20px; display:none;" tabindex="315"></TD></TR>
+		<TR><TD align=center id="SFL16" style="font-size:30px;" onclick="SFLcolorG(16)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR16" maxlength=2  style="width:20px; display:none;" tabindex="316"></TD></TR>
+		<TR><TD align=center id="SFL17" style="font-size:30px;" onclick="SFLcolorG(17)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR17" maxlength=2  style="width:20px; display:none;" tabindex="317"></TD></TR>
+		<TR><TD align=center id="SFL18" style="font-size:30px;" onclick="SFLcolorG(18)">&nbsp;</TD>
+			<TD><input type="tel" id="GsflODR18" maxlength=2  style="width:20px; display:none;" tabindex="318"></TD></TR>
+		<TR>
+			<TD><!--&nbsp;-->
+				<!--<button onclick="editSFLg()" style="font-size:15px; border:2px inset gray; border-radius:10px;">mod</button>-->
+			
+				<button onclick="GsaveSFL()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">save</button><!--&#8680;--><!-- right arrows: 8680 &#8658; --><button onclick="displaySFLsavedG()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">show</button><!--localStorage.getItem("sflP1") --><button onclick="delNUMSg()" style="font-size:15px; border:2px inset gray; border-radius:10px;">del#</button>
+			</TD>
+		</TR>	
+	</TABLE>	
+
+	
+	
+	<TABLE id="tblWK" border=1 align=center style="background:blue; color:white; zoom:2; position:fixed; left:40px; top:350px; visibility:hidden; font-size:20px;"> <!-- top:400px; -->
+		<thead>
+		<TR style="background:dodgerblue; color:white;"><TH colspan=5>Enter week to shuffle (0-4)</TH>
+		</TR>	
+		<TR>
+			<TD>
+				<label><input id="wk0" type="radio" name="sflWK" value="0" style="zoom:1;"/>0</label>
+			</TD>
+			<TD><label><input id="wk1" type="radio" name="sflWK" value="1" style="zoom:;"/>1</label></TD>	
+			<TD> 
+				<label><input id="wk2" type="radio" name="sflWK" value="2" style="zoom:1;"/>2</label>
+									<!-- type="radio" -->
+			</TD>	
+			<TD><label><input id="wk3" type="radio" name="sflWK" value="3" style="zoom:;"/>3</label></TD>
+			<TD><label><input id="wk4" type="radio" name="sflWK" value="4" style="zoom:;"/>4</label></TD>
+		</TR>
+		<TR>
+						<TD colspan=4 align=center><button style="color:black;  font-size:15px;" onclick="GshowSFL()"><b>SUBMIT</b></button></TD>
+									<!-- font-size:15px; -->
+						<TD><a onclick="hideRADIO()" style=""><b>clear</b></a>
+						</TD><!-- &times; font-size:45px;-->
+		</TR>
+	</TABLE>
+	
+</div>	
+
+</body>
+</html>
