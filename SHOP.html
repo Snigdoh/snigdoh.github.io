@@ -139,7 +139,10 @@
 		if ( document.getElementById("myG"+Gno).style.display == "none" ) {	
 			//alert("Will try to display pic for G2 (grapes)!");
 			for (let n = 1; n < 16; n++) { document.getElementById("myG"+n).style.display = "none"; }
-			document.getElementById("myG"+Gno).style.display = "block"; }
+			document.getElementById("myG"+Gno).style.height = "250px"; 
+			document.getElementById("myG"+Gno).style.width = "250px"; 
+			document.getElementById("myG"+Gno).style.display = "block"; 
+		}
 		else { document.getElementById("myG"+Gno).style.display = "none"; }		
 	}
 
@@ -232,14 +235,14 @@
 			<TD style="background:white; color:black; width:10px;">1</TD>
 			<TD class="headcol" id="G1" tabindex="0" onclick="displayGpic(1)" style='cursor:pointer; background:maroon;'>bread</TD> 
 			<TD style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red;" align=center id="G1detail" onclick="itemNOTE('g1')">white</TD>
-					<img src ="PassiveArms1.png" id="myG1" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 			
+					<img src ="PassiveArms1.png" id="myG1" width="150px" height="150" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 			
 			<TD align=center id="G1check" style="font-size:30px; width:15px;" onclick="BUY(1)"></TD><!--onclick="PLAYwk('AB',1,2)"-->			
 		</TR>
 		<TR>
 			<TD style="background:white; color:black; width:10px;">2</TD>
 			<TD class="headcol" id="G2" tabindex="0" onclick="displayGpic(2)" style='cursor:pointer; background:maroon;' >grapes</TD> 
 			<TD align=center id="G2detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red; background:black; color:white;" onclick="itemNOTE('g2')">green</TD>
-					<img src ="VGClogo.jpeg" id="myG2" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
+					<img src ="VGClogo.jpeg" id="myG2" width="250px" height="250" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
 			<TD align=center id="G2check" style="font-size:30px; width:15px;" onclick="BUY(2)"></TD><!--PLAYwk('TC',2,2)-->
 		</TR>
 		<TR style="display:block;">	<!-- G3 WAS missing! -->
