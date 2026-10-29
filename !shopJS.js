@@ -143,7 +143,8 @@ var BUYnowstr; 		// < was PLAYwk1str
 		      "localStorage 'G10item' = '" + localStorage.getItem("G10item") + "'.");*/	
 		for (let n = 9; n < 16; n++) {
 			if ( (localStorage.getItem("G"+n+"item") != '')  &&  (localStorage.getItem("G"+n+"item") != null)  ) {
-				document.getElementById("R"+n).style.display="block";
+				document.getElementById("R"+n).style.display="block";	// < *!
+				//document.getElementById("R"+n).style.visibility = "visible";	// < *!
 				document.getElementById("G"+n).innerHTML=localStorage.getItem("G"+n+"item");
 				/*var ITEMname = prompt("Enter item name", 'drink');
 			  		localStorage.setItem("G"+n+"item",ITEMname);

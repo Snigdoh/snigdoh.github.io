@@ -13,65 +13,24 @@
 
 
 <style>
-	.body,
-	.wrapper {
-	  /* Break the flow */
-		  position: absolute;
-		  top: 0px;	
-	  /* Give them all the available space */
-		  width: 100%;
-		  height: 100%;	
-	  /* Remove the margins if any */
-		  margin: 0;	
-	  /* Allow them to scroll down the document */
-		  /* overflow-y: hidden; */
-		  overflow-y:scroll;
-	}
-	
-	.body {
-	  /* Sending body at the bottom of the stack */
-	  FONT-SIZE:40px;
-	  z-index: 1;
-	   /* zoom:250%; */	/* 250%; */
-	  overscroll-behavior-y: contain; /* < prevents 'pull-to-refresh' in CHROME (not DDG) */
-	  /*background:lime;*/
-	  /*zoom:150%;*/	/*250%;*/
+
+  table {
+    width: 90%;	/*100%;             /* Table must have a defined width */
+    table-layout: fixed;     /* Forces columns/cells to be equal width */
+    border-collapse: collapse; 
   }
-	table.table2 tr td:nth-child(+6){ display:none }
-	table.table2 tr th:nth-child(+6){ display:none }
-	
-	
-	.wrapper {
-	  /* Making the wrapper stack above the body */
-	  z-index: 2;
-	  padding:5px; /* < my add (Mar 14/23) [dec to 5 px June 6/23] */
-	  /*zoom:150%;*/
-	}
+  
+  td, th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    
+    /* Optional: Prevents long words or URLs from breaking the layout */
+    word-wrap: break-word;   
+    overflow: hidden;
+  }
 
-	table.HEADtbl td { 
-		background:black; color:white; text-align:center; 
-		zoom:300%;
-	}	
-	table.tableMAIN thead { 
-		display:block; /* display:block; | display:unset; */ 
-		/* width:150px; overflow-x:scroll; */
-		zoom:400%;
-	}
-	table.tableMAIN tbody { 
-		/* height:150px; overflow-y:scroll; */
-		display:block; 
-		zoom:400%;
-		/* width:150px; overflow-x:scroll; */
-	} 
-	table.tableMAIN td { width:30px; background:black; color:white; text-align:center; font-size:15px;} /* width: 30px; */
-	table.tableMAIN th { width:30px; background:beige; color:maroon;  font-size:15px; } /* width: 30px;  */
-	.headcol {
-		/*position: sticky;
-    	left: 5px;
-    	background-color: blue;*/
-	}
-
-	
+  
 	input { width:11px; font-size:15px; text-align:center; }
 		input.uncoded { background:gray; } /* beige ivory linen */
 		input.inptTXT { background:gray; width:110px; } /* beige ivory linen */
@@ -108,6 +67,7 @@
 			  position: absolute; top: 0; right: 25px;
 			  font-size: 36px; margin-left: 50px;
 			}	
+
 			
 	.grid-container {
 	  display: grid;
@@ -123,11 +83,8 @@
 	  background-color:blue;	/* rgba(255, 255, 255, 0.8); */
 	  	color:white;
 	  border: 1px solid black;
-	  text-align: center;
-	  
+	  text-align: center;	  
     }	
-	
-	
 	
 	
 </style>
@@ -151,6 +108,7 @@
 		for (let n = 9; n < 16; n++) {
 			if ( document.getElementById("R"+n).style.display=="none" ) {
 				document.getElementById("R"+n).style.display="block";
+				//document.getElementById("R"+n).style.visibility = "visible";	// < *!
 				var ITEMname = prompt("Enter item name", 'drink');
 			  		localStorage.setItem("G"+n+"item",ITEMname);
 			  	document.getElementById("G"+n).style.fontSize = "19px"; // < ???
@@ -193,7 +151,7 @@
 
 </head>
 
-<body class="body" style="background:yellow;" onload="LOADgroc();"> <!-- onload="LOADbk();"   zoom:250%; -->
+<body class="body" style="background:beige;" onload="LOADgroc();"> <!-- onload="LOADbk();"   zoom:250%; -->
 	
 <div class="wrapper"><!-- Put the page contents here -->	
 				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
@@ -222,12 +180,12 @@
 
 	<TABLE class="tableMAIN" border=1 align=center style="">
 		<thead><TR>			
-			<TD style="width:10px;"></TD>
+			<TD style="width:50px;"></TD>
 			<TD> 
 				<span style="font-size:25px; cursor:pointer; background:ivory;color:maroon;" onclick="GopenNav()">&#9776;</span>
 			</TD>	
 			<TH id='det' style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="">details<br></TH>
-			<TH id='w2' style="font-size:12px; width:15px;" onclick="">&#10003;<!--check symbol--></TH> 		
+			<TH id='w2' style="font-size:12px; width:50px;" onclick="">&#10003;<!--check symbol--></TH> 		
 		</TR></thead>	
 
 		<tbody>
@@ -245,7 +203,7 @@
 					<img src ="VGClogo.jpeg" id="myG2" width="250px" height="250" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
 			<TD align=center id="G2check" style="font-size:30px; width:15px;" onclick="BUY(2)"></TD><!--PLAYwk('TC',2,2)-->
 		</TR>
-		<TR style="display:block;">	<!-- G3 WAS missing! -->
+		<TR>	<!-- G3 WAS missing! -->
 			<TD style="background:white; color:black; width:10px;">3</TD>
 			<TD class="headcol" id="G3" tabindex="0" onclick="displayGpic(3)" style='cursor:pointer; background:maroon;' >miss</TD> 
 			<TD align=center id="G3detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red; background:black; color:white;" onclick="itemNOTE('g3')">G3</TD>
@@ -289,30 +247,28 @@
 					<img src ="" id="myG8" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G8check" style="font-size:30px; width:15px;" onclick="BUY(8)"></TD>
 		</TR>				
-		
-
-		<TR id="R9" style="display:none;">
+		<TR id="R9"><!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">9</TD>
 			<TD class="headcol" id="G9" tabindex="0" onclick="displayGpic(9)" style='cursor:pointer; background:maroon;''>G9 item</TD>
 			<TD align=center id="G9detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g9')">G9 detail</TD>
 					<img src ="" id="myG9" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G9check" style="font-size:30px; width:15px;" onclick="BUY(9)"></TD>
 		</TR>				
-		<TR id="R10" style="display:none;">
+		<TR id="R10"><!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">10</TD>
 			<TD class="headcol" id="G10" tabindex="0" onclick="displayGpic(10)" style='cursor:pointer; background:maroon;''>G10 item</TD>
 			<TD align=center id="G10detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g10')">G10 detail</TD>
 					<img src ="" id="myG10" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G10check" style="font-size:30px; width:15px;" onclick="BUY(10)"></TD>
 		</TR>						
-		<TR id="R11" style="display:none;">
+		<TR id="R11"> <!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">11</TD>
 			<TD class="headcol" id="G11" tabindex="0" onclick="displayGpic(11)" style='cursor:pointer; background:maroon;''>G11 item</TD>
 			<TD align=center id="G11detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g11')">G11 detail</TD>
 					<img src ="" id="myG11" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G11check" style="font-size:30px; width:15px;" onclick="BUY(11)"></TD>
 		</TR>	
-		<TR id="R12" style="display:none;">
+		<TR id="R12" style=""> <!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">12</TD>
 			<TD class="headcol" id="G12" tabindex="0" onclick="displayGpic(12)" style='cursor:pointer; background:maroon;''>G12 item</TD>
 			<TD align=center id="G12detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g12')">G12 detail</TD>
