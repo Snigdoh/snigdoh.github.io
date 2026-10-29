@@ -125,7 +125,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 		for (let i = 1; i < 9; i++) {	  // was i < 17 pre July/26 *
 				if ( localStorage.getItem('G'+i) == "y" ) {
 					document.getElementById("G"+i+"check").style.background = "green";
-					document.getElementById("G"+i+"check").style.fontSize = "12px";	//"20px"; 
+					document.getElementById("G"+i+"check").style.fontSize = "20px";	//"20px"; 
 					document.getElementById("G"+i+"check").innerHTML = '&#10003;'; 
 				}
 		}
@@ -143,7 +143,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 		      "localStorage 'G10item' = '" + localStorage.getItem("G10item") + "'.");*/	
 		for (let n = 9; n < 16; n++) {
 			if ( (localStorage.getItem("G"+n+"item") != '')  &&  (localStorage.getItem("G"+n+"item") != null)  ) {
-				document.getElementById("R"+n).style.display="block";	// < *!
+				//document.getElementById("R"+n).style.display="block";	// < *!
 				//document.getElementById("R"+n).style.visibility = "visible";	// < *!
 				document.getElementById("G"+n).innerHTML=localStorage.getItem("G"+n+"item");
 				/*var ITEMname = prompt("Enter item name", 'drink');
@@ -154,9 +154,10 @@ var BUYnowstr; 		// < was PLAYwk1str
 		}			  
 			  
 		for (let n = 1; n < 16; n++) {
-			document.getElementById("G"+n).style.fontSize = "12px";	//20px"; 	
+			document.getElementById("G"+n).style.fontSize = "20px";	//20px"; 	
+			document.getElementById("G"+n).style.color = "white";	
 			document.getElementById("G"+n).innerHTML = localStorage.getItem("G"+n+"item");;
-			document.getElementById("G"+n+"detail").style.fontSize = "12px";	//20px"; 	
+			document.getElementById("G"+n+"detail").style.fontSize = "20px";	//20px"; 	
 			document.getElementById("G"+n+"detail").innerHTML = localStorage.getItem("G"+n+"detail");;
 		}
 		
