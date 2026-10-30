@@ -30,6 +30,22 @@
     overflow: hidden;
   }
 
+	table.HEADtbl td { 
+		/*background:black; color:white; text-align:center;*/
+		/*zoom:300%;*/
+	}	
+	table.tableMAIN thead { 
+		/* display:block; | display:unset; */ 
+		/* width:150px; overflow-x:scroll; */
+		/*zoom:400%;*/
+	}
+	table.tableMAIN tbody { 
+		/* height:150px; overflow-y:scroll; */
+		/*display:block;*/
+		zoom:400%;
+		/* width:150px; overflow-x:scroll; */
+	}
+
   
 	input { width:11px; font-size:15px; text-align:center; }
 		input.uncoded { background:gray; } /* beige ivory linen */
@@ -106,9 +122,10 @@
 	function addITEM(){
 		alert("Will try to add an item to list!");
 		for (let n = 9; n < 16; n++) {
-			if ( document.getElementById("R"+n).style.display=="none" ) {
-				document.getElementById("R"+n).style.display="block";
-				//document.getElementById("R"+n).style.visibility = "visible";	// < *!
+			//if ( document.getElementById("R"+n).style.display=="none" ) {
+			if ( document.getElementById("R"+n).style.visibility=="hidden" ) {
+				//document.getElementById("R"+n).style.display="block";
+				document.getElementById("R"+n).style.visibility = "visible";	// < *!
 				var ITEMname = prompt("Enter item name", 'drink');
 			  		localStorage.setItem("G"+n+"item",ITEMname);
 			  	document.getElementById("G"+n).style.fontSize = "19px"; // < ???
@@ -173,7 +190,7 @@
 
 	<TABLE class="HEADtbl" border=1 align=center > 	
 		<TR><TD>
-				<font size=6>Grocery List</font>&emsp;<span style="font-size:50px; cursor:pointer; background:ivory;color:maroon;" onclick="GopenNav()">&#9776;</span> <!--  -->
+				<font size=7>Grocery List</font>&emsp;<span style="font-size:150px; cursor:pointer; background:ivory;color:maroon;" onclick="GopenNav()">&#9776;</span> <!--  -->
 			</TD> 
 		</TR>
 	</TABLE>
@@ -245,52 +262,52 @@
 					<img src ="" id="myG8" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G8check" style="font-size:30px; width:15px;" onclick="BUY(8)"></TD>
 		</TR>				
-		<TR id="R9"><!-- style="display:none;"> -->
+		<TR id="R9" style="visibility:hidden;"><!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">9</TD>
 			<TD class="headcol" id="G9" tabindex="0" onclick="displayGpic(9)" style='cursor:pointer; background:maroon;''>G9 item</TD>
 			<TD align=center id="G9detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g9')">G9 detail</TD>
 					<img src ="" id="myG9" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G9check" style="font-size:30px; width:15px;" onclick="BUY(9)"></TD>
 		</TR>				
-		<TR id="R10"><!-- style="display:none;"> -->
+		<TR id="R10" style="visibility:hidden;"><!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">10</TD>
 			<TD class="headcol" id="G10" tabindex="0" onclick="displayGpic(10)" style='cursor:pointer; background:maroon;''>G10 item</TD>
 			<TD align=center id="G10detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g10')">G10 detail</TD>
 					<img src ="" id="myG10" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G10check" style="font-size:30px; width:15px;" onclick="BUY(10)"></TD>
 		</TR>						
-		<TR id="R11"> <!-- style="display:none;"> -->
+		<TR id="R11" style="visibility:hidden;"> <!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">11</TD>
 			<TD class="headcol" id="G11" tabindex="0" onclick="displayGpic(11)" style='cursor:pointer; background:maroon;''>G11 item</TD>
 			<TD align=center id="G11detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g11')">G11 detail</TD>
 					<img src ="" id="myG11" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G11check" style="font-size:30px; width:15px;" onclick="BUY(11)"></TD>
 		</TR>	
-		<TR id="R12" style=""> <!-- style="display:none;"> -->
+		<TR id="R12" style="visibility:hidden;"> <!-- style="display:none;"> -->
 			<TD style="background:white; color:black; width:10px;">12</TD>
 			<TD class="headcol" id="G12" tabindex="0" onclick="displayGpic(12)" style='cursor:pointer; background:maroon;''>G12 item</TD>
 			<TD align=center id="G12detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g12')">G12 detail</TD>
 					<img src ="" id="myG12" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G12check" style="font-size:30px; width:15px;" onclick="BUY(12)"></TD>
 		</TR>						
-		<TR id="R13" style="display:none;">
+		<TR id="R13" style="visibility:hidden;">
 			<TD style="background:white; color:black; width:10px;">13</TD>
 			<TD class="headcol" id="G13" tabindex="0" onclick="displayGpic(13)" style='cursor:pointer; background:maroon;''>G13 item</TD>
 			<TD align=center id="G13detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g13')">G13 detail</TD>
 					<img src ="" id="myG13" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G13check" style="font-size:30px; width:15px;" onclick="BUY(13)"></TD>
 		</TR>						
-		<TR id="R14" style="display:none;">
+		<TR id="R14" style="visibility:hidden;">
 			<TD style="background:white; color:black; width:10px;">14</TD>
-			<TD class="headcol" id="G14" tabindex="0" onclick="displayGpic(14)" style='cursor:pointer; background:maroon;''>G14 item</TD>
-			<TD align=center id="G14detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g14')">G14 detail</TD>
+			<TD class="headcol" id="G14" tabindex="0" onclick="displayGpic(14)" style='cursor:pointer; background:maroon;''></TD>
+			<TD align=center id="G14detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g14')"></TD>
 					<img src ="" id="myG14" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G14check" style="font-size:30px; width:15px;" onclick="BUY(14)"></TD>
 		</TR>						
-		<TR id="R15" style="display:none;">
-			<TD style="background:white; color:black; width:10px;">15</TD>
-			<TD class="headcol" id="G15" tabindex="0" onclick="displayGpic(15)" style='cursor:pointer; background:maroon;''>G15 item</TD>
-			<TD align=center id="G15detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g15')">G15 detail</TD>
+		<TR id="R15" style="visibility:hidden;"">
+			<TD style="background:white; color:black; width:10px;"></TD>
+			<TD class="headcol" id="G15" tabindex="0" onclick="displayGpic(15)" style='cursor:pointer; background:maroon;''></TD>
+			<TD align=center id="G15detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g15')"></TD>
 					<img src ="" id="myG15" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
 			<TD align=center id="G15check" style="font-size:30px; width:15px;" onclick="BUY(15)"></TD>
 		</TR>								
@@ -306,17 +323,17 @@
 
 		
 		
-	<TABLE id="tblSFL" border=1 align=center style="background:beige; zoom:1; position:fixed; left:150px; top:100px; visibility:hidden;">
+	<TABLE id="tblSFL" border=1 align=center style="width:40%; background:silver; zoom:1; position:fixed; left:150px; top:100px; visibility:hidden;">
 		<TR>			
 			<TD><!--<input value="WK">-->
-				&nbsp;Grocery Items&emsp;<a onclick="GhideSFL()"><b>&times;</b></a><br>
+				&nbsp;<span style="font-size:30px;">Grocery Items&emsp;<a onclick="GhideSFL()"><b>&times;</b></a></span>
 				<!--<input id="WKipt" style="border:0px inset gray; background:beige;color:gray; width:20px; font-size:10px;" value='W2'>-->
 				
-				<input id="WKdisp" style="border:0px inset gray; background:beige; color:blue; width:100px; font-size:20px;" value=''><!--&nbsp;-->
+				<!--<input id="WKdisp" style="border:0px inset gray; background:beige; color:blue; width:100px; font-size:20px;" value=''>--><!--&nbsp;-->
 				
 					<!--<button onclick="SFL2()" style="font-size:15px; border:2px inset gray; border-radius:10px;">sfl</button>-->      <!-- SHUFFLE -->
 					
-					<button onclick="gSFLmnl()" style="font-size:15px; border:2px inset gray; border-radius:10px;">#s</button>&nbsp;<span id="SVDspan" style="visibility:hidden;">SVD</span>
+					<button onclick="gSFLmnl()" style="font-size:25px; border:2px inset gray; border-radius:10px;">#s</button>&nbsp;<span id="SVDspan" style="visibility:hidden;">SVD</span>
 			</TD>
 		</TR>	
 		<TR><TD align=center id="SFL1" style="font-size:30px;" onclick="SFLcolorG('1')"><!--Hodgins, George W.--></TD>
