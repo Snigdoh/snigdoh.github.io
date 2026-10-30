@@ -190,7 +190,8 @@
 
 	<TABLE class="HEADtbl" border=1 align=center > 	
 		<TR><TD>
-				<font size=7>Grocery List</font>&emsp;<span style="font-size:150px; cursor:pointer; background:ivory;color:maroon;" onclick="GopenNav()">&#9776;</span> <!--  -->
+				<font size=7>Grocery List</font>&emsp;
+				<span style="font-size:150px; float:right; cursor:pointer; background:ivory;color:maroon;" onclick="GopenNav()">&#9776;</span> <!--  -->
 			</TD> 
 		</TR>
 	</TABLE>
@@ -200,7 +201,7 @@
 			<TD style="width:10%;"></TD>
 			<TD style="width:30%; font-size:40px;">item</TD>	
 			<TH id='det' style="font-size:40px; border-right-style:solid; border-right-width:2px; border-right-color:red; width:40%px;" onclick="">details<br></TH>
-			<TH id='w2' style="font-size:12px; width:20%;" onclick="">&#10003;<!--check symbol--></TH> 		
+			<TH id='w2' style="font-size:30px; text-align: center; width:20%;" onclick="">&#10003;<!--check symbol--></TH> 		
 		</TR></thead>	
 
 		<tbody>
@@ -214,14 +215,14 @@
 		<TR>
 			<TD style="background:white; color:black; width:10px;">2</TD>
 			<TD class="headcol" id="G2" tabindex="0" onclick="displayGpic(2)" style='cursor:pointer; background:maroon;' >grapes</TD> 
-			<TD align=center id="G2detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red; background:black; color:white;" onclick="itemNOTE('g2')">green</TD>
+			<TD align=center id="G2detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g2')">green</TD>
 					<img src ="VGClogo.jpeg" id="myG2" width="250px" height="250" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
 			<TD align=center id="G2check" style="font-size:30px; width:15px; text-align: center;" onclick="BUY(2)"></TD><!--PLAYwk('TC',2,2)-->
 		</TR>
 		<TR>	<!-- G3 WAS missing! -->
 			<TD style="background:white; color:black; width:10px;">3</TD>
 			<TD class="headcol" id="G3" tabindex="0" onclick="displayGpic(3)" style='cursor:pointer; background:maroon;' >miss</TD> 
-			<TD align=center id="G3detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red; background:black; color:white;" onclick="itemNOTE('g3')">G3</TD>
+			<TD align=center id="G3detail" style="font-size:14px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g3')">G3</TD>
 					<img src ="" id="myG3" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 
 			<TD align=center id="G3check" style="font-size:30px; width:15px; text-align: center;" onclick="BUY(3)"></TD>
 		</TR>				

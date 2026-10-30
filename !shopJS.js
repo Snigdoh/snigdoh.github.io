@@ -32,7 +32,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 				  array+" 'BUYnow' array content = "+BUYnow)*/
 			//alert("Will try to SHUFFLE finished irem order.\n'BUYnow' (?array) = "+BUYnow); // *!
 			//localStorage.setItem("G"+pNO,'y');
-			for (let b = 1; b < 9; b++) {
+			for (let b = 1; b < 16; b++) { // was < 9 pre Oct 30/26 *!
 				//alert("Trying to get localStorage's 'yes's to show in shuffle!");
 				if ( localStorage.getItem("G"+b) == 'y' ) {
 					//alert("lS 'G"+b+"' =  'y'");
@@ -122,7 +122,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 
 	function GlocStor() {
 		//localStorage.setItem("G"+pNO,'y');
-		for (let i = 1; i < 9; i++) {	  // was i < 17 pre July/26 *
+		for (let i = 1; i < 16; i++) {	  // was i < 9 pre Nov/26 *
 				if ( localStorage.getItem('G'+i) == "y" ) {
 					document.getElementById("G"+i+"check").style.background = "green";
 					document.getElementById("G"+i+"check").style.color = "white"; 
