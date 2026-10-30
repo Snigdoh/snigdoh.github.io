@@ -125,6 +125,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 		for (let i = 1; i < 9; i++) {	  // was i < 17 pre July/26 *
 				if ( localStorage.getItem('G'+i) == "y" ) {
 					document.getElementById("G"+i+"check").style.background = "green";
+					document.getElementById("G"+i+"check").style.color = "white"; 
 					document.getElementById("G"+i+"check").style.fontSize = "20px";	//"20px"; 
 					document.getElementById("G"+i+"check").innerHTML = '&#10003;'; 
 				}
@@ -213,6 +214,7 @@ function BUY(pNO) {
 		else { 
 			//alert(pl+" is playing wk "+wk+"!");
 			document.getElementById("G"+pNO+"check").style.background = "blue"; 
+			document.getElementById("G"+pNO+"check").style.color = "white"; 
 				document.getElementById("G"+pNO+"check").style.fontSize = "20px"; 
 			document.getElementById("G"+pNO+"check").innerHTML = '&#10003;'; 
 			
