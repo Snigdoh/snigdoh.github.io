@@ -32,7 +32,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 				  array+" 'BUYnow' array content = "+BUYnow)*/
 			//alert("Will try to SHUFFLE finished irem order.\n'BUYnow' (?array) = "+BUYnow); // *!
 			//localStorage.setItem("G"+pNO,'y');
-			for (let b = 1; b < 16; b++) { // was < 9 pre Oct 30/26 *!
+			for (let b = 1; b < 21; b++) { // was < 9 pre Oct 30/26 *!
 				//alert("Trying to get localStorage's 'yes's to show in shuffle!");
 				if ( localStorage.getItem("G"+b) == 'y' ) {
 					//alert("lS 'G"+b+"' =  'y'");
@@ -91,7 +91,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 		}
 		
 		storedNOTE = localStorage.getItem("NOTEchangeG");
-		for (let i = 1; i < 16; i++) {	// > 17
+		for (let i = 1; i < 21; i++) {	// > 17
 				var PL = "g"+i;
 					//alert("PL = "+PL);
 				const afterPL = storedNOTE.split(PL)[1]; 
@@ -102,32 +102,36 @@ var BUYnowstr; 		// < was PLAYwk1str
 					//document.getElementById("G"+i).style.background = "maroon"; // < Sep/26 *!
 					//document.getElementById("G"+i).style.border = "2px solid red"; // < Sep/26 *!
 					//document.getElementById("G"+i).innerHTML = document.getElementById("G"+i).innerHTML+" n"; // < Sep/26 *!
-					document.getElementById("G"+i).style.background = "orange"; // < Oct/26 *!
-					document.getElementById("G"+i).style.color = "black"; // < Oct/26 *!
+					//document.getElementById("G"+i).style.background = "orange"; // < Oct/26 *!
+					//document.getElementById("G"+i).style.color = "black"; // < Oct/26 *!
+					document.getElementById("G"+i+"detail").style.background = "orange"; // < Oct/26 *!
+					document.getElementById("G"+i+"detail").style.color = "black"; // < Oct/26 *!
 				  } else {
 				    //alert("No note re "+pl+"!");
 				}	
 			}		
 		
-			for (let n = 1; n < 9; n++) {	// first 8 items can have picture!
+			for (let n = 1; n < 21; n++) {	// first 8 items can have picture!
 				//localStorage.setItem("G"+n+"itemPIC", pic);	
 				// 1. Retrieve the URL string from localStorage
 				const storedImageUrl = localStorage.getItem("G"+n+"itemPIC");			
 				// 2. If it exists, apply it to the <img> src attribute
 				if (storedImageUrl) {
 					document.getElementById("myG"+n).src = storedImageUrl;	
+					document.getElementById("G"+n).style.background = "brown"; // < Oct/26 *!
 				}		
 			}
 	}
 
 	function GlocStor() {
 		//localStorage.setItem("G"+pNO,'y');
-		for (let i = 1; i < 16; i++) {	  // was i < 9 pre Nov/26 *
+		for (let i = 1; i < 21; i++) {	  // was i < 9 pre Nov/26 *
 				if ( localStorage.getItem('G'+i) == "y" ) {
 					document.getElementById("G"+i+"check").style.background = "green";
 					document.getElementById("G"+i+"check").style.color = "white"; 
 					document.getElementById("G"+i+"check").style.fontSize = "20px";	//"20px"; 
 					document.getElementById("G"+i+"check").innerHTML = '&#10003;'; 
+					document.getElementById("N"+i).style.background = "moccasin";	
 				}
 		}
 /*		for (let w = 0; w < 5; w++) {	  
@@ -142,7 +146,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 		//localStorage.setItem("G"+n+"item",ITEMname);	// < G9 - G10
 		/*alert("localStorage 'G9item' = '" + localStorage.getItem("G9item") + "'.\n"+
 		      "localStorage 'G10item' = '" + localStorage.getItem("G10item") + "'.");*/	
-		for (let n = 9; n < 16; n++) {
+		for (let n = 9; n < 21; n++) {
 			if ( (localStorage.getItem("G"+n+"item") != '')  &&  (localStorage.getItem("G"+n+"item") != null)  ) {
 				//document.getElementById("R"+n).style.display="block";	// < *!
 				document.getElementById("R"+n).style.visibility = "visible";	// < *!
@@ -154,7 +158,7 @@ var BUYnowstr; 		// < was PLAYwk1str
 			//alert("No more slots available!");
 		}			  
 			  
-		for (let n = 1; n < 16; n++) {
+		for (let n = 1; n < 21; n++) {
 			document.getElementById("G"+n).style.fontSize = "20px";	//20px"; 	
 			document.getElementById("G"+n).style.color = "white";	
 			document.getElementById("G"+n).innerHTML = localStorage.getItem("G"+n+"item");;
@@ -202,12 +206,13 @@ function BUY(pNO) {
 		if ( (document.getElementById("G"+pNO+"check").style.background == "blue") || (document.getElementById("G"+pNO+"check").style.background == "green") ) {
 			//alert(pl+" is NOT playing wk "+wk+"!");
 			document.getElementById("G"+pNO+"check").style.background = "slategray";
-			document.getElementById("G"+pNO+"check").innerHTML = ""; 	
+			document.getElementById("G"+pNO+"check").innerHTML = ""; 
+			document.getElementById("N"+pNO).style.background = "white";		
 			localStorage.setItem("G"+pNO,"n");
 			
 				var index = BUYnow.indexOf(pNO);		//alert("index of "+pl+" = "+index+"\nPLAY = "+BUYnow);
 				BUYnow.splice(index, 1);				/* <<< HELP! (July 15/23 */		// < **!
-				alert("Post splice BUYnow = "+BUYnow);
+				//alert("Post splice BUYnow = "+BUYnow); //*
 				//BUYnowstr = BUYnow.toString();
 				//localStorage.setItem("lsBUY",BUYnowstr);	//localStorage.setItem("noWK1",BUYnowstr);				
 		}
@@ -217,6 +222,7 @@ function BUY(pNO) {
 			document.getElementById("G"+pNO+"check").style.color = "white"; 
 				document.getElementById("G"+pNO+"check").style.fontSize = "20px"; 
 			document.getElementById("G"+pNO+"check").innerHTML = '&#10003;'; 
+			document.getElementById("N"+pNO).style.background = "moccasin";	//yellow"; 
 			
 					//&#10003;<!--check symbol-->
 			localStorage.setItem("G"+pNO,'y');	//pl);
@@ -246,7 +252,7 @@ function BUY(pNO) {
 		  */
 		  	const ITEMarray = []; var ITEMstr; 
 			const Garray = []; var Gstr;
-			for (let b = 1; b < 16; b++) {
+			for (let b = 1; b < 21; b++) {
 				Garray.push(localStorage.getItem("G"+b));
 				ITEMarray.push(localStorage.getItem("G"+b+"item"));				
 		  	}
@@ -286,7 +292,7 @@ function BUY(pNO) {
 */		
 
 		if ( reply=="YES!") {
-			for (let i = 1; i < 16; i++) {	  // was i < 17 pre July/26 *
+			for (let i = 1; i < 21; i++) {	  // was i < 17 pre July/26 *
 				//if ( (localStorage.getItem('G'+i+'playWK'+w) != "") &&  (localStorage.getItem('G'+i+'playWK'+w) != null) ) {
 						localStorage.setItem('G'+i+'item',""); 
 						localStorage.setItem("G"+n+"detail",""); // < Oct 27 **
