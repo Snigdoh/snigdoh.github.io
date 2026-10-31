@@ -168,7 +168,7 @@
 
 </head>
 
-<body class="body" style="background:beige;" onload="LOADgroc();"> <!-- onload="LOADbk();"   zoom:250%; -->
+<body class="body" style="background:beige; overflow-y:scroll;" onload="LOADgroc();"> <!-- onload="LOADbk();"   zoom:250%; -->
 	
 <div class="wrapper"><!-- Put the page contents here -->	
 				<div id="mySidenav" class="sidenav"  style='opacity:1.0; border-right: 5px solid red;'>
@@ -306,7 +306,7 @@
 			<TD align=center id="G14check" style="font-size:30px; width:15px; text-align: center;" onclick="BUY(14)"></TD>
 		</TR>						
 		<TR id="R15" style="visibility:hidden;"">
-			<TD style="background:white; color:black; width:10px;"></TD>
+			<TD style="background:white; color:black; width:10px;">15</TD>
 			<TD class="headcol" id="G15" tabindex="0" onclick="displayGpic(15)" style='cursor:pointer; background:maroon;''></TD>
 			<TD align=center id="G15detail" style="font-size:16px; border-right-style:solid; border-right-width:2px; border-right-color:red;" onclick="itemNOTE('g15')"></TD>
 					<img src ="" id="myG15" width="50px" height="50" style="border:2px solid navy; border-radius:8px; display:none; position:absolute; top:50px; left:50px;"/> 						
@@ -324,20 +324,24 @@
 
 		
 		
-	<TABLE id="tblSFL" border=1 align=center style="width:40%; background:silver; zoom:1; position:fixed; left:150px; top:100px; visibility:hidden; border:3px solid black; border-radius:5px;"">
+	<TABLE id="tblSFL" border=1 align=center style="width:30%; background:silver; zoom:1; position:fixed; left:150px; top:100px; visibility:hidden; border:3px solid black; border-radius:5px;"">
+		<thead>
 		<TR>			
-			<TD><!--<input value="WK">-->
-				&nbsp;<span style="font-size:30px;">Items&emsp;<a onclick="GhideSFL()"><b>&times;</b></a></span>
+			<TD style="width:75%;""><!--<input value="WK">-->
+				&nbsp;<span style="font-size:30px;">Items&emsp;<a onclick="GhideSFL()" style="float:right; color:blue; font-size:40px;"><b>&times;</b>&emsp;</a></span>
 			</TD>
 				<!--<input id="WKipt" style="border:0px inset gray; background:beige;color:gray; width:20px; font-size:10px;" value='W2'>-->
 				
 				<!--<input id="WKdisp" style="border:0px inset gray; background:beige; color:blue; width:100px; font-size:20px;" value=''>--><!--&nbsp;-->
 				
 					<!--<button onclick="SFL2()" style="font-size:15px; border:2px inset gray; border-radius:10px;">sfl</button>-->      <!-- SHUFFLE -->
-			<TD>		
+			<TD style="width:25%;">		
 					<button onclick="gSFLmnl()" style="font-size:25px; border:2px inset gray; border-radius:10px;">#s</button>&nbsp;<span id="SVDspan" style="visibility:hidden;">SVD</span>
 			</TD>
 		</TR>	
+		</thead>	
+
+		<tbody>
 		<TR><TD align=center id="SFL1" style="font-size:30px;" onclick="SFLcolorG('1')"><!--Hodgins, George W.--></TD>
 			<TD><input type="tel" id="GsflODR1" maxlength=2 style="width:20px; display:none;" tabindex="301"></TD>
 		</TR>
@@ -379,9 +383,13 @@
 			<TD><!--&nbsp;-->
 				<!--<button onclick="editSFLg()" style="font-size:15px; border:2px inset gray; border-radius:10px;">mod</button>-->
 			
-				<button onclick="GsaveSFL()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">save</button><!--&#8680;--><!-- right arrows: 8680 &#8658; --><button onclick="displaySFLsavedG()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">show</button><!--localStorage.getItem("sflP1") --><button onclick="delNUMSg()" style="font-size:15px; border:2px inset gray; border-radius:10px;">del#</button>
-			</TD>
-		</TR>	
+				<button onclick="GsaveSFL()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">save</button><!--&#8680;--><!-- right arrows: 8680 &#8658; --><button onclick="displaySFLsavedG()" style="font-size:20px; border:2px inset silver; border-radius:10px; background:black; color:white;">show</button><!--localStorage.getItem("sflP1") -->
+			</TD>						
+			<TD>
+				<button onclick="delNUMSg()" style="font-size:15px; border:2px inset gray; border-radius:10px;">del#</button>
+			</TD>	
+		</TR>
+		</tbody>	
 	</TABLE>	
 
 	
